@@ -49,7 +49,7 @@
     "serve": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "command": "npm-run-all --parallel \"npx serve ./dist/libs/<%= domain %>/<%= name %>\" \"npx nx run <%= domain %>-<%= name %>:build:serve\""
+        "command": "npm-run-all --parallel \"serve ./dist/libs/<%= domain %>/<%= name %>\" \"nx run <%= domain %>-<%= name %>:build:serve\""
       },
       "dependsOn": [
         {

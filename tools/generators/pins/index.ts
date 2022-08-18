@@ -36,19 +36,20 @@ export default async function (tree: Tree, schema: any) {
       domain: schema.domain,
       npmScope,
       className,
-      appUuid: v4(),
-      roomUuid: v4(),
+      sessionUuid: v4(),
     }
   );
 
   addDependenciesToPackageJson(
     tree,
-    {},
+    { '@swc/helpers': '0.3.13' },
     {
       '@types/aframe': '^1.2.0',
       '@pinser-metaverse/core': '0.2.0',
       'npm-run-all': '^4.1.5',
       serve: '^14.0.1',
+      '@swc/core': '1.2.185',
+      'rollup-plugin-terser': '^7.0.2',
     }
   );
 

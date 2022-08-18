@@ -1,3 +1,4 @@
+import 'aframe';
 import {
   customElement,
   html,
@@ -9,8 +10,8 @@ import {
   property,
   TemplateResult,
 } from '@pinser-metaverse/core';
+import '@pinser-metaverse/gltf';
 import '@pinser-metaverse/scene';
-import 'aframe';
 
 @injectable({
   networked: true,

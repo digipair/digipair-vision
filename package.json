@@ -6,7 +6,8 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "networked-server": "node ./dist/apps/networked-server/main"
+    "networked-server": "node ./dist/apps/networked-server/main",
+    "publish": "nx run core:publish --ver=%npm_config_npmversion% --tag=latest && nx run core:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run gltf:publish --ver=%npm_config_npmversion% --tag=latest && nx run gltf:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run player:publish --ver=%npm_config_npmversion% --tag=latest && nx run player:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run scene:publish --ver=%npm_config_npmversion% --tag=latest && nx run scene:publish-es --ver=%npm_config_npmversion% --tag=latest"
   },
   "private": true,
   "dependencies": {

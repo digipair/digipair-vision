@@ -1,10 +1,16 @@
-import { customElement, html, MetaElement } from '@pinser-metaverse/core';
+import {
+  customElement,
+  html,
+  MetaElement,
+  unsafeHTML,
+} from '@pinser-metaverse/core';
+import { TemplateResult } from 'lit';
 import './logo';
 
 @customElement('meta-avatar')
 export class AvatarElement extends MetaElement {
-  override render() {
-    return html` <meta-logo
+  private defaultAvatar(): string {
+    return ` <meta-logo
         scale="0.25 0.25 0.25"
         position="0 -0.2 0.2"
         rotation="-22.5 -45 22.5"
@@ -39,5 +45,14 @@ export class AvatarElement extends MetaElement {
           ></a-sphere>
         </a-sphere>
       </a-entity>`;
+  }
+
+  override render(): TemplateResult {
+    return html`${unsafeHTML(
+      this.el
+        .closest(`meta-scene`)
+        .querySelector(':scope > template[slot=avatar]')?.innerHTML ||
+        this.defaultAvatar()
+    )}`;
   }
 }
