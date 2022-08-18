@@ -1,0 +1,25 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2017",
+    "module": "esnext",
+    "lib": ["es2019", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@pinser-metaverse/core": ["libs/core/src/index.ts"],
+      "@pinser-metaverse/gltf": ["libs/gltf/src/index.ts"],
+      "@pinser-metaverse/player": ["libs/player/src/index.ts"],
+      "@pinser-metaverse/scene": ["libs/scene/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

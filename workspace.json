@@ -1,0 +1,12 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "core": "libs/core",
+    "demo": "apps/demo",
+    "gltf": "libs/gltf",
+    "networked-server": "apps/networked-server",
+    "player": "libs/player",
+    "scene": "libs/scene"
+  }
+}

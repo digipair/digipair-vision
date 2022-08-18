@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Pinser METAVERSE Demo</title>
+    <base href="/" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <script src="https://networked.pinser-metaverse.com/socket.io/socket.io.js"></script>
+    <script src="https://networked.pinser-metaverse.com/easyrtc/easyrtc.js"></script>
+  </head>
+  <body>
+    <meta-scene
+      session="f12dc432-f696-47b4-802b-b4e807f73a8a"
+    >
+      <template slot="scene">
+        <a-sky color="#DDDDDD"></a-sky>
+        <tic-tac-toe position="0 0 -10"></tic-tac-toe>
+      </template>
+    </meta-scene>
+  </body>
+</html>

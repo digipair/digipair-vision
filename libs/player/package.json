@@ -1,0 +1,40 @@
+{
+  "name": "@pinser-metaverse/player",
+  "version": "0.0.0",
+  "type": "commonjs",
+  "license": "MIT",
+  "homepage": "https://github.com/pinser-metaverse/pinser-metaverse",
+  "keywords": [
+    "metaverse",
+    "pinser",
+    "pinser-metaverse",
+    "webxr",
+    "webgl",
+    "vr",
+    "ar",
+    "3d",
+    "aframe",
+    "three",
+    "threejs",
+    "player",
+    "avatar",
+    "camera"
+  ],
+  "repository": {
+    "url": "https://github.com/pinser-metaverse/pinser-metaverse.git",
+    "type": "git"
+  },
+  "author": {
+    "name": "Marc Buils",
+    "email": "marc.buils@pinser.agency",
+    "url": "https://www.pinser.agency"
+  },
+  "peerDependencies": {
+    "@pinser-metaverse/core": "0.2.0"
+  },
+  "devDependencies": {
+    "@types/aframe": "^1.2.0",
+    "aframe-blink-controls": "^0.3.0",
+    "super-hands": "^3.0.3"
+  }
+}

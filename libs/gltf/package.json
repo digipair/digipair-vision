@@ -1,0 +1,37 @@
+{
+  "name": "@pinser-metaverse/gltf",
+  "version": "0.0.0",
+  "type": "commonjs",
+  "license": "MIT",
+  "homepage": "https://github.com/pinser-metaverse/pinser-metaverse",
+  "keywords": [
+    "metaverse",
+    "pinser",
+    "pinser-metaverse",
+    "webxr",
+    "webgl",
+    "vr",
+    "ar",
+    "3d",
+    "aframe",
+    "three",
+    "threejs",
+    "gltf",
+    "glb"
+  ],
+  "repository": {
+    "url": "https://github.com/pinser-metaverse/pinser-metaverse.git",
+    "type": "git"
+  },
+  "author": {
+    "name": "Marc Buils",
+    "email": "marc.buils@pinser.agency",
+    "url": "https://www.pinser.agency"
+  },
+  "peerDependencies": {
+    "@pinser-metaverse/core": "0.2.0"
+  },
+  "devDependencies": {
+    "@types/aframe": "^1.2.0"
+  }
+}

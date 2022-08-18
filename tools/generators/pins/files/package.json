@@ -1,0 +1,8 @@
+{
+  "name": "@<%= npmScope %>/<%= domain %>-<%= name %>",
+  "version": "0.1.0",
+  "type": "module",
+  "peerDependencies": {
+    "@pinser-metaverse/core": "2.0"
+  }
+}
