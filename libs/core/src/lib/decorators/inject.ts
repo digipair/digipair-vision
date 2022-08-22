@@ -13,8 +13,10 @@ export const inject = () => (target: MetaProvider, property: string) => {
 
       if (!provider) {
         const name = providers.get(type);
-        provider = this.el.closest(`[${name}]`)?.components[name]
-          .__AFRAME_ELEMENT__;
+        provider = (
+          this.el.closest(`[${name}]`) ||
+          this.el.sceneEl.querySelector(`meta-scene-container[${name}]`)
+        )?.components[name].__AFRAME_ELEMENT__;
 
         if (provider) {
           const listener = () => {
