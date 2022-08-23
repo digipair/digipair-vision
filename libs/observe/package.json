@@ -1,23 +1,18 @@
 {
-  "name": "@pinser-metaverse/gltf-es",
+  "name": "@pinser-metaverse/observe",
   "version": "0.0.0",
   "type": "module",
   "license": "MIT",
-  "homepage": "https://github.com/pinser-metaverse/pinser-metaverse",
+  "homepage": "https://github.com/pinser-metaverse/pinser-metaverse/tree/master/libs/observe",
   "keywords": [
-    "metaverse",
+    "rxjs",
+    "redux",
     "pinser",
-    "pinser-metaverse",
-    "webxr",
-    "webgl",
-    "vr",
-    "ar",
-    "3d",
     "aframe",
-    "three",
-    "threejs",
-    "gltf",
-    "glb"
+    "lit",
+    "metaverse",
+    "pinser-metaverse",
+    "observe"
   ],
   "repository": {
     "url": "https://github.com/pinser-metaverse/pinser-metaverse.git",

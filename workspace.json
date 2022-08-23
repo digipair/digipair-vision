@@ -7,6 +7,8 @@
     "gltf": "libs/gltf",
     "networked-server": "apps/networked-server",
     "player": "libs/player",
-    "scene": "libs/scene"
+    "scene": "libs/scene",
+    "observe": "libs/observe",
+    "exporter": "libs/exporter"
   }
 }

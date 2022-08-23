@@ -1,0 +1,76 @@
+{
+  "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
+  "sourceRoot": "libs/observe/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/observe",
+        "main": "libs/observe/src/index.ts",
+        "tsConfig": "libs/observe/tsconfig.lib.json",
+        "assets": ["libs/observe/*.md"]
+      }
+    },
+    "build-es": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "project": "libs/observe/package.esm.json",
+        "outputPath": "dist/libs/observe-es",
+        "compiler": "swc",
+        "entryFile": "libs/observe/src/index.ts",
+        "tsConfig": "libs/observe/tsconfig.lib.json",
+        "rollupConfig": ["libs/observe/rollup.config.cjs"],
+        "assets": [
+          {
+            "glob": "libs/observe/*.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "node tools/scripts/publish.mjs observe {args.ver} {args.tag}"
+      },
+      "dependsOn": [
+        {
+          "projects": "self",
+          "target": "build"
+        }
+      ]
+    },
+    "publish-es": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "node tools/scripts/publish-es.mjs observe {args.ver} {args.tag}"
+      },
+      "dependsOn": [
+        {
+          "projects": "self",
+          "target": "build-es"
+        }
+      ]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/observe/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/observe"],
+      "options": {
+        "jestConfig": "libs/observe/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["library", "utils", "observe"]
+}

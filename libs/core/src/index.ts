@@ -2,7 +2,7 @@ import { Entity as _Entity } from 'aframe';
 import { TemplateResult as _TemplateResult } from 'lit';
 
 export const { THREE } = AFRAME;
-export { html, LitElement, nothing } from 'lit';
+export { html, LitElement, nothing, noChange } from 'lit';
 export {
   customElement as customLitElement,
   property as propertyLit,

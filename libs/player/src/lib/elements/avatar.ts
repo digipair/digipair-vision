@@ -2,9 +2,9 @@ import {
   customElement,
   html,
   MetaElement,
+  TemplateResult,
   unsafeHTML,
 } from '@pinser-metaverse/core';
-import { TemplateResult } from 'lit';
 import './logo';
 
 @customElement('meta-avatar')
