@@ -46,9 +46,9 @@ registerComponent('networked-element', {
     },
   },
   init() {
-    let assets = this.el.sceneEl?.querySelector(':scope > assets');
+    let assets = this.el.sceneEl?.querySelector(':scope > a-assets');
     if (!assets) {
-      assets = document.createElement('assets');
+      assets = document.createElement('a-assets');
       this.el.sceneEl?.appendChild(assets);
     }
 
@@ -70,7 +70,7 @@ registerComponent('networked-element', {
 
       NAF?.schemas.add({
         template: `#${templateId}`,
-        components: this.data.networkedElements,
+        components: ['position', 'rotation', ...this.data.networkedElements],
       });
     }
 

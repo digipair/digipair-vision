@@ -12,7 +12,7 @@ export class GltfElement extends MetaElement {
   private mesh: THREE.Mesh | null = null;
 
   @property({ default: false })
-  debug!: boolean;
+  development!: boolean;
 
   @property()
   url!: string;
@@ -29,7 +29,7 @@ export class GltfElement extends MetaElement {
       return;
     }
 
-    if (this.debug) {
+    if (this.development) {
       console.log('Debug: GltfCustomizerElement mesh', this.mesh);
     }
 

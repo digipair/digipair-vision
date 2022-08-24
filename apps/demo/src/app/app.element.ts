@@ -1,4 +1,5 @@
 import 'aframe';
+
 import {
   customElement,
   html,
