@@ -2,6 +2,7 @@ import {
   customElement,
   html,
   MetaElement,
+  property,
   TemplateResult,
   unsafeHTML,
 } from '@pinser-metaverse/core';
@@ -11,6 +12,9 @@ import { PlayerProvider } from '@pinser-metaverse/player';
   providers: [PlayerProvider],
 })
 export class SceneContainerElement extends MetaElement {
+  @property({ default: false })
+  dev!: boolean;
+
   private scene(): TemplateResult {
     return html`${unsafeHTML(
       this.el
@@ -21,7 +25,7 @@ export class SceneContainerElement extends MetaElement {
 
   override render(): TemplateResult {
     return html`
-      <meta-player></meta-player>
+      <meta-player dev=${this.dev}></meta-player>
 
       ${this.scene()}
     `;

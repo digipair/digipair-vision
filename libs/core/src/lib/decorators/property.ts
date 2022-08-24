@@ -27,7 +27,7 @@ export const property =
       type:
         type === Number ? 'number' : type === Boolean ? 'boolean' : 'string',
       parse: function (value: number | string) {
-        return type === Number || type === String || type === Boolean || !value
+        return type === String || !value
           ? value
           : JSON.parse(value as string);
       },

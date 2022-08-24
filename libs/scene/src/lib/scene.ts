@@ -9,7 +9,6 @@ import 'aframe-extras';
 import 'aframe-physics-extras';
 import 'aframe-physics-system/dist/aframe-physics-system.js';
 import 'aframe-rounded';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
 import 'networked-aframe';
 import './scene-container';
 
@@ -18,7 +17,7 @@ export class SceneElement extends LitElement {
   @propertyLit()
   private session!: string;
 
-  @propertyLit()
+  @propertyLit({ type: Boolean })
   private embedded = false;
 
   @propertyLit()
@@ -27,14 +26,14 @@ export class SceneElement extends LitElement {
   @propertyLit()
   private adapter = 'easyrtc';
 
-  @propertyLit()
+  @propertyLit({ type: Boolean })
   private audio = true;
 
-  @propertyLit()
+  @propertyLit({ type: Boolean })
   private video = false;
 
-  @propertyLit()
-  private debug = false;
+  @propertyLit({ type: Boolean })
+  private development = false;
 
   private connectOnLoad = false;
 
@@ -61,8 +60,8 @@ export class SceneElement extends LitElement {
   override render(): TemplateResult {
     return html`
       <a-scene
-        debug=${ifDefined(this.debug)}
-        embedded=${ifDefined(this.embedded ? true : undefined)}
+        ?debug=${this.development}
+        ?embedded=${this.embedded}
         networked-scene="
           serverURL: ${this.serverURL};
           app: pinser-metaverse;
@@ -72,11 +71,11 @@ export class SceneElement extends LitElement {
           adapter: ${this.adapter};
           audio: ${this.audio};
           video: ${this.video};
-          debug: ${this.debug};
+          debug: ${this.development};
           connectOnLoad: ${this.connectOnLoad};
         "
       >
-        <meta-scene-container></meta-scene-container>
+        <meta-scene-container dev=${this.development}></meta-scene-container>
       </a-scene>
     `;
   }

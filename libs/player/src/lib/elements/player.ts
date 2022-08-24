@@ -5,6 +5,7 @@ import {
   inject,
   MetaElement,
   nothing,
+  property,
   TemplateResult,
   THREE,
 } from '@pinser-metaverse/core';
@@ -17,6 +18,9 @@ import './avatar';
 
 @customElement('meta-player')
 export class PlayerElement extends MetaElement {
+  @property({ default: false })
+  dev!: boolean;
+
   @inject()
   playerProvider!: PlayerProvider;
 
@@ -101,8 +105,8 @@ export class PlayerElement extends MetaElement {
         <a-entity
           position="0 1.6 0"
           camera="fov: 40; zoom: 1;"
-          look-controls="reverseMouseDrag: true; touchEnabled: false; magicWindowTrackingEnabled: false;"
-          wasd-controls
+          look-controls="reverseMouseDrag: true; touchEnabled: true; magicWindowTrackingEnabled: false;"
+          ?wasd-controls=${this.dev}
           networked="template: #avatar-template; attachTemplateToLocal: false;"
         >
           <a-entity

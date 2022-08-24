@@ -17,7 +17,7 @@ function getRollupOptions(options) {
     };
   }
 
-  const bundled = [];
+  const bundled = ['lit/async-directive.js', 'lit/directive.js'];
 
   return {
     ...options,

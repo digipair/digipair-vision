@@ -40,7 +40,8 @@
     "serve": {
       "executor": "@nrwl/web:dev-server",
       "options": {
-        "buildTarget": "demo:build"
+        "buildTarget": "demo:build",
+        "host": "0.0.0.0"
       },
       "configurations": {
         "production": {
