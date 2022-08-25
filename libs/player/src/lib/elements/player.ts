@@ -15,6 +15,7 @@ import { EventTeleport } from '../interfaces/event-teleport';
 import { PlayerProvider } from '../providers/player.provider';
 import '../utils/Geometry.js';
 import './avatar';
+import './element';
 
 declare const NAF: any;
 
@@ -121,7 +122,7 @@ export class PlayerElement extends MetaElement {
     this.el.sceneEl?.removeEventListener('exit-vr', this.exitvr);
     this.playerProvider.el.removeEventListener('teleport', this.teleport);
   }
-  
+
   override render(): TemplateResult {
     return html`
       <a-entity player networked="template: #player-template;">
