@@ -18,7 +18,7 @@ export class PlayerProvider extends MetaProvider {
 
     NAF?.schemas.add({
       template: `#element-template`,
-      components: ['position', 'rotation', 'meta-element'],
+      components: ['position', 'rotation', 'scale', 'meta-element'],
     });
   }
 
@@ -42,7 +42,7 @@ export class PlayerProvider extends MetaProvider {
 
   addNetworkedElement(
     element: string,
-    attributes: { [key: string]: any },
+    attributes: { [key: string]: any } = {},
     id: string | null = null
   ) {
     const el = document.createElement('a-entity');
@@ -55,6 +55,7 @@ export class PlayerProvider extends MetaProvider {
           ...attributes,
           position: undefined,
           rotation: undefined,
+          scale: undefined,
         })
       )}`
     );
@@ -69,6 +70,10 @@ export class PlayerProvider extends MetaProvider {
 
     if (attributes['rotation']) {
       el.setAttribute('rotation', attributes['rotation']);
+    }
+
+    if (attributes['scale']) {
+      el.setAttribute('scale', attributes['scale']);
     }
 
     this.el.sceneEl?.appendChild(el);
