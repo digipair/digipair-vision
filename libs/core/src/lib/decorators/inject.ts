@@ -18,23 +18,23 @@ export const inject = () => (target: MetaProvider, property: string) => {
           this.el.sceneEl.querySelector(`meta-scene-container[${name}]`)
         )?.components[name].__AFRAME_ELEMENT__;
 
-        if (provider) {
-          const listener = () => {
-            this.requestUpdate();
-          };
-          provider.el.addEventListener('__META_UPDATE__', listener);
-          this.__SUBSCRIPTIONS__.push({
-            el: provider.el,
-            type: '__META_UPDATE__',
-            listener,
-          });
-
-          providersByElement.set(this, provider);
-        } else {
+        if (!provider) {
           throw new Error(
             `${name} cannot be injected. May be it is not correctly provided ?`
           );
         }
+
+        const listener = () => {
+          this.requestUpdate();
+        };
+        provider.el.addEventListener('__META_UPDATE__', listener);
+        this.__SUBSCRIPTIONS__.push({
+          el: provider.el,
+          type: '__META_UPDATE__',
+          listener,
+        });
+
+        providersByElement.set(this, provider);
       }
 
       return provider;

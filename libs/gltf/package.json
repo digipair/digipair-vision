@@ -29,6 +29,6 @@
     "url": "https://www.pinser.agency"
   },
   "peerDependencies": {
-    "@pinser-metaverse/core": "0.5.2"
+    "@pinser-metaverse/core": "0.5.3"
   }
 }

@@ -40,6 +40,7 @@ export const customElement =
     };
 
     const aFrameElementDefinition = {
+      __META_INITIALIZED__: false,
       get schema() {
         return ElementClass.schema;
       },
@@ -50,7 +51,12 @@ export const customElement =
         return ElementClass.multiple;
       },
       init: function (data?: unknown): void {
-        getInstance(this as Component).init(data);
+        // defer init for providers
+        setTimeout(() => {
+          getInstance(this as Component).init(data);
+          this.__META_INITIALIZED__ = true;
+          getInstance(this as Component).requestUpdate();
+        }, 1);
       },
       pause: function (): void {
         getInstance(this as Component).pause();
@@ -77,7 +83,10 @@ export const customElement =
       },
       update: function (oldData: unknown): void {
         getInstance(this as Component).update(oldData);
-        getInstance(this as Component).requestUpdate();
+
+        if (this.__META_INITIALIZED__) {
+          getInstance(this as Component).requestUpdate();
+        }
       },
     };
 

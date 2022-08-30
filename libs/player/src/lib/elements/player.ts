@@ -86,7 +86,9 @@ export class PlayerElement extends MetaElement {
       (camera as any).components['look-controls'].pitchObject.rotation.x = (
         THREE as any
       ).Math.degToRad(+rx);
-      (camera as any).components['look-controls'].yawObject.rotation.y = +ry;
+      (camera as any).components['look-controls'].yawObject.rotation.y = (
+        THREE as any
+      ).Math.degToRad(+ry);
     }
   };
 
