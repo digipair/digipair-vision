@@ -53,39 +53,39 @@ export const customElement =
       init: function (data?: unknown): void {
         // defer init for providers
         setTimeout(() => {
-          getInstance(this as Component).init(data);
+          getInstance(this as unknown as Component).init(data);
           this.__META_INITIALIZED__ = true;
-          getInstance(this as Component).requestUpdate();
+          getInstance(this as unknown as Component).requestUpdate();
         }, 1);
       },
       pause: function (): void {
-        getInstance(this as Component).pause();
+        getInstance(this as unknown as Component).pause();
       },
       play: function (): void {
-        getInstance(this as Component).play();
+        getInstance(this as unknown as Component).play();
       },
       remove: function (): void {
-        getInstance(this as Component).remove();
-        instances.delete(this as Component);
+        getInstance(this as unknown as Component).remove();
+        instances.delete(this as unknown as Component);
       },
       tick: function (time: number, timeDelta: number): void {
-        getInstance(this as Component).tick(time, timeDelta);
+        getInstance(this as unknown as Component).tick(time, timeDelta);
       },
       tock: function (
         time: number,
         timeDelta: number,
         camera: THREE.Camera
       ): void {
-        getInstance(this as Component).tock(time, timeDelta, camera);
+        getInstance(this as unknown as Component).tock(time, timeDelta, camera);
       },
       updateSchema: function (): void {
-        getInstance(this as Component).updateSchema();
+        getInstance(this as unknown as Component).updateSchema();
       },
       update: function (oldData: unknown): void {
-        getInstance(this as Component).update(oldData);
+        getInstance(this as unknown as Component).update(oldData);
 
         if (this.__META_INITIALIZED__) {
-          getInstance(this as Component).requestUpdate();
+          getInstance(this as unknown as Component).requestUpdate();
         }
       },
     };

@@ -14,6 +14,7 @@ import 'super-hands';
 import { EventTeleport } from '../interfaces/event-teleport';
 import { PlayerProvider } from '../providers/player.provider';
 import '../utils/Geometry.js';
+import '../utils/look-controls-custom.js';
 import './avatar';
 import './element';
 
@@ -83,10 +84,10 @@ export class PlayerElement extends MetaElement {
 
     if (camera) {
       camera.setAttribute('position', '0 1.6 0');
-      (camera as any).components['look-controls'].pitchObject.rotation.x = (
+      (camera as any).components['look-controls-custom'].pitchObject.rotation.x = (
         THREE as any
       ).Math.degToRad(+rx);
-      (camera as any).components['look-controls'].yawObject.rotation.y = (
+      (camera as any).components['look-controls-custom'].yawObject.rotation.y = (
         THREE as any
       ).Math.degToRad(+ry);
     }
@@ -131,7 +132,7 @@ export class PlayerElement extends MetaElement {
         <a-entity
           position="0 1.6 0"
           camera="fov: 40; zoom: 1;"
-          look-controls="reverseMouseDrag: true; touchEnabled: true; magicWindowTrackingEnabled: false;"
+          look-controls-custom="reverseMouseDrag: true; touchEnabled: true; magicWindowTrackingEnabled: false;"
           ?wasd-controls=${this.dev}
           networked="template: #avatar-template;"
           visible="false"

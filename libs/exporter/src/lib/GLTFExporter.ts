@@ -30,32 +30,32 @@ export class GLTFExporter {
   constructor() {
     this.pluginCallbacks = [];
 
-    this.register(function (writer) {
+    this.register(function (writer: any) {
       return new GLTFLightExtension(writer);
     });
 
-    this.register(function (writer) {
+    this.register(function (writer: any) {
       return new GLTFMaterialsUnlitExtension(writer);
     });
 
-    this.register(function (writer) {
+    this.register(function (writer: any) {
       return new GLTFMaterialsPBRSpecularGlossiness(writer);
     });
 
-    this.register(function (writer) {
+    this.register(function (writer: any) {
       return new GLTFMaterialsTransmissionExtension(writer);
     });
 
-    this.register(function (writer) {
+    this.register(function (writer: any) {
       return new GLTFMaterialsVolumeExtension(writer);
     });
 
-    this.register(function (writer) {
+    this.register(function (writer: any) {
       return new GLTFMaterialsClearcoatExtension(writer);
     });
   }
 
-  register(callback) {
+  register(callback: any) {
     if (this.pluginCallbacks.indexOf(callback) === -1) {
       this.pluginCallbacks.push(callback);
     }
@@ -63,7 +63,7 @@ export class GLTFExporter {
     return this;
   }
 
-  unregister(callback) {
+  unregister(callback: any) {
     if (this.pluginCallbacks.indexOf(callback) !== -1) {
       this.pluginCallbacks.splice(this.pluginCallbacks.indexOf(callback), 1);
     }
@@ -78,7 +78,7 @@ export class GLTFExporter {
    * @param  {Function} onError  Callback on errors
    * @param  {Object} options options
    */
-  parse(input, onDone, onError, options?) {
+  parse(input: any, onDone: any, onError: any, options?: any) {
     if (typeof onError === 'object') {
       console.warn(
         'THREE.GLTFExporter: parse() expects options as the fourth argument now.'
@@ -98,7 +98,7 @@ export class GLTFExporter {
     writer.write(input, onDone, options).catch(onError);
   }
 
-  parseAsync(input, options) {
+  parseAsync(input: any, options: any) {
     const scope = this;
 
     return new Promise(function (resolve, reject) {
@@ -139,7 +139,7 @@ const WEBGL_CONSTANTS = {
   REPEAT: 10497,
 };
 
-const THREE_TO_WEBGL = {};
+const THREE_TO_WEBGL: any = {};
 
 THREE_TO_WEBGL[NearestFilter] = WEBGL_CONSTANTS.NEAREST;
 THREE_TO_WEBGL[NearestMipmapNearestFilter] =
@@ -155,7 +155,7 @@ THREE_TO_WEBGL[ClampToEdgeWrapping] = WEBGL_CONSTANTS.CLAMP_TO_EDGE;
 THREE_TO_WEBGL[RepeatWrapping] = WEBGL_CONSTANTS.REPEAT;
 THREE_TO_WEBGL[MirroredRepeatWrapping] = WEBGL_CONSTANTS.MIRRORED_REPEAT;
 
-const PATH_PROPERTIES = {
+const PATH_PROPERTIES: any = {
   scale: 'scale',
   position: 'translation',
   quaternion: 'rotation',
@@ -183,10 +183,10 @@ const GLB_CHUNK_TYPE_BIN = 0x004e4942;
  * @param  {Array} array2 Array 2 to compare
  * @return {Boolean}        Returns true if both arrays are equal
  */
-function equalArray(array1, array2) {
+function equalArray(array1: any, array2: any) {
   return (
     array1.length === array2.length &&
-    array1.every(function (element, index) {
+    array1.every(function (element: any, index: any) {
       return element === array2[index];
     })
   );
@@ -197,7 +197,7 @@ function equalArray(array1, array2) {
  * @param  {string} text
  * @return {ArrayBuffer}
  */
-function stringToArrayBuffer(text) {
+function stringToArrayBuffer(text: any) {
   return new TextEncoder().encode(text).buffer;
 }
 
@@ -207,7 +207,7 @@ function stringToArrayBuffer(text) {
  * @param {Matrix4} matrix
  * @returns {Boolean} Returns true, if parameter is identity matrix
  */
-function isIdentityMatrix(matrix) {
+function isIdentityMatrix(matrix: any) {
   return equalArray(
     matrix.elements,
     [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]
@@ -221,7 +221,7 @@ function isIdentityMatrix(matrix) {
  * @param  {Integer} count
  * @return {Object} Object containing the `min` and `max` values (As an array of attribute.itemSize components)
  */
-function getMinMax(attribute, start, count) {
+function getMinMax(attribute: any, start: any, count: any) {
   const output = {
     min: new Array(attribute.itemSize).fill(Number.POSITIVE_INFINITY),
     max: new Array(attribute.itemSize).fill(Number.NEGATIVE_INFINITY),
@@ -258,7 +258,7 @@ function getMinMax(attribute, start, count) {
  * @returns {Integer} new buffer size with required padding.
  *
  */
-function getPaddedBufferSize(bufferSize) {
+function getPaddedBufferSize(bufferSize: any) {
   return Math.ceil(bufferSize / 4) * 4;
 }
 
@@ -269,7 +269,7 @@ function getPaddedBufferSize(bufferSize) {
  * @param {Integer} paddingByte (Optional)
  * @returns {ArrayBuffer} The same buffer if it's already aligned to 4-byte boundary or a new buffer
  */
-function getPaddedArrayBuffer(arrayBuffer, paddingByte = 0) {
+function getPaddedArrayBuffer(arrayBuffer: any, paddingByte = 0) {
   const paddedLength = getPaddedBufferSize(arrayBuffer.byteLength);
 
   if (paddedLength !== arrayBuffer.byteLength) {
@@ -288,8 +288,8 @@ function getPaddedArrayBuffer(arrayBuffer, paddingByte = 0) {
   return arrayBuffer;
 }
 
-let cachedCanvas = null;
-declare const OffscreenCanvas;
+let cachedCanvas: any = null;
+declare const OffscreenCanvas: any;
 
 function getCanvas() {
   if (cachedCanvas) {
@@ -364,7 +364,7 @@ class GLTFWriter {
     };
   }
 
-  setPlugins(plugins) {
+  setPlugins(plugins: any) {
     this.plugins = plugins;
   }
 
@@ -374,7 +374,7 @@ class GLTFWriter {
    * @param  {Function} onDone  Callback on completed
    * @param  {Object} options options
    */
-  async write(input, onDone, options) {
+  async write(input: any, onDone: any, options: any) {
     this.options = Object.assign(
       {},
       {
@@ -488,7 +488,7 @@ class GLTFWriter {
    * @param {THREE.Object3D|THREE.Material} object
    * @param {Object} objectDef
    */
-  serializeUserData(object, objectDef) {
+  serializeUserData(object: any, objectDef: any) {
     if (Object.keys(object.userData).length === 0) return;
 
     const options = this.options;
@@ -510,7 +510,7 @@ class GLTFWriter {
       }
 
       if (Object.keys(json).length > 0) objectDef.extras = json;
-    } catch (error) {
+    } catch (error: any) {
       console.warn(
         "THREE.GLTFExporter: userData of '" +
           object.name +
@@ -527,7 +527,7 @@ class GLTFWriter {
    * @param  {Object} object
    * @return {Integer}
    */
-  getUID(object) {
+  getUID(object: any) {
     if (!this.uids.has(object)) this.uids.set(object, this.uid++);
 
     return this.uids.get(object);
@@ -539,7 +539,7 @@ class GLTFWriter {
    * @param {BufferAttribute} normal
    * @returns {Boolean}
    */
-  isNormalizedNormalAttribute(normal) {
+  isNormalizedNormalAttribute(normal: any) {
     const cache = this.cache;
 
     if (cache.attributesNormalized.has(normal)) return false;
@@ -562,7 +562,7 @@ class GLTFWriter {
    * @returns {BufferAttribute}
    *
    */
-  createNormalizedNormalAttribute(normal) {
+  createNormalizedNormalAttribute(normal: any) {
     const cache = this.cache;
 
     if (cache.attributesNormalized.has(normal))
@@ -596,7 +596,7 @@ class GLTFWriter {
    * @param {Object} mapDef
    * @param {THREE.Texture} texture
    */
-  applyTextureTransform(mapDef, texture) {
+  applyTextureTransform(mapDef: any, texture: any) {
     let didTransform = false;
     const transformDef: any = {};
 
@@ -622,7 +622,7 @@ class GLTFWriter {
     }
   }
 
-  buildMetalRoughTexture(metalnessMap, roughnessMap) {
+  buildMetalRoughTexture(metalnessMap: any, roughnessMap: any) {
     if (metalnessMap === roughnessMap) return metalnessMap;
 
     console.warn(
@@ -683,7 +683,7 @@ class GLTFWriter {
    * @param  {ArrayBuffer} buffer
    * @return {Integer}
    */
-  processBuffer(buffer) {
+  processBuffer(buffer: any) {
     const json = this.json;
     const buffers = this.buffers;
 
@@ -704,7 +704,7 @@ class GLTFWriter {
    * @param  {number} target (Optional) Target usage of the BufferView
    * @return {Object}
    */
-  processBufferView(attribute, componentType, start, count, target): any {
+  processBufferView(attribute: any, componentType: any, start: any, count: any, target: any): any {
     const json = this.json;
 
     if (!json.bufferViews) json.bufferViews = [];
@@ -787,7 +787,7 @@ class GLTFWriter {
    * @param {Blob} blob
    * @return {Promise<Integer>}
    */
-  processBufferViewImage(blob) {
+  processBufferViewImage(blob: any) {
     const writer = this;
     const json = writer.json;
 
@@ -819,11 +819,11 @@ class GLTFWriter {
    * @param  {Integer} count (Optional)
    * @return {Integer|null} Index of the processed accessor on the "accessors" array
    */
-  processAccessor(attribute, geometry?, start?, count?) {
+  processAccessor(attribute: any, geometry?: any, start?: any, count?: any) {
     const options = this.options;
     const json = this.json;
 
-    const types = {
+    const types: any = {
       1: 'SCALAR',
       2: 'VEC2',
       3: 'VEC3',
@@ -916,7 +916,7 @@ class GLTFWriter {
    * @param  {String} mimeType export format
    * @return {Integer}     Index of the processed texture in the "images" array
    */
-  processImage(image, format, flipY, mimeType = 'image/png') {
+  processImage(image: any, format: any, flipY: any, mimeType: any = 'image/png') {
     const writer = this;
     const cache = writer.cache;
     const json = writer.json;
@@ -1004,7 +1004,7 @@ class GLTFWriter {
         }
 
         pending.push(
-          toBlobPromise.then((blob) =>
+          toBlobPromise.then((blob: any) =>
             writer.processBufferViewImage(blob).then((bufferViewIndex) => {
               imageDef.bufferView = bufferViewIndex;
             })
@@ -1027,7 +1027,7 @@ class GLTFWriter {
    * @param  {Texture} map Texture to process
    * @return {Integer}     Index of the processed texture in the "samplers" array
    */
-  processSampler(map) {
+  processSampler(map: any) {
     const json = this.json;
 
     if (!json.samplers) json.samplers = [];
@@ -1047,7 +1047,7 @@ class GLTFWriter {
    * @param  {Texture} map Map to process
    * @return {Integer} Index of the processed texture in the "textures" array
    */
-  processTexture(map) {
+  processTexture(map: any) {
     const cache = this.cache;
     const json = this.json;
 
@@ -1066,7 +1066,7 @@ class GLTFWriter {
 
     if (map.name) textureDef.name = map.name;
 
-    this._invokeAll(function (ext) {
+    this._invokeAll(function (ext: any) {
       ext.writeTexture && ext.writeTexture(map, textureDef);
     });
 
@@ -1080,7 +1080,7 @@ class GLTFWriter {
    * @param  {THREE.Material} material Material to process
    * @return {Integer|null} Index of the processed material in the "materials" array
    */
-  processMaterial(material) {
+  processMaterial(material: any) {
     const cache = this.cache;
     const json = this.json;
 
@@ -1218,7 +1218,7 @@ class GLTFWriter {
 
     this.serializeUserData(material, materialDef);
 
-    this._invokeAll(function (ext) {
+    this._invokeAll(function (ext: any) {
       ext.writeMaterial && ext.writeMaterial(material, materialDef);
     });
 
@@ -1232,7 +1232,7 @@ class GLTFWriter {
    * @param  {THREE.Mesh} mesh Mesh to process
    * @return {Integer|null} Index of the processed mesh in the "meshes" array
    */
-  processMesh(mesh) {
+  processMesh(mesh: any) {
     const cache = this.cache;
     const json = this.json;
 
@@ -1280,7 +1280,7 @@ class GLTFWriter {
     const targets: any = [];
 
     // Conversion between attributes names in threejs and gltf spec
-    const nameConversion = {
+    const nameConversion: any = {
       uv: 'TEXCOORD_0',
       uv2: 'TEXCOORD_1',
       color: 'COLOR_0',
@@ -1510,7 +1510,7 @@ class GLTFWriter {
 
     if (!json.meshes) json.meshes = [];
 
-    this._invokeAll(function (ext) {
+    this._invokeAll(function (ext: any) {
       ext.writeMesh && ext.writeMesh(mesh, meshDef);
     });
 
@@ -1524,7 +1524,7 @@ class GLTFWriter {
    * @param  {THREE.Camera} camera Camera to process
    * @return {Integer}      Index of the processed mesh in the "camera" array
    */
-  processCamera(camera) {
+  processCamera(camera: any) {
     const json = this.json;
 
     if (!json.cameras) json.cameras = [];
@@ -1567,7 +1567,7 @@ class GLTFWriter {
    * @param {THREE.Object3D} root
    * @return {number|null}
    */
-  processAnimation(clip, root) {
+  processAnimation(clip: any, root: any) {
     const json = this.json;
     const nodeMap = this.nodeMap;
 
@@ -1665,7 +1665,7 @@ class GLTFWriter {
    * @param {THREE.Object3D} object
    * @return {number|null}
    */
-  processSkin(object) {
+  processSkin(object: any) {
     const json = this.json;
     const nodeMap = this.nodeMap;
 
@@ -1711,7 +1711,7 @@ class GLTFWriter {
    * @param  {THREE.Object3D} node Object3D to processNode
    * @return {Integer} Index of the node in the nodes list
    */
-  processNode(object) {
+  processNode(object: any) {
     const json = this.json;
     const options = this.options;
     const nodeMap = this.nodeMap;
@@ -1777,7 +1777,7 @@ class GLTFWriter {
       if (children.length > 0) nodeDef.children = children;
     }
 
-    this._invokeAll(function (ext) {
+    this._invokeAll(function (ext: any) {
       ext.writeNode && ext.writeNode(object, nodeDef);
     });
 
@@ -1790,7 +1790,7 @@ class GLTFWriter {
    * Process Scene
    * @param  {Scene} node Scene to process
    */
-  processScene(scene) {
+  processScene(scene: any) {
     const json = this.json;
     const options = this.options;
 
@@ -1826,7 +1826,7 @@ class GLTFWriter {
    * Creates a Scene to hold a list of objects and parse it
    * @param  {Array} objects List of objects to process
    */
-  processObjects(objects) {
+  processObjects(objects: any) {
     const scene = new Scene();
     scene.name = 'AuxScene';
 
@@ -1842,12 +1842,12 @@ class GLTFWriter {
   /**
    * @param {THREE.Object3D|Array<THREE.Object3D>} input
    */
-  processInput(input) {
+  processInput(input: any) {
     const options = this.options;
 
     input = input instanceof Array ? input : [input];
 
-    this._invokeAll(function (ext) {
+    this._invokeAll(function (ext: any) {
       ext.beforeParse && ext.beforeParse(input);
     });
 
@@ -1872,12 +1872,12 @@ class GLTFWriter {
       this.processAnimation(options.animations[i], input[0]);
     }
 
-    this._invokeAll(function (ext) {
+    this._invokeAll(function (ext: any) {
       ext.afterParse && ext.afterParse(input);
     });
   }
 
-  _invokeAll(func) {
+  _invokeAll(func: any) {
     for (let i = 0, il = this.plugins.length; i < il; i++) {
       func(this.plugins[i]);
     }
@@ -1892,12 +1892,12 @@ class GLTFWriter {
 class GLTFLightExtension {
   writer: any;
   name: string;
-  constructor(writer) {
+  constructor(writer: any) {
     this.writer = writer;
     this.name = 'KHR_lights_punctual';
   }
 
-  writeNode(light, nodeDef) {
+  writeNode(light: any, nodeDef: any) {
     if (!light.isLight) return;
 
     if (
@@ -1983,12 +1983,12 @@ class GLTFLightExtension {
 class GLTFMaterialsUnlitExtension {
   writer: any;
   name: string;
-  constructor(writer) {
+  constructor(writer: any) {
     this.writer = writer;
     this.name = 'KHR_materials_unlit';
   }
 
-  writeMaterial(material, materialDef) {
+  writeMaterial(material: any, materialDef: any) {
     if (!material.isMeshBasicMaterial) return;
 
     const writer = this.writer;
@@ -2012,12 +2012,12 @@ class GLTFMaterialsUnlitExtension {
 class GLTFMaterialsPBRSpecularGlossiness {
   writer: any;
   name: string;
-  constructor(writer) {
+  constructor(writer: any) {
     this.writer = writer;
     this.name = 'KHR_materials_pbrSpecularGlossiness';
   }
 
-  writeMaterial(material, materialDef) {
+  writeMaterial(material: any, materialDef: any) {
     if (!material.isGLTFSpecularGlossinessMaterial) return;
 
     const writer = this.writer;
@@ -2062,12 +2062,12 @@ class GLTFMaterialsPBRSpecularGlossiness {
 class GLTFMaterialsClearcoatExtension {
   writer: any;
   name: string;
-  constructor(writer) {
+  constructor(writer: any) {
     this.writer = writer;
     this.name = 'KHR_materials_clearcoat';
   }
 
-  writeMaterial(material, materialDef) {
+  writeMaterial(material: any, materialDef: any) {
     if (!material.isMeshPhysicalMaterial) return;
 
     const writer = this.writer;
@@ -2124,12 +2124,12 @@ class GLTFMaterialsClearcoatExtension {
 class GLTFMaterialsTransmissionExtension {
   writer: any;
   name: string;
-  constructor(writer) {
+  constructor(writer: any) {
     this.writer = writer;
     this.name = 'KHR_materials_transmission';
   }
 
-  writeMaterial(material, materialDef) {
+  writeMaterial(material: any, materialDef: any) {
     if (!material.isMeshPhysicalMaterial || material.transmission === 0) return;
 
     const writer = this.writer;
@@ -2165,12 +2165,12 @@ class GLTFMaterialsTransmissionExtension {
 class GLTFMaterialsVolumeExtension {
   writer: any;
   name: string;
-  constructor(writer) {
+  constructor(writer: any) {
     this.writer = writer;
     this.name = 'KHR_materials_volume';
   }
 
-  writeMaterial(material, materialDef) {
+  writeMaterial(material: any, materialDef: any) {
     if (!material.isMeshPhysicalMaterial || material.transmission === 0) return;
 
     const writer = this.writer;
@@ -2202,7 +2202,7 @@ class GLTFMaterialsVolumeExtension {
  * Static utility functions
  */
 GLTFExporter.Utils = {
-  insertKeyframe: function (track, time) {
+  insertKeyframe: function (track: any, time: any) {
     const tolerance = 0.001; // 1ms
     const valueSize = track.getValueSize();
 
@@ -2273,9 +2273,9 @@ GLTFExporter.Utils = {
     return index;
   },
 
-  mergeMorphTargetTracks: function (clip, root) {
-    const tracks = [];
-    const mergedTracks = {};
+  mergeMorphTargetTracks: function (clip: any, root: any) {
+    const tracks: any[] = [];
+    const mergedTracks: any = {};
     const sourceTracks = clip.tracks;
 
     for (let i = 0; i < sourceTracks.length; ++i) {
