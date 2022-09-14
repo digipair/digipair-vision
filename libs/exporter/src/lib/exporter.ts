@@ -1,15 +1,13 @@
 import { Entity } from '@pinser-metaverse/core';
+import { GLTFExporter } from './GLTFExporter';
 
-/* eslint-disable @typescript-eslint/no-var-requires */
-declare const require: any;
-const { GLTFExporter } = require('./GLTFExporter');
-
-export function exporter(element: Entity, filename: string): void {
+export function exporter(object3D: Entity['object3D'], filename: string): void {
   const gltfExporter = new GLTFExporter();
 
   gltfExporter.parse(
-    element,
+    object3D,
     (result: any) => {
+      console.log(result);
       if (result instanceof ArrayBuffer) {
         saveArrayBuffer(result, `${filename}.glb`);
       } else {
