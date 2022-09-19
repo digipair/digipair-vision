@@ -29,7 +29,7 @@ export class PlayerProvider extends MetaProvider {
     );
   }
 
-  teleport(position: string, rotation: string) {
+  teleport(position: string, rotation?: string) {
     this.el.dispatchEvent(
       new CustomEvent('teleport', {
         detail: {

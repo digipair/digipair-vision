@@ -78,18 +78,22 @@ export class PlayerElement extends MetaElement {
 
     const player = this.el.querySelector('[player]');
     const camera = this.el.querySelector('[camera]');
-    const [rx, ry] = rotation.split(' ');
 
     player?.setAttribute('position', position);
 
     if (camera) {
       camera.setAttribute('position', '0 1.6 0');
-      (camera as any).components['look-controls-custom'].pitchObject.rotation.x = (
-        THREE as any
-      ).Math.degToRad(+rx);
-      (camera as any).components['look-controls-custom'].yawObject.rotation.y = (
-        THREE as any
-      ).Math.degToRad(+ry);
+
+      if (rotation) {
+        const [rx, ry] = rotation.split(' ');
+
+        (camera as any).components[
+          'look-controls-custom'
+        ].pitchObject.rotation.x = (THREE as any).Math.degToRad(+rx);
+        (camera as any).components[
+          'look-controls-custom'
+        ].yawObject.rotation.y = (THREE as any).Math.degToRad(+ry);
+      }
     }
   };
 
