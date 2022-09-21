@@ -8,6 +8,7 @@ import {
   property,
   TemplateResult,
   THREE,
+  unsafeHTML,
 } from '@pinser-metaverse/core';
 import 'aframe-blink-controls';
 import 'super-hands';
@@ -131,6 +132,10 @@ export class PlayerElement extends MetaElement {
   }
 
   override render(): TemplateResult {
+    const templateCamera = this.el
+      .closest(`meta-scene`)
+      .querySelector(':scope > template[slot=camera]')?.innerHTML;
+
     return html`
       <a-entity player networked="template: #player-template;">
         <a-entity
@@ -139,12 +144,12 @@ export class PlayerElement extends MetaElement {
           look-controls-custom="reverseMouseDrag: true; touchEnabled: true; magicWindowTrackingEnabled: false;"
           ?wasd-controls=${this.dev}
           networked="template: #avatar-template;"
-          visible="false"
         >
           <a-entity
             raycaster="objects: [selectable];"
             cursor="rayOrigin: mouse; fuse: false;"
           ></a-entity>
+          ${!templateCamera ? nothing : unsafeHTML(templateCamera)}
         </a-entity>
 
         ${!this.vrmode
@@ -172,10 +177,8 @@ export class PlayerElement extends MetaElement {
               ></a-entity>
             `}
 
-        <!--
         <a-entity hand-tracking-controls="hand: left;"> </a-entity>
         <a-entity hand-tracking-controls="hand: right;"></a-entity>
-        -->
       </a-entity>
     `;
   }

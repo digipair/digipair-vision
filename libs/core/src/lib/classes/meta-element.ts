@@ -69,7 +69,7 @@ __SUBSCRIPTIONS__: subscription[] = [];
     render(this.render(), this.el);
   }
 
-  render(): TemplateResult {
-    return html``;
+  render(): TemplateResult | null {
+    return null;
   }
 }

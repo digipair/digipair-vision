@@ -3,6 +3,6 @@
   "version": "0.1.0",
   "type": "module",
   "peerDependencies": {
-    "@pinser-metaverse/core": "0.5.5"
+    "@pinser-metaverse/core": "0.6.1"
   }
 }

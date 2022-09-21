@@ -51,7 +51,11 @@ export class AvatarElement extends MetaElement {
       </a-entity>`;
   }
 
-  override render(): TemplateResult {
+  override render(): TemplateResult | null {
+    if (this.el.hasAttribute('camera')) {
+      return null;
+    }
+
     const template = this.el
       .closest(`meta-scene`)
       .querySelector(':scope > template[slot=avatar]')?.innerHTML;

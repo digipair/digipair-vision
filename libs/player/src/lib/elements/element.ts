@@ -15,9 +15,9 @@ export class ElementElement extends MetaElement {
   @property({ default: 'e30=' })
   attributes!: string;
 
-  public override render(): TemplateResult {
+  public override render(): TemplateResult | null {
     if (!this.element || !this.attributes) {
-      return html``;
+      return null;
     }
 
     const attributes = JSON.parse(atob(this.attributes));
