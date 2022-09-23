@@ -135,6 +135,12 @@ export class PlayerElement extends MetaElement {
     const templateCamera = this.el
       .closest(`meta-scene`)
       .querySelector(':scope > template[slot=camera]')?.innerHTML;
+    const templateHandLeft = this.el
+      .closest(`meta-scene`)
+      .querySelector(':scope > template[slot=handleft]')?.innerHTML;
+    const templateHandRight = this.el
+      .closest(`meta-scene`)
+      .querySelector(':scope > template[slot=handright]')?.innerHTML;
 
     return html`
       <a-entity player networked="template: #player-template;">
@@ -164,7 +170,9 @@ export class PlayerElement extends MetaElement {
                 blink-controls="cameraRig: [player]; teleportOrigin: [camera]; collisionEntities: [teleportable]; snapTurn: false;"
                 raycaster="objects: [selectable];"
                 networked="template: #left-hand-template; attachTemplateToLocal: false;"
-              ></a-entity>
+              >
+                ${!templateHandLeft ? nothing : unsafeHTML(templateHandLeft)}
+              </a-entity>
               <a-entity
                 super-hands
                 sphere-collider="objects: a-box"
@@ -174,7 +182,9 @@ export class PlayerElement extends MetaElement {
                 blink-controls="cameraRig: [player]; teleportOrigin: [camera]; collisionEntities: [teleportable]; snapTurn: false;"
                 raycaster="objects: [selectable];"
                 networked="template: #right-hand-template; attachTemplateToLocal: false;"
-              ></a-entity>
+              >
+                ${!templateHandRight ? nothing : unsafeHTML(templateHandRight)}
+              </a-entity>
             `}
 
         <a-entity hand-tracking-controls="hand: left;"> </a-entity>

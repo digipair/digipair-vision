@@ -28,8 +28,8 @@
     "url": "https://www.pinser.agency"
   },
   "peerDependencies": {
-    "@pinser-metaverse/core": "0.6.1",
-    "@pinser-metaverse/player": "0.6.1"
+    "@pinser-metaverse/core": "0.6.2",
+    "@pinser-metaverse/player": "0.6.2"
   },
   "devDependencies": {
     "@types/aframe": "^1.2.0",
