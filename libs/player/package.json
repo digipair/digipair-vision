@@ -30,7 +30,7 @@
     "url": "https://www.pinser.agency"
   },
   "peerDependencies": {
-    "@pinser-metaverse/core": "0.6.2"
+    "@pinser-metaverse/core": "0.7.3"
   },
   "devDependencies": {
     "aframe-blink-controls": "^0.5.1",

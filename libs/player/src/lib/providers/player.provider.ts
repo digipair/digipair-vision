@@ -22,14 +22,27 @@ export class PlayerProvider extends MetaProvider {
     });
   }
 
-  set(data: any): void {
-    (this.el.sceneEl?.querySelector('[camera]') as Entity)?.setAttribute(
-      'meta-avatar',
-      `playerinfo: ${btoa(JSON.stringify(data))}`
-    );
+  setInfo(data: any): void {
+    (
+      this.el.sceneEl?.querySelector('meta-player [meta-avatar]') as Entity
+    )?.setAttribute('meta-avatar', `playerinfo: ${btoa(JSON.stringify(data))}`);
   }
 
-  teleport(position: string, rotation?: string) {
+  setAudio(config: any = {}): void {
+    (
+      this.el.sceneEl?.querySelector(
+        'meta-player [meta-avatar][meta-audio-source]'
+      ) as Entity
+    )?.setAttribute('meta-audio-source', config);
+
+    this.el.sceneEl
+      ?.querySelectorAll('[meta-audio-source]')
+      .forEach((el: any) => {
+        el.components['meta-audio-source'].resetGroup();
+      });
+  }
+
+  teleport(position: string, rotation?: string): void {
     this.el.dispatchEvent(
       new CustomEvent('teleport', {
         detail: {

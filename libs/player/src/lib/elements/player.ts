@@ -12,6 +12,7 @@ import {
 } from '@pinser-metaverse/core';
 import 'aframe-blink-controls';
 import 'super-hands';
+import '../directives/audio-source';
 import { EventTeleport } from '../interfaces/event-teleport';
 import { PlayerProvider } from '../providers/player.provider';
 import '../utils/Geometry.js';
@@ -33,7 +34,7 @@ export class PlayerElement extends MetaElement {
   private templates = [
     {
       id: 'avatar-template',
-      content: `<a-entity meta-avatar networked-audio-source></a-entity>`,
+      content: `<a-entity meta-avatar meta-audio-source></a-entity>`,
     },
     {
       id: 'player-template',
@@ -121,7 +122,7 @@ export class PlayerElement extends MetaElement {
 
     NAF?.schemas.add({
       template: `#avatar-template`,
-      components: ['position', 'rotation', 'meta-avatar'],
+      components: ['position', 'rotation', 'meta-avatar', 'meta-audio-source'],
     });
   }
 

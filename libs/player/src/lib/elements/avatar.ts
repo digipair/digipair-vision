@@ -1,5 +1,6 @@
 import {
   customElement,
+  Entity,
   html,
   MetaElement,
   property,
@@ -52,7 +53,16 @@ export class AvatarElement extends MetaElement {
   }
 
   override render(): TemplateResult | null {
+    let el: Entity | null;
+
     if (this.el.hasAttribute('camera')) {
+      return null;
+    }
+
+    // get and update the custom avatar if exists
+    el = this.el.querySelector('[playerinfo]');
+    if (el) {
+      el.setAttribute('playerinfo', atob(this.playerinfo));
       return null;
     }
 
@@ -64,7 +74,7 @@ export class AvatarElement extends MetaElement {
       return this.defaultAvatar();
     }
 
-    const el = document.createElement('a-entity');
+    el = document.createElement('a-entity');
     el.innerHTML = template;
     el.querySelector(':scope > *')?.setAttribute(
       'playerinfo',
