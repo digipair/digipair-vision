@@ -4,11 +4,12 @@
   "projects": {
     "core": "libs/core",
     "demo": "apps/demo",
+    "exporter": "libs/exporter",
     "gltf": "libs/gltf",
     "networked-server": "apps/networked-server",
+    "observe": "libs/observe",
     "player": "libs/player",
     "scene": "libs/scene",
-    "observe": "libs/observe",
-    "exporter": "libs/exporter"
+    "teleport": "libs/teleport"
   }
 }

@@ -1,23 +1,16 @@
 {
-  "name": "@pinser-metaverse/exporter",
-  "version": "0.0.0",
-  "type": "commonjs",
+  "name": "@<%= npmScope %>/<%= name %>",
+  "version": "0.1.0",
+  "type": "module",
   "license": "MIT",
-  "homepage": "https://github.com/pinser-metaverse/pinser-metaverse",
+  "homepage": "https://github.com/pinser-metaverse/pinser-metaverse/tree/master/libs/<%= name %>",
   "keywords": [
-    "metaverse",
     "pinser",
-    "pinser-metaverse",
-    "webxr",
-    "webgl",
-    "vr",
-    "ar",
-    "3d",
     "aframe",
-    "three",
-    "threejs",
-    "gltf",
-    "glb"
+    "lit",
+    "metaverse",
+    "pinser-metaverse",
+    "teleport"
   ],
   "repository": {
     "url": "https://github.com/pinser-metaverse/pinser-metaverse.git",

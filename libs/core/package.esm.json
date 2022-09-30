@@ -24,8 +24,8 @@
   },
   "author": {
     "name": "Marc Buils",
-    "email": "marc.buils@pinser.agency",
-    "url": "https://www.pinser.agency"
+    "email": "marc.buils@pinser.world",
+    "url": "https://www.pinser.world"
   },
   "devDependencies": {
     "@types/aframe": "^1.2.0",

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>@pinser-metaverse/teleport</title>
+    <base href="/" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <script type="importmap">
+      {
+        "imports": {
+          "@pinser-metaverse/core": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/core-es@0.8.0/index.js",
+          "@pinser-metaverse/player": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/player-es@0.8.0/index.js",
+          "@pinser-metaverse/scene": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/scene-es@0.8.0/index.js",
+          "@pinser-metaverse/gltf": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/gltf-es@0.8.0/index.js",
+          "@pinser-metaverse/exporter": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/exporter-es@0.8.0/index.js",
+          "@pinser-metaverse/observe": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/gltf-es@0.8.0/index.js"
+        }
+      }
+    </script>
+    <script src="https://networked.pinser-metaverse.com/socket.io/socket.io.js"></script>
+    <script src="https://networked.pinser-metaverse.com/easyrtc/easyrtc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe@1.3.0/dist/aframe-v1.3.0.min.js"></script>
+    <script type="module">
+      import './index.js';
+      import '@pinser-metaverse/scene';
+    </script>
+  </head>
+  <body>
+    <meta-scene session="8a8d92b5-1148-4e87-b938-688eff54efed" development>
+      <template slot="scene">
+        <a-sky color="#DDDDDD"></a-sky>
+        <meta-teleport position="0 0 -10"></meta-teleport>
+      </template>
+    </meta-scene>
+  </body>
+</html>

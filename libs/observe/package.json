@@ -20,10 +20,10 @@
   },
   "author": {
     "name": "Marc Buils",
-    "email": "marc.buils@pinser.agency",
-    "url": "https://www.pinser.agency"
+    "email": "marc.buils@pinser.world",
+    "url": "https://www.pinser.world"
   },
   "peerDependencies": {
-    "@pinser-metaverse/core": "0.7.3"
+    "@pinser-metaverse/core": "0.8.0"
   }
 }

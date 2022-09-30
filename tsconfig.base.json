@@ -16,11 +16,12 @@
     "baseUrl": ".",
     "paths": {
       "@pinser-metaverse/core": ["libs/core/src/index.ts"],
+      "@pinser-metaverse/exporter": ["libs/exporter/src/index.ts"],
       "@pinser-metaverse/gltf": ["libs/gltf/src/index.ts"],
+      "@pinser-metaverse/observe": ["libs/observe/src/index.ts"],
       "@pinser-metaverse/player": ["libs/player/src/index.ts"],
       "@pinser-metaverse/scene": ["libs/scene/src/index.ts"],
-      "@pinser-metaverse/observe": ["libs/observe/src/index.ts"],
-      "@pinser-metaverse/exporter": ["libs/exporter/src/index.ts"]
+      "@pinser-metaverse/teleport": ["libs/teleport/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

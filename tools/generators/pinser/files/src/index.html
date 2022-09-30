@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>@<%= npmScope %>/<%= domain %>/<%= name %></title>
+    <title>@<%= npmScope %>/<%= name %></title>
     <base href="/" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,12 +11,12 @@
     <script type="importmap">
       {
         "imports": {
-          "@pinser-metaverse/core": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/core-es@0.7.3/index.js",
-          "@pinser-metaverse/player": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/player-es@0.7.3/index.js",
-          "@pinser-metaverse/scene": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/scene-es@0.7.3/index.js",
-          "@pinser-metaverse/gltf": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/gltf-es@0.7.3/index.js",
-          "@pinser-metaverse/exporter": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/exporter-es@0.7.3/index.js",
-          "@pinser-metaverse/observe": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/gltf-es@0.7.3/index.js"
+          "@pinser-metaverse/core": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/core-es@0.8.0/index.js",
+          "@pinser-metaverse/player": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/player-es@0.8.0/index.js",
+          "@pinser-metaverse/scene": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/scene-es@0.8.0/index.js",
+          "@pinser-metaverse/gltf": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/gltf-es@0.8.0/index.js",
+          "@pinser-metaverse/exporter": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/exporter-es@0.8.0/index.js",
+          "@pinser-metaverse/observe": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/gltf-es@0.8.0/index.js"
         }
       }
     </script>
@@ -32,9 +32,9 @@
     <meta-scene
       session="<%= sessionUuid %>"
     >
-      <template slot="scene">
+      <template slot="scene" development>
         <a-sky color="#DDDDDD"></a-sky>
-        <<%= domain %>-<%= name %> position="0 0 -10"></<%= domain %>-<%= name %>>
+        <meta-<%= name %> position="0 0 -10"></meta-<%= name %>>
       </template>
     </meta-scene>
   </body>
