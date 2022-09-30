@@ -12,6 +12,7 @@
     "player": "libs/player",
     "ready-player-me": "libs/ready-player-me",
     "scene": "libs/scene",
+    "screen-shared": "libs/screen-shared",
     "teleport": "libs/teleport"
   }
 }

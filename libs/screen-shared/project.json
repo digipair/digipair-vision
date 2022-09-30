@@ -1,0 +1,99 @@
+{
+  "$schema": "..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
+  "sourceRoot": "libs/screen-shared/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/screen-shared",
+        "main": "libs/screen-shared/src/index.ts",
+        "tsConfig": "libs/screen-shared/tsconfig.lib.json",
+        "assets": ["libs/screen-shared/*.md"]
+      }
+    },
+    "build-es": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "project": "libs/screen-shared/package.esm.json",
+        "outputPath": "dist/libs/screen-shared-es",
+        "compiler": "swc",
+        "entryFile": "libs/screen-shared/src/index.ts",
+        "tsConfig": "libs/screen-shared/tsconfig.lib.json",
+        "rollupConfig": ["libs/screen-shared/rollup.config.cjs"],
+        "assets": [
+          {
+            "glob": "libs/screen-shared/*.md",
+            "input": ".",
+            "output": "."
+          },
+          {
+            "glob": "libs/screen-shared/src/index.html",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      },
+      "configurations": {
+        "serve": {
+          "watch": true,
+          "assets": []
+        }
+      }
+    },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "node tools/scripts/publish.mjs screen-shared {args.ver} {args.tag}"
+      },
+      "dependsOn": [
+        {
+          "projects": "self",
+          "target": "build"
+        }
+      ]
+    },
+    "publish-es": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "node tools/scripts/publish-es.mjs screen-shared {args.ver} {args.tag}"
+      },
+      "dependsOn": [
+        {
+          "projects": "self",
+          "target": "build-es"
+        }
+      ]
+    },
+    "serve": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "npm-run-all --parallel \"serve ./dist/libs/screen-shared-es\" \"nx run screen-shared:build-es:serve\""
+      },
+      "dependsOn": [
+        {
+          "projects": "self",
+          "target": "build-es"
+        }
+      ]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/screen-shared/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/screen-shared"],
+      "options": {
+        "jestConfig": "libs/screen-shared/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["screen-shared"]
+}

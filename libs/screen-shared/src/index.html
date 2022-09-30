@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>@pinser-metaverse/design-system</title>
+    <title>@pinser-metaverse/screen-shared</title>
     <base href="/" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
           "@pinser-metaverse/observe": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/observe-es@0.10.4/index.js",
           "@pinser-metaverse/teleport": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/teleport-es@0.10.4/index.js",
           "@pinser-metaverse/ready-player-me": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/ready-player-me-es@0.10.4/index.js",
-          "@pinser-metaverse/screen-shared": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/screen-shared-es@0.10.4/index.js"
+          "@pinser-metaverse/design-system": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/design-system-es@0.10.4/index.js"
         }
       }
     </script>
@@ -32,10 +32,14 @@
     </script>
   </head>
   <body>
-    <meta-scene session="f8e272b7-9a27-42d5-94bd-ff51a748f751" development>
+    <meta-scene
+      session="7c9be75d-0446-4c4b-9a07-7a1c25ce8e81"
+      video
+      development
+    >
       <template slot="scene">
         <a-sky color="#DDDDDD"></a-sky>
-        <meta-design-system position="0 0 -10"></meta-design-system>
+        <meta-screen-shared position="0 0 -10"></meta-screen-shared>
       </template>
     </meta-scene>
   </body>

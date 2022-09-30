@@ -92,7 +92,7 @@ export class PlayerProvider extends MetaProvider {
     this.el.sceneEl?.appendChild(el);
   }
 
-  removeNetworkedElement(el: Element) {
+  removeNetworkedElement(el: Entity) {
     if (NAF && NAF.connection.isConnected() && !NAF.utils.isMine(el)) {
       NAF.utils.takeOwnership(el);
     }
