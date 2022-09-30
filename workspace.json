@@ -9,6 +9,7 @@
     "networked-server": "apps/networked-server",
     "observe": "libs/observe",
     "player": "libs/player",
+    "ready-player-me": "libs/ready-player-me",
     "scene": "libs/scene",
     "teleport": "libs/teleport"
   }

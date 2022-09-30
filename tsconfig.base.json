@@ -20,6 +20,9 @@
       "@pinser-metaverse/gltf": ["libs/gltf/src/index.ts"],
       "@pinser-metaverse/observe": ["libs/observe/src/index.ts"],
       "@pinser-metaverse/player": ["libs/player/src/index.ts"],
+      "@pinser-metaverse/ready-player-me": [
+        "libs/ready-player-me/src/index.ts"
+      ],
       "@pinser-metaverse/scene": ["libs/scene/src/index.ts"],
       "@pinser-metaverse/teleport": ["libs/teleport/src/index.ts"]
     }
