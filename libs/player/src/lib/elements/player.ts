@@ -19,6 +19,7 @@ import '../utils/Geometry.js';
 import '../utils/look-controls-custom.js';
 import './avatar';
 import './element';
+import './teleportable-cursor';
 
 declare const NAF: any;
 
@@ -144,6 +145,10 @@ export class PlayerElement extends MetaElement {
       .querySelector(':scope > template[slot=handright]')?.innerHTML;
 
     return html`
+      <meta-teleportable-cursor
+        vrmode=${this.vrmode}
+      ></meta-teleportable-cursor>
+
       <a-entity player networked="template: #player-template;">
         <a-entity
           position="0 1.6 0"

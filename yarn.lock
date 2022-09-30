@@ -1889,11 +1889,6 @@
   dependencies:
     esquery "^1.0.1"
 
-"@pinser-metaverse/core@0.7.3":
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/@pinser-metaverse/core/-/core-0.7.3.tgz#1a335fbafa9f9819b01e7417759dee219b376e2e"
-  integrity sha512-/IV9xkhEOA7Y9dpfrIBeVOa6JYQtK3M4focWOPcibUpvY516GsEILCxg+nwalsAuSMkvqBhOcD7X8Cs05i4aDA==
-
 "@pmmmwh/react-refresh-webpack-plugin@^0.5.1":
   version "0.5.6"
   resolved "https://registry.yarnpkg.com/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.5.6.tgz#9ced74cb23dae31ab385f775e237ce4c50422a1d"
