@@ -4,6 +4,7 @@
   "projects": {
     "core": "libs/core",
     "demo": "apps/demo",
+    "design-system": "libs/design-system",
     "exporter": "libs/exporter",
     "gltf": "libs/gltf",
     "networked-server": "apps/networked-server",
