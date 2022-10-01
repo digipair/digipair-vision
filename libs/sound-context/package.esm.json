@@ -1,9 +1,9 @@
 {
-  "name": "@pinser-metaverse/screen-shared-es",
+  "name": "@pinser-metaverse/sound-context-es",
   "version": "0.1.0",
   "type": "module",
   "license": "MIT",
-  "homepage": "https://github.com/pinser-metaverse/pinser-metaverse/tree/master/libs/screen-shared",
+  "homepage": "https://github.com/pinser-metaverse/pinser-metaverse/tree/master/libs/sound-context",
   "keywords": [
     "pinser",
     "aframe",
