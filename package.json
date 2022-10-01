@@ -43,7 +43,7 @@
     "@nrwl/node": "14.3.0",
     "@nrwl/web": "14.3.0",
     "@nrwl/workspace": "14.3.0",
-    "@pinser-metaverse/core": "0.11.0",
+    "@pinser-metaverse/core": "0.11.1",
     "@swc/cli": "~0.1.55",
     "@swc/core": "^1.2.173",
     "@swc/jest": "0.2.20",

@@ -44,7 +44,7 @@ import {
           ${!this.icon
             ? nothing
             : html`
-            <design-system-icon icon=${this.icon} color="white" width="2" position="0.027 0.041 0"></icon>
+            <meta-icon icon=${this.icon} color="white" width="2" position="0.027 0.041 0"></meta-icon>
           `}
           ${!this.content
             ? nothing
