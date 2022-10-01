@@ -1,7 +1,19 @@
-import { Entity, injectable, MetaProvider } from '@pinser-metaverse/core';
+import {
+  Entity,
+  injectable,
+  internalProperty,
+  MetaProvider,
+  THREE,
+} from '@pinser-metaverse/core';
 
 @injectable()
 export class PlayerProvider extends MetaProvider {
+  @internalProperty()
+  playersound = true;
+
+  @internalProperty()
+  playermic = true;
+
   override init(): void {
     let assets = this.el.sceneEl?.querySelector(':scope > a-assets');
     if (!assets) {
@@ -97,5 +109,36 @@ export class PlayerProvider extends MetaProvider {
       NAF.utils.takeOwnership(el);
     }
     el.remove();
+  }
+
+  setSound(sound: boolean): void {
+    this.setupSound();
+
+    const audioListener = (this.el.sceneEl as any).audioListener;
+
+    if (sound) {
+      audioListener.setMasterVolume(1);
+    } else {
+      audioListener.setMasterVolume(0);
+    }
+
+    this.playersound = sound;
+  }
+
+  setMic(mic: boolean): void {
+    NAF.connection.adapter.enableMicrophone(mic);
+    this.playermic = mic;
+  }
+
+  private setupSound() {
+    const sceneEl: any = this.el.sceneEl;
+
+    if (!sceneEl.audioListener) {
+      sceneEl.audioListener = new THREE.AudioListener();
+      sceneEl.camera && sceneEl.camera.add(sceneEl.audioListener);
+      sceneEl.addEventListener('camera-set-active', (evt: any) => {
+        evt.detail.cameraEl.getObject3D('camera').add(sceneEl.audioListener);
+      });
+    }
   }
 }

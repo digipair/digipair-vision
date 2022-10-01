@@ -2,20 +2,26 @@ import {
   customElement,
   Entity,
   html,
+  internalProperty,
   MetaElement,
   property,
   TemplateResult,
 } from '@pinser-metaverse/core';
+import './gltf-static';
 
 @customElement('meta-gltf')
 export class GltfElement extends MetaElement {
-  private mesh: THREE.Mesh | null = null;
+  @property()
+  url!: string;
+
+  @property()
+  animations!: string;
+
+  @property()
+  playing!: string;
 
   @property({ default: false })
   development!: boolean;
-
-  @property()
-  url!: string;
 
   @property({ default: {} })
   materials!: any;
@@ -23,74 +29,66 @@ export class GltfElement extends MetaElement {
   @property({ default: {} })
   meshes!: any;
 
-  private modelInitialise(el: Entity) {
-    this.mesh = el.getObject3D('mesh') as THREE.Mesh;
-    if (!this.mesh) {
-      return;
-    }
+  @internalProperty()
+  animationinitialized = false;
 
-    if (this.development) {
-      console.log('Debug: GltfCustomizerElement mesh', this.mesh);
-    }
-
-    this.setMaterials();
-    this.setMeshes();
+  private async initialization(srcElement: Entity): Promise<void> {
+    await this.addAnimations(srcElement, this.animations);
+    this.animationinitialized = true;
   }
 
-  private setMaterial(name: string, value: any) {
-    const { material } = (this.mesh as THREE.Mesh).getObjectByName(name) as any;
+  async addAnimations(modelEl: Entity, animationsModel: string) {
+    const animationsEl = await this.getAnimationsElement(animationsModel);
 
-    for (const attribute of Object.keys(value)) {
-      const attributeValue = value[attribute];
+    (modelEl.object3D.getObjectByName('Scene') as THREE.Object3D).animations =
+      animationsEl.object3D.getObjectByName('AuxScene')?.animations || [];
+  }
 
-      if (material[attribute].set) {
-        material[attribute].set(attributeValue);
+  private getAnimationsElement(animationsModel: string): Promise<Entity> {
+    return new Promise((resolve) => {
+      let animationsEl: Entity | null | undefined =
+        this.el.sceneEl?.querySelector(
+          `:scope > [data-meta-gltf][url="${animationsModel}"]`
+        );
+
+      if (!animationsEl) {
+        animationsEl = document.createElement('meta-gltf-static');
+        animationsEl.setAttribute('url', animationsModel);
+        animationsEl.setAttribute('visible', false);
+        animationsEl.setAttribute('data-meta-gltf-animations', '');
+
+        animationsEl.addEventListener('model-loaded', ({ srcElement }) => {
+          (animationsEl as Entity).setAttribute(
+            'data-meta-gltf-animations-ready',
+            ''
+          );
+          resolve(srcElement as Entity);
+        });
+
+        this.el.sceneEl?.append(animationsEl);
+      } else if (
+        !animationsEl.hasAttribute('data-meta-gltf-animations-ready')
+      ) {
+        animationsEl.addEventListener('model-loaded', ({ srcElement }) => {
+          resolve(srcElement as Entity);
+        });
       } else {
-        material[attribute] = attributeValue;
+        resolve(animationsEl.querySelector(':scope > a-gltf-model') as Entity);
       }
-    }
+    });
   }
 
-  private setMaterials(): void {
-    for (const material of Object.keys(this.materials)) {
-      this.setMaterial(material, this.materials[material]);
-    }
-  }
-
-  private setMesh(name: string, value: any) {
-    const mesh = (this.mesh as THREE.Mesh).getObjectByName(name) as any;
-
-    for (const attribute of Object.keys(value)) {
-      const attributeValue = value[attribute];
-
-      if (mesh[attribute].set) {
-        mesh[attribute].set(attributeValue);
-      } else {
-        mesh[attribute] = attributeValue;
-      }
-    }
-  }
-
-  private setMeshes(): void {
-    for (const mesh of Object.keys(this.meshes)) {
-      this.setMesh(mesh, this.meshes[mesh]);
-    }
-  }
-
-  public override update(): void {
-    if (this.mesh) {
-      this.setMaterials();
-      this.setMeshes();
-    }
-  }
-
-  public override render(): TemplateResult {
+  override render(): TemplateResult {
     return html`
-      <a-gltf-model
-        src=${this.url}
-        @model-loaded=${(event: THREE.Event) =>
-          this.modelInitialise(event['srcElement'])}
-      ></a-gltf-model>
+      <meta-gltf-static
+        @model-loaded=${({ srcElement }: any) =>
+          this.initialization(srcElement)}
+        url=${this.url}
+        development=${this.development}
+        materials=${JSON.stringify(this.materials)}
+        meshes=${JSON.stringify(this.meshes)}
+        animation-mixer=${!this.animationinitialized ? '' : this.playing}
+      ></meta-gltf-static>
     `;
   }
 }
