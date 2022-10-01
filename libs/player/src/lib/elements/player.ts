@@ -18,8 +18,10 @@ import { PlayerProvider } from '../providers/player.provider';
 import '../utils/Geometry.js';
 import '../utils/look-controls-custom.js';
 import './avatar';
+import './camera';
 import './element';
 import './teleportable-cursor';
+import './toolbar';
 
 declare const NAF: any;
 
@@ -66,6 +68,25 @@ export class PlayerElement extends MetaElement {
       `,
     },
   ];
+
+  private defaultCamera(): TemplateResult {
+    return html`
+      <meta-player-camera vrmode=${this.vrmode}></meta-player-camera>
+    `;
+  }
+
+  private defaultHandLeft(): typeof nothing {
+    return nothing;
+  }
+
+  private defaultHandRight(): TemplateResult {
+    return html`
+      <meta-player-toolbar
+        position="0 -0.03 0.15"
+        rotation="0 -90 90"
+      ></meta-player-toolbar>
+    `;
+  }
 
   private readonly entervr = () => {
     this.vrmode = true;
@@ -161,7 +182,7 @@ export class PlayerElement extends MetaElement {
             raycaster="objects: [selectable];"
             cursor="rayOrigin: mouse; fuse: false;"
           ></a-entity>
-          ${!templateCamera ? nothing : unsafeHTML(templateCamera)}
+          ${!templateCamera ? this.defaultCamera() : unsafeHTML(templateCamera)}
         </a-entity>
 
         ${!this.vrmode
@@ -177,7 +198,9 @@ export class PlayerElement extends MetaElement {
                 raycaster="objects: [selectable];"
                 networked="template: #left-hand-template; attachTemplateToLocal: false;"
               >
-                ${!templateHandLeft ? nothing : unsafeHTML(templateHandLeft)}
+                ${!templateHandLeft
+                  ? this.defaultHandLeft()
+                  : unsafeHTML(templateHandLeft)}
               </a-entity>
               <a-entity
                 super-hands
@@ -189,7 +212,9 @@ export class PlayerElement extends MetaElement {
                 raycaster="objects: [selectable];"
                 networked="template: #right-hand-template; attachTemplateToLocal: false;"
               >
-                ${!templateHandRight ? nothing : unsafeHTML(templateHandRight)}
+                ${!templateHandRight
+                  ? this.defaultHandRight()
+                  : unsafeHTML(templateHandRight)}
               </a-entity>
             `}
 
