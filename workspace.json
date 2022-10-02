@@ -14,7 +14,7 @@
     "ready-player-me": "libs/ready-player-me",
     "scene": "libs/scene",
     "screen-shared": "libs/screen-shared",
-    "sound-context": "libs/sound-context",
+    "room": "libs/room",
     "teleport": "libs/teleport"
   }
 }

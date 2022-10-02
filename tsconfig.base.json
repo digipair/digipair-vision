@@ -27,7 +27,7 @@
       ],
       "@pinser-metaverse/scene": ["libs/scene/src/index.ts"],
       "@pinser-metaverse/screen-shared": ["libs/screen-shared/src/index.ts"],
-      "@pinser-metaverse/sound-context": ["libs/sound-context/src/index.ts"],
+      "@pinser-metaverse/room": ["libs/room/src/index.ts"],
       "@pinser-metaverse/teleport": ["libs/teleport/src/index.ts"]
     }
   },

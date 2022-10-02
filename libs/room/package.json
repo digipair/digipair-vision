@@ -1,9 +1,9 @@
 {
-  "name": "@pinser-metaverse/sound-context-es",
+  "name": "@pinser-metaverse/room",
   "version": "0.1.0",
   "type": "module",
   "license": "MIT",
-  "homepage": "https://github.com/pinser-metaverse/pinser-metaverse/tree/master/libs/sound-context",
+  "homepage": "https://github.com/pinser-metaverse/pinser-metaverse/tree/master/libs/room",
   "keywords": [
     "pinser",
     "aframe",
@@ -22,6 +22,6 @@
     "url": "https://www.pinser.world"
   },
   "peerDependencies": {
-    "@pinser-metaverse/core": "0.11.1"
+    "@pinser-metaverse/core": "0.12.1"
   }
 }

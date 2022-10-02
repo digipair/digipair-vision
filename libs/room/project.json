@@ -1,36 +1,36 @@
 {
   "$schema": "..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
-  "sourceRoot": "libs/sound-context/src",
+  "sourceRoot": "libs/room/src",
   "projectType": "library",
   "targets": {
     "build": {
       "executor": "@nrwl/js:swc",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/sound-context",
-        "main": "libs/sound-context/src/index.ts",
-        "tsConfig": "libs/sound-context/tsconfig.lib.json",
-        "assets": ["libs/sound-context/*.md"]
+        "outputPath": "dist/libs/room",
+        "main": "libs/room/src/index.ts",
+        "tsConfig": "libs/room/tsconfig.lib.json",
+        "assets": ["libs/room/*.md"]
       }
     },
     "build-es": {
       "executor": "@nrwl/web:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "project": "libs/sound-context/package.esm.json",
-        "outputPath": "dist/libs/sound-context-es",
+        "project": "libs/room/package.esm.json",
+        "outputPath": "dist/libs/room-es",
         "compiler": "swc",
-        "entryFile": "libs/sound-context/src/index.ts",
-        "tsConfig": "libs/sound-context/tsconfig.lib.json",
-        "rollupConfig": ["libs/sound-context/rollup.config.cjs"],
+        "entryFile": "libs/room/src/index.ts",
+        "tsConfig": "libs/room/tsconfig.lib.json",
+        "rollupConfig": ["libs/room/rollup.config.cjs"],
         "assets": [
           {
-            "glob": "libs/sound-context/*.md",
+            "glob": "libs/room/*.md",
             "input": ".",
             "output": "."
           },
           {
-            "glob": "libs/sound-context/src/index.html",
+            "glob": "libs/room/src/index.html",
             "input": ".",
             "output": "."
           }
@@ -46,7 +46,7 @@
     "publish": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "command": "node tools/scripts/publish.mjs sound-context {args.ver} {args.tag}"
+        "command": "node tools/scripts/publish.mjs room {args.ver} {args.tag}"
       },
       "dependsOn": [
         {
@@ -58,7 +58,7 @@
     "publish-es": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "command": "node tools/scripts/publish-es.mjs sound-context {args.ver} {args.tag}"
+        "command": "node tools/scripts/publish-es.mjs room {args.ver} {args.tag}"
       },
       "dependsOn": [
         {
@@ -70,7 +70,7 @@
     "serve": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "command": "npm-run-all --parallel \"serve ./dist/libs/sound-context-es\" \"nx run sound-context:build-es:serve\""
+        "command": "npm-run-all --parallel \"serve ./dist/libs/room-es\" \"nx run room:build-es:serve\""
       },
       "dependsOn": [
         {
@@ -83,17 +83,17 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/sound-context/**/*.ts"]
+        "lintFilePatterns": ["libs/room/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/sound-context"],
+      "outputs": ["coverage/libs/room"],
       "options": {
-        "jestConfig": "libs/sound-context/jest.config.ts",
+        "jestConfig": "libs/room/jest.config.ts",
         "passWithNoTests": true
       }
     }
   },
-  "tags": ["sound-context"]
+  "tags": ["room"]
 }

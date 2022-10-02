@@ -7,11 +7,11 @@ const { exclude: _, ...swcJestConfig } = JSON.parse(
   readFileSync(`${__dirname}/.lib.swcrc`, 'utf-8')
 );
 export default {
-  displayName: 'sound-context',
+  displayName: 'room',
   preset: '../../../jest.preset.js',
   transform: {
     '^.+\\.[tj]s$': ['@swc/jest', swcJestConfig],
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../../coverage/libs/sound-context',
+  coverageDirectory: '../../../coverage/libs/room',
 };

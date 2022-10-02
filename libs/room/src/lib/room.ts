@@ -9,7 +9,7 @@ import {
 } from '@pinser-metaverse/core';
 import { PlayerProvider } from '@pinser-metaverse/player';
 
-@customElement('meta-sound-context')
+@customElement('meta-room')
 export class SoundContextElement extends MetaElement {
   @property({ default: 'shape: box;' })
   element!: string;
