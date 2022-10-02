@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>@pinser-metaverse/info</title>
+    <base href="/" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <script type="importmap">
+      {
+        "imports": {
+          "@pinser-metaverse/core": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/core-es@0.11.1/index.js",
+          "@pinser-metaverse/player": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/player-es@0.11.1/index.js",
+          "@pinser-metaverse/scene": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/scene-es@0.11.1/index.js",
+          "@pinser-metaverse/gltf": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/gltf-es@0.11.1/index.js",
+          "@pinser-metaverse/exporter": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/exporter-es@0.11.1/index.js",
+          "@pinser-metaverse/observe": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/observe-es@0.11.1/index.js",
+          "@pinser-metaverse/teleport": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/teleport-es@0.11.1/index.js",
+          "@pinser-metaverse/ready-player-me": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/ready-player-me-es@0.11.1/index.js",
+          "@pinser-metaverse/design-system": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/design-system-es@0.11.1/index.js",
+          "@pinser-metaverse/screen-shared": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/screen-shared-es@0.11.1/index.js",
+          "@pinser-metaverse/sound-context": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/sound-context-es@0.11.1/index.js"
+        }
+      }
+    </script>
+    <script src="https://networked.pinser-metaverse.com/socket.io/socket.io.js"></script>
+    <script src="https://networked.pinser-metaverse.com/easyrtc/easyrtc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe@1.3.0/dist/aframe-v1.3.0.min.js"></script>
+    <script type="module">
+      import './index.js';
+      import '@pinser-metaverse/scene';
+    </script>
+  </head>
+  <body>
+    <meta-scene session="e890816d-c306-4a5d-8cbc-eceba86ab2e4" development>
+      <template slot="scene">
+        <a-sky color="#DDDDDD"></a-sky>
+        <meta-info position="0 0 -10"></meta-info>
+      </template>
+    </meta-scene>
+  </body>
+</html>

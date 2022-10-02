@@ -11,7 +11,9 @@ import {
   property,
   TemplateResult,
 } from '@pinser-metaverse/core';
+import '@pinser-metaverse/design-system';
 import '@pinser-metaverse/gltf';
+import '@pinser-metaverse/info';
 import '@pinser-metaverse/scene';
 
 @injectable({

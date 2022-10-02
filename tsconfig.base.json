@@ -19,6 +19,7 @@
       "@pinser-metaverse/design-system": ["libs/design-system/src/index.ts"],
       "@pinser-metaverse/exporter": ["libs/exporter/src/index.ts"],
       "@pinser-metaverse/gltf": ["libs/gltf/src/index.ts"],
+      "@pinser-metaverse/info": ["libs/info/src/index.ts"],
       "@pinser-metaverse/observe": ["libs/observe/src/index.ts"],
       "@pinser-metaverse/player": ["libs/player/src/index.ts"],
       "@pinser-metaverse/ready-player-me": [
