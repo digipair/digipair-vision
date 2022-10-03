@@ -62,6 +62,7 @@ export class SceneElement extends LitElement {
       <a-scene
         ?debug=${this.development}
         ?embedded=${this.embedded}
+        ar-hit-test="target: meta-scene-container; footprintDepth: 1;"
         networked-scene="
           serverURL: ${this.serverURL};
           app: pinser-metaverse;

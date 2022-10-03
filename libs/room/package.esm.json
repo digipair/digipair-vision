@@ -1,6 +1,6 @@
 {
   "name": "@pinser-metaverse/room-es",
-  "version": "0.1.0",
+  "version": "0.12.5",
   "type": "module",
   "license": "MIT",
   "homepage": "https://github.com/pinser-metaverse/pinser-metaverse/tree/master/libs/room",
@@ -22,6 +22,6 @@
     "url": "https://www.pinser.world"
   },
   "peerDependencies": {
-    "@pinser-metaverse/core": "0.12.1"
+    "@pinser-metaverse/core": "0.12.5"
   }
 }

@@ -23,11 +23,18 @@
         "entryFile": "libs/gltf/src/index.ts",
         "tsConfig": "libs/gltf/tsconfig.lib.json",
         "rollupConfig": ["libs/gltf/rollup.config.cjs"],
-        "assets": [{
-          "glob": "libs/gltf/*.md",
-          "input": ".",
-          "output": "."
-        }]
+        "assets": [
+          {
+            "glob": "libs/gltf/*.md",
+            "input": ".",
+            "output": "."
+          },
+          {
+            "glob": "libs/gltf/src/index.html",
+            "input": ".",
+            "output": "."
+          }
+        ]
       }
     },
     "publish": {
@@ -46,6 +53,18 @@
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "command": "node tools/scripts/publish-es.mjs gltf {args.ver} {args.tag}"
+      },
+      "dependsOn": [
+        {
+          "projects": "self",
+          "target": "build-es"
+        }
+      ]
+    },
+    "serve": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "npm-run-all --parallel \"serve ./dist/libs/gltf-es\" \"nx run gltf:build-es:serve\""
       },
       "dependsOn": [
         {

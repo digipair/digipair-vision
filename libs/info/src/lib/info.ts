@@ -69,10 +69,10 @@ export class InfoElement extends MetaElement {
           `}
 
       <a-box
-        width="1"
-        height="1.6"
+        width="1.5"
+        height="2"
         depth="5"
-        position="0 0.8 2.5"
+        position="0 0 2.5"
         static-body
         physics-collider
         visible="false"

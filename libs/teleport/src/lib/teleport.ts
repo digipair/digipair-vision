@@ -50,28 +50,30 @@ export class TeleportElement extends MetaElement {
 
   override render(): TemplateResult {
     return html`
-      <a-ring
-        color=${this.color}
-        radius-outer="0.2"
-        radius-inner="0.15"
-        position="0 0 0"
-        rotation="-90 0 0"
-      ></a-ring>
+      <a-entity hide-on-enter-ar>
+        <a-ring
+          color=${this.color}
+          radius-outer="0.2"
+          radius-inner="0.15"
+          position="0 0 0"
+          rotation="-90 0 0"
+        ></a-ring>
 
-      <a-cylinder
-        color=${this.color}
-        position="0 0.299 0"
-        height="0.6"
-        radius="0.2"
-        opacity="0.1"
-        selectable
-        @click=${() =>
-          this.teleport(this.height, this.rotationx, this.rotationy)}
-        @mouseenter=${() => (this.hover = true)}
-        @mouseleave=${() => (this.hover = false)}
-        visible=${this.hover}
-      >
-      </a-cylinder>
+        <a-cylinder
+          color=${this.color}
+          position="0 0.299 0"
+          height="0.6"
+          radius="0.2"
+          opacity="0.1"
+          selectable
+          @click=${() =>
+            this.teleport(this.height, this.rotationx, this.rotationy)}
+          @mouseenter=${() => (this.hover = true)}
+          @mouseleave=${() => (this.hover = false)}
+          visible=${this.hover}
+        >
+        </a-cylinder>
+      </a-entity>
     `;
   }
 }
