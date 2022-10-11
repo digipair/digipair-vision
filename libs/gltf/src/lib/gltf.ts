@@ -32,8 +32,15 @@ export class GltfElement extends MetaElement {
   @internalProperty()
   animationinitialized = false;
 
-  private async initialization(srcElement: Entity): Promise<void> {
-    await this.addAnimations(srcElement, this.animations);
+  private async initialization(
+    srcElement: Entity,
+    animationsModel: string
+  ): Promise<void> {
+    if (!animationsModel) {
+      return;
+    }
+
+    await this.addAnimations(srcElement, animationsModel);
     this.animationinitialized = true;
   }
 
@@ -82,7 +89,7 @@ export class GltfElement extends MetaElement {
     return html`
       <meta-gltf-static
         @model-loaded=${({ srcElement }: any) =>
-          this.initialization(srcElement)}
+          this.initialization(srcElement, this.animations)}
         url=${this.url}
         development=${this.development}
         materials=${JSON.stringify(this.materials)}

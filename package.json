@@ -9,7 +9,8 @@
     "networked-server": "node ./dist/apps/networked-server/main",
     "publish": "nx run core:publish --ver=%npm_config_npmversion% --tag=latest && nx run core:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run gltf:publish --ver=%npm_config_npmversion% --tag=latest && nx run gltf:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run player:publish --ver=%npm_config_npmversion% --tag=latest && nx run player:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run scene:publish --ver=%npm_config_npmversion% --tag=latest && nx run scene:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run exporter:publish --ver=%npm_config_npmversion% --tag=latest && nx run exporter:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run observe:publish --ver=%npm_config_npmversion% --tag=latest && nx run observe:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run teleport:publish --ver=%npm_config_npmversion% --tag=latest && nx run teleport:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run ready-player-me:publish --ver=%npm_config_npmversion% --tag=latest && nx run ready-player-me:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run design-system:publish --ver=%npm_config_npmversion% --tag=latest && nx run design-system:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run screen-shared:publish --ver=%npm_config_npmversion% --tag=latest && nx run screen-shared:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run room:publish --ver=%npm_config_npmversion% --tag=latest && nx run room:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run info:publish --ver=%npm_config_npmversion% --tag=latest && nx run info:publish-es --ver=%npm_config_npmversion% --tag=latest",
     "serve": "serve",
-    "nx": "nx"
+    "nx": "nx",
+    "docsify": "docsify"
   },
   "private": true,
   "dependencies": {
@@ -55,6 +56,7 @@
     "@typescript-eslint/parser": "~5.24.0",
     "@ungap/custom-elements": "0.1.6",
     "cypress": "^9.1.0",
+    "docsify-cli": "^4.4.4",
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-cypress": "^2.10.3",

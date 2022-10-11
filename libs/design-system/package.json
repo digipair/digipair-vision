@@ -1,6 +1,6 @@
 {
   "name": "@pinser-metaverse/design-system",
-  "version": "0.12.5",
+  "version": "0.12.7",
   "type": "module",
   "license": "MIT",
   "homepage": "https://github.com/pinser-metaverse/pinser-metaverse/tree/master/libs/design-system",
@@ -22,6 +22,6 @@
     "url": "https://www.pinser.world"
   },
   "peerDependencies": {
-    "@pinser-metaverse/core": "0.12.5"
+    "@pinser-metaverse/core": "0.12.7"
   }
 }

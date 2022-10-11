@@ -63,18 +63,20 @@ export class SceneElement extends LitElement {
         ?debug=${this.development}
         ?embedded=${this.embedded}
         ar-hit-test="target: meta-scene-container; footprintDepth: 1;"
-        networked-scene="
+        networked-scene=${`
           serverURL: ${this.serverURL};
           app: pinser-metaverse;
-          room: ${this.session
-          ? this.session.replace(/-/g, '').toLowerCase()
-          : 'default'};
+          room: ${
+            this.session
+              ? this.session.replace(/-/g, '').toLowerCase()
+              : 'default'
+          };
           adapter: ${this.adapter};
           audio: ${this.audio};
           video: ${this.video};
           debug: ${this.development};
           connectOnLoad: ${this.connectOnLoad};
-        "
+        `}
       >
         <meta-scene-container dev=${this.development}></meta-scene-container>
       </a-scene>
