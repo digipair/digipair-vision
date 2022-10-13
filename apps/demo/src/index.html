@@ -14,23 +14,23 @@
   <body>
     <meta-scene session="f12dc432-f696-47b4-802b-b4e807f73a8a" development>
       <template slot="scene">
-        <a-sky color="#80d4ff"></a-sky>
+        <a-sky hide-on-enter-ar color="#80d4ff"></a-sky>
 
-        <tic-tac-toe position="0 0 -10"></tic-tac-toe>
+        <tic-tac-toe position="0 0.25 -5" scale="0.5 0.5 0.5"></tic-tac-toe>
 
         <meta-gltf
           url="./assets/man.glb"
           animations="./assets/animations.glb"
           playing="clip: IDLE;"
-          position="-2.2 0 -10"></meta-gltf>
+          position="-1.15 0 -5"
         ></meta-gltf>
 
-      <meta-teleportable
-        hide-on-enter-ar
-        width="30"
-        height="30"
-        color="#d99f20"
-      ></meta-teleportable>
+        <meta-teleportable
+          hide-on-enter-ar
+          width="30"
+          height="30"
+          color="#d99f20"
+        ></meta-teleportable>
       </template>
     </meta-scene>
   </body>

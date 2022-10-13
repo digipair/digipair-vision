@@ -1,107 +1,83 @@
 # Get started
 
-## Project initialisation
+The easier way to create your own project is to fork the project [metaverse-bootstrap](https://github.com/pinser-metaverse/metaverse-boostrap).
 
-To generate our project skeleton, we will use [nx](https://nx.dev/).
+There is 2 options:
+
+- [Quick](#quick)
+- [Normal](#Normal)
+
+## Quick
+
+The project [metaverse-bootstrap](https://github.com/pinser-metaverse/metaverse-boostrap) is ready to be used with the wonderful tool CodeSandbox.
+
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/pinser-metaverse/metaverse-boostrap/blob/master/apps/metaverse/src/lib/metaverse.space.ts)
+
+## Normal
+
+The project [metaverse-bootstrap](https://github.com/pinser-metaverse/metaverse-boostrap) is hosted on Github and use the repository engine Git.
+
+### Requirements
+
+The project requires the following tools:
+
+- NodeJS LTS (https://nodejs.org)
+- Git (https://git-scm.com)
+- Yarn (https://classic.yarnpkg.com/lang/en/docs/install/)
+
+### Clone the project
 
 On a bash / DOS terminal, execute the following command:
 
 ```bash
-$ npx create-nx-workspace helloworld --appName="helloWorld" --preset="web-components" --style="css" --nx-cloud=false
+$ git clone https://github.com/pinser-metaverse/metaverse-boostrap.git
 ```
 
-Open the created directory "helloworld" in your favorite IDE ([VisualStudio code](https://code.visualstudio.com/) ?)
+### Install dependencies
 
-## Start the development server
-
-On a bash / DOS terminal, execute the following command in your project directory:
+On a bash / DOS terminal, execute the following command **in your project directory**:
 
 ```bash
-nx serve
+yarn install
 ```
 
-Open `http://localhost:4200/` in your browser to see the result
+### Start the development server
 
-## Add required library
+[metaverse-bootstrap](https://github.com/pinser-metaverse/metaverse-boostrap) use the build system [nx](https://nx.dev) to be more flexible.
+The project is composed of one application named "metaverse".
 
-On a bash / DOS terminal, execute the following command in your project directory:
+On a bash / DOS terminal, execute the following command **in your project directory**:
 
 ```bash
-npm install aframe @pinser-metaverse/core @pinser-metaverse/scene @pinser-metaverse/player
+yarn nx serve metaverse
 ```
 
-- [aframe](https://aframe.io/): wonderful 3D engine from HTML tags
-- [@pinser-metaverse/core](https://github.com/pinser-metaverse/pinser-metaverse/): create 3D web components
-- [@pinser-metaverse/scene](https://github.com/pinser-metaverse/pinser-metaverse/): create 3D scene
-- [@pinser-metaverse/player](https://github.com/pinser-metaverse/pinser-metaverse/): create 3D player
+### See the result
 
-## Import required library in source code
+Open http://localhost:4200/ in your browser to see the result
 
-In apps/web-components/src/app/app.element.ts  
-replace
+## Add a network session
 
-```typescript
-import './app.element.css';
-```
+To see the other connected users, you must create a network session:
 
-by
+1. open the file `apps/metaverse/src/metaverse.html`
+2. add an attribute `session` to the html element `meta-scene` with a unique uuid as value
 
-```typescript
-import 'aframe'; // main 3d engine
+> The uuid can be generated from [uuidgenerator.net](https://www.uuidgenerator.net) for example
 
-import '@pinser-metaverse/scene'; // default 3d environment
-import { MetaElement, customElement, html } from '@pinser-metaverse/core'; // used to create a 3d component
-```
+<iframe src="https://codesandbox.io/embed/github/pinser-metaverse/pinser-metaverse-examples/tree/get-started-network/?fontsize=10&hidenavigation=1&theme=dark&view=editor&module=/apps/metaverse/src/metaverse.html&codemirror=1&highlights=50"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Pinser get-started network"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
 
-## Create an empty 3d scene
+> Congratulation, you created your first web metaverse with [pinser-metaverse](https://www.pinser-metaverse.com).  
+> You can test it on Phone, tablet, Desktop and VR/AR/XR headset
 
-In apps/web-components/src/index.html  
-replace the body by
+## Next step
 
-by
+Follow the section [My first Pin's](my-first-pins.md)
 
-```html
-<meta-scene>
-  <template slot="scene">
-    <hello-world></hello-world>
-  </template>
-</meta-scene>
-```
-
-The following line display our amazing custom component, but who doesn't exist yet:
-
-```typescript
-<hello-world></hello-world>
-```
-
-## Add our custom HelloWorld component
-
-In apps/web-components/src/app/app.element.ts  
-replace the generated code by the following code at end of the file
-
-```typescript
-@customElement('hello-world')
-export class HelloWorldElement extends AFrameElement {
-  render() {
-    return html`
-      <a-box
-        material="color: grey;"
-        position="0.090 0.5 -3.05"
-        scale="1.2 0.3 0.1"
-      ></a-box>
-      <a-text value="Hello World" position="-0.5 0.5 -3"></a-text>
-    `;
-  }
-}
-```
-
-Our element display the text "Hello world" on a grey box in our environment.
-![hello world aframe-element component](./assets/get-started-hello-world.png)
-
-**Congratulation, you created your first pinser-metaverse scene compatible VR / 3D.**
-
-demo online:
-https://pinser-metaverse-examples-get-started.onrender.com
-
-source code:
-https://github.com/pinser-metaverse/pinser-metaverse-examples/tree/get-started
+> Don't hesitate to improve this documentation, any help will be amazing !  
+> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/pinser-metaverse/pinser-metaverse/blob/master/docs/get-started.md)
