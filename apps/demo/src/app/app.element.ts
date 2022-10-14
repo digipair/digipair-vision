@@ -5,10 +5,10 @@ import {
   html,
   inject,
   injectable,
-  internalProperty,
   MetaElement,
   MetaProvider,
   property,
+  state,
   TemplateResult,
 } from '@pinser-metaverse/core';
 import '@pinser-metaverse/design-system';
@@ -20,10 +20,10 @@ import '@pinser-metaverse/scene';
   networked: true,
 })
 class TictactoeService extends MetaProvider {
-  @internalProperty()
+  @state()
   player = 'X';
 
-  @internalProperty()
+  @state()
   pawns = [
     ['', '', ''],
     ['', '', ''],
@@ -134,7 +134,7 @@ export class PawnElement extends MetaElement {
   @property()
   positioncolumn!: number;
 
-  @internalProperty()
+  @state()
   backgroundcolor = 'grey';
 
   private onClick() {

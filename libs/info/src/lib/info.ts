@@ -2,10 +2,10 @@ import {
   customElement,
   Entity,
   html,
-  internalProperty,
   MetaElement,
   nothing,
   property,
+  state,
   TemplateResult,
   unsafeHTML,
 } from '@pinser-metaverse/core';
@@ -25,7 +25,7 @@ export class InfoElement extends MetaElement {
   @property({ default: 'info' })
   icon!: string;
 
-  @internalProperty()
+  @state()
   displayed = false;
 
   private content(): TemplateResult {

@@ -2,9 +2,9 @@ import {
   customElement,
   html,
   inject,
-  internalProperty,
   MetaElement,
   property,
+  state,
   TemplateResult,
   THREE,
 } from '@pinser-metaverse/core';
@@ -24,7 +24,7 @@ export class TeleportElement extends MetaElement {
   @property({ default: 0 })
   height!: number;
 
-  @internalProperty()
+  @state()
   hover = false;
 
   @inject()

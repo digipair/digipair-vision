@@ -2,9 +2,9 @@ import {
   customElement,
   Entity,
   html,
-  internalProperty,
   MetaElement,
   property,
+  state,
   TemplateResult,
 } from '@pinser-metaverse/core';
 import './gltf-static';
@@ -29,7 +29,7 @@ export class GltfElement extends MetaElement {
   @property({ default: {} })
   meshes!: any;
 
-  @internalProperty()
+  @state()
   animationinitialized = false;
 
   private async initialization(

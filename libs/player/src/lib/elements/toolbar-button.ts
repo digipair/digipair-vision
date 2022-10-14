@@ -1,9 +1,9 @@
 import {
   customElement,
   html,
-  internalProperty,
   MetaElement,
   property,
+  state,
   TemplateResult,
 } from '@pinser-metaverse/core';
 import '@pinser-metaverse/design-system';
@@ -13,7 +13,7 @@ export class PlayerToolbarButtonElement extends MetaElement {
   @property()
   icon!: string;
 
-  @internalProperty()
+  @state()
   hover = false;
 
   override render(): TemplateResult {

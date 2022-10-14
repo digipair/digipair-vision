@@ -3,10 +3,10 @@ import {
   Entity,
   html,
   inject,
-  internalProperty,
   MetaElement,
   nothing,
   property,
+  state,
 } from '@pinser-metaverse/core';
 import { PlayerProvider } from '../providers/player.provider';
 
@@ -18,10 +18,10 @@ export class TeleportableCursorElement extends MetaElement {
   @property({ default: '#d6d6d6' })
   color!: string;
 
-  @internalProperty()
+  @state()
   cursorvisible = false;
 
-  @internalProperty()
+  @state()
   cursorposition = '0 0 0';
 
   @inject()

@@ -2,7 +2,9 @@ import {
   customLitElement,
   html,
   LitElement,
+  nothing,
   propertyLit,
+  stateLit,
   TemplateResult,
 } from '@pinser-metaverse/core';
 import 'aframe-extras';
@@ -30,10 +32,16 @@ export class SceneElement extends LitElement {
   private audio = true;
 
   @propertyLit({ type: Boolean })
-  private video = false;
+  private video = true;
 
   @propertyLit({ type: Boolean })
   private development = false;
+
+  @stateLit()
+  private mediaDevicesChecked = false;
+
+  private audioChecked = false;
+  private videoChecked = false;
 
   private connectOnLoad = false;
 
@@ -51,35 +59,56 @@ export class SceneElement extends LitElement {
 
       this.connectOnLoad = true;
     }
+
+    this.checkMediaDevices();
   }
 
   protected override createRenderRoot(): Element | ShadowRoot {
     return this;
   }
 
+  private async checkMediaDevices() {
+    if (this.audio || this.video) {
+      const devices = await navigator.mediaDevices.enumerateDevices();
+      this.audioChecked =
+        this.audio &&
+        devices.filter(({ kind }) => kind === 'audioinput').length > 0;
+      this.videoChecked =
+        this.video &&
+        devices.filter(({ kind }) => kind === 'videoinput').length > 0;
+    }
+
+    this.mediaDevicesChecked = true;
+  }
+
   override render(): TemplateResult {
-    return html`
-      <a-scene
-        ?debug=${this.development}
-        ?embedded=${this.embedded}
-        ar-hit-test="target: meta-scene-container; footprintDepth: 1;"
-        networked-scene=${`
-          serverURL: ${this.serverURL};
-          app: pinser-metaverse;
-          room: ${
-            this.session
-              ? this.session.replace(/-/g, '').toLowerCase()
-              : 'default'
-          };
-          adapter: ${this.adapter};
-          audio: ${this.audio};
-          video: ${this.video};
-          debug: ${this.development};
-          connectOnLoad: ${this.connectOnLoad};
-        `}
-      >
-        <meta-scene-container dev=${this.development}></meta-scene-container>
-      </a-scene>
-    `;
+    console.log('-', this.videoChecked, this.audioChecked);
+    return html` ${!this.mediaDevicesChecked
+      ? nothing
+      : html`
+          <a-scene
+            ?debug=${this.development}
+            ?embedded=${this.embedded}
+            ar-hit-test="target: meta-scene-container; footprintDepth: 1;"
+            networked-scene=${`
+              serverURL: ${this.serverURL};
+              app: pinser-metaverse;
+              room: ${
+                this.session
+                  ? this.session.replace(/-/g, '').toLowerCase()
+                  : 'default'
+              };
+              adapter: ${this.adapter};
+              audio: ${this.audioChecked};
+              video: ${this.videoChecked};
+              debug: ${this.development};
+              connectOnLoad: ${this.connectOnLoad};
+            `}
+          >
+            <meta-scene-container
+              dev=${this.development}
+            ></meta-scene-container>
+          </a-scene>
+        `}`;
   }
 }

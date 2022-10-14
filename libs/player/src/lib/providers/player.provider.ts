@@ -1,17 +1,17 @@
 import {
   Entity,
   injectable,
-  internalProperty,
   MetaProvider,
+  state,
   THREE,
 } from '@pinser-metaverse/core';
 
 @injectable()
 export class PlayerProvider extends MetaProvider {
-  @internalProperty()
+  @state()
   playersound = true;
 
-  @internalProperty()
+  @state()
   playermic = true;
 
   override init(): void {

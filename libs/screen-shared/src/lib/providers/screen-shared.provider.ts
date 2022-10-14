@@ -2,8 +2,8 @@ import {
   Entity,
   inject,
   injectable,
-  internalProperty,
   MetaProvider,
+  state,
   THREE,
 } from '@pinser-metaverse/core';
 import { PlayerProvider } from '@pinser-metaverse/player';
@@ -37,7 +37,7 @@ function getPathTo(element: Element, root: Element): string {
   networked: true,
 })
 export class ScreenSharedProvider extends MetaProvider {
-  @internalProperty()
+  @state()
   menuVisible = false;
 
   @inject()

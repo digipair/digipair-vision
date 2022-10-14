@@ -10,7 +10,7 @@ interface Action {
 }
 const actions = new Map<MetaElement, Action>();
 
-export const internalProperty =
+export const state =
   () => (target: MetaElement, property: string) => {
     if (!(target.constructor as typeof MetaElement).__INTERNAL_PROPERTIES__) {
       (target.constructor as typeof MetaElement).__INTERNAL_PROPERTIES__ = [];
