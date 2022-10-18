@@ -1,6 +1,6 @@
 {
   "name": "@pinser-metaverse/screen-shared",
-  "version": "0.13.0",
+  "version": "0.13.2",
   "type": "module",
   "license": "MIT",
   "homepage": "https://github.com/pinser-metaverse/pinser-metaverse/tree/master/libs/screen-shared",
@@ -22,6 +22,6 @@
     "url": "https://www.pinser.world"
   },
   "peerDependencies": {
-    "@pinser-metaverse/core": "0.13.0"
+    "@pinser-metaverse/core": "0.13.2"
   }
 }

@@ -77,7 +77,7 @@ To see the other connected users, you must create a network session:
 
 ## Next step
 
-Follow the section [My first Pin's](my-first-pins.md)
+Create your first Pin's [a tic-tac-toe](example-tictactoe)
 
 > Don't hesitate to improve this documentation, any help will be amazing !  
 > [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/pinser-metaverse/pinser-metaverse/blob/master/docs/get-started.md)

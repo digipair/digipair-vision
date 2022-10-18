@@ -1,6 +1,6 @@
 - [Usage](/#main)
 - [Get Started](get-started)
-- [My first Pin's](my-first-pins)
+- [Example: tic-tac-toe](example-tictactoe)
 - [Element creation](element-creation)
 - [Available elements](available-elements)
 - [Player](player)
