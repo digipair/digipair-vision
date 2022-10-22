@@ -2,7 +2,7 @@ const { terser } = require('rollup-plugin-terser');
 
 function getRollupOptions(options) {
   const extraGlobals = {};
-  const bundled = [];
+  const bundled = ['@vaadin/router'];
 
   return {
     ...options,

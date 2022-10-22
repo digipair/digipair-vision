@@ -1,8 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare const NAF: any;
 
-const { registerComponent } = AFRAME;
-
 function getPathTo(element: Element, root: Element): string {
   if (element.id !== '') return 'id("' + element.id + '")';
   if (element === root) return element.tagName;
@@ -33,7 +31,7 @@ function kebabCase(text: string) {
     .toLowerCase();
 }
 
-registerComponent('networked-element', {
+AFRAME.registerComponent('networked-element', {
   schema: {
     element: {
       type: 'string',

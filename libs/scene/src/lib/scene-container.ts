@@ -1,7 +1,9 @@
 import {
   customElement,
   html,
+  inject,
   MetaElement,
+  nothing,
   property,
   TemplateResult,
   unsafeHTML,
@@ -12,20 +14,54 @@ import { PlayerProvider } from '@pinser-metaverse/player';
   providers: [PlayerProvider],
 })
 export class SceneContainerElement extends MetaElement {
-  @property({ default: false })
-  dev!: boolean;
+  @property()
+  session!: string;
+
+  @property()
+  server!: string;
+
+  @property()
+  adapter!: string;
+
+  @property()
+  development!: boolean;
+
+  @inject()
+  playerProvider!: PlayerProvider;
+
+  override init(): void {
+    if (this.session) {
+      this.startSession();
+    }
+  }
+
+  private startSession() {
+    this.playerProvider.debug = this.development;
+    this.playerProvider.networked = {
+      serverURL: this.server,
+      adapter: this.adapter,
+    };
+
+    this.playerProvider.startSession(this.session);
+  }
 
   private scene(): TemplateResult {
-    return html`${unsafeHTML(
-      this.el
-        .closest(`meta-scene`)
-        .querySelector(':scope > template[slot=scene]')?.innerHTML || ''
-    )}`;
+    const scene = this.el
+      .closest(`meta-scene`)
+      .querySelector(':scope > template[slot=scene]');
+
+    return html`${!scene ? nothing : unsafeHTML(scene.innerHTML)}`;
   }
 
   override render(): TemplateResult {
+    this.playerProvider.debug = this.development;
+    this.playerProvider.networked = {
+      serverURL: this.server,
+      adapter: this.adapter,
+    };
+
     return html`
-      <meta-player dev=${this.dev}></meta-player>
+      <meta-player development=${this.development}></meta-player>
 
       ${this.scene()}
     `;

@@ -30,7 +30,7 @@ The project requires the following tools:
 On a bash / DOS terminal, execute the following command:
 
 ```bash
-$ git clone https://github.com/pinser-metaverse/metaverse-boostrap.git
+git clone https://github.com/pinser-metaverse/metaverse-boostrap.git
 ```
 
 ### Install dependencies
@@ -54,7 +54,7 @@ yarn nx serve metaverse
 
 ### See the result
 
-Open http://localhost:4200/ in your browser to see the result
+Open http://localhost:3000/ in your browser to see the result
 
 ## Add a network session
 

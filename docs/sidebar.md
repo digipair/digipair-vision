@@ -10,6 +10,6 @@
 - [Export](export)
 - [How it works](how-it-works)
 - **Links**
-- [Discord](https://discord.gg/CQF5EY4q)
+- [Discord](https://discord.gg/kCqF8xaMHJ)
 - [Github](https://github.com/pinser-metaverse/pinser-metaverse)
 - [stackoverflow](https://stackoverflow.com/questions/tagged/pinser)

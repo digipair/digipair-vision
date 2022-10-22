@@ -11,10 +11,10 @@ import {
   state,
   TemplateResult,
 } from '@pinser-metaverse/core';
-import '@pinser-metaverse/design-system';
 import '@pinser-metaverse/gltf';
-import '@pinser-metaverse/info';
+import { PlayerProvider } from '@pinser-metaverse/player';
 import '@pinser-metaverse/scene';
+import '@pinser-metaverse/teleport';
 
 @injectable({
   networked: true,
@@ -57,6 +57,13 @@ class TictactoeService extends MetaProvider {
 export class TicTacToeElement extends MetaElement {
   @inject()
   private tictactoeService!: TictactoeService;
+
+  @inject()
+  private playerProvider!: PlayerProvider;
+
+  override init(): void {
+    // this.playerProvider.setAudio({ positional: false });
+  }
 
   private reset() {
     this.tictactoeService.reset();

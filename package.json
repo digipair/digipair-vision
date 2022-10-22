@@ -7,7 +7,7 @@
     "build": "nx build",
     "test": "nx test",
     "networked-server": "node ./dist/apps/networked-server/main",
-    "publish": "nx run core:publish --ver=%npm_config_npmversion% --tag=latest && nx run core:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run gltf:publish --ver=%npm_config_npmversion% --tag=latest && nx run gltf:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run player:publish --ver=%npm_config_npmversion% --tag=latest && nx run player:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run scene:publish --ver=%npm_config_npmversion% --tag=latest && nx run scene:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run exporter:publish --ver=%npm_config_npmversion% --tag=latest && nx run exporter:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run observe:publish --ver=%npm_config_npmversion% --tag=latest && nx run observe:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run teleport:publish --ver=%npm_config_npmversion% --tag=latest && nx run teleport:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run ready-player-me:publish --ver=%npm_config_npmversion% --tag=latest && nx run ready-player-me:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run design-system:publish --ver=%npm_config_npmversion% --tag=latest && nx run design-system:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run screen-shared:publish --ver=%npm_config_npmversion% --tag=latest && nx run screen-shared:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run room:publish --ver=%npm_config_npmversion% --tag=latest && nx run room:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run info:publish --ver=%npm_config_npmversion% --tag=latest && nx run info:publish-es --ver=%npm_config_npmversion% --tag=latest",
+    "publish": "nx run core:publish --ver=%npm_config_npmversion% --tag=latest && nx run core:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run gltf:publish --ver=%npm_config_npmversion% --tag=latest && nx run gltf:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run player:publish --ver=%npm_config_npmversion% --tag=latest && nx run player:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run scene:publish --ver=%npm_config_npmversion% --tag=latest && nx run scene:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run exporter:publish --ver=%npm_config_npmversion% --tag=latest && nx run exporter:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run observe:publish --ver=%npm_config_npmversion% --tag=latest && nx run observe:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run teleport:publish --ver=%npm_config_npmversion% --tag=latest && nx run teleport:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run ready-player-me:publish --ver=%npm_config_npmversion% --tag=latest && nx run ready-player-me:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run design-system:publish --ver=%npm_config_npmversion% --tag=latest && nx run design-system:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run screen-shared:publish --ver=%npm_config_npmversion% --tag=latest && nx run screen-shared:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run router:publish --ver=%npm_config_npmversion% --tag=latest && nx run router:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run info:publish --ver=%npm_config_npmversion% --tag=latest && nx run info:publish-es --ver=%npm_config_npmversion% --tag=latest",
     "serve": "serve",
     "nx": "nx",
     "docsify": "docsify"
@@ -16,6 +16,7 @@
   "dependencies": {
     "@swc/helpers": "~0.3.3",
     "@types/aframe": "^1.2.0",
+    "@vaadin/router": "^1.7.4",
     "aframe": "^1.3.0",
     "aframe-blink-controls": "^0.4.0",
     "aframe-extras": "^6.1.1",
@@ -26,7 +27,7 @@
     "jest-canvas-mock": "^2.4.0",
     "lit": "^2.2.5",
     "md5": "^2.3.0",
-    "networked-aframe": "^0.9.1",
+    "networked-aframe": "^0.10.1",
     "reflect-metadata": "^0.1.13",
     "regenerator-runtime": "0.13.7",
     "super-hands": "^3.0.3",

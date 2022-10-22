@@ -56,7 +56,7 @@ Follow the section [Get started](get-started)
 
 ### Join us
 
-[![Join us on Discord](./assets/discord.png)](https://discord.gg/CQF5EY4q)
+[![Join us on Discord](./assets/discord.png)](https://discord.gg/kCqF8xaMHJ)
 
 ### Support
 

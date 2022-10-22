@@ -74,6 +74,7 @@ export class InfoElement extends MetaElement {
         depth="5"
         position="0 0 2.5"
         static-body
+        collision-filter="collidesWith: player, hand;"
         physics-collider
         visible="false"
         @collisions=${({ detail }: any) => this.toggleMenu(detail)}

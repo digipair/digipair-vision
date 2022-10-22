@@ -12,7 +12,6 @@ import {
 } from '@pinser-metaverse/core';
 import 'aframe-blink-controls';
 import 'super-hands';
-import '../directives/audio-source';
 import { EventTeleport } from '../interfaces/event-teleport';
 import { PlayerProvider } from '../providers/player.provider';
 import '../utils/Geometry.js';
@@ -28,7 +27,7 @@ declare const NAF: any;
 @customElement('meta-player')
 export class PlayerElement extends MetaElement {
   @property({ default: false })
-  dev!: boolean;
+  development!: boolean;
 
   @inject()
   playerProvider!: PlayerProvider;
@@ -37,7 +36,7 @@ export class PlayerElement extends MetaElement {
   private templates = [
     {
       id: 'avatar-template',
-      content: `<a-entity meta-avatar meta-audio-source></a-entity>`,
+      content: `<a-entity meta-avatar networked-audio-source></a-entity>`,
     },
     {
       id: 'player-template',
@@ -144,7 +143,12 @@ export class PlayerElement extends MetaElement {
 
     NAF?.schemas.add({
       template: `#avatar-template`,
-      components: ['position', 'rotation', 'meta-avatar', 'meta-audio-source'],
+      components: [
+        'position',
+        'rotation',
+        'meta-avatar',
+        'networked-audio-source',
+      ],
     });
   }
 
@@ -175,7 +179,7 @@ export class PlayerElement extends MetaElement {
           position="0 1.6 0"
           camera="fov: 40; zoom: 1;"
           look-controls-custom="reverseMouseDrag: true; touchEnabled: true; magicWindowTrackingEnabled: false;"
-          ?wasd-controls=${this.dev}
+          ?wasd-controls=${this.development}
           networked="template: #avatar-template;"
         >
           <a-entity
@@ -192,6 +196,7 @@ export class PlayerElement extends MetaElement {
                 super-hands
                 sphere-collider="objects: a-box"
                 static-body="shape: sphere; sphereRadius: 0.02"
+                collision-filter="group: hand;"
                 hand-controls="hand: left"
                 laser-controls="hand: left;"
                 blink-controls="cameraRig: [player]; teleportOrigin: [camera]; collisionEntities: [teleportable]; snapTurn: false;"
@@ -206,6 +211,7 @@ export class PlayerElement extends MetaElement {
                 super-hands
                 sphere-collider="objects: a-box"
                 static-body="shape: sphere; sphereRadius: 0.02"
+                collision-filter="group: hand;"
                 hand-controls="hand: right"
                 laser-controls="hand: right;"
                 blink-controls="cameraRig: [player]; teleportOrigin: [camera]; collisionEntities: [teleportable]; snapTurn: false;"

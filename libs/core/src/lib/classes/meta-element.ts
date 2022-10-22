@@ -1,21 +1,21 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { Component, Entity, Schema, System } from 'aframe';
-import { html, render, TemplateResult } from 'lit';
+import { render, TemplateResult } from 'lit';
 import { subscription } from '../interfaces/subscription';
 
 export class MetaElement {
   static __NETWORKED__: boolean;
   static __ELEMENT_NAME__: string;
   static __INTERNAL_PROPERTIES__: string[];
-
+  
   static schema: Schema;
   static dependencies: string[];
   static multiple: boolean;
   static mappings: unknown;
 
-__AFRAME_INSTANCE__!: Component;
-__SUBSCRIPTIONS__: subscription[] = [];
+  __AFRAME_INSTANCE__!: Component;
+  __SUBSCRIPTIONS__: subscription[] = [];
 
   init(data?: unknown): void {}
   pause(): void {}

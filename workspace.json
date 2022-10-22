@@ -12,9 +12,9 @@
     "observe": "libs/observe",
     "player": "libs/player",
     "ready-player-me": "libs/ready-player-me",
+    "router": "libs/router",
     "scene": "libs/scene",
     "screen-shared": "libs/screen-shared",
-    "room": "libs/room",
     "teleport": "libs/teleport"
   }
 }

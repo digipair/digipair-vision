@@ -15,7 +15,10 @@ export class PlayerCameraElement extends MetaElement {
 
   override render(): TemplateResult {
     return html`
-      <a-entity static-body="shape: sphere; sphereRadius: 0.02"></a-entity>
+      <a-entity
+        static-body="shape: sphere; sphereRadius: 0.02"
+        collision-filter="group: player;"
+      ></a-entity>
 
       ${this.vrmode
         ? nothing

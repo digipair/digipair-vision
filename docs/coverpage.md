@@ -10,4 +10,4 @@
 
 [Get Started](#main)
 [GitHub](https://github.com/pinser-metaverse/pinser-metaverse)
-[Discord](https://discord.gg/CQF5EY4q)
+[Discord](https://discord.gg/kCqF8xaMHJ)

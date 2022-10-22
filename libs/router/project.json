@@ -1,36 +1,36 @@
 {
   "$schema": "..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
-  "sourceRoot": "libs/room/src",
+  "sourceRoot": "libs/router/src",
   "projectType": "library",
   "targets": {
     "build": {
       "executor": "@nrwl/js:swc",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/room",
-        "main": "libs/room/src/index.ts",
-        "tsConfig": "libs/room/tsconfig.lib.json",
-        "assets": ["libs/room/*.md"]
+        "outputPath": "dist/libs/router",
+        "main": "libs/router/src/index.ts",
+        "tsConfig": "libs/router/tsconfig.lib.json",
+        "assets": ["libs/router/*.md"]
       }
     },
     "build-es": {
       "executor": "@nrwl/web:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "project": "libs/room/package.esm.json",
-        "outputPath": "dist/libs/room-es",
+        "project": "libs/router/package.esm.json",
+        "outputPath": "dist/libs/router-es",
         "compiler": "swc",
-        "entryFile": "libs/room/src/index.ts",
-        "tsConfig": "libs/room/tsconfig.lib.json",
-        "rollupConfig": ["libs/room/rollup.config.cjs"],
+        "entryFile": "libs/router/src/index.ts",
+        "tsConfig": "libs/router/tsconfig.lib.json",
+        "rollupConfig": ["libs/router/rollup.config.cjs"],
         "assets": [
           {
-            "glob": "libs/room/*.md",
+            "glob": "libs/router/*.md",
             "input": ".",
             "output": "."
           },
           {
-            "glob": "libs/room/src/index.html",
+            "glob": "libs/router/src/index.html",
             "input": ".",
             "output": "."
           }
@@ -46,7 +46,7 @@
     "publish": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "command": "node tools/scripts/publish.mjs room {args.ver} {args.tag}"
+        "command": "node tools/scripts/publish.mjs router {args.ver} {args.tag}"
       },
       "dependsOn": [
         {
@@ -58,7 +58,7 @@
     "publish-es": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "command": "node tools/scripts/publish-es.mjs room {args.ver} {args.tag}"
+        "command": "node tools/scripts/publish-es.mjs router {args.ver} {args.tag}"
       },
       "dependsOn": [
         {
@@ -70,7 +70,7 @@
     "serve": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "command": "npm-run-all --parallel \"serve ./dist/libs/room-es\" \"nx run room:build-es:serve\""
+        "command": "npm-run-all --parallel \"serve ./dist/libs/router-es\" \"nx run router:build-es:serve\""
       },
       "dependsOn": [
         {
@@ -83,17 +83,17 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/room/**/*.ts"]
+        "lintFilePatterns": ["libs/router/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/room"],
+      "outputs": ["coverage/libs/router"],
       "options": {
-        "jestConfig": "libs/room/jest.config.ts",
+        "jestConfig": "libs/router/jest.config.ts",
         "passWithNoTests": true
       }
     }
   },
-  "tags": ["room"]
+  "tags": ["router"]
 }
