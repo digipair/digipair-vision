@@ -5,6 +5,7 @@ import {
   state,
   THREE,
 } from '@pinser-metaverse/core';
+import { MetaCursor } from '../interfaces/cursor.interface';
 
 @injectable()
 export class PlayerProvider extends MetaProvider {
@@ -14,13 +15,22 @@ export class PlayerProvider extends MetaProvider {
   @state()
   playermic = true;
 
-  debug = false;
+  @state()
+  playermenu = { visible: false, position: '0 0 0', rotation: '0 0 0' };
+
+  @state()
+  customcursor = '';
+
+  customcursorData: any;
+
+  debug!: boolean;
   networked!: {
     serverURL: string;
     adapter: string;
   };
 
   override init(): void {
+    this.debug = false;
     this.networked = {
       serverURL: 'https://networked.pinser-metaverse.com',
       adapter: 'easyrtc',
@@ -45,18 +55,28 @@ export class PlayerProvider extends MetaProvider {
     });
   }
 
-  setInfo(data: any): void {
-    (
-      this.el.sceneEl?.querySelector('meta-player [meta-avatar]') as Entity
-    )?.setAttribute('meta-avatar', `playerinfo: ${btoa(JSON.stringify(data))}`);
-  }
-
   setAudio(config: any = {}): void {
     (
       this.el.sceneEl?.querySelector(
         'meta-player [meta-avatar][networked-audio-source]'
       ) as Entity
     )?.setAttribute('networked-audio-source', config);
+  }
+
+  startCursor(cursor: MetaCursor): void {
+    this.customcursorData = cursor.data;
+    this.customcursor = cursor.component;
+  }
+
+  stopCursor(): void {
+    this.customcursorData = null;
+    this.customcursor = '';
+  }
+
+  setInfo(data: any): void {
+    (
+      this.el.sceneEl?.querySelector('meta-player [meta-avatar]') as Entity
+    )?.setAttribute('meta-avatar', `playerinfo: ${btoa(JSON.stringify(data))}`);
   }
 
   teleport(position: string, rotation?: string): void {
@@ -70,17 +90,48 @@ export class PlayerProvider extends MetaProvider {
     );
   }
 
+  toggleMenu(): void {
+    if (this.playermenu.visible) {
+      this.playermenu = { ...this.playermenu, visible: false };
+      return;
+    }
+
+    const playerEl = this.el.sceneEl?.querySelector(
+      'meta-player > [networked]'
+    ) as Entity;
+    const cameraEl = this.el.sceneEl?.querySelector(
+      'meta-player [meta-avatar]'
+    ) as Entity;
+    const position = new THREE.Vector3();
+    cameraEl.object3D.getWorldPosition(position);
+
+    const rotationPlayer = playerEl.getAttribute('rotation');
+    const rotationCamera = cameraEl.getAttribute('rotation');
+
+    this.playermenu = {
+      position: `${position.x} ${position.y - 0.29} ${position.z}`,
+      rotation: `0 ${rotationPlayer.y + rotationCamera.y} 0`,
+      visible: true,
+    };
+  }
+
   addNetworkedElement(
     element: string,
     attributes: { [key: string]: any } = {},
-    id: string | null = null
-  ) {
+    id: string | null = null,
+    options: {
+      editable?: boolean;
+      shape?: string;
+      dynamic?: boolean;
+      import?: string;
+    } = {}
+  ): Entity {
     const el = document.createElement('a-entity');
 
     el.setAttribute('networked', 'template: #element-template');
     el.setAttribute(
       'meta-element',
-      `element: ${element}; attributes: ${btoa(
+      `element: ${element}; import: ${options.import || ''}; attributes: ${btoa(
         JSON.stringify({
           ...attributes,
           position: undefined,
@@ -106,7 +157,33 @@ export class PlayerProvider extends MetaProvider {
       el.setAttribute('scale', attributes['scale']);
     }
 
+    if (options.editable) {
+      el.setAttribute('editable', '');
+      el.setAttribute('grabbable', '');
+      el.setAttribute('stretchable', '');
+      el.setAttribute(
+        'body',
+        options.dynamic
+          ? 'type: dynamic; shape: none;'
+          : 'type: static; shape: none;'
+      );
+      el.setAttribute('shape', options.shape);
+      el.setAttribute('collision-filter', 'collidesWith: hand, surface;');
+
+      if (!options.dynamic) {
+        el.addEventListener('grab-start', () => {
+          el.setAttribute('body', 'type', 'dynamic');
+        });
+
+        el.addEventListener('grab-end', () => {
+          el.setAttribute('body', 'type', 'static');
+        });
+      }
+    }
+
     this.el.sceneEl?.appendChild(el);
+
+    return el;
   }
 
   removeNetworkedElement(el: Entity) {
@@ -184,16 +261,6 @@ export class PlayerProvider extends MetaProvider {
       const { template } = el.getAttribute('networked') as any;
       el.removeAttribute('networked');
       el.setAttribute('networked', { template } as any);
-    });
-
-    sceneEl.querySelectorAll('[networked-video-source]').forEach((el) => {
-      el.removeAttribute('networked-video-source');
-      el.setAttribute('networked-video-source', '');
-    });
-
-    sceneEl.querySelectorAll('[networked-audio-source]').forEach((el) => {
-      el.removeAttribute('networked-audio-source');
-      el.setAttribute('networked-audio-source', '');
     });
   }
 }

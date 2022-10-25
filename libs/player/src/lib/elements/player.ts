@@ -19,6 +19,7 @@ import '../utils/look-controls-custom.js';
 import './avatar';
 import './camera';
 import './element';
+import './menu';
 import './teleportable-cursor';
 import './toolbar';
 
@@ -32,7 +33,7 @@ export class PlayerElement extends MetaElement {
   @inject()
   playerProvider!: PlayerProvider;
 
-  private vrmode = false;
+  private vrmode!: boolean;
   private templates = [
     {
       id: 'avatar-template',
@@ -121,9 +122,12 @@ export class PlayerElement extends MetaElement {
   };
 
   override init(): void {
+    this.vrmode = false;
+
     this.el.sceneEl?.addEventListener('enter-vr', this.entervr);
     this.el.sceneEl?.addEventListener('exit-vr', this.exitvr);
     this.playerProvider.el.addEventListener('teleport', this.teleport);
+
     this.initTemplates();
   }
 
@@ -170,9 +174,19 @@ export class PlayerElement extends MetaElement {
       .querySelector(':scope > template[slot=handright]')?.innerHTML;
 
     return html`
-      <meta-teleportable-cursor
-        vrmode=${this.vrmode}
-      ></meta-teleportable-cursor>
+      ${this.playerProvider.customcursor
+        ? unsafeHTML(
+            `<${this.playerProvider.customcursor} vrmode=${this.vrmode}></${this.playerProvider.customcursor}>`
+          )
+        : html`<meta-teleportable-cursor
+            vrmode=${this.vrmode}
+          ></meta-teleportable-cursor>`}
+      ${!this.playerProvider.playermenu.visible
+        ? nothing
+        : html`<meta-player-menu
+            position=${this.playerProvider.playermenu.position}
+            rotation=${this.playerProvider.playermenu.rotation}
+          ></meta-player-menu>`}
 
       <a-entity player networked="template: #player-template;">
         <a-entity
@@ -193,11 +207,14 @@ export class PlayerElement extends MetaElement {
           ? nothing
           : html`
               <a-entity
-                super-hands
-                sphere-collider="objects: a-box"
-                static-body="shape: sphere; sphereRadius: 0.02"
+                super-hands=" colliderEvent: collisions;
+                              colliderEventProperty: els;
+                              colliderEndEvent: collisions;
+                              colliderEndEventProperty: clearedEls;"
+                physics-collider
+                static-body="shape: sphere; sphereRadius: 0.02;"
                 collision-filter="group: hand;"
-                hand-controls="hand: left"
+                hand-controls="hand: left;"
                 laser-controls="hand: left;"
                 blink-controls="cameraRig: [player]; teleportOrigin: [camera]; collisionEntities: [teleportable]; snapTurn: false;"
                 raycaster="objects: [selectable];"
@@ -208,11 +225,14 @@ export class PlayerElement extends MetaElement {
                   : unsafeHTML(templateHandLeft)}
               </a-entity>
               <a-entity
-                super-hands
-                sphere-collider="objects: a-box"
-                static-body="shape: sphere; sphereRadius: 0.02"
+                super-hands=" colliderEvent: collisions;
+                              colliderEventProperty: els;
+                              colliderEndEvent: collisions;
+                              colliderEndEventProperty: clearedEls;"
+                physics-collider
+                static-body="shape: sphere; sphereRadius: 0.02;"
                 collision-filter="group: hand;"
-                hand-controls="hand: right"
+                hand-controls="hand: right;"
                 laser-controls="hand: right;"
                 blink-controls="cameraRig: [player]; teleportOrigin: [camera]; collisionEntities: [teleportable]; snapTurn: false;"
                 raycaster="objects: [selectable];"

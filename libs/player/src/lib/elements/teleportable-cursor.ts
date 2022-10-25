@@ -21,13 +21,25 @@ export class TeleportableCursorElement extends MetaElement {
   @state()
   cursorvisible = false;
 
-  @state()
-  cursorposition = '0 0 0';
-
   @inject()
   playerProvider!: PlayerProvider;
 
-  private mousemove = () => {
+  private teleport = (event: any) => {
+    const cursor: any = (this.el.sceneEl as Entity).querySelector('[cursor]');
+    const enable =
+      cursor.components.raycaster.intersectedEls[0]?.hasAttribute(
+        'teleportable'
+      );
+
+    if (!enable) {
+      return;
+    }
+
+    const { x, y, z } = event.detail.intersection.point;
+    this.playerProvider.teleport(`${x} ${y} ${z}`);
+  };
+
+  private computeCursorPosition() {
     if (this.vrmode) {
       if (this.cursorvisible) {
         this.cursorvisible = false;
@@ -40,15 +52,11 @@ export class TeleportableCursorElement extends MetaElement {
       cursor.components.raycaster.intersectedEls[0]?.hasAttribute(
         'teleportable'
       );
-    let position = '0 0 0';
 
     if (visible) {
       const { point } = cursor.components.raycaster.rawIntersections[0];
-      position = `${point.x} ${point.y + 0.001} ${point.z}`;
 
-      if (position !== this.cursorposition) {
-        this.cursorposition = position;
-      }
+      this.el.object3D.position.set(point.x, point.y + 0.001, point.z);
 
       if (!this.cursorvisible) {
         this.cursorvisible = true;
@@ -58,14 +66,22 @@ export class TeleportableCursorElement extends MetaElement {
         this.cursorvisible = false;
       }
     }
-  };
+  }
 
   override init(): void {
-    document.addEventListener('mousemove', this.mousemove);
+    const cursor = this.el.sceneEl?.querySelector('[cursor]');
+
+    cursor?.addEventListener('click', this.teleport);
+  }
+
+  override tick(): void {
+    this.computeCursorPosition();
   }
 
   override remove(): void {
-    document.removeEventListener('mousemove', this.mousemove);
+    const cursor = this.el.sceneEl?.querySelector('[cursor]');
+
+    cursor?.removeEventListener('click', this.teleport);
   }
 
   override render() {
@@ -77,7 +93,6 @@ export class TeleportableCursorElement extends MetaElement {
               color=${this.color}
               radius-outer="0.2"
               radius-inner="0.15"
-              position=${this.cursorposition}
               rotation="-90 0 0"
             ></a-ring>
           `}

@@ -32,7 +32,11 @@ export class SceneElement extends LitElement {
 
   override render(): TemplateResult {
     return html`
-      <a-scene ?debug=${this.development} ar-hit-test="footprintDepth: 1;">
+      <a-scene
+        physics=${`debug: ${this.development}; driver: local;`}
+        ?debug=${this.development}
+        ar-hit-test="footprintDepth: 1;"
+      >
         <meta-scene-container
           session=${this.session}
           server=${this.server}
