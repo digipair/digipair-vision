@@ -23,6 +23,14 @@ export class PlayerToolbarElement extends MetaElement {
     );
   }
 
+  private toggleMenu(): void {
+    this.playerProvider.toggleMenu();
+  }
+
+  private stopCursor(): void {
+    this.playerProvider.stopCursor();
+  }
+
   override render(): TemplateResult {
     return html`
       <a-rounded
@@ -52,20 +60,34 @@ export class PlayerToolbarElement extends MetaElement {
           width="0.001"
         ></a-plane>
 
-        ${this.me.preview
+        ${this.playerProvider.customcursor
+          ? html`<meta-player-toolbar-button
+              position="0.111 0.025 0.001"
+              icon="cancel"
+              @click=${() => this.stopCursor()}
+            ></meta-player-toolbar-button>`
+          : this.playerProvider.playermenu.visible
+          ? html`<meta-player-toolbar-button
+              position="0.111 0.025 0.001"
+              icon="close"
+              @click=${() => this.toggleMenu()}
+            ></meta-player-toolbar-button>`
+          : this.me.preview
           ? html`
               <a-circle
                 src=${this.me.preview}
                 radius="0.017"
                 position="0.111 0.025 0.001"
+                selectable
+                @click=${() => this.toggleMenu()}
               ></a-circle>
             `
           : html`
-              <meta-icon
-                color="#000000"
-                position="0.098 0.025 0.001"
+              <meta-player-toolbar-button
+                position="0.111 0.025 0.001"
                 icon="account_circle"
-              ></meta-icon>
+                @click=${() => this.toggleMenu()}
+              ></meta-player-toolbar-button>
             `}
       </a-rounded>
     `;

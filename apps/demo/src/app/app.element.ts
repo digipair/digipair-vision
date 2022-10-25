@@ -14,6 +14,7 @@ import {
 import '@pinser-metaverse/gltf';
 import { PlayerProvider } from '@pinser-metaverse/player';
 import '@pinser-metaverse/scene';
+import '@pinser-metaverse/screen-shared';
 import '@pinser-metaverse/teleport';
 
 @injectable({
