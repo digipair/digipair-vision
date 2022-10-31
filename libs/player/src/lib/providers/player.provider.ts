@@ -192,8 +192,8 @@ export class PlayerProvider extends MetaProvider {
     });
 
     sceneEl.querySelectorAll('[networked-audio-source]').forEach((el) => {
-      el.removeAttribute('networked-ausio-source');
-      el.setAttribute('networked-ausio-source', '');
+      el.removeAttribute('networked-audio-source');
+      el.setAttribute('networked-audio-source', '');
     });
   }
 }
