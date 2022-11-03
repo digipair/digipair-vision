@@ -7,10 +7,23 @@
     "dynamic": false,
     "placeholder": {
       "geometry": "primitive: box; width: 1.6; height: 0.9; depth: 0.003;",
-      "position": "0 0 0.001"
+      "position": "0 0.45 0.001"
     },
     "shape": "shape: box; halfExtents: 0.8 0.45 0.1; offset: 0 0 0;",
-    "attributes": { "position": "0 0 0.001" }
+    "attributes": { "position": "0 0.45 0.001" }
+  },
+  {
+    "name": "Screen curved",
+    "image": "https://assets.pinser-metaverse.com/pins/images/screen-shared-curved.jpg",
+    "component": "meta-screen-shared",
+    "import": "@pinser-metaverse/screen-shared",
+    "dynamic": false,
+    "placeholder": {
+      "geometry": "primitive: box; width: 1.54; height: 0.9; depth: 0.2;",
+      "position": "0 0.45 0.001"
+    },
+    "shape": "shape: box; halfExtents: 0.77 0.45 0.2; offset: 0 0 0;",
+    "attributes": { "position": "0 0.45 0.001", "curved": true }
   },
   {
     "name": "Teleport",

@@ -1,6 +1,6 @@
 {
   "name": "@<%= npmScope %>/<%= name %>-es",
-  "version": "0.15.3",
+  "version": "0.16.0",
   "type": "module",
   "license": "MIT",
   "homepage": "https://github.com/pinser-metaverse/pinser-metaverse/tree/master/libs/<%= name %>",
@@ -22,6 +22,6 @@
     "url": "https://www.pinser.world"
   },
   "peerDependencies": {
-    "@pinser-metaverse/core": "0.15.3"
+    "@pinser-metaverse/core": "0.16.0"
   }
 }

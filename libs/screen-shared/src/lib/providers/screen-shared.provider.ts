@@ -73,13 +73,14 @@ export class ScreenSharedProvider extends MetaProvider {
     this.menuVisible = !this.menuVisible;
   }
 
-  async openDesktop(): Promise<void> {
+  async openDesktop(options: { curved?: boolean }): Promise<void> {
     this.menuVisible = false;
     this.streamId = v4();
     const positions = this.computeScreenPosition();
     this.playerProvider.addNetworkedElement('meta-screen-shared-desktop', {
       screenid: `${this.elementid}`,
       streamid: this.streamId,
+      curved: options.curved,
       ...positions,
     });
 
@@ -89,11 +90,12 @@ export class ScreenSharedProvider extends MetaProvider {
     (videoEl as any).srcObject = this.stream;
   }
 
-  async openWebcam(): Promise<void> {
+  async openWebcam(options: { curved?: boolean }): Promise<void> {
     this.menuVisible = false;
     const positions = this.computeScreenPosition();
     this.playerProvider.addNetworkedElement('meta-screen-shared-webcam', {
       screenid: `${this.elementid}`,
+      curved: options.curved,
       ...positions,
     });
 

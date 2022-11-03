@@ -30,7 +30,9 @@ export class MenuElement extends MetaElement {
         </template>
 
         <template slot="panel">
-          <meta-player-menu-planel-pins repository="https://assets.pinser-metaverse.com/pins/list.json"></meta-player-menu-planel-pins>
+          <meta-player-menu-planel-pins
+            repository="https://assets.pinser-metaverse.com/pins/list.json"
+          ></meta-player-menu-planel-pins>
         </template>
       </meta-menu>
     `;
