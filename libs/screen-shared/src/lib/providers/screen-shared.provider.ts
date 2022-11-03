@@ -73,15 +73,18 @@ export class ScreenSharedProvider extends MetaProvider {
     this.menuVisible = !this.menuVisible;
   }
 
-  async openDesktop(): Promise<void> {
+  async openDesktop(options: { curved?: boolean }): Promise<void> {
     this.menuVisible = false;
     this.streamId = v4();
-    const positions = this.computeScreenPosition();
-    this.playerProvider.addNetworkedElement('meta-screen-shared-desktop', {
-      screenid: `${this.elementid}`,
-      streamid: this.streamId,
-      ...positions,
-    });
+    const screenEl = this.playerProvider.addNetworkedElement(
+      'meta-screen-shared-desktop',
+      {
+        screenid: `${this.elementid}`,
+        streamid: this.streamId,
+        curved: options.curved,
+      }
+    );
+    this.setScreenPosition(screenEl);
 
     const videoEl = this.videoElement();
     this.stream = await navigator.mediaDevices.getDisplayMedia();
@@ -89,13 +92,16 @@ export class ScreenSharedProvider extends MetaProvider {
     (videoEl as any).srcObject = this.stream;
   }
 
-  async openWebcam(): Promise<void> {
+  async openWebcam(options: { curved?: boolean }): Promise<void> {
     this.menuVisible = false;
-    const positions = this.computeScreenPosition();
-    this.playerProvider.addNetworkedElement('meta-screen-shared-webcam', {
-      screenid: `${this.elementid}`,
-      ...positions,
-    });
+    const screenEl = this.playerProvider.addNetworkedElement(
+      'meta-screen-shared-webcam',
+      {
+        screenid: `${this.elementid}`,
+        curved: options.curved,
+      }
+    );
+    this.setScreenPosition(screenEl);
 
     const videoEl = this.videoElement();
     const stream = await navigator.mediaDevices.getUserMedia({
@@ -122,31 +128,13 @@ export class ScreenSharedProvider extends MetaProvider {
     );
   }
 
-  private computeScreenPosition(): {
-    position: string;
-    rotation: string;
-    scale: string;
-  } {
-    const position = new THREE.Vector3();
-    this.el.object3D.getWorldPosition(position);
-
-    const quaternion = new THREE.Quaternion();
-    const rotation = new THREE.Euler();
-    this.el.object3D.getWorldQuaternion(quaternion);
-    rotation.setFromQuaternion(quaternion);
-
+  private setScreenPosition(screenEl: Entity): void {
+    const matrix = this.el.object3D.matrixWorld.clone();
     const scale = new THREE.Vector3();
     this.el.object3D.getWorldScale(scale);
 
-    return {
-      position: `${position.x} ${position.y} ${position.z}`,
-      rotation: `${THREE.MathUtils.radToDeg(
-        rotation.x
-      )} ${THREE.MathUtils.radToDeg(rotation.y)}  ${THREE.MathUtils.radToDeg(
-        rotation.z
-      )}`,
-      scale: `${scale.x} ${scale.y} 1`,
-    };
+    screenEl.object3D.applyMatrix4(matrix);
+    screenEl.object3D.scale.set(scale.x, scale.y, scale.z);
   }
 
   private videoElement(): Element {

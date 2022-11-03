@@ -19,6 +19,9 @@ export class ShareScreenElement extends MetaElement {
   @property({ default: '#000000' })
   color!: string;
 
+  @property({ default: false })
+  curved!: boolean;
+
   @inject()
   screenSharedProvider!: ScreenSharedProvider;
 
@@ -41,12 +44,12 @@ export class ShareScreenElement extends MetaElement {
     this.screenSharedProvider.toggleMenu();
   }
 
-  private openDesktop(): void {
-    this.screenSharedProvider.openDesktop();
+  private openDesktop(options: { curved?: boolean } = {}): void {
+    this.screenSharedProvider.openDesktop(options);
   }
 
-  private openWebcam(): void {
-    this.screenSharedProvider.openWebcam();
+  private openWebcam(options: { curved?: boolean } = {}): void {
+    this.screenSharedProvider.openWebcam(options);
   }
 
   private stop(): void {
@@ -63,25 +66,32 @@ export class ShareScreenElement extends MetaElement {
       ${screenEl
         ? nothing
         : html`
-            <a-plane
-              color=${this.color}
-              width="1.6"
-              height="0.9"
-              material="side: front;"
-            ></a-plane>
+            <a-entity
+              material=${this.curved
+                ? `side: back; color: ${this.color};`
+                : `side: front; color: ${this.color};`}
+              geometry=${this.curved
+                ? `primitive: cylinder; openEnded: true; thetaLength: 46; thetaStart: 157; radius: 2; height: 0.9;`
+                : `primitive: plane; width: 1.6; height: 0.9;`}
+              position=${this.curved ? `0 0 2` : `0 0 0`}
+            ></a-entity>
           `}
       ${!this.screenSharedProvider.menuVisible || screenEl
         ? nothing
         : html`
             <meta-button
               content="Ecran"
-              position="-0.160 0.043 0.002"
-              @click=${() => this.openDesktop()}
+              position=${this.curved
+                ? `-0.160 0.043 0.005`
+                : `-0.160 0.043 0.002`}
+              @click=${() => this.openDesktop({ curved: this.curved })}
             ></meta-button>
             <meta-button
               content="Webcam"
-              position="-0.160 -0.059 0.002"
-              @click=${() => this.openWebcam()}
+              position=${this.curved
+                ? `-0.160 -0.059 0.005`
+                : `-0.160 -0.059 0.002`}
+              @click=${() => this.openWebcam({ curved: this.curved })}
             ></meta-button>
           `}
       ${!this.screenSharedProvider.menuVisible || !isMine
@@ -89,19 +99,22 @@ export class ShareScreenElement extends MetaElement {
         : html`
             <meta-button
               content="Stop"
-              position="-0.160 -0.051 0.002"
+              position=${this.curved
+                ? `-0.160 -0.051 0.005`
+                : `-0.160 -0.051 0.002`}
               @click=${() => this.stop()}
             ></meta-button>
           `}
-      <a-plane
+      <a-entity
         visible="false"
-        width="1.6"
-        height="0.9"
-        position="0 0 0.003"
+        material=${this.curved ? `side: back;` : `side: front;`}
+        geometry=${this.curved
+          ? `primitive: cylinder; openEnded: true; thetaLength: 46; thetaStart: 157; radius: 2; height: 0.9;`
+          : `primitive: plane; width: 1.6; height: 0.9;`}
+        position=${this.curved ? `0 0 2.003` : `0 0 0.003`}
         selectable
         @click=${() => this.toggleMenu()}
-      >
-      </a-plane>
+      ></a-entity>
     `;
   }
 }
