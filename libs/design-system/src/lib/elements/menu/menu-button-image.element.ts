@@ -6,7 +6,7 @@ import {
   state,
   TemplateResult,
 } from '@pinser-metaverse/core';
-import '../common/icon.element.ts';
+import '../common/icon.element';
 
 @customElement('meta-menu-button-image')
 export class MenuButtonImage extends MetaElement {

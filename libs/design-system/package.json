@@ -1,7 +1,6 @@
 {
   "name": "@pinser-metaverse/design-system",
   "version": "0.16.0",
-  "type": "module",
   "license": "MIT",
   "homepage": "https://github.com/pinser-metaverse/pinser-metaverse/tree/master/libs/design-system",
   "keywords": [
