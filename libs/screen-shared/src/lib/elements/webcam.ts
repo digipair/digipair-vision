@@ -1,9 +1,11 @@
 import {
   customElement,
+  Entity,
   html,
   MetaElement,
   property,
   TemplateResult,
+  THREE,
 } from '@pinser-metaverse/core';
 
 @customElement('meta-screen-shared-webcam')
@@ -13,6 +15,31 @@ export class ScreenSharedWebcamElement extends MetaElement {
 
   @property()
   curved!: boolean;
+
+  override init(): void {
+    setTimeout(() => this.initTexture(), 500);
+  }
+
+  private initTexture() {
+    if (!this.curved) {
+      return;
+    }
+
+    const map = (
+      (
+        (
+          this.el.querySelector(':scope > a-entity') as Entity
+        ).object3D.getObjectByProperty('type', 'Mesh') as THREE.Mesh
+      )?.material as THREE.MeshStandardMaterial
+    ).map;
+
+    if (!map) {
+      setTimeout(() => this.initTexture(), 500);
+      return;
+    }
+    map.wrapT = map.wrapS = THREE.RepeatWrapping;
+    map.repeat.set(-1, 1);
+  }
 
   override render(): TemplateResult {
     return html`
