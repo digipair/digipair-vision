@@ -1,90 +1,63 @@
-# @pinser-metaverse/observe
+# @pinser-metaverse
 
-@pinser-metaverse/observe is a lit-html library for to display observables like rxjs or redux.
+Pinser metaverse provide a simple way to create your own web metaverse or 3D web components like a simple HTML page.  
+Inspired from the very nice libraries [Polymer lit](https://lit.dev) and [A-Frame](https://aframe.io), you can create AR / VR / 3D elements on typescript classes like Angular/React/Lit.
 
-It tested with :
+[Go to @pinser-metaverse documentation](https://www.pinser-metaverse.com)
 
-- [rxjs](https://rxjs.dev/): Reactive Extensions Library for JavaScript
-- [lit](https://lit.dev/): Simple. Fast. Web Components.
-- [aframe-element](https://github.com/pinserworld/pinser/tree/master/libs/utils/aframe-element): Simple library for building fast, lightweight web components for 3D development.
+## Develop across all platforms
 
-Code inspired from https://lit.dev/docs/templates/custom-directives/
+<img alt="Develop across all platforms" src="./docs/assets/employee-desk.min.png" style="float: right; width: 17rem;"/>
 
-## Installation
+Pinser metaverse is compatible with :
 
-Use the package manager [npm](https://www.npmjs.com/package/@pinser-metaverse/observe) to install @pinser-metaverse/observe.
+- Mobile
+- Tablet
+- Desktop
+- VR/AR/XR heaset
 
-```bash
-npm install @pinser-metaverse/observe
-```
+## Compatible with several realities
 
-## Usage
+<img alt="Compatible with several realities" src="./docs/assets/boy-using-metaverse-tech.min.png" style="float: right; width: 17rem;"/>
 
-### Simple usage
+Your creation can be used on :
 
-```typescript
-import { observe } from '@pinser-metaverse/observe';
-import { of } from 'rxjs';
+- Desktop / Phone and tablet Screen
+- Virtual reality
+- Mixed Reality / Augmented Reality
 
-// ...
-title$ = of('Hello World');
+You want test it ? [try it now on your headset !](https://metaverse-bootstrap.onrender.com)
 
-render() {
-  return html`
-<h1>${observe(this.title$)}</h1>
-  `;
-}
-```
+## Complete toolbox set
 
-### With callback
+<img alt="Complete toolbox set" src="./docs/assets/labour-tool-box.min.png" style="float: right; width: 17rem;"/>
 
-```typescript
-import { observe } from '@pinser-metaverse/observe';
-import { of } from 'rxjs';
+Thanks to the fantastic open source libraries to propose :
 
-// ...
-list$ = of([
-  { title: 'todo 1' },
-  { title: 'todo 2' },
-]);
+- 3D editor - [AFrame](https://aframe.io)
+- Testing tool - [Jest](https://jestjs.io)
+- Build system - [nx](https://nx.dev)
+- Reactive web components - [lit-html](https://lit.dev)
 
-render() {
-  return html`
-<ul>
-  ${observe(this.list$, (list) => list.map((item) => html`
-    <li>${item.title}</li>
-  `))}
-</ul>
-  `;
-}
-```
+You can apply all modern web development good practices
 
-## Example
+## What next
 
-### Todo-list with rxjs
+Follow the section [Get started](get-started)
 
-- Demo: 
-https://pinser-metaverse-observe-demo.onrender.com/
-- Source code: 
-https://github.com/pinser-metaverse/pinser-metaverse/tree/master/apps/observe-demo/src/app/app.element.ts
+### Try it now
 
-![Todo-list with rxjs](./docs/assets/example-todolist.png)
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/pinser-metaverse/metaverse-boostrap/blob/master/apps/metaverse/src/lib/metaverse.space.ts)
 
+### Join us
 
-## Building
+[![Join us on Discord](./docs/assets/discord.png)](https://discord.gg/kCqF8xaMHJ)
 
-Run `nx build observe` to build the library.
+### Support
 
-## Running unit tests
+[![Github](./docs/assets/github.png)](https://github.com/pinser-metaverse/pinser-metaverse)
 
-Run `nx test observe` to execute the unit tests via [Jest](https://jestjs.io).
+[![stackoverflow](./docs/assets/stackoverflow.png)](https://stackoverflow.com/questions/tagged/pinser)
 
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
+> Don't hesitate to improve this documentation, any help will be amazing !  
+> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/pinser-metaverse/pinser-metaverse/blob/master/docs/README.md)

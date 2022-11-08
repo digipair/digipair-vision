@@ -1,7 +1,7 @@
 {
   "name": "@pinser-metaverse/teleport",
   "version": "0.0.0",
-  "type": "module",
+  "type": "commonjs",
   "license": "MIT",
   "homepage": "https://github.com/pinser-metaverse/pinser-metaverse/tree/master/libs/teleport",
   "keywords": [
@@ -22,7 +22,7 @@
     "url": "https://www.pinser.world"
   },
   "peerDependencies": {
-    "@pinser-metaverse/core": "0.16.2",
-    "@pinser-metaverse/player": "0.16.2"
+    "@pinser-metaverse/core": "0.17.2",
+    "@pinser-metaverse/player": "0.17.2"
   }
 }

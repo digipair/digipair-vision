@@ -1,151 +1,63 @@
 # @pinser-metaverse
 
-pinser-metaverse is a library inspired from the very nice library [Polymer lit](https://lit.dev/) to map [A-Frame](https://aframe.io/) AR / VR / 3D elements on typescript classes like Angular/React/Lit.  
-You can create simple, fast and reactive WebXR 3D / AR and VR scenes with all modern web development good practices.
+Pinser metaverse provide a simple way to create your own web metaverse or 3D web components like a simple HTML page.  
+Inspired from the very nice libraries [Polymer lit](https://lit.dev) and [A-Frame](https://aframe.io), you can create AR / VR / 3D elements on typescript classes like Angular/React/Lit.
 
-**[Get started !](./docs/get-started.md)**
+[Go to @pinser-metaverse documentation](https://www.pinser-metaverse.com)
 
-## Installation
+## Develop across all platforms
 
-Use the package manager [npm](https://www.npmjs.com/package/@pinser-metaverse/core) to install aframe-element.
+<img alt="Develop across all platforms" src="./docs/assets/employee-desk.min.png" style="float: right; width: 17rem;"/>
 
-```bash
-npm install @pinser-metaverse/core @pinser-metaverse/scene @pinser-metaverse/player
-```
+Pinser metaverse is compatible with :
 
-## Usage
+- Mobile
+- Tablet
+- Desktop
+- VR/AR/XR heaset
 
-### By component
+## Compatible with several realities
 
-```typescript
-import { customElement, MetaElement, html } from '@pinser-metaverse/core';
+<img alt="Compatible with several realities" src="./docs/assets/boy-using-metaverse-tech.min.png" style="float: right; width: 17rem;"/>
 
-@customElement('my-3d-element')
-exports My3dElement extends MetaElement {
-  render() {
-    return html`
-      <a-entity text="value: Hello World;"></a-entity>
-    `;
-  }
-}
-```
+Your creation can be used on :
 
-```html
-<meta-scene>
-  <template slot="scene">
-    <my-3d-element></my-3d-element>
-  </template>
-</meta-scene>
-```
+- Desktop / Phone and tablet Screen
+- Virtual reality
+- Mixed Reality / Augmented Reality
 
-### With parameters
+You want test it ? [try it now on your headset !](https://metaverse-bootstrap.onrender.com)
 
-```typescript
-import { customElement, MetaElement, html } from '@pinser-metaverse/core';
+## Complete toolbox set
 
-@customElement('my-text-element')
-exports MyTextElement extends MetaElement {
-  @property()
-  text: string;
+<img alt="Complete toolbox set" src="./docs/assets/labour-tool-box.min.png" style="float: right; width: 17rem;"/>
 
-  render() {
-    return html`
-      <a-entity text="value: ${this.text};"></a-entity>
-    `;
-  }
-}
-```
+Thanks to the fantastic open source libraries to propose :
 
-```html
-<meta-scene>
-  <template slot="scene">
-    <my-text-element text="Hello World"></my-text-element>
-  </template>
-</meta-scene>
-```
+- 3D editor - [AFrame](https://aframe.io)
+- Testing tool - [Jest](https://jestjs.io)
+- Build system - [nx](https://nx.dev)
+- Reactive web components - [lit-html](https://lit.dev)
 
-### By attribute
+You can apply all modern web development good practices
 
-```typescript
-import { customElement, MetaElement, html } from '@pinser-metaverse/core';
+## What next
 
-@customElement('my-text-element')
-exports MyTextElement extends MetaElement {
-  @property()
-  text: string;
+Follow the section [Get started](get-started)
 
-  render() {
-    return html`
-      <a-entity text="value: ${this.data.text};"></a-entity>
-    `;
-  }
-}
-```
+### Try it now
 
-```html
-<meta-scene>
-  <template slot="scene">
-    <a-entity my-text-element="text: Hello World;"></a-entity>
-  </template>
-</meta-scene>
-```
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/pinser-metaverse/metaverse-boostrap/blob/master/apps/metaverse/src/lib/metaverse.space.ts)
 
-### With an aframe hook
+### Join us
 
-```typescript
-import { customElement, MetaElement, html } from '@pinser-metaverse/core';
+[![Join us on Discord](./docs/assets/discord.png)](https://discord.gg/kCqF8xaMHJ)
 
-@customElement('my-3d-element')
-exports My3dElement extends MetaElement {
-  init() {
-    console.log('component initilized', this.el);
-  }
+### Support
 
-  render() {
-    return html`
-      <a-entity text="value: Hello World;"></a-entity>
-    `;
-  }
-}
-```
+[![Github](./docs/assets/github.png)](https://github.com/pinser-metaverse/pinser-metaverse)
 
-```html
-<meta-scene>
-  <template slot="scene">
-    <my-3d-element></my-3d-element>
-  </template>
-</meta-scene>
-```
+[![stackoverflow](./docs/assets/stackoverflow.png)](https://stackoverflow.com/questions/tagged/pinser)
 
-## Documentation
-
-- [Get started](./docs/get-started.md)
-
-## Example
-
-### Tictactoe
-
-- Demo: https://pinser-metaverse-demo.onrender.com
-- Source code: https://github.com/pinserworld/pinser-metaverse/blob/master/apps/demo/src/app/app.element.ts
-
-_Tips: You can open 2 tabs on the same browser to test multiplayer mode._
-
-![pinser-metaverse example tictactoe](./docs/assets/example-tictactoe.png)
-
-### Pinser storybook
-
-- Demo: https://pinser-widgets-storybook.onrender.com/
-
-The owner of the multiplayer game is the first to open the link (player yellow). Next users to open the demo are red.
-
-![Pinser storybook examples](./docs/assets/pinser-storybook.png)
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
+> Don't hesitate to improve this documentation, any help will be amazing !  
+> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/pinser-metaverse/pinser-metaverse/blob/master/docs/README.md)
