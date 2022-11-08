@@ -1,6 +1,6 @@
 {
   "name": "@pinser-metaverse/info-es",
-  "version": "0.16.1",
+  "version": "0.16.2",
   "type": "module",
   "license": "MIT",
   "homepage": "https://github.com/pinser-metaverse/pinser-metaverse/tree/master/libs/info",
@@ -22,6 +22,6 @@
     "url": "https://www.pinser.world"
   },
   "peerDependencies": {
-    "@pinser-metaverse/core": "0.16.1"
+    "@pinser-metaverse/core": "0.16.2"
   }
 }

@@ -238,8 +238,8 @@ export class PlayerProvider extends MetaProvider {
         devices.filter(({ kind }) => kind === 'audioinput').length > 0;
       const video =
         devices.filter(({ kind }) => kind === 'videoinput').length > 0;
-
-      sceneEl.setAttribute('networked-scene', {
+      
+        sceneEl.setAttribute('networked-scene', {
         serverURL: this.networked.serverURL,
         app: 'pinser-metaverse',
         room: sessionFormated.replace(/-/g, '').toLowerCase(),
@@ -255,12 +255,21 @@ export class PlayerProvider extends MetaProvider {
   stopSession() {
     const sceneEl = this.el.sceneEl as Entity;
 
-    sceneEl.removeAttribute('networked-scene');
+    sceneEl.querySelectorAll(':scope > [networked]').forEach((el) => {
+      if (NAF.utils.getCreator(el) === NAF.clientId) {
+        if (NAF.connection.isConnected()) {
+          NAF.utils.takeOwnership(el);
+        }
+        el.remove();
+      }
+    });
 
     sceneEl.querySelectorAll('[networked]').forEach((el) => {
-      const { template } = el.getAttribute('networked') as any;
-      el.removeAttribute('networked');
-      el.setAttribute('networked', { template } as any);
+      if (NAF.connection.isConnected()) {
+        NAF.utils.takeOwnership(el);
+      }
     });
+
+    sceneEl.removeAttribute('networked-scene');
   }
 }
