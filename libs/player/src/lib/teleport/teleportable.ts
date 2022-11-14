@@ -5,7 +5,7 @@ import {
   MetaElement,
   property,
 } from '@pinser-metaverse/core';
-import { PlayerProvider } from '../providers/player.provider';
+import { PlayerProvider } from '../player/player.provider';
 
 @customElement('meta-teleportable')
 export class TeleportableElement extends MetaElement {

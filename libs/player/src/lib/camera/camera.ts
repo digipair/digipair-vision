@@ -6,7 +6,7 @@ import {
   property,
   TemplateResult,
 } from '@pinser-metaverse/core';
-import './toolbar';
+import '../toolbar/toolbar';
 
 @customElement('meta-player-camera')
 export class PlayerCameraElement extends MetaElement {

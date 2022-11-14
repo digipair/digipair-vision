@@ -12,16 +12,16 @@ import {
 } from '@pinser-metaverse/core';
 import 'aframe-blink-controls';
 import 'super-hands';
-import { EventTeleport } from '../interfaces/event-teleport';
-import { PlayerProvider } from '../providers/player.provider';
+import { EventTeleport } from '../teleport/event-teleport';
+import { PlayerProvider } from './player.provider';
 import '../utils/Geometry.js';
 import '../utils/look-controls-custom.js';
-import './avatar';
-import './camera';
-import './element';
-import './menu';
-import './teleportable-cursor';
-import './toolbar';
+import '../avatar/avatar';
+import '../camera/camera';
+import '../pins/element';
+import '../menu/menu.element';
+import '../teleport/teleportable-cursor';
+import '../toolbar/toolbar';
 
 declare const NAF: any;
 

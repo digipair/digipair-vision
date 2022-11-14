@@ -8,7 +8,7 @@ export class MetaElement {
   static __NETWORKED__: boolean;
   static __ELEMENT_NAME__: string;
   static __INTERNAL_PROPERTIES__: string[];
-  
+
   static schema: Schema;
   static dependencies: string[];
   static multiple: boolean;
@@ -66,7 +66,11 @@ export class MetaElement {
 
   requestUpdate(): void {
     if (!this.el) return;
-    render(this.render(), this.el);
+
+    const template = this.render();
+    if (template) {
+      render(template, this.el);
+    }
   }
 
   render(): TemplateResult | null {
