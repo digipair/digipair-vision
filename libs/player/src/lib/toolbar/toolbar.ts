@@ -6,7 +6,7 @@ import {
   TemplateResult,
 } from '@pinser-metaverse/core';
 import '@pinser-metaverse/design-system';
-import { PlayerProvider } from '../providers/player.provider';
+import { PlayerProvider } from '../player/player.provider';
 import './toolbar-button';
 
 @customElement('meta-player-toolbar')

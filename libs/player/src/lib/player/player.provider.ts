@@ -5,7 +5,7 @@ import {
   state,
   THREE,
 } from '@pinser-metaverse/core';
-import { MetaCursor } from '../interfaces/cursor.interface';
+import { MetaCursor } from './cursor.interface';
 
 @injectable()
 export class PlayerProvider extends MetaProvider {
@@ -121,6 +121,7 @@ export class PlayerProvider extends MetaProvider {
     id: string | null = null,
     options: {
       editable?: boolean;
+      name?: string;
       shape?: string;
       dynamic?: boolean;
       import?: string;
@@ -131,14 +132,16 @@ export class PlayerProvider extends MetaProvider {
     el.setAttribute('networked', 'template: #element-template');
     el.setAttribute(
       'meta-element',
-      `element: ${element}; import: ${options.import || ''}; attributes: ${btoa(
-        JSON.stringify({
-          ...attributes,
-          position: undefined,
-          rotation: undefined,
-          scale: undefined,
-        })
-      )}`
+      `element: ${JSON.stringify(element)}; attributes: ${JSON.stringify(
+        btoa(
+          JSON.stringify({
+            ...attributes,
+            position: undefined,
+            rotation: undefined,
+            scale: undefined,
+          })
+        )
+      )}; options: ${JSON.stringify(btoa(JSON.stringify(options)))};`
     );
 
     if (id) {
@@ -157,39 +160,19 @@ export class PlayerProvider extends MetaProvider {
       el.setAttribute('scale', attributes['scale']);
     }
 
-    if (options.editable) {
-      el.setAttribute('editable', '');
-      el.setAttribute('grabbable', '');
-      el.setAttribute('stretchable', '');
-      el.setAttribute(
-        'body',
-        options.dynamic
-          ? 'type: dynamic; shape: none;'
-          : 'type: static; shape: none;'
-      );
-      el.setAttribute('shape', options.shape);
-      el.setAttribute('collision-filter', 'collidesWith: hand, surface;');
-
-      if (!options.dynamic) {
-        el.addEventListener('grab-start', () => {
-          el.setAttribute('body', 'type', 'dynamic');
-        });
-
-        el.addEventListener('grab-end', () => {
-          el.setAttribute('body', 'type', 'static');
-        });
-      }
-    }
-
     this.el.sceneEl?.appendChild(el);
 
     return el;
   }
 
-  removeNetworkedElement(el: Entity) {
+  takeOwnership(el: Element): void {
     if (NAF && NAF.connection.isConnected() && !NAF.utils.isMine(el)) {
       NAF.utils.takeOwnership(el);
     }
+  }
+
+  removeNetworkedElement(el: Entity) {
+    this.takeOwnership(el);
     el.remove();
   }
 
@@ -238,8 +221,8 @@ export class PlayerProvider extends MetaProvider {
         devices.filter(({ kind }) => kind === 'audioinput').length > 0;
       const video =
         devices.filter(({ kind }) => kind === 'videoinput').length > 0;
-      
-        sceneEl.setAttribute('networked-scene', {
+
+      sceneEl.setAttribute('networked-scene', {
         serverURL: this.networked.serverURL,
         app: 'pinser-metaverse',
         room: sessionFormated.replace(/-/g, '').toLowerCase(),
@@ -257,17 +240,13 @@ export class PlayerProvider extends MetaProvider {
 
     sceneEl.querySelectorAll(':scope > [networked]').forEach((el) => {
       if (NAF.utils.getCreator(el) === NAF.clientId) {
-        if (NAF.connection.isConnected()) {
-          NAF.utils.takeOwnership(el);
-        }
+        this.takeOwnership(el);
         el.remove();
       }
     });
 
     sceneEl.querySelectorAll('[networked]').forEach((el) => {
-      if (NAF.connection.isConnected()) {
-        NAF.utils.takeOwnership(el);
-      }
+      this.takeOwnership(el);
     });
 
     sceneEl.removeAttribute('networked-scene');
