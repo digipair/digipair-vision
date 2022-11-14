@@ -8,7 +8,7 @@ import {
   property,
   state,
 } from '@pinser-metaverse/core';
-import { PlayerProvider } from '../providers/player.provider';
+import { PlayerProvider } from '../player/player.provider';
 
 @customElement('meta-teleportable-cursor')
 export class TeleportableCursorElement extends MetaElement {

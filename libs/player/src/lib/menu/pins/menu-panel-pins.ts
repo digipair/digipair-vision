@@ -8,9 +8,9 @@ import {
   TemplateResult,
 } from '@pinser-metaverse/core';
 import '@pinser-metaverse/design-system';
-import { MetaPins } from '../interfaces/pins.interface';
-import { PlayerProvider } from '../providers/player.provider';
-import './add-pins-cursor';
+import { MetaPins } from '../../pins/pins.interface';
+import { PlayerProvider } from '../../player/player.provider';
+import '../../pins/add-pins-cursor';
 
 @customElement('meta-player-menu-planel-pins')
 export class MenuPanelPinsElement extends MetaElement {
@@ -26,7 +26,7 @@ export class MenuPanelPinsElement extends MetaElement {
   private add(pins: MetaPins): void {
     this.playerProvider.toggleMenu();
     this.playerProvider.startCursor({
-      component: 'meta-player-add-pins-cursor',
+      component: 'meta-player-menu-add-pins-cursor',
       data: pins,
     });
   }
@@ -42,7 +42,7 @@ export class MenuPanelPinsElement extends MetaElement {
 
   override render(): TemplateResult {
     return html`
-      <meta-menu-panel icon="apps" title="Pin's">
+      <meta-menu-panel icon="widgets" title="Pin's">
         ${this.pins.map(
           (pin, index) => html`
             <meta-menu-button-image
