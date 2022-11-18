@@ -2,7 +2,7 @@ const { terser } = require('rollup-plugin-terser');
 
 function getRollupOptions(options) {
   const extraGlobals = {};
-  const bundled = ['uuid', 'md5'];
+  const bundled = ['md5'];
 
   return {
     ...options,

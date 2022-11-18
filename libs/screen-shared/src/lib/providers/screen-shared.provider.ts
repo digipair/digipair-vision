@@ -8,7 +8,6 @@ import {
 } from '@pinser-metaverse/core';
 import { PlayerProvider } from '@pinser-metaverse/player';
 import * as md5 from 'md5';
-import { v4 } from 'uuid';
 
 function getPathTo(element: Element, root: Element): string {
   if (element.id !== '') return 'id("' + element.id + '")';
@@ -75,7 +74,7 @@ export class ScreenSharedProvider extends MetaProvider {
 
   async openDesktop(options: { curved?: boolean }): Promise<void> {
     this.menuVisible = false;
-    this.streamId = v4();
+    this.streamId = THREE.MathUtils.generateUUID();
     const screenEl = this.playerProvider.addNetworkedElement(
       'meta-screen-shared-desktop',
       {

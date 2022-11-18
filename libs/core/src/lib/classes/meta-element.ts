@@ -15,9 +15,9 @@ export class MetaElement {
   static mappings: unknown;
 
   __AFRAME_INSTANCE__!: Component;
-  __SUBSCRIPTIONS__: subscription[] = [];
+  __SUBSCRIPTIONS__!: subscription[];
 
-  init(data?: unknown): void {}
+  init(): void {}
   pause(): void {}
   play(): void {}
   remove(): void {}

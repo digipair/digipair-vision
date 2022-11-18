@@ -28,7 +28,8 @@
       "@pinser-metaverse/router": ["libs/router/src/index.ts"],
       "@pinser-metaverse/scene": ["libs/scene/src/index.ts"],
       "@pinser-metaverse/screen-shared": ["libs/screen-shared/src/index.ts"],
-      "@pinser-metaverse/teleport": ["libs/teleport/src/index.ts"]
+      "@pinser-metaverse/teleport": ["libs/teleport/src/index.ts"],
+      "@pinser-metaverse/html": ["libs/html/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

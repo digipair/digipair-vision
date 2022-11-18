@@ -1,8 +1,8 @@
 import {
-  customLitElement,
+  customHtmlElement,
   html,
-  LitElement,
-  propertyLit,
+  MetaHtmlElement,
+  propertyHtml,
   TemplateResult,
 } from '@pinser-metaverse/core';
 import 'aframe-extras';
@@ -12,27 +12,24 @@ import 'aframe-rounded';
 import 'networked-aframe';
 import './scene-container';
 
-@customLitElement('meta-scene')
-export class SceneElement extends LitElement {
-  @propertyLit()
+@customHtmlElement('meta-scene')
+export class SceneElement extends MetaHtmlElement {
+  @propertyHtml()
   private session!: string;
 
-  @propertyLit()
+  @propertyHtml()
   private server = 'https://networked.pinser-metaverse.com';
 
-  @propertyLit()
+  @propertyHtml()
   private adapter = 'easyrtc';
 
-  @propertyLit({ type: Boolean })
+  @propertyHtml({ type: Boolean })
   private development = false;
-
-  protected override createRenderRoot(): Element | ShadowRoot {
-    return this;
-  }
 
   override render(): TemplateResult {
     return html`
       <a-scene
+        keyboard-shortcuts="enterVR: false"
         physics=${`debug: ${this.development}; driver: local;`}
         ?debug=${this.development}
         ar-hit-test="footprintDepth: 1;"

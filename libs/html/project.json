@@ -1,0 +1,99 @@
+{
+  "$schema": "..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
+  "sourceRoot": "libs/html/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/html",
+        "main": "libs/html/src/index.ts",
+        "tsConfig": "libs/html/tsconfig.lib.json",
+        "assets": ["libs/html/*.md"]
+      }
+    },
+    "build-es": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "project": "libs/html/package.esm.json",
+        "outputPath": "dist/libs/html-es",
+        "compiler": "swc",
+        "entryFile": "libs/html/src/index.ts",
+        "tsConfig": "libs/html/tsconfig.lib.json",
+        "rollupConfig": ["libs/html/rollup.config.cjs"],
+        "assets": [
+          {
+            "glob": "libs/html/*.md",
+            "input": ".",
+            "output": "."
+          },
+          {
+            "glob": "libs/html/src/index.html",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      },
+      "configurations": {
+        "serve": {
+          "watch": true,
+          "assets": []
+        }
+      }
+    },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "node tools/scripts/publish.mjs html {args.ver} {args.tag}"
+      },
+      "dependsOn": [
+        {
+          "projects": "self",
+          "target": "build"
+        }
+      ]
+    },
+    "publish-es": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "node tools/scripts/publish-es.mjs html {args.ver} {args.tag}"
+      },
+      "dependsOn": [
+        {
+          "projects": "self",
+          "target": "build-es"
+        }
+      ]
+    },
+    "serve": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "npm-run-all --parallel \"serve ./dist/libs/html-es\" \"nx run html:build-es:serve\""
+      },
+      "dependsOn": [
+        {
+          "projects": "self",
+          "target": "build-es"
+        }
+      ]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/html/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/html"],
+      "options": {
+        "jestConfig": "libs/html/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["html"]
+}
