@@ -12,16 +12,16 @@ import {
 } from '@pinser-metaverse/core';
 import 'aframe-blink-controls';
 import 'super-hands';
-import { EventTeleport } from '../teleport/event-teleport';
-import { PlayerProvider } from './player.provider';
-import '../utils/Geometry.js';
-import '../utils/look-controls-custom.js';
 import '../avatar/avatar';
 import '../camera/camera';
-import '../pins/element';
 import '../menu/menu.element';
+import '../pins/element';
+import { EventTeleport } from '../teleport/event-teleport';
 import '../teleport/teleportable-cursor';
 import '../toolbar/toolbar';
+import '../utils/Geometry.js';
+import '../utils/look-controls-custom.js';
+import { PlayerProvider } from './player.provider';
 
 declare const NAF: any;
 
@@ -197,7 +197,7 @@ export class PlayerElement extends MetaElement {
           networked="template: #avatar-template;"
         >
           <a-entity
-            raycaster="objects: [selectable];"
+            raycaster="objects: [selectable], .vr-interactable, .collidable;"
             cursor="rayOrigin: mouse; fuse: false;"
           ></a-entity>
           ${!templateCamera ? this.defaultCamera() : unsafeHTML(templateCamera)}
@@ -223,7 +223,7 @@ export class PlayerElement extends MetaElement {
                 hand-controls="hand: left;"
                 laser-controls="hand: left;"
                 blink-controls="cameraRig: [player]; teleportOrigin: [camera]; collisionEntities: [teleportable]; snapTurn: false;"
-                raycaster="objects: [selectable];"
+                raycaster="objects: [selectable], .vr-interactable, .collidable;"
                 networked="template: #left-hand-template; attachTemplateToLocal: false;"
               >
                 ${!templateHandLeft
@@ -247,7 +247,7 @@ export class PlayerElement extends MetaElement {
                 hand-controls="hand: right;"
                 laser-controls="hand: right;"
                 blink-controls="cameraRig: [player]; teleportOrigin: [camera]; collisionEntities: [teleportable]; snapTurn: false;"
-                raycaster="objects: [selectable];"
+                raycaster="objects: [selectable], .vr-interactable, .collidable;"
                 networked="template: #right-hand-template; attachTemplateToLocal: false;"
               >
                 ${!templateHandRight

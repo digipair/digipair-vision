@@ -28,6 +28,7 @@ export const inject = () => (target: MetaProvider, property: string) => {
           this.requestUpdate();
         };
         provider.el.addEventListener('__META_UPDATE__', listener);
+        this.__SUBSCRIPTIONS__ = this.__SUBSCRIPTIONS__ || [];
         this.__SUBSCRIPTIONS__.push({
           el: provider.el,
           type: '__META_UPDATE__',

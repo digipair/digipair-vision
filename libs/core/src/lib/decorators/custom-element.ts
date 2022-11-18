@@ -2,6 +2,7 @@ import { Component, SinglePropertySchema } from 'aframe';
 import { MetaElement } from '../classes/meta-element';
 import { MetaProvider } from '../classes/meta-provider';
 import '../components/networked-element';
+import { subscription } from '../interfaces/subscription';
 import { providers } from '../stores/providers';
 
 const { registerComponent, registerPrimitive } = AFRAME;
@@ -50,10 +51,10 @@ export const customElement =
       get multiple() {
         return ElementClass.multiple;
       },
-      init: function (data?: unknown): void {
+      init: function (): void {
         // defer init for providers
         setTimeout(() => {
-          getInstance(this as unknown as Component).init(data);
+          getInstance(this as unknown as Component).init();
           this.__META_INITIALIZED__ = true;
           getInstance(this as unknown as Component).requestUpdate();
         }, 1);
@@ -65,6 +66,11 @@ export const customElement =
         getInstance(this as unknown as Component).play();
       },
       remove: function (): void {
+        const __SUBSCRIPTIONS__ = ((this as any).__SUBSCRIPTIONS__ ||
+          []) as subscription[];
+        __SUBSCRIPTIONS__.forEach(({ el, type, listener }) => {
+          el.removeEventListener(type, listener);
+        });
         getInstance(this as unknown as Component).remove();
         instances.delete(this as unknown as Component);
       },

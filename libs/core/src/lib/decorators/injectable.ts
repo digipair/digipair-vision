@@ -50,8 +50,8 @@ export const injectable =
       get multiple() {
         return ElementClass.multiple;
       },
-      init: function (data?: unknown): void {
-        getInstance(this as Component).init(data);
+      init: function (): void {
+        getInstance(this as Component).init();
       },
       pause: function (): void {
         getInstance(this as Component).pause();

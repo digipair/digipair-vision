@@ -15,6 +15,7 @@
     "router": "libs/router",
     "scene": "libs/scene",
     "screen-shared": "libs/screen-shared",
-    "teleport": "libs/teleport"
+    "teleport": "libs/teleport",
+    "html": "libs/html"
   }
 }
