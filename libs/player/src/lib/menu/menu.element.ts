@@ -15,14 +15,8 @@ import { MenuProvider } from './menu.provider';
 })
 export class MenuElement extends MetaElement {
   private defaultMenu(): TemplateResult {
-    const xrMode =
-      this.el.sceneEl?.is('vr-mode') || this.el.sceneEl?.is('ar-mode');
-
     return html`
-      <meta-menu
-        rotation=${xrMode ? `-10 0 0` : `0 0 0`}
-        position=${xrMode ? `-0.53 0 -0.5` : `-0.53 0 -1`}
-      >
+      <meta-menu>
         <template slot="menu">
           <meta-player-menu-side></meta-menu-side>
         </template>
