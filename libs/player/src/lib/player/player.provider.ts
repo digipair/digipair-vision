@@ -109,7 +109,7 @@ export class PlayerProvider extends MetaProvider {
     const rotationCamera = cameraEl.getAttribute('rotation');
 
     this.playermenu = {
-      position: `${position.x} ${position.y - 0.29} ${position.z}`,
+      position: `${position.x} ${position.y} ${position.z}`,
       rotation: `0 ${rotationPlayer.y + rotationCamera.y} 0`,
       visible: true,
     };

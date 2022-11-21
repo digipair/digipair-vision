@@ -6,6 +6,7 @@ import {
   TemplateResult,
 } from '@pinser-metaverse/core';
 import 'aframe-extras';
+import 'aframe-gradient-sky';
 import 'aframe-physics-extras';
 import 'aframe-physics-system/dist/aframe-physics-system.js';
 import 'aframe-rounded';
@@ -21,6 +22,9 @@ export class SceneElement extends MetaHtmlElement {
   private server = 'https://networked.pinser-metaverse.com';
 
   @propertyHtml()
+  private draco = 'https://assets.pinser-metaverse.com/draco/';
+
+  @propertyHtml()
   private adapter = 'easyrtc';
 
   @propertyHtml({ type: Boolean })
@@ -33,6 +37,7 @@ export class SceneElement extends MetaHtmlElement {
         physics=${`debug: ${this.development}; driver: local;`}
         ?debug=${this.development}
         ar-hit-test="footprintDepth: 1;"
+        gltf-model=${`dracoDecoderPath: ${this.draco};`}
       >
         <meta-scene-container
           session=${this.session}

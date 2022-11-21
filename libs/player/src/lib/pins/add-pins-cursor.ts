@@ -57,6 +57,7 @@ export class AddPinsCursorElement extends MetaElement {
         name: cursorData.name,
         shape: cursorData.shape,
         dynamic: cursorData.dynamic,
+        import: cursorData.import,
       }
     );
 

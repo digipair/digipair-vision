@@ -4,6 +4,7 @@ function getRollupOptions(options) {
   const extraGlobals = {};
   const bundled = [
     'aframe-extras',
+    'aframe-gradient-sky',
     'aframe-physics-extras',
     'aframe-physics-system/dist/aframe-physics-system.js',
     'aframe-rounded',

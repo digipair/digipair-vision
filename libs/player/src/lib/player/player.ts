@@ -75,17 +75,24 @@ export class PlayerElement extends MetaElement {
     `;
   }
 
-  private defaultHandLeft(): typeof nothing {
-    return nothing;
-  }
-
-  private defaultHandRight(): TemplateResult {
+  private defaultHandLeft(): TemplateResult {
     return html`
+      ${!this.playerProvider.playermenu.visible
+        ? nothing
+        : html`<meta-player-menu
+            scale="0.5 0.5 1"
+            position="0.06 0.30 0.10"
+            rotation="0 90 -90"
+          ></meta-player-menu>`}
       <meta-player-toolbar
-        position="0 -0.03 0.15"
-        rotation="0 -90 90"
+        position="0.04 0.08 0.16"
+        rotation="0 90 -90"
       ></meta-player-toolbar>
     `;
+  }
+
+  private defaultHandRight(): typeof nothing {
+    return nothing;
   }
 
   private readonly entervr = () => {
@@ -181,12 +188,14 @@ export class PlayerElement extends MetaElement {
         : html`<meta-teleportable-cursor
             vrmode=${this.vrmode}
           ></meta-teleportable-cursor>`}
-      ${!this.playerProvider.playermenu.visible
+      ${this.vrmode || !this.playerProvider.playermenu.visible
         ? nothing
-        : html`<meta-player-menu
+        : html`<a-entity
             position=${this.playerProvider.playermenu.position}
             rotation=${this.playerProvider.playermenu.rotation}
-          ></meta-player-menu>`}
+          >
+            <meta-player-menu position="-0.56 -0.27 -1"></meta-player-menu>
+          </a-entity>`}
 
       <a-entity player networked="template: #player-template;">
         <a-entity
