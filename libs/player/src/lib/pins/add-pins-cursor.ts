@@ -53,7 +53,7 @@ export class AddPinsCursorElement extends MetaElement {
       },
       null,
       {
-        editable: true,
+        editable: cursorData.editable,
         name: cursorData.name,
         shape: cursorData.shape,
         dynamic: cursorData.dynamic,

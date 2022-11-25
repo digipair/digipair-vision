@@ -26,19 +26,6 @@
     "attributes": { "position": "0 0.45 0.001", "curved": true }
   },
   {
-    "name": "Teleport",
-    "image": "https://assets.pinser-metaverse.com/pins/images/teleport.jpg",
-    "component": "meta-teleport",
-    "import": "@pinser-metaverse/teleport",
-    "dynamic": false,
-    "placeholder": {
-      "geometry": "primitive: cylinder; height: 0.6; radius: 0.2;",
-      "position": "0 0.3 0"
-    },
-    "shape": "shape: box; halfExtents: 0.2 0.3 0.2; offset: 0 0.3 0;",
-    "attributes": { "position": "0 0.001 0" }
-  },
-  {
     "name": "Man",
     "image": "https://assets.pinser-metaverse.com/pins/images/man.jpg",
     "component": "meta-gltf",

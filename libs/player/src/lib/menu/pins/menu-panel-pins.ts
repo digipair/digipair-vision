@@ -8,9 +8,9 @@ import {
   TemplateResult,
 } from '@pinser-metaverse/core';
 import '@pinser-metaverse/design-system';
+import '../../pins/add-pins-cursor';
 import { MetaPins } from '../../pins/pins.interface';
 import { PlayerProvider } from '../../player/player.provider';
-import '../../pins/add-pins-cursor';
 
 @customElement('meta-player-menu-planel-pins')
 export class MenuPanelPinsElement extends MetaElement {
@@ -27,7 +27,7 @@ export class MenuPanelPinsElement extends MetaElement {
     this.playerProvider.toggleMenu();
     this.playerProvider.startCursor({
       component: 'meta-player-menu-add-pins-cursor',
-      data: pins,
+      data: { editable: true, ...pins },
     });
   }
 

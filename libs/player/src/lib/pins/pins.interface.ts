@@ -7,6 +7,7 @@ export interface MetaPins {
     position?: string;
     rotation?: string;
   };
+  editable?: boolean;
   import?: string;
   dynamic?: boolean;
   shape?: string;
