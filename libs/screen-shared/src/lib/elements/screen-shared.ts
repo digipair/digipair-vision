@@ -12,6 +12,8 @@ import { ScreenSharedProvider } from '../providers/screen-shared.provider';
 import './desktop';
 import './webcam';
 
+declare const NAF: any;
+
 @customElement('meta-screen-shared', {
   providers: [ScreenSharedProvider],
 })

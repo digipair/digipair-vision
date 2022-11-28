@@ -1,1 +1,4 @@
-import './app/app.element';
+import 'aframe';
+
+import '@pinser-metaverse/scene';
+import './app/pinser.metaverse';

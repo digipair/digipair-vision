@@ -9,6 +9,8 @@ import {
 import { PlayerProvider } from '@pinser-metaverse/player';
 import * as md5 from 'md5';
 
+declare const NAF: any;
+
 function getPathTo(element: Element, root: Element): string {
   if (element.id !== '') return 'id("' + element.id + '")';
   if (element === root) return element.tagName;

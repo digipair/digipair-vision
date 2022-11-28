@@ -68,7 +68,12 @@ AFRAME.registerComponent('networked-element', {
 
       NAF?.schemas.add({
         template: `#${templateId}`,
-        components: ['position', 'rotation', 'scale', ...this.data.networkedElements],
+        components: [
+          'position',
+          'rotation',
+          'scale',
+          ...this.data.networkedElements,
+        ],
       });
     }
 

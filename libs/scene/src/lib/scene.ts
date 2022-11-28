@@ -30,11 +30,14 @@ export class SceneElement extends MetaHtmlElement {
   @propertyHtml({ type: Boolean })
   private development = false;
 
+  @propertyHtml({ type: Boolean })
+  private debugphysics = false;
+
   override render(): TemplateResult {
     return html`
       <a-scene
         keyboard-shortcuts="enterVR: false"
-        physics=${`debug: ${this.development}; driver: local;`}
+        physics=${`debug: ${this.debugphysics}; driver: local;`}
         ?debug=${this.development}
         ar-hit-test="footprintDepth: 1;"
         gltf-model=${`dracoDecoderPath: ${this.draco};`}

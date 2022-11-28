@@ -55,7 +55,7 @@ export class GltfElement extends MetaElement {
     return new Promise((resolve) => {
       let animationsEl: Entity | null | undefined =
         this.el.sceneEl?.querySelector(
-          `:scope > [data-meta-gltf][url="${animationsModel}"]`
+          `:scope > [data-meta-gltf-animations][url="${animationsModel}"]`
         );
 
       if (!animationsEl) {

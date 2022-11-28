@@ -7,6 +7,8 @@ import {
 } from '@pinser-metaverse/core';
 import { MetaCursor } from './cursor.interface';
 
+declare const NAF: any;
+
 @injectable()
 export class PlayerProvider extends MetaProvider {
   @state()

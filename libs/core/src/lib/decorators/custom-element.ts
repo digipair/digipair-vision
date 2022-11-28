@@ -5,8 +5,6 @@ import '../components/networked-element';
 import { subscription } from '../interfaces/subscription';
 import { providers } from '../stores/providers';
 
-const { registerComponent, registerPrimitive } = AFRAME;
-
 export const customElement =
   <P extends typeof MetaProvider>(
     elementName: string,
@@ -96,7 +94,7 @@ export const customElement =
       },
     };
 
-    registerComponent(elementName, aFrameElementDefinition);
+    AFRAME.registerComponent(elementName, aFrameElementDefinition);
 
     const networkedProviders = options.providers
       .filter((provider) => provider.__NETWORKED__)
@@ -113,7 +111,7 @@ export const customElement =
       }));
 
     if (options.networked || networkedProviders.length > 0) {
-      registerPrimitive(`${elementName}`, {
+      AFRAME.registerPrimitive(`${elementName}`, {
         defaultComponents: {
           'networked-element': {
             element: elementName,
@@ -147,7 +145,7 @@ export const customElement =
         },
       });
     } else {
-      registerPrimitive(`${elementName}`, {
+      AFRAME.registerPrimitive(`${elementName}`, {
         defaultComponents: {
           [elementName]: {},
           ...Object.fromEntries(

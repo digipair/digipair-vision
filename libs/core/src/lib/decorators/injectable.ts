@@ -2,7 +2,7 @@ import { Component } from 'aframe';
 import { MetaProvider } from '../classes/meta-provider';
 import { providers } from '../stores/providers';
 
-const { registerComponent, THREE } = AFRAME;
+const THREE = AFRAME.THREE;
 
 export const injectable =
   (_options?: { networked?: boolean }) =>
@@ -84,5 +84,5 @@ export const injectable =
       },
     };
 
-    registerComponent(elementName, aFrameElementDefinition);
+    AFRAME.registerComponent(elementName, aFrameElementDefinition);
   };
