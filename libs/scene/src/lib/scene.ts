@@ -34,7 +34,7 @@ export class SceneElement extends MetaHtmlElement {
     return html`
       <a-scene
         keyboard-shortcuts="enterVR: false"
-        physics=${`debug: ${this.development}; driver: local;`}
+        physics=${`driver: local;`}
         ?debug=${this.development}
         ar-hit-test="footprintDepth: 1;"
         gltf-model=${`dracoDecoderPath: ${this.draco};`}

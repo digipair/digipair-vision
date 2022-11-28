@@ -1,3 +1,5 @@
+import { registerComponent } from 'aframe';
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare const NAF: any;
 
@@ -31,7 +33,7 @@ function kebabCase(text: string) {
     .toLowerCase();
 }
 
-AFRAME.registerComponent('networked-element', {
+registerComponent('networked-element', {
   schema: {
     element: {
       type: 'string',
@@ -68,7 +70,12 @@ AFRAME.registerComponent('networked-element', {
 
       NAF?.schemas.add({
         template: `#${templateId}`,
-        components: ['position', 'rotation', 'scale', ...this.data.networkedElements],
+        components: [
+          'position',
+          'rotation',
+          'scale',
+          ...this.data.networkedElements,
+        ],
       });
     }
 

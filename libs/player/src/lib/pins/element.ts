@@ -9,6 +9,8 @@ import {
 } from '@pinser-metaverse/core';
 import { PlayerProvider } from '../player/player.provider';
 
+declare const NAF: any;
+
 @customElement('meta-element')
 export class ElementElement extends MetaElement {
   @state()
@@ -25,20 +27,15 @@ export class ElementElement extends MetaElement {
 
   private template!: string;
 
-  private updateOptions(options: { dynamic: boolean }): void {
-    const component = this.el.components['grabbable'] as any;
+  private updateOptions(editing: boolean): void {
+    const options = JSON.parse(atob(this.options));
     const type = 'static';
 
     if (!options.dynamic && this.el.getAttribute('body').type !== type) {
       this.el.setAttribute('body', { type });
     }
 
-    setTimeout(() => {
-      const old = JSON.parse(atob(this.options));
-      const options = { editing: component['grabbed'] };
-
-      this.options = btoa(JSON.stringify({ ...old, ...options }));
-    }, 1);
+    this.options = btoa(JSON.stringify({ ...options, editing }));
   }
 
   override init(): void {
@@ -52,10 +49,10 @@ export class ElementElement extends MetaElement {
       this.el.setAttribute('editable', '');
       this.el.addEventListener('grab-start', () => {
         this.playerProvider.takeOwnership(this.el);
-        this.updateOptions(options);
+        this.updateOptions(true);
       });
       this.el.addEventListener('grab-end', () => {
-        this.updateOptions(options);
+        this.updateOptions(false);
       });
     }
   }
