@@ -2,6 +2,7 @@ import { html, MetaElement } from '@pinser-metaverse/core';
 import '@pinser-metaverse/gltf';
 import '@pinser-metaverse/html';
 import { routeElement } from '@pinser-metaverse/router';
+import './hyperbeam.component';
 import './title.element';
 
 @routeElement('home-space')
@@ -34,6 +35,22 @@ export class HomeSpaceElement extends MetaElement {
         scale="0.15 0.15 0.15"
         rotation="0 -7.15 0"
       ></meta-gltf>
+
+      <a-plane
+        class="hyperbeam"
+        selectable
+        position="2 1.5 -1"
+        rotation="0 -65 0"
+        width="1.6"
+        height="0.9"
+        color="#000000"
+        sound="src: #audio; autoplay: true; refDistance: 0.2; rolloffFactor: 3"
+        hyperbeam
+      ></a-plane>
+
+      <audio id="audio" autoplay></audio>
+      <!-- Remove autoplay when AFrame adds support for dynamic audio -->
+      <div id="hbcontainer"></div>
     `;
   }
 }

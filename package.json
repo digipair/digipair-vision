@@ -14,6 +14,7 @@
   },
   "private": true,
   "dependencies": {
+    "@hyperbeam/web": "^0.0.23",
     "@swc/helpers": "~0.3.3",
     "@types/aframe": "^1.2.0",
     "@vaadin/router": "^1.7.4",

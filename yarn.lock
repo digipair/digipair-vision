@@ -1338,6 +1338,13 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
+"@hyperbeam/web@^0.0.23":
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/@hyperbeam/web/-/web-0.0.23.tgz#c9a5386745383011d9e55ab042efe5bdb1624fa1"
+  integrity sha512-DYTodFIxyLL0Of/5Cr1omtgsCT9IDMZUF7IKZQisacgnt64W96xN81C+yebVJjb7BC+dfjzkwn0zBPkzHzBsXw==
+  dependencies:
+    "@types/chrome" "^0.0.178"
+
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz#fd3db1d59ecf7cf121e80650bb86712f9b55eced"
@@ -2194,6 +2201,14 @@
   dependencies:
     "@types/node" "*"
 
+"@types/chrome@^0.0.178":
+  version "0.0.178"
+  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.0.178.tgz#fba7969208cef79ae752dc1138ff05de39f5ffde"
+  integrity sha512-U+G5YG2pH0qvLrYVJ9aT5VbPXYR3fAFyCuRBRAA14Pv7GrkFzDJuXPspgdeLYaKzGEp4rymUkuqUOuFz18LI1g==
+  dependencies:
+    "@types/filesystem" "*"
+    "@types/har-format" "*"
+
 "@types/connect-history-api-fallback@^1.3.5":
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/@types/connect-history-api-fallback/-/connect-history-api-fallback-1.3.5.tgz#d1f7a8a09d0ed5a57aee5ae9c18ab9b803205dae"
@@ -2254,6 +2269,18 @@
     "@types/qs" "*"
     "@types/serve-static" "*"
 
+"@types/filesystem@*":
+  version "0.0.32"
+  resolved "https://registry.yarnpkg.com/@types/filesystem/-/filesystem-0.0.32.tgz#307df7cc084a2293c3c1a31151b178063e0a8edf"
+  integrity sha512-Yuf4jR5YYMR2DVgwuCiP11s0xuVRyPKmz8vo6HBY3CGdeMj8af93CFZX+T82+VD1+UqHOxTq31lO7MI7lepBtQ==
+  dependencies:
+    "@types/filewriter" "*"
+
+"@types/filewriter@*":
+  version "0.0.29"
+  resolved "https://registry.yarnpkg.com/@types/filewriter/-/filewriter-0.0.29.tgz#a48795ecadf957f6c0d10e0c34af86c098fa5bee"
+  integrity sha512-BsPXH/irW0ht0Ji6iw/jJaK8Lj3FJemon2gvEqHKpCdDCeemHa+rI3WBGq5z7cDMZgoLjY40oninGxqk+8NzNQ==
+
 "@types/fs-extra@^8.0.1":
   version "8.1.2"
   resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-8.1.2.tgz#7125cc2e4bdd9bd2fc83005ffdb1d0ba00cca61f"
@@ -2275,6 +2302,11 @@
   integrity sha512-anKkLmZZ+xm4p8JWBf4hElkM4XR+EZeA2M9BAkkTldmcyDY4mbdIJnRghDJH3Ov5ooY7/UAoENtmdMSkaAd7Cw==
   dependencies:
     "@types/node" "*"
+
+"@types/har-format@*":
+  version "1.2.9"
+  resolved "https://registry.yarnpkg.com/@types/har-format/-/har-format-1.2.9.tgz#b9b3a9bfc33a078e7d898a00b09662910577f4a4"
+  integrity sha512-rffW6MhQ9yoa75bdNi+rjZBAvu2HhehWJXlhuWXnWdENeuKe82wUgAwxYOb7KRKKmxYN+D/iRKd2NDQMLqlUmg==
 
 "@types/http-proxy@^1.17.8":
   version "1.17.9"
