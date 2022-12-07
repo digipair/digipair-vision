@@ -5,50 +5,48 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/web:webpack",
+      "executor": "@nrwl/web:rollup",
       "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
       "options": {
+        "project": "apps/demo/package.json",
         "outputPath": "dist/apps/demo",
         "compiler": "swc",
-        "index": "apps/demo/src/index.html",
-        "baseHref": "/",
-        "main": "apps/demo/src/main.ts",
-        "polyfills": "apps/demo/src/polyfills.ts",
-        "tsConfig": "apps/demo/tsconfig.app.json",
-        "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
-        "styles": ["apps/demo/src/styles.scss"],
-        "scripts": []
+        "entryFile": "apps/demo/src/index.ts",
+        "tsConfig": "apps/demo/tsconfig.lib.json",
+        "rollupConfig": ["apps/demo/rollup.config.cjs"],
+        "format": ["esm"],
+        "assets": [
+          {
+            "glob": "apps/demo/src/index.html",
+            "input": ".",
+            "output": "."
+          },
+          {
+            "glob": "apps/demo/src/favicon.ico",
+            "input": ".",
+            "output": "."
+          },
+          "apps/demo/src/assets"
+        ]
       },
       "configurations": {
-        "production": {
-          "fileReplacements": [
-            {
-              "replace": "apps/demo/src/environments/environment.ts",
-              "with": "apps/demo/src/environments/environment.prod.ts"
-            }
-          ],
-          "optimization": true,
-          "outputHashing": "all",
-          "sourceMap": false,
-          "namedChunks": false,
-          "extractLicenses": true,
-          "vendorChunk": false
+        "serve": {
+          "watch": true,
+          "assets": []
         }
       }
     },
     "serve": {
-      "executor": "@nrwl/web:dev-server",
+      "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "buildTarget": "demo:build",
-        "host": "0.0.0.0",
-        "allowedHosts": "all"
+        "command": "npm-run-all --parallel \"serve --cors ./dist/apps/demo\" \"nx run demo:build:serve\""
       },
-      "configurations": {
-        "production": {
-          "buildTarget": "demo:build:production"
+      "dependsOn": [
+        {
+          "projects": "self",
+          "target": "build"
         }
-      }
+      ]
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
