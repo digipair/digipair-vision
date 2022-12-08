@@ -2,14 +2,14 @@ import {
   customHtmlElement,
   html,
   injectHtml,
-  MetaHtmlElement,
+  MetaHtmlElement
 } from '@pinser-metaverse/core';
-import { PinserProvider } from '../../pinser.provider';
+import { SessionProvider } from '../../session.provider';
 
 @customHtmlElement('home-title')
 export class HomeSpaceElement extends MetaHtmlElement {
   @injectHtml()
-  pinserProvider: PinserProvider;
+  sessionProvider: SessionProvider;
 
   override render() {
     return html`
@@ -22,7 +22,7 @@ export class HomeSpaceElement extends MetaHtmlElement {
         <p><br /></p>
         <button
           class="btn btn-lg btn-primary"
-          @click=${() => this.pinserProvider.go('/experiences/')}
+          @click=${() => this.sessionProvider.go('/experiences/')}
         >
           Live your experiences
         </button>

@@ -5,13 +5,13 @@ import {
   MetaElement,
 } from '@pinser-metaverse/core';
 import { RouterProvider } from '@pinser-metaverse/router';
-import { routes } from './pinser.routes';
 import '@pinser-metaverse/screen-shared';
 import '@pinser-metaverse/teleport';
-import { PinserProvider } from './pinser.provider';
+import { routes } from './pinser.routes';
+import { SessionProvider } from './session.provider';
 
 @customElement('pinser-metaverse', {
-  providers: [RouterProvider, PinserProvider],
+  providers: [RouterProvider, SessionProvider],
 })
 export class PinserMetaverseSpaceElement extends MetaElement {
   @inject()

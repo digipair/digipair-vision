@@ -1,11 +1,23 @@
-import { html, MetaElement } from '@pinser-metaverse/core';
+import { html, inject, MetaElement } from '@pinser-metaverse/core';
 import '@pinser-metaverse/gltf';
 import '@pinser-metaverse/html';
 import { routeElement } from '@pinser-metaverse/router';
+import { SessionProvider } from '../../session.provider';
 import './title.element';
 
 @routeElement('home-space')
 export class HomeSpaceElement extends MetaElement {
+  @inject()
+  sessionProvider: SessionProvider;
+
+  override init(): void {
+    this.sessionProvider.startSession('60a9f2ef-c64a-4b0d-9068-33ce2008baef');
+  }
+
+  override remove(): void {
+    this.sessionProvider.stopSession();
+  }
+
   override render() {
     return html`
       <a-sky

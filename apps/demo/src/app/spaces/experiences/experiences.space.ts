@@ -1,7 +1,7 @@
 import { html, inject, MetaElement } from '@pinser-metaverse/core';
 import { routeElement, RouterProvider } from '@pinser-metaverse/router';
+import { SessionProvider } from '../../session.provider';
 import { routes } from './experiences.routes';
-import { PinserProvider } from '../../pinser.provider';
 
 @routeElement('experiences-space', {
   providers: [RouterProvider],
@@ -11,7 +11,7 @@ export class ExperiencesSpaceElement extends MetaElement {
   routerProvider: RouterProvider;
 
   @inject()
-  pinserProvider: PinserProvider;
+  sessionProvider: SessionProvider;
 
   private experiences = [
     {
@@ -50,7 +50,7 @@ export class ExperiencesSpaceElement extends MetaElement {
     if (route.indexOf('http') >= 0) {
       window.location = route as any;
     } else {
-      this.pinserProvider.go(route);
+      this.sessionProvider.go(route);
     }
   }
 

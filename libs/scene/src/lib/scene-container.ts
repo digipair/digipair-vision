@@ -61,7 +61,7 @@ export class SceneContainerElement extends MetaElement {
     };
 
     return html`
-      <meta-player development=${this.development}></meta-player>
+      <meta-player></meta-player>
 
       ${this.scene()}
     `;

@@ -1,10 +1,14 @@
-import { html, MetaElement } from '@pinser-metaverse/core';
-import { routeElement } from '@pinser-metaverse/router';
+import { html, inject, MetaElement } from '@pinser-metaverse/core';
 import '@pinser-metaverse/gltf';
 import '@pinser-metaverse/html';
+import { routeElement } from '@pinser-metaverse/router';
+import { SessionProvider } from '../../../../session.provider';
 
 @routeElement('experiences-cinemavr-space')
 export class CinemaVrSpaceElement extends MetaElement {
+  @inject()
+  sessionProvider: SessionProvider;
+
   override init() {
     let assets = this.el.sceneEl?.querySelector(':scope > a-assets');
     if (!assets) {
@@ -19,19 +23,26 @@ export class CinemaVrSpaceElement extends MetaElement {
       video.setAttribute('loop', 'true');
 
       const source = document.createElement('source');
-      source.setAttribute('src', 'https://agency-experiences.onrender.com/assets/spaces/experiences/timeScapes.mp4');
+      source.setAttribute(
+        'src',
+        'https://agency-experiences.onrender.com/assets/spaces/experiences/timeScapes.mp4'
+      );
 
       video.appendChild(source);
       assets.appendChild(video);
     }
 
     video.play();
+
+    this.sessionProvider.startSession('9708ad3c-9683-42a4-b286-fcc8a03ec46e');
   }
 
   override remove() {
     const assets = this.el.sceneEl?.querySelector(':scope > a-assets');
     const video = assets.querySelector('#video') as any;
     video.pause();
+
+    this.sessionProvider.stopSession();
   }
 
   override render() {

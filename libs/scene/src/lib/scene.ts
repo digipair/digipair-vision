@@ -39,6 +39,7 @@ export class SceneElement extends MetaHtmlElement {
         keyboard-shortcuts="enterVR: false"
         physics=${`debug: ${this.debugphysics}; driver: local;`}
         ?debug=${this.development}
+        ?stats=${this.development}
         ar-hit-test="footprintDepth: 1;"
         gltf-model=${`dracoDecoderPath: ${this.draco};`}
       >

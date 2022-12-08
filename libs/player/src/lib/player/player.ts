@@ -5,10 +5,9 @@ import {
   inject,
   MetaElement,
   nothing,
-  property,
   TemplateResult,
   THREE,
-  unsafeHTML,
+  unsafeHTML
 } from '@pinser-metaverse/core';
 import 'aframe-blink-controls';
 import 'super-hands';
@@ -27,9 +26,6 @@ declare const NAF: any;
 
 @customElement('meta-player')
 export class PlayerElement extends MetaElement {
-  @property({ default: false })
-  development!: boolean;
-
   @inject()
   playerProvider!: PlayerProvider;
 
@@ -202,7 +198,7 @@ export class PlayerElement extends MetaElement {
           position="0 1.6 0"
           camera="fov: 40; zoom: 1;"
           look-controls-custom="reverseMouseDrag: true; touchEnabled: true; magicWindowTrackingEnabled: false;"
-          ?wasd-controls=${this.development}
+          ?wasd-controls=${this.playerProvider.debug}
           networked="template: #avatar-template;"
         >
           <a-entity

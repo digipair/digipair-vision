@@ -247,10 +247,22 @@ export class PlayerProvider extends MetaProvider {
       }
     });
 
-    sceneEl.querySelectorAll('[networked]').forEach((el) => {
-      this.takeOwnership(el);
-    });
+    sceneEl
+      .querySelectorAll(':scope > meta-scene-container [networked]')
+      .forEach((el) => {
+        this.takeOwnership(el);
+      });
 
     sceneEl.removeAttribute('networked-scene');
+
+    sceneEl
+      .querySelectorAll(
+        ':scope > meta-scene-container > meta-player [networked]'
+      )
+      .forEach((el) => {
+        const { template } = el.getAttribute('networked') as any;
+        el.removeAttribute('networked');
+        el.setAttribute('networked', { template } as any);
+      });
   }
 }

@@ -1,13 +1,17 @@
-import { html, MetaElement, nothing, state } from '@pinser-metaverse/core';
+import { html, inject, MetaElement, nothing, state } from '@pinser-metaverse/core';
 import { routeElement } from '@pinser-metaverse/router';
 import '@pinser-metaverse/gltf';
 import '@pinser-metaverse/design-system';
 import './stand.element';
+import { SessionProvider } from '../../../../session.provider';
 
 @routeElement('experiences-with-hands-space', { networked: true })
 export class WithHandsSpaceElement extends MetaElement {
   @state()
   current = -1;
+
+  @inject()
+  sessionProvider: SessionProvider;
 
   private articles = [
     {
@@ -57,6 +61,14 @@ export class WithHandsSpaceElement extends MetaElement {
       },
     },
   ];
+
+  override init(): void {
+    this.sessionProvider.startSession('f28115e2-bbd4-4da2-a6e9-c40f0391c620');
+  }
+
+  override remove(): void {
+    this.sessionProvider.stopSession();
+  }
 
   private show(pins: number) {
     this.current = pins;

@@ -1,10 +1,14 @@
-import { html, MetaElement } from '@pinser-metaverse/core';
+import { html, inject, MetaElement } from '@pinser-metaverse/core';
 import { routeElement } from '@pinser-metaverse/router';
 import '@pinser-metaverse/gltf';
 import '@pinser-metaverse/html';
+import { SessionProvider } from '../../../../session.provider';
 
 @routeElement('experiences-cinema-space')
 export class CinemaSpaceElement extends MetaElement {
+  @inject()
+  sessionProvider: SessionProvider;
+
   override init() {
     let assets = this.el.sceneEl?.querySelector(':scope > a-assets');
     if (!assets) {
@@ -26,12 +30,16 @@ export class CinemaSpaceElement extends MetaElement {
     }
 
     video.play();
+
+    this.sessionProvider.startSession('0072b0f5-8a76-4b83-9b17-57ad4dca04c6');
   }
 
   override remove() {
     const assets = this.el.sceneEl?.querySelector(':scope > a-assets');
     const video = assets.querySelector('#video') as any;
     video.pause();
+
+    this.sessionProvider.stopSession();
   }
 
   override render() {

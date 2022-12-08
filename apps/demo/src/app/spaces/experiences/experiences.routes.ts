@@ -4,7 +4,6 @@ import './spaces/cinema360/cinema360.space';
 import './spaces/cinemavr/cinemavr.space';
 import './spaces/mixed-reality/mixed-reality.space';
 import './spaces/with-hands/with-hands.space';
-import './spaces/digital-twin/digital-twin.space';
 
 export const routes = [
   {
