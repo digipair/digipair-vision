@@ -1889,6 +1889,11 @@
   dependencies:
     esquery "^1.0.1"
 
+"@pinser-metaverse/core@0.20.0":
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/@pinser-metaverse/core/-/core-0.20.0.tgz#8dcfa3ee5dceec5e0aeaf158c9f8bf43c7ac391c"
+  integrity sha512-7FDrYtfg1IgxE4DT24aAX5+O3H1MY/PYsBpd2YEgLbDHCvTAFE99GbCUod0oCH7rVI25z+spV16MCLNXy5/1Pg==
+
 "@pmmmwh/react-refresh-webpack-plugin@^0.5.1":
   version "0.5.6"
   resolved "https://registry.yarnpkg.com/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.5.6.tgz#9ced74cb23dae31ab385f775e237ce4c50422a1d"
@@ -1994,6 +1999,11 @@
   integrity sha512-OAPJUAtgeINhh/TAlUID4QTs53Njm7xzddaVlEs/SXwgtiD1tW22zAB/W1wdqfrpmikgaWQ9Fw6Ws+hsiRm5Vg==
   dependencies:
     "@sinonjs/commons" "^1.7.0"
+
+"@splinetool/loader@^0.9.151":
+  version "0.9.151"
+  resolved "https://registry.yarnpkg.com/@splinetool/loader/-/loader-0.9.151.tgz#beca19028a45904ecae7e36fa3f3c2ac5a1aa823"
+  integrity sha512-V6AdvowlQCIN20885urRiyTrdA2vW0CO53mxNLvKRSL767X67dzTUZtBU1YoAH0gNhVxTXsUoZzwD75oBbkpMw==
 
 "@swc/cli@~0.1.55":
   version "0.1.57"

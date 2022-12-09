@@ -7,6 +7,7 @@
     "design-system": "libs/design-system",
     "exporter": "libs/exporter",
     "gltf": "libs/gltf",
+    "html": "libs/html",
     "info": "libs/info",
     "networked-server": "apps/networked-server",
     "observe": "libs/observe",
@@ -15,7 +16,7 @@
     "router": "libs/router",
     "scene": "libs/scene",
     "screen-shared": "libs/screen-shared",
-    "teleport": "libs/teleport",
-    "html": "libs/html"
+    "spline": "libs/spline",
+    "teleport": "libs/teleport"
   }
 }

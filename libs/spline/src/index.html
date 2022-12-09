@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>@pinser-metaverse/spline</title>
+    <base href="/" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <script type="importmap">
+      {
+        "imports": {
+          "@pinser-metaverse/core": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/core-es@0.20.0/index.js",
+          "@pinser-metaverse/player": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/player-es@0.20.0/index.js",
+          "@pinser-metaverse/scene": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/scene-es@0.20.0/index.js",
+          "@pinser-metaverse/gltf": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/gltf-es@0.20.0/index.js",
+          "@pinser-metaverse/exporter": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/exporter-es@0.20.0/index.js",
+          "@pinser-metaverse/observe": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/observe-es@0.20.0/index.js",
+          "@pinser-metaverse/teleport": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/teleport-es@0.20.0/index.js",
+          "@pinser-metaverse/ready-player-me": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/ready-player-me-es@0.20.0/index.js",
+          "@pinser-metaverse/design-system": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/design-system-es@0.20.0/index.js",
+          "@pinser-metaverse/screen-shared": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/screen-shared-es@0.20.0/index.js",
+          "@pinser-metaverse/room": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/room-es@0.20.0/index.js",
+          "@pinser-metaverse/html": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/html-es@0.20.0/index.js",
+          "@splinetool/loader": "https://unpkg.com/@splinetool/loader@0.9.150/build/SplineLoader.js",
+          "three": "/three.js",
+          "three/": "https://unpkg.com/three@0.142.0/"
+        }
+      }
+    </script>
+    <script src="https://networked.pinser-metaverse.com/socket.io/socket.io.js"></script>
+    <script src="https://networked.pinser-metaverse.com/easyrtc/easyrtc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe@1.3.0/dist/aframe-v1.3.0.min.js"></script>
+    <script type="module">
+      import './index.js';
+      import '@pinser-metaverse/scene';
+    </script>
+  </head>
+  <body>
+    <meta-scene session="77dc9175-d25b-40c8-9f85-475b1d80c03d" development>
+      <template slot="scene">
+        <a-sky hide-on-ar color="#1d1e20"></a-sky>
+        <a-entity light="type: ambient; intensity: 0;"></a-entity>
+        <meta-spline
+          position="0.2 1.3 -2"
+          url="https://prod.spline.design/rT4Jp3YTuo9aFXUU/scene.splinecode"
+          scale="0.001 0.001 0.001"
+        ></meta-spline>
+      </template>
+    </meta-scene>
+  </body>
+</html>

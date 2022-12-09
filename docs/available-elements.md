@@ -16,6 +16,14 @@ Display a 3D object
 <meta-gltf url="GLB_OR_GLTF_FILE"></meta-gltf>
 ```
 
+## @pinser-metaverse/spline
+
+Display a [spline](https://spline.design) scene
+
+```html
+<meta-spline url="SPLINECODE_URL"></meta-spline>
+```
+
 ## @pinser-metaverse/teleport
 
 Display a ring where the user is teleported if he selects it.

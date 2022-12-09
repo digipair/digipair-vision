@@ -19,6 +19,7 @@
       "@pinser-metaverse/design-system": ["libs/design-system/src/index.ts"],
       "@pinser-metaverse/exporter": ["libs/exporter/src/index.ts"],
       "@pinser-metaverse/gltf": ["libs/gltf/src/index.ts"],
+      "@pinser-metaverse/html": ["libs/html/src/index.ts"],
       "@pinser-metaverse/info": ["libs/info/src/index.ts"],
       "@pinser-metaverse/observe": ["libs/observe/src/index.ts"],
       "@pinser-metaverse/player": ["libs/player/src/index.ts"],
@@ -28,8 +29,8 @@
       "@pinser-metaverse/router": ["libs/router/src/index.ts"],
       "@pinser-metaverse/scene": ["libs/scene/src/index.ts"],
       "@pinser-metaverse/screen-shared": ["libs/screen-shared/src/index.ts"],
-      "@pinser-metaverse/teleport": ["libs/teleport/src/index.ts"],
-      "@pinser-metaverse/html": ["libs/html/src/index.ts"]
+      "@pinser-metaverse/spline": ["libs/spline/src/index.ts"],
+      "@pinser-metaverse/teleport": ["libs/teleport/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

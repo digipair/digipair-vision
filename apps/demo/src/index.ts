@@ -11,5 +11,6 @@ import '@pinser-metaverse/router';
 import '@pinser-metaverse/scene';
 import '@pinser-metaverse/screen-shared';
 import '@pinser-metaverse/teleport';
+import '@pinser-metaverse/spline';
     
 import './app/pinser.metaverse';
