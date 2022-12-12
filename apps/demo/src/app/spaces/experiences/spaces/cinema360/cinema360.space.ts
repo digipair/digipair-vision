@@ -1,6 +1,4 @@
 import { html, inject, MetaElement } from '@pinser-metaverse/core';
-import '@pinser-metaverse/gltf';
-import '@pinser-metaverse/html';
 import { routeElement } from '@pinser-metaverse/router';
 import { SessionProvider } from '../../../../session.provider';
 

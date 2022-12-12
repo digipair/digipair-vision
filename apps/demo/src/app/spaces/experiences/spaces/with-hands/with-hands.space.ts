@@ -1,6 +1,11 @@
-import { html, inject, MetaElement, nothing, state } from '@pinser-metaverse/core';
+import {
+  html,
+  inject,
+  MetaElement,
+  nothing,
+  state,
+} from '@pinser-metaverse/core';
 import { routeElement } from '@pinser-metaverse/router';
-import '@pinser-metaverse/gltf';
 import '@pinser-metaverse/design-system';
 import './stand.element';
 import { SessionProvider } from '../../../../session.provider';
@@ -15,13 +20,14 @@ export class WithHandsSpaceElement extends MetaElement {
 
   private articles = [
     {
-      image: 'https://agency-experiences.onrender.com/assets/spaces/experiences/nike.png',
+      image:
+        'https://agency-experiences.onrender.com/assets/spaces/experiences/nike.png',
       title: 'Nike',
       pins: {
         name: 'Nike',
-        image: 'https://agency-experiences.onrender.com/assets/spaces/experiences/nike.png',
-        component: 'meta-gltf',
-        import: '@pinser-metaverse/gltf',
+        image:
+          'https://agency-experiences.onrender.com/assets/spaces/experiences/nike.png',
+        component: 'a-gltf-model',
         dynamic: false,
         editable: true,
         placeholder: {
@@ -32,20 +38,21 @@ export class WithHandsSpaceElement extends MetaElement {
           'shape: box; halfExtents: 0.049 0.053 0.163; offset: 0.05 0.053 -0.06;',
         attributes: {
           position: '0 0 0',
-          url: 'https://agency-experiences.onrender.com/assets/spaces/experiences/nike_shoe-small.glb',
+          src: 'https://agency-experiences.onrender.com/assets/spaces/experiences/nike_shoe-small.glb',
           scale: '0.0015 0.0015 0.0015',
           rotation: '0 -90 0',
         },
       },
     },
     {
-      image: 'https://agency-experiences.onrender.com/assets/spaces/experiences/sci-fi.png',
+      image:
+        'https://agency-experiences.onrender.com/assets/spaces/experiences/sci-fi.png',
       title: 'Sci-Fi',
       pins: {
         name: 'Sci-Fi',
-        image: 'https://agency-experiences.onrender.com/assets/spaces/experiences/sci-fi.png',
-        component: 'meta-gltf',
-        import: '@pinser-metaverse/gltf',
+        image:
+          'https://agency-experiences.onrender.com/assets/spaces/experiences/sci-fi.png',
+        component: 'a-gltf-model',
         dynamic: false,
         editable: true,
         placeholder: {
@@ -55,7 +62,7 @@ export class WithHandsSpaceElement extends MetaElement {
         shape: 'shape: box; halfExtents: 0.049 0.081 0.163; offset: 0 0.081 0;',
         attributes: {
           position: '0.015 0 -0.024',
-          url: 'https://agency-experiences.onrender.com/assets/spaces/experiences/sci-fi_shoe-small.glb',
+          src: 'https://agency-experiences.onrender.com/assets/spaces/experiences/sci-fi_shoe-small.glb',
           scale: '2.445 2.445 2.445',
         },
       },

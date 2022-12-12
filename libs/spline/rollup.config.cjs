@@ -1,16 +1,23 @@
 const { terser } = require('rollup-plugin-terser');
+const alias = require('@rollup/plugin-alias');
 
 function getRollupOptions(options) {
   const extraGlobals = {};
   const bundled = ['@splinetool/loader'];
-  const externals = [
-    'three',
-    'three/examples/jsm/loaders/DRACOLoader.js',
-    'three/examples/jsm/utils/BufferGeometryUtils.js',
-  ];
+  const externals = [];
 
   return {
     ...options,
+    plugins: [
+      ...options.plugins,
+      alias({
+        entries: [
+          { find: 'three/examples/jsm/loaders/DRACOLoader.js', replacement: 'libs/spline/src/lib/vendors/DRACOLoader.js' },
+          { find: 'three/examples/jsm/utils/BufferGeometryUtils.js', replacement: 'libs/spline/src/lib/vendors/BufferGeometryUtils.js' },
+          { find: 'three', replacement: 'libs/spline/src/lib/vendors/three.js' },
+        ]
+      })
+    ],
     external: (name) => {
       if (bundled.includes(name)) {
         return false;

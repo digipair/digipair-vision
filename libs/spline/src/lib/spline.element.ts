@@ -4,15 +4,13 @@ import SplineLoader from '@splinetool/loader';
 @customElement('meta-spline')
 export class SplineElement extends MetaElement {
   @property()
-  url!: string;
+  scene!: string;
 
-  override render(): null {
+  override update(): void {
     const loader = new SplineLoader();
 
-    loader.load(this.url, (splineScene) => {
+    loader.load(this.scene, (splineScene) => {
       this.el.setObject3D('mesh', splineScene);
     });
-
-    return null;
   }
 }

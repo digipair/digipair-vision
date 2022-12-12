@@ -7,7 +7,7 @@
     "build": "nx build",
     "test": "nx test",
     "networked-server": "node ./dist/apps/networked-server/main",
-    "publish": "nx run core:publish --ver=%npm_config_npmversion% --tag=latest && nx run core:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run gltf:publish --ver=%npm_config_npmversion% --tag=latest && nx run gltf:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run player:publish --ver=%npm_config_npmversion% --tag=latest && nx run player:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run scene:publish --ver=%npm_config_npmversion% --tag=latest && nx run scene:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run exporter:publish --ver=%npm_config_npmversion% --tag=latest && nx run exporter:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run observe:publish --ver=%npm_config_npmversion% --tag=latest && nx run observe:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run teleport:publish --ver=%npm_config_npmversion% --tag=latest && nx run teleport:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run ready-player-me:publish --ver=%npm_config_npmversion% --tag=latest && nx run ready-player-me:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run design-system:publish --ver=%npm_config_npmversion% --tag=latest && nx run design-system:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run screen-shared:publish --ver=%npm_config_npmversion% --tag=latest && nx run screen-shared:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run router:publish --ver=%npm_config_npmversion% --tag=latest && nx run router:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run info:publish --ver=%npm_config_npmversion% --tag=latest && nx run info:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run html:publish --ver=%npm_config_npmversion% --tag=latest && nx run html:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run spline:publish --ver=%npm_config_npmversion% --tag=latest && nx run spline:publish-es --ver=%npm_config_npmversion% --tag=latest",
+    "publish": "nx run core:publish --ver=%npm_config_npmversion% --tag=latest && nx run core:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run player:publish --ver=%npm_config_npmversion% --tag=latest && nx run player:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run scene:publish --ver=%npm_config_npmversion% --tag=latest && nx run scene:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run exporter:publish --ver=%npm_config_npmversion% --tag=latest && nx run exporter:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run observe:publish --ver=%npm_config_npmversion% --tag=latest && nx run observe:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run teleport:publish --ver=%npm_config_npmversion% --tag=latest && nx run teleport:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run ready-player-me:publish --ver=%npm_config_npmversion% --tag=latest && nx run ready-player-me:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run design-system:publish --ver=%npm_config_npmversion% --tag=latest && nx run design-system:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run screen-shared:publish --ver=%npm_config_npmversion% --tag=latest && nx run screen-shared:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run router:publish --ver=%npm_config_npmversion% --tag=latest && nx run router:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run info:publish --ver=%npm_config_npmversion% --tag=latest && nx run info:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run html:publish --ver=%npm_config_npmversion% --tag=latest && nx run html:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run spline:publish --ver=%npm_config_npmversion% --tag=latest && nx run spline:publish-es --ver=%npm_config_npmversion% --tag=latest && nx run mesh:publish --ver=%npm_config_npmversion% --tag=latest && nx run mesh:publish-es --ver=%npm_config_npmversion% --tag=latest",
     "serve": "serve",
     "nx": "nx",
     "docsify": "docsify"
@@ -15,7 +15,7 @@
   "private": true,
   "dependencies": {
     "@rollup/plugin-alias": "^4.0.2",
-    "@splinetool/loader": "^0.9.151",
+    "@splinetool/loader": "^0.9.154",
     "@swc/helpers": "~0.3.3",
     "@types/aframe": "^1.2.0",
     "@vaadin/router": "^1.7.4",
@@ -47,7 +47,7 @@
     "@nrwl/node": "14.3.0",
     "@nrwl/web": "14.3.0",
     "@nrwl/workspace": "14.3.0",
-    "@pinser-metaverse/core": "0.20.0",
+    "@pinser-metaverse/core": "0.21.0",
     "@swc/cli": "~0.1.55",
     "@swc/core": "^1.2.173",
     "@swc/jest": "0.2.20",

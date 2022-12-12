@@ -2000,10 +2000,10 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@splinetool/loader@^0.9.151":
-  version "0.9.151"
-  resolved "https://registry.yarnpkg.com/@splinetool/loader/-/loader-0.9.151.tgz#beca19028a45904ecae7e36fa3f3c2ac5a1aa823"
-  integrity sha512-V6AdvowlQCIN20885urRiyTrdA2vW0CO53mxNLvKRSL767X67dzTUZtBU1YoAH0gNhVxTXsUoZzwD75oBbkpMw==
+"@splinetool/loader@^0.9.154":
+  version "0.9.154"
+  resolved "https://registry.yarnpkg.com/@splinetool/loader/-/loader-0.9.154.tgz#4feb57b035ec9fe3f8bd84d213f0102c886ae89f"
+  integrity sha512-tEAvpy6wIw0GMkGI1taCEmBl5SELLUfAhof7VjnFX4tKH/noZ6YMqgqk1W5IshNYtnNXz+RvxzIASiwiGUNLUg==
 
 "@swc/cli@~0.1.55":
   version "0.1.57"

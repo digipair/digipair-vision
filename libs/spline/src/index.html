@@ -11,21 +11,17 @@
     <script type="importmap">
       {
         "imports": {
-          "@pinser-metaverse/core": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/core-es@0.20.0/index.js",
-          "@pinser-metaverse/player": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/player-es@0.20.0/index.js",
-          "@pinser-metaverse/scene": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/scene-es@0.20.0/index.js",
-          "@pinser-metaverse/gltf": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/gltf-es@0.20.0/index.js",
-          "@pinser-metaverse/exporter": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/exporter-es@0.20.0/index.js",
-          "@pinser-metaverse/observe": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/observe-es@0.20.0/index.js",
-          "@pinser-metaverse/teleport": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/teleport-es@0.20.0/index.js",
-          "@pinser-metaverse/ready-player-me": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/ready-player-me-es@0.20.0/index.js",
-          "@pinser-metaverse/design-system": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/design-system-es@0.20.0/index.js",
-          "@pinser-metaverse/screen-shared": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/screen-shared-es@0.20.0/index.js",
-          "@pinser-metaverse/room": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/room-es@0.20.0/index.js",
-          "@pinser-metaverse/html": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/html-es@0.20.0/index.js",
-          "@splinetool/loader": "https://unpkg.com/@splinetool/loader@0.9.150/build/SplineLoader.js",
-          "three": "/three.js",
-          "three/": "https://unpkg.com/three@0.142.0/"
+          "@pinser-metaverse/core": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/core-es@0.21.0/index.js",
+          "@pinser-metaverse/player": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/player-es@0.21.0/index.js",
+          "@pinser-metaverse/scene": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/scene-es@0.21.0/index.js",
+          "@pinser-metaverse/exporter": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/exporter-es@0.21.0/index.js",
+          "@pinser-metaverse/observe": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/observe-es@0.21.0/index.js",
+          "@pinser-metaverse/teleport": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/teleport-es@0.21.0/index.js",
+          "@pinser-metaverse/ready-player-me": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/ready-player-me-es@0.21.0/index.js",
+          "@pinser-metaverse/design-system": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/design-system-es@0.21.0/index.js",
+          "@pinser-metaverse/screen-shared": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/screen-shared-es@0.21.0/index.js",
+          "@pinser-metaverse/room": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/room-es@0.21.0/index.js",
+          "@pinser-metaverse/html": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/html-es@0.21.0/index.js"
         }
       }
     </script>
@@ -33,8 +29,9 @@
     <script src="https://networked.pinser-metaverse.com/easyrtc/easyrtc.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aframe@1.3.0/dist/aframe-v1.3.0.min.js"></script>
     <script type="module">
-      import './index.js';
       import '@pinser-metaverse/scene';
+      import '@pinser-metaverse/mesh';
+      import './index.js';
     </script>
   </head>
   <body>
@@ -44,9 +41,35 @@
         <a-entity light="type: ambient; intensity: 0;"></a-entity>
         <meta-spline
           position="0.2 1.3 -2"
-          url="https://prod.spline.design/rT4Jp3YTuo9aFXUU/scene.splinecode"
+          scene="https://api.codetabs.com/v1/proxy?quest=https://prod.spline.design/rghCnSFI7Ule1uBd/scene.splinecode"
           scale="0.001 0.001 0.001"
-        ></meta-spline>
+        >
+          <meta-mesh
+            onject="Emoji-4"
+            selectable
+            animation__mouseenter="property: position; to: 20 0 0; startEvents: mouseenter; dur: 500; easing: easeOutElastic"
+            animation__mouseleave="property: position; to: 0 0 0; startEvents: mouseleave; dur: 500; easing: easeOutElastic"
+          ></meta-mesh>
+          <meta-mesh
+            onject="Emoji-1"
+            animation="property: position; to: -20 -10 0; dur: 2000; easing: linear; dir: alternate; loop: true;"
+          ></meta-mesh>
+          <meta-mesh
+            onject="Emoji-2"
+            animation="property: position; to: -10 -10 0; dur: 3000; easing: linear; dir: alternate; loop: true;"
+          ></meta-mesh>
+          <meta-mesh
+            mesh="Emoji-3"
+            animation="property: position; to: -10 -20 0; dur: 1500; easing: linear; dir: alternate; loop: true;"
+          ></meta-mesh>
+          <meta-mesh
+            selectable
+            animation__mouseenter="property: position; to: 20 0 0; startEvents: mouseenter; dur: 500; easing: easeOutElastic"
+            animation__mouseleave="property: position; to: 0 0 0; startEvents: mouseleave; dur: 500; easing: easeOutElastic"
+            onject="phone"
+          >
+          </meta-mesh>
+        </meta-spline>
       </template>
     </meta-scene>
   </body>
