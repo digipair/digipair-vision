@@ -1,46 +1,52 @@
 {
-  "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
-  "sourceRoot": "libs/gltf/src",
+  "$schema": "..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
+  "sourceRoot": "libs/mesh/src",
   "projectType": "library",
   "targets": {
     "build": {
       "executor": "@nrwl/js:swc",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/gltf",
-        "main": "libs/gltf/src/index.ts",
-        "tsConfig": "libs/gltf/tsconfig.lib.json",
-        "assets": ["libs/gltf/*.md"]
+        "outputPath": "dist/libs/mesh",
+        "main": "libs/mesh/src/index.ts",
+        "tsConfig": "libs/mesh/tsconfig.lib.json",
+        "assets": ["libs/mesh/*.md"]
       }
     },
     "build-es": {
       "executor": "@nrwl/web:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "project": "libs/gltf/package.esm.json",
-        "outputPath": "dist/libs/gltf-es",
+        "project": "libs/mesh/package.esm.json",
+        "outputPath": "dist/libs/mesh-es",
         "compiler": "swc",
-        "entryFile": "libs/gltf/src/index.ts",
-        "tsConfig": "libs/gltf/tsconfig.lib.json",
-        "rollupConfig": ["libs/gltf/rollup.config.cjs"],
+        "entryFile": "libs/mesh/src/index.ts",
+        "tsConfig": "libs/mesh/tsconfig.lib.json",
+        "rollupConfig": ["libs/mesh/rollup.config.cjs"],
         "assets": [
           {
-            "glob": "libs/gltf/*.md",
+            "glob": "libs/mesh/*.md",
             "input": ".",
             "output": "."
           },
           {
-            "glob": "libs/gltf/src/index.html",
+            "glob": "libs/mesh/src/index.html",
             "input": ".",
             "output": "."
           }
         ]
+      },
+      "configurations": {
+        "serve": {
+          "watch": true,
+          "assets": []
+        }
       }
     },
     "publish": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "command": "node tools/scripts/publish.mjs gltf {args.ver} {args.tag}"
+        "command": "node tools/scripts/publish.mjs mesh {args.ver} {args.tag}"
       },
       "dependsOn": [
         {
@@ -52,7 +58,7 @@
     "publish-es": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "command": "node tools/scripts/publish-es.mjs gltf {args.ver} {args.tag}"
+        "command": "node tools/scripts/publish-es.mjs mesh {args.ver} {args.tag}"
       },
       "dependsOn": [
         {
@@ -64,7 +70,7 @@
     "serve": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "command": "npm-run-all --parallel \"serve ./dist/libs/gltf-es\" \"nx run gltf:build-es:serve\""
+        "command": "npm-run-all --parallel \"serve ./dist/libs/mesh-es\" \"nx run mesh:build-es:serve\""
       },
       "dependsOn": [
         {
@@ -77,17 +83,17 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/gltf/**/*.ts"]
+        "lintFilePatterns": ["libs/mesh/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/gltf"],
+      "outputs": ["coverage/libs/mesh"],
       "options": {
-        "jestConfig": "libs/gltf/jest.config.ts",
+        "jestConfig": "libs/mesh/jest.config.ts",
         "passWithNoTests": true
       }
     }
   },
-  "tags": ["library", "gltf"]
+  "tags": ["mesh"]
 }

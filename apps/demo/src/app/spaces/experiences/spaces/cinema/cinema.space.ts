@@ -1,7 +1,5 @@
 import { html, inject, MetaElement } from '@pinser-metaverse/core';
 import { routeElement } from '@pinser-metaverse/router';
-import '@pinser-metaverse/gltf';
-import '@pinser-metaverse/html';
 import { SessionProvider } from '../../../../session.provider';
 
 @routeElement('experiences-cinema-space')
@@ -23,7 +21,10 @@ export class CinemaSpaceElement extends MetaElement {
       video.setAttribute('loop', 'true');
 
       const source = document.createElement('source');
-      source.setAttribute('src', 'https://agency-experiences.onrender.com/assets/spaces/experiences/timeScapes.mp4');
+      source.setAttribute(
+        'src',
+        'https://agency-experiences.onrender.com/assets/spaces/experiences/timeScapes.mp4'
+      );
 
       video.appendChild(source);
       assets.appendChild(video);

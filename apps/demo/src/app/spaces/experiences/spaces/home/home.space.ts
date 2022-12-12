@@ -1,7 +1,5 @@
 import { html, inject, MetaElement } from '@pinser-metaverse/core';
 import { routeElement } from '@pinser-metaverse/router';
-import '@pinser-metaverse/gltf';
-import '@pinser-metaverse/html';
 import { SessionProvider } from '../../../../session.provider';
 
 @routeElement('experiences-home-space')
@@ -16,7 +14,7 @@ export class HomeSpaceElement extends MetaElement {
   override remove(): void {
     this.sessionProvider.stopSession();
   }
-  
+
   override render() {
     return html`
       <a-sky

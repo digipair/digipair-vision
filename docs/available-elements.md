@@ -2,19 +2,11 @@
 
 > **_ Libraries concerned _**  
 > [@pinser-metaverse/core](https://www.npmjs.com/package/@pinser-metaverse/core)  
-> [@pinser-metaverse/gltf](https://www.npmjs.com/package/@pinser-metaverse/gltf)  
+> [@pinser-metaverse/mesh](https://www.npmjs.com/package/@pinser-metaverse/mesh)  
 > [@pinser-metaverse/teleport](https://www.npmjs.com/package/@pinser-metaverse/teleport)  
 > [@pinser-metaverse/design-system](https://www.npmjs.com/package/@pinser-metaverse/design-system)  
 > [@pinser-metaverse/screen-shared](https://www.npmjs.com/package/@pinser-metaverse/screen-shared)  
 > [@pinser-metaverse/info](https://www.npmjs.com/package/@pinser-metaverse/info)
-
-## @pinser-metaverse/gltf
-
-Display a 3D object
-
-```html
-<meta-gltf url="GLB_OR_GLTF_FILE"></meta-gltf>
-```
 
 ## @pinser-metaverse/spline
 
@@ -22,6 +14,25 @@ Display a [spline](https://spline.design) scene
 
 ```html
 <meta-spline url="SPLINECODE_URL"></meta-spline>
+```
+
+## @pinser-metaverse/spline
+
+Manage a mesh in a GLTF or a Spline object
+
+```html
+<meta-mesh object="OBJECT_NAME"></meta-mesh>
+```
+
+### Example
+
+```html
+<a-gltf-model src="/assets/scene.glb">
+  <meta-mesh
+    object="Emoji"
+    animation="property: position; to: -20 -10 0; dur: 2000; easing: linear; dir: alternate; loop: true;"
+  ></meta-mesh>
+</a-gltf-model>
 ```
 
 ## @pinser-metaverse/teleport

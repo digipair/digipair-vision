@@ -1,1 +1,1 @@
-export * from './lib/spline';
+export * from './lib/spline.element';

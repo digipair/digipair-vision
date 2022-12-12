@@ -5,7 +5,7 @@ import {
   property,
   TemplateResult,
 } from '@pinser-metaverse/core';
-import '@pinser-metaverse/gltf';
+import '@pinser-metaverse/mesh';
 
 @customElement('meta-ready-player-me')
 export class ReadyPlayerMeElement extends MetaElement {
@@ -38,14 +38,13 @@ export class ReadyPlayerMeElement extends MetaElement {
         ></a-text>
       </a-rounded>
 
-      <meta-gltf-static
-        url=${this.playerinfo.avatar}
+      <a-gltf-model
+        src=${this.playerinfo.avatar}
         position="0 0 -0.02"
-        meshes=${JSON.stringify({
-          LeftHand: { scale: { x: 0, y: 0, z: 0 } },
-          RightHand: { scale: { x: 0, y: 0, z: 0 } },
-        })}
-      ></meta-gltf-static>
+      >
+        <meta-mesh object="LeftHand" scale="0 0 0">
+        <meta-mesh object="RightHand" scale="0 0 0">
+      </a-gltf-model>
     `;
   }
 }
