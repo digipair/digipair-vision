@@ -13,11 +13,11 @@ export class StandElement extends MetaElement {
   pins: any;
 
   override render(): TemplateResult {
-    const pins = JSON.parse(atob(this.pins));
+    const pins = this.pins;
     const element = pins.component;
     const attributes = pins.attributes;
     const options = {
-      editable: pins.import,
+      editable: pins.editable,
       name: pins.name,
       shape: pins.shape,
       dynamic: pins.dynamic,
@@ -54,11 +54,11 @@ export class StandElement extends MetaElement {
 
         <a-entity
           networked="template: #element-template; persistent: true; owner: scene; networkId: experiences-with-hands-stand-item;"
-          meta-element=${`element: ${JSON.stringify(
-            element
-          )}; attributes: ${JSON.stringify(
-            btoa(JSON.stringify(attributes))
-          )}; options: ${JSON.stringify(btoa(JSON.stringify(options)))};`}
+          meta-element=${`element: ${btoa(
+            JSON.stringify(element)
+          )}; attributes: ${btoa(JSON.stringify(attributes))}; options: ${btoa(
+            JSON.stringify(options)
+          )};`}
           position="0.24 -0.143 0.126"
           rotation="0 90 0"
         ></a-entity>

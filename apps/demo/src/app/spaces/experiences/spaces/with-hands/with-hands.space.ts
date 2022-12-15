@@ -111,8 +111,6 @@ export class WithHandsSpaceElement extends MetaElement {
                 } 0`}
                 image=${article.image}
                 title=${article.title}
-                actionicon="movie_filter"
-                actiontext="Voir"
                 @click=${() => this.show(index)}
               ></meta-menu-button-image>
             `
@@ -124,9 +122,7 @@ export class WithHandsSpaceElement extends MetaElement {
         ? nothing
         : html`
             <experiences-with-hands-stand
-              pins=${JSON.stringify(
-                btoa(JSON.stringify(this.articles[this.current].pins))
-              )}
+              pins=${btoa(JSON.stringify(this.articles[this.current].pins))}
               position="1.09 1.36 -0.166"
               rotation="0 -90 0"
             ></experiences-with-hands-stand>

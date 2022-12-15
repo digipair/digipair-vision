@@ -65,9 +65,7 @@ export class ExperiencesSpaceElement extends MetaElement {
       <meta-menu-button-image
         position="-0.39 1.52 -1"
         image="https://agency-experiences.onrender.com/assets/spaces/experiences/back-arrow-small.png"
-        title="Home "
-        actionicon="first_page"
-        actiontext="Retour"
+        title="Home"
         @click=${() => this.go('/home/')}
       ></meta-menu-button-image>
 
@@ -80,8 +78,6 @@ export class ExperiencesSpaceElement extends MetaElement {
               } 0`}
               image=${experience.image}
               title=${experience.title}
-              actionicon="movie_filter"
-              actiontext="Voir"
               @click=${() => this.go(experience.route)}
             ></meta-menu-button-image>
           `

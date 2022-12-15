@@ -7,7 +7,7 @@ import {
   nothing,
   TemplateResult,
   THREE,
-  unsafeHTML
+  unsafeHTML,
 } from '@pinser-metaverse/core';
 import 'aframe-blink-controls';
 import 'super-hands';
@@ -73,17 +73,19 @@ export class PlayerElement extends MetaElement {
 
   private defaultHandLeft(): TemplateResult {
     return html`
-      ${!this.playerProvider.playermenu.visible
-        ? nothing
-        : html`<meta-player-menu
-            scale="0.5 0.5 1"
-            position="0.06 0.30 0.10"
-            rotation="0 90 -90"
-          ></meta-player-menu>`}
-      <meta-player-toolbar
-        position="0.04 0.08 0.16"
-        rotation="0 90 -90"
-      ></meta-player-toolbar>
+      <a-entity rotation="-90 0 90">
+        ${!this.playerProvider.playermenu.visible
+          ? nothing
+          : html`<meta-player-menu
+              scale="0.55 0.5 1"
+              position="-0.5 0.15 0"
+              rotation="0 0 0"
+            ></meta-player-menu>`}
+        <meta-player-toolbar
+          position="-0.15 0.1 0"
+          rotation="0 0 0"
+        ></meta-player-toolbar>
+      </a-entity>
     `;
   }
 
@@ -190,7 +192,7 @@ export class PlayerElement extends MetaElement {
             position=${this.playerProvider.playermenu.position}
             rotation=${this.playerProvider.playermenu.rotation}
           >
-            <meta-player-menu position="-0.56 -0.27 -1"></meta-player-menu>
+            <meta-player-menu position="-0.56 -0.27 -0.99"></meta-player-menu>
           </a-entity>`}
 
       <a-entity player networked="template: #player-template;">

@@ -51,8 +51,6 @@ export class MenuPanelPinsElement extends MetaElement {
               } 0.001`}
               image=${pin.image}
               title=${pin.name}
-              actionicon="add"
-              actiontext="Add"
               @click=${() => this.add(pin)}
             ></meta-menu-button-image>
           `

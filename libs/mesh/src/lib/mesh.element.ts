@@ -35,9 +35,9 @@ export class MeshElement extends MetaElement {
   }
 
   private updateMesh(parentMesh: THREE.Object3D<THREE.Event>) {
-    const mesh = parentMesh?.getObjectByName(
-      this.object
-    ) as THREE.Object3D<Event>;
+    const mesh = !this.object
+      ? parentMesh
+      : (parentMesh?.getObjectByName(this.object) as THREE.Object3D<Event>);
 
     if (!mesh) return;
     this.el.setObject3D('mesh', mesh);

@@ -6,22 +6,13 @@ import {
   TemplateResult,
 } from '@pinser-metaverse/core';
 import '@pinser-metaverse/design-system';
+import '@pinser-metaverse/mesh';
 import { PlayerProvider } from '../player/player.provider';
-import './toolbar-button';
 
 @customElement('meta-player-toolbar')
 export class PlayerToolbarElement extends MetaElement {
   @inject()
   playerProvider!: PlayerProvider;
-
-  private get me(): { username: string; preview: string } {
-    return JSON.parse(
-      atob(
-        (this.el.sceneEl?.querySelector('meta-player [meta-avatar]') as any)
-          .components['meta-avatar'].data.playerinfo
-      )
-    );
-  }
 
   private toggleMenu(): void {
     this.playerProvider.toggleMenu();
@@ -32,64 +23,50 @@ export class PlayerToolbarElement extends MetaElement {
   }
 
   override render(): TemplateResult {
-    return html`
-      <a-rounded
-        selectable
-        width="0.14"
-        height="0.05"
-        radius="0.025"
-        color="#ffffff"
-      >
-        <meta-player-toolbar-button
-          position="0.029 0.025 0.001"
-          icon=${this.playerProvider.playersound ? 'volume_up' : 'volume_off'}
-          @click=${() =>
-            this.playerProvider.setSound(!this.playerProvider.playersound)}
-        ></meta-player-toolbar-button>
-        <meta-player-toolbar-button
-          position="0.062 0.025 0.001"
-          icon=${this.playerProvider.playermic ? 'mic' : 'mic_off'}
-          @click=${() =>
-            this.playerProvider.setMic(!this.playerProvider.playermic)}
-        ></meta-player-toolbar-button>
-
-        <a-plane
-          color="#d0d0d0"
-          position="0.084 0.025 0.001"
-          height="0.040"
-          width="0.001"
-        ></a-plane>
-
-        ${this.playerProvider.customcursor
-          ? html`<meta-player-toolbar-button
-              position="0.111 0.025 0.001"
-              icon="cancel"
-              @click=${() => this.stopCursor()}
-            ></meta-player-toolbar-button>`
-          : this.playerProvider.playermenu.visible
-          ? html`<meta-player-toolbar-button
-              position="0.111 0.025 0.001"
-              icon="close"
-              @click=${() => this.toggleMenu()}
-            ></meta-player-toolbar-button>`
-          : this.me.preview
-          ? html`
-              <a-circle
-                src=${this.me.preview}
-                radius="0.017"
-                position="0.111 0.025 0.001"
-                selectable
-                @click=${() => this.toggleMenu()}
-              ></a-circle>
-            `
-          : html`
-              <meta-player-toolbar-button
-                position="0.111 0.025 0.001"
-                icon="account_circle"
-                @click=${() => this.toggleMenu()}
-              ></meta-player-toolbar-button>
-            `}
-      </a-rounded>
-    `;
+    return this.playerProvider.customcursor
+      ? html`
+          <a-box
+            opacity="0"
+            width="0.02"
+            height="0.02"
+            depth="0.002"
+            position="0 0.02 0"
+            selectable
+            animation__mouseenter="property: scale; to: 1.4 1.4 1.4; startEvents: mouseenter; dur: 500; easing: easeOutElastic"
+            animation__mouseleave="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 500; easing: easeOutElastic"
+            animation__mouseclick="property: scale; to: 1 1 1; startEvents: click; dur: 500; easing: easeOutElastic"
+            @click=${() => this.stopCursor()}
+          >
+            <a-box
+              color="#202020"
+              width="0.02"
+              height="0.002"
+              depth="0.002"
+              rotation="0 0 45"
+            ></a-box>
+            <a-box
+              color="#202020"
+              width="0.02"
+              height="0.002"
+              depth="0.002"
+              rotation="0 0 -45"
+            ></a-box>
+          </a-box>
+        `
+      : html`
+          <a-box
+            opacity="0"
+            position="0 0.02 0"
+            rotation="0 -45 0"
+            scale="0.02 0.02 0.02"
+            selectable
+            @click=${() => this.toggleMenu()}
+            animation__mouseenter="property: scale; to: 0.025 0.025 0.025; startEvents: mouseenter; dur: 500; easing: easeOutElastic"
+            animation__mouseleave="property: scale; to: 0.02 0.02 0.02; startEvents: mouseleave; dur: 500; easing: easeOutElastic"
+            animation__mouseclick="property: scale; to: 0.02 0.02 0.02; startEvents: click; dur: 500; easing: easeOutElastic"
+          >
+            <meta-logo></meta-logo>
+          </a-box>
+        `;
   }
 }

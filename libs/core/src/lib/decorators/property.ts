@@ -21,20 +21,18 @@ export const property =
             default:
               type === Number || type === Boolean || type === String
                 ? options.default
-                : JSON.stringify(options.default),
+                : btoa(JSON.stringify(options.default)),
           }
         : {}),
       type:
         type === Number ? 'number' : type === Boolean ? 'boolean' : 'string',
-      parse: function (value: number | string) {
-        let result: any;
-
-        try {
-          result =
-            type === String || !value ? value : JSON.parse(value as string);
-        } catch (e) {
-          result = value;
-        }
+      parse: function (value: string) {
+        const result =
+          type === String || !value
+            ? value
+            : type === Number || type === Boolean
+            ? JSON.parse(value)
+            : JSON.parse(atob(value));
 
         return result;
       },

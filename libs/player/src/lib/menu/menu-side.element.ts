@@ -6,12 +6,16 @@ import {
   TemplateResult,
 } from '@pinser-metaverse/core';
 import '@pinser-metaverse/design-system';
+import { PlayerProvider } from '../player/player.provider';
 import { MenuProvider } from './menu.provider';
 
 @customElement('meta-player-menu-side')
 export class MenuSideElement extends MetaElement {
   @inject()
   private menuProvider!: MenuProvider;
+
+  @inject()
+  private playerProvider!: PlayerProvider;
 
   override render(): TemplateResult {
     return html`
@@ -28,6 +32,21 @@ export class MenuSideElement extends MetaElement {
           scale="0.5 0.5 1"
           @click=${() => (this.menuProvider.panel = 'scene')}
         ></meta-button>
+
+        <a-entity position="0.075 0.03 0.001">
+          <meta-menu-button
+            position="0.029 0 0"
+            icon=${this.playerProvider.playersound ? 'volume_up' : 'volume_off'}
+            @click=${() =>
+              this.playerProvider.setSound(!this.playerProvider.playersound)}
+          ></meta-menu-button>
+          <meta-menu-button
+            position="0.062 0 0"
+            icon=${this.playerProvider.playermic ? 'mic' : 'mic_off'}
+            @click=${() =>
+              this.playerProvider.setMic(!this.playerProvider.playermic)}
+          ></meta-menu-button>
+        </a-entity>
       </meta-menu-side-profile>
     `;
   }

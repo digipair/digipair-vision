@@ -10,8 +10,6 @@ import {
 import './icon.element';
 
 const BACKGROUND = '#0062ff';
-const HOVER = '#3381ff';
-const SELECTED = '#75aaff';
 
 @customElement('meta-button')
 export class ButtonElement extends MetaElement {
@@ -32,14 +30,13 @@ export class ButtonElement extends MetaElement {
       <a-rounded
         selectable
         radius="0.045"
-        position="0 0 0.005"
+        position="0 0 0.001"
         width=${this.width}
         height="0.082"
         color=${this.backgroundcolor}
-        @mousedown=${() => (this.backgroundcolor = SELECTED)}
-        @mouseup=${() => (this.backgroundcolor = HOVER)}
-        @mouseenter=${() => (this.backgroundcolor = HOVER)}
-        @mouseleave=${() => (this.backgroundcolor = BACKGROUND)}
+        animation__mouseenter="property: position; to: 0 0 0.01; startEvents: mouseenter; dur: 500; easing: easeOutElastic"
+        animation__mouseleave="property: position; to: 0 0 0.005; startEvents: mouseleave; dur: 500; easing: easeOutElastic"
+        animation__mouseclick="property: position; to: 0 0 0.005; startEvents: click; dur: 500; easing: easeOutElastic"
       >
         ${!this.icon
           ? nothing
