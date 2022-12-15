@@ -124,13 +124,13 @@ import {
 @customElement('example-selectable-box')
 export class HelloWorldElement extends MetaElement {
   override render(): TemplateResult {
-    return html`<a-box selected @click=${() => console.log('box clicked')}>
+    return html`<a-box selectable @click=${() => console.log('box clicked')}>
     </a-box>`;
   }
 }
 ```
 
-> `selected`attribute is required to catch the mouse/touch/lazer events (`click`, `mouseenter`, `mouseleave`, ...)  
+> `selectable`attribute is required to catch the mouse/touch/lazer events (`click`, `mouseenter`, `mouseleave`, ...)  
 > See [AFrame documentation](https://aframe.io/docs/) for more information about events
 
 ### AFrame hook
@@ -227,7 +227,7 @@ export class HelloWorldElement extends MetaElement {
   override render(): TemplateResult {
     return html`<a-box
       color=${this.color}
-      selected
+      selectable
       @click=${() =>
         this.color === 'green' ? (this.color = 'red') : (this.color = 'green')}
     ></a-box>`;

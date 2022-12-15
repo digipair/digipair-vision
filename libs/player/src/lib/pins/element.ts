@@ -17,10 +17,10 @@ export class ElementElement extends MetaElement {
   element!: string;
 
   @state()
-  attributes = 'e30=';
+  attributes: any = {};
 
   @state()
-  options = 'e30=';
+  options: any = {};
 
   @inject()
   private playerProvider!: PlayerProvider;
@@ -28,18 +28,18 @@ export class ElementElement extends MetaElement {
   private template!: string;
 
   private updateOptions(editing: boolean): void {
-    const options = JSON.parse(atob(this.options));
+    const options = this.options;
     const type = 'static';
 
     if (!options.dynamic && this.el.getAttribute('body').type !== type) {
       this.el.setAttribute('body', { type });
     }
 
-    this.options = btoa(JSON.stringify({ ...options, editing }));
+    this.options = { ...options, editing };
   }
 
   override init(): void {
-    const options = JSON.parse(atob(this.options));
+    const options = this.options;
 
     if (options.import) {
       import(options.import);
@@ -62,8 +62,8 @@ export class ElementElement extends MetaElement {
       return null;
     }
 
-    const attributes = JSON.parse(atob(this.attributes));
-    const options = JSON.parse(atob(this.options));
+    const attributes = this.attributes;
+    const options = this.options;
 
     if ((options.editable && !options.editing) || NAF.utils.isMine(this.el)) {
       const type =

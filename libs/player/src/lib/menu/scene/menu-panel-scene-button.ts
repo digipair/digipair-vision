@@ -8,7 +8,7 @@ import {
 } from '@pinser-metaverse/core';
 import '@pinser-metaverse/design-system';
 
-@customElement('meta-player-toolbar-button')
+@customElement('meta-player-menu-panel-scene-button')
 export class PlayerToolbarButtonElement extends MetaElement {
   @property()
   icon!: string;

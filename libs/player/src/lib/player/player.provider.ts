@@ -134,16 +134,14 @@ export class PlayerProvider extends MetaProvider {
     el.setAttribute('networked', 'template: #element-template');
     el.setAttribute(
       'meta-element',
-      `element: ${JSON.stringify(element)}; attributes: ${JSON.stringify(
-        btoa(
-          JSON.stringify({
-            ...attributes,
-            position: undefined,
-            rotation: undefined,
-            scale: undefined,
-          })
-        )
-      )}; options: ${JSON.stringify(btoa(JSON.stringify(options)))};`
+      `element: ${btoa(JSON.stringify(element))}; attributes: ${btoa(
+        JSON.stringify({
+          ...attributes,
+          position: undefined,
+          rotation: undefined,
+          scale: undefined,
+        })
+      )}; options: ${btoa(JSON.stringify(options))};`
     );
 
     if (id) {

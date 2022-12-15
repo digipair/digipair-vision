@@ -7,7 +7,7 @@ import {
   nothing,
   TemplateResult,
   THREE,
-  unsafeHTML
+  unsafeHTML,
 } from '@pinser-metaverse/core';
 import 'aframe-blink-controls';
 import 'super-hands';
@@ -78,11 +78,11 @@ export class PlayerElement extends MetaElement {
         : html`<meta-player-menu
             scale="0.5 0.5 1"
             position="0.06 0.30 0.10"
-            rotation="0 90 -90"
+            rotation="0 0 0"
           ></meta-player-menu>`}
       <meta-player-toolbar
-        position="0.04 0.08 0.16"
-        rotation="0 90 -90"
+        position="0 0.1 0"
+        rotation="0 0 90"
       ></meta-player-toolbar>
     `;
   }
