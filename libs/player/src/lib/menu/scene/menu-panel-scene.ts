@@ -8,6 +8,7 @@ import {
 } from '@pinser-metaverse/core';
 import '@pinser-metaverse/design-system';
 import { PlayerProvider } from '../../player/player.provider';
+import './menu-panel-scene-button';
 
 @customElement('meta-player-menu-planel-scene')
 export class MenuPanelSceneElement extends MetaElement {
@@ -21,7 +22,7 @@ export class MenuPanelSceneElement extends MetaElement {
 
   private getPinsNameFromElement(el: Entity) {
     const component = el.components['meta-element'] as any;
-    const options = JSON.parse(atob(JSON.parse(component.data.options)));
+    const options = JSON.parse(atob(component.data.options));
 
     return options.name;
   }
@@ -59,12 +60,12 @@ export class MenuPanelSceneElement extends MetaElement {
                     width="0.4"
                     position="0.054 0.025 0.001"
                   ></a-text>
-                  <meta-player-toolbar-button
+                  <meta-player-menu-panel-scene-button
                     icon="delete"
                     position="0.72 0.025 0.001"
                     @click=${() => this.removePins(el)}
-                  ></meta-player-toolbar-button
-                ></a-rounded>
+                  ></meta-player-menu-panel-scene-button>
+                </a-rounded>
               `
             )}
       </meta-menu-panel>

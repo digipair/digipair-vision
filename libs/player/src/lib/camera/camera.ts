@@ -14,6 +14,8 @@ export class PlayerCameraElement extends MetaElement {
   vrmode!: boolean;
 
   override render(): TemplateResult {
+    console.log('this.vrmode', this.vrmode, typeof this.vrmode);
+
     return html`
       <a-entity
         static-body="shape: sphere; sphereRadius: 0.02"
@@ -24,8 +26,8 @@ export class PlayerCameraElement extends MetaElement {
         ? nothing
         : html`
             <meta-player-toolbar
-              position="-0.05 -0.175 -0.5"
-              scale="0.5 0.5 1"
+              position="0 -0.175 -0.5"
+              scale="0.5 0.5 0.5"
             ></meta-player-toolbar>
           `}
     `;
