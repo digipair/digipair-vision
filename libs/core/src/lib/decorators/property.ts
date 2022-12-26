@@ -21,7 +21,7 @@ export const property =
             default:
               type === Number || type === Boolean || type === String
                 ? options.default
-                : btoa(JSON.stringify(options.default)),
+                : btoa(encodeURIComponent(JSON.stringify(options.default))),
           }
         : {}),
       type:
@@ -32,7 +32,7 @@ export const property =
             ? value
             : type === Number || type === Boolean
             ? JSON.parse(value)
-            : JSON.parse(atob(value));
+            : JSON.parse(decodeURIComponent(atob(value)));
 
         return result;
       },

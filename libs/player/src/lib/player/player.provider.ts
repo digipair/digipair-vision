@@ -78,7 +78,10 @@ export class PlayerProvider extends MetaProvider {
   setInfo(data: any): void {
     (
       this.el.sceneEl?.querySelector('meta-player [meta-avatar]') as Entity
-    )?.setAttribute('meta-avatar', `playerinfo: ${btoa(JSON.stringify(data))}`);
+    )?.setAttribute(
+      'meta-avatar',
+      `playerinfo: ${btoa(encodeURIComponent(JSON.stringify(data)))}`
+    );
   }
 
   teleport(position: string, rotation?: string): void {
@@ -134,14 +137,18 @@ export class PlayerProvider extends MetaProvider {
     el.setAttribute('networked', 'template: #element-template');
     el.setAttribute(
       'meta-element',
-      `element: ${btoa(JSON.stringify(element))}; attributes: ${btoa(
-        JSON.stringify({
-          ...attributes,
-          position: undefined,
-          rotation: undefined,
-          scale: undefined,
-        })
-      )}; options: ${btoa(JSON.stringify(options))};`
+      `element: ${btoa(
+        encodeURIComponent(JSON.stringify(element))
+      )}; attributes: ${btoa(
+        encodeURIComponent(
+          JSON.stringify({
+            ...attributes,
+            position: undefined,
+            rotation: undefined,
+            scale: undefined,
+          })
+        )
+      )}; options: ${btoa(encodeURIComponent(JSON.stringify(options)))};`
     );
 
     if (id) {

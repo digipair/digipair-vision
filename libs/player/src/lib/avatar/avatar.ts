@@ -11,7 +11,7 @@ import './logo';
 
 @customElement('meta-avatar')
 export class AvatarElement extends MetaElement {
-  @property({ default: 'e30=' })
+  @property({ default: {} })
   playerinfo!: string;
 
   private defaultAvatar(): TemplateResult {
@@ -62,7 +62,7 @@ export class AvatarElement extends MetaElement {
     // get and update the custom avatar if exists
     el = this.el.querySelector('[playerinfo]');
     if (el) {
-      el.setAttribute('playerinfo', atob(this.playerinfo));
+      el.setAttribute('playerinfo', this.playerinfo);
       return null;
     }
 
@@ -76,10 +76,7 @@ export class AvatarElement extends MetaElement {
 
     el = document.createElement('a-entity');
     el.innerHTML = template;
-    el.querySelector(':scope > *')?.setAttribute(
-      'playerinfo',
-      atob(this.playerinfo)
-    );
+    el.querySelector(':scope > *')?.setAttribute('playerinfo', this.playerinfo);
 
     return html`${unsafeHTML(el.innerHTML)}`;
   }

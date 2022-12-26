@@ -31,11 +31,13 @@ export const state = () => (target: MetaElement, property: string) => {
 
   Object.defineProperty(target, property, {
     get() {
-      return JSON.parse(atob(this.data[property]));
+      return JSON.parse(decodeURIComponent(atob(this.data[property])));
     },
     set(value: unknown) {
       if (!this.constructor.schema[property].default) {
-        this.constructor.schema[property].default = btoa(JSON.stringify(value));
+        this.constructor.schema[property].default = btoa(
+          encodeURIComponent(JSON.stringify(value))
+        );
       }
 
       if (!this.__AFRAME_INSTANCE__) {
@@ -51,7 +53,9 @@ export const state = () => (target: MetaElement, property: string) => {
         clearTimeout(action.timer);
       }
 
-      (action.properties as any)[property] = btoa(JSON.stringify(value));
+      (action.properties as any)[property] = btoa(
+        encodeURIComponent(JSON.stringify(value))
+      );
       action.timer = setTimeout(() => {
         this.el.setAttribute(
           this.constructor.__ELEMENT_NAME__,

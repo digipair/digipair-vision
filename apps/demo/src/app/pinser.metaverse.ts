@@ -4,6 +4,7 @@ import {
   inject,
   MetaElement,
 } from '@pinser-metaverse/core';
+import { PlayerProvider } from '@pinser-metaverse/player';
 import { RouterProvider } from '@pinser-metaverse/router';
 import '@pinser-metaverse/screen-shared';
 import '@pinser-metaverse/teleport';
@@ -15,10 +16,19 @@ import { SessionProvider } from './session.provider';
 })
 export class PinserMetaverseSpaceElement extends MetaElement {
   @inject()
+  playerProvider: PlayerProvider;
+
+  @inject()
   routerProvider: RouterProvider;
 
   override init(): void {
     this.routerProvider.setRoutes(routes);
+
+    this.playerProvider.setInfo({
+      username: localStorage.getItem('username') || 'Visiteur',
+      avatar: localStorage.getItem('avatar') || '/assets/visitor.glb',
+      preview: localStorage.getItem('preview') || '/assets/visitor.png',
+    });
   }
 
   override render() {

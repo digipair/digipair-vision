@@ -5,10 +5,10 @@ import {
   nothing,
   state,
 } from '@pinser-metaverse/core';
-import { routeElement } from '@pinser-metaverse/router';
 import '@pinser-metaverse/design-system';
-import './stand.element';
+import { routeElement } from '@pinser-metaverse/router';
 import { SessionProvider } from '../../../../session.provider';
+import './stand.element';
 
 @routeElement('experiences-with-hands-space', { networked: true })
 export class WithHandsSpaceElement extends MetaElement {
@@ -122,7 +122,11 @@ export class WithHandsSpaceElement extends MetaElement {
         ? nothing
         : html`
             <experiences-with-hands-stand
-              pins=${btoa(JSON.stringify(this.articles[this.current].pins))}
+              pins=${btoa(
+                encodeURIComponent(
+                  JSON.stringify(this.articles[this.current].pins)
+                )
+              )}
               position="1.09 1.36 -0.166"
               rotation="0 -90 0"
             ></experiences-with-hands-stand>

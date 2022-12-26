@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Pinser METAVERSE Demo</title>
+    <base href="/" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <style>
+        body {
+            padding-top: 1rem;
+        }
+
+        .frame {
+            width: 100%;
+            height: 660px;
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+    </style>
+  </head>
+  <body>
+    <template id="template-login">
+        <form>
+          <div class="mb-3">
+            <label for="username" class="form-label">Nom d'utilisateur</label>
+            <input type="text" class="form-control" id="username" aria-describedby="usernameHelp">
+            <div id="usernameHelp" class="form-text">ATTENTION: accents et caractères spéciaux interdits.</div>
+          </div>
+          <button type="button" class="btn btn-primary" id="save-username">Suivant</button>
+        </form>
+    </template>
+
+    <template id="template-avatar">
+        <iframe id="frame" class="frame" src="https://pinser.readyplayer.me/avatar?frameApi&bodyType=halfbody&hands=false" allow="camera *; microphone *"></iframe>
+    </template>
+
+    <div class="container" id="container">
+        Chargement...
+    </div>
+
+    <script>
+        async function getPreview() {
+          if (!localStorage.getItem('preview')) {
+            const response = await fetch('https://render.readyplayer.me/render', { 
+              method: 'POST', 
+              body: JSON.stringify({ 
+                model: localStorage.getItem('avatar'),
+                scene: 'halfbody-portrait-v1'
+              })
+            });
+
+            const { renders } = await response.json();
+            localStorage.setItem('preview', renders[0]);
+          }
+
+          window.location = '/';
+        }
+
+        if (!localStorage.getItem('username')) {
+            document.querySelector('#container').innerHTML = document.querySelector('#template-login').innerHTML;
+            document.querySelector('#save-username').addEventListener('click', () => {
+                localStorage.setItem('username', document.querySelector('#username').value);
+                document.querySelector('#container').innerHTML = document.querySelector('#template-avatar').innerHTML;
+            });
+        } else if (!localStorage.getItem('avatar')) {
+            document.querySelector('#container').innerHTML = document.querySelector('#template-avatar').innerHTML;
+        } else {
+            getPreview();
+        }
+
+
+        
+      window.addEventListener('message', subscribe);
+      document.addEventListener('message', subscribe);
+
+      function subscribe(event) {
+        const json = parse(event);
+
+        if (json?.source !== 'readyplayerme') {
+          return;
+        }
+
+        // Susbribe to all events sent from Ready Player Me once frame is ready
+        if (json.eventName === 'v1.frame.ready') {
+          frame.contentWindow.postMessage(
+            JSON.stringify({
+              target: 'readyplayerme',
+              type: 'subscribe',
+              eventName: 'v1.**',
+            }),
+            '*'
+          );
+        }
+
+        // Get avatar GLB URL
+        if (json.eventName === 'v1.avatar.exported') {
+          console.log(`Avatar URL: ${json.data.url}`);
+          localStorage.setItem('avatar', json.data.url);
+          getPreview();
+        }
+
+        // Get user id
+        if (json.eventName === 'v1.user.set') {
+          console.log(
+            `User with id ${json.data.id} set: ${JSON.stringify(json)}`
+          );
+        }
+      }
+
+      function parse(event) {
+        try {
+          return JSON.parse(event.data);
+        } catch (error) {
+          return null;
+        }
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+  </body>
+</html>

@@ -9,9 +9,11 @@ import {
 export class MenuSideElement extends MetaElement {
   private get me(): { username: string; preview: string } {
     return JSON.parse(
-      atob(
-        (this.el.sceneEl?.querySelector('meta-player [meta-avatar]') as any)
-          .components['meta-avatar'].data.playerinfo
+      decodeURIComponent(
+        atob(
+          (this.el.sceneEl?.querySelector('meta-player [meta-avatar]') as any)
+            .components['meta-avatar'].data.playerinfo
+        )
       )
     );
   }

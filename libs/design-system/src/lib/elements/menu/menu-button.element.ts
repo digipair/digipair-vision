@@ -15,6 +15,7 @@ export class MenuButtonButtonElement extends MetaElement {
   override render(): TemplateResult {
     return html`
       <a-circle
+        position="-0.013 0 0.001"
         radius="0.015"
         color="#d0d0d0"
         animation__mouseenter="property: position; to: 0 0 0.005; startEvents: mouseenter; dur: 500; easing: easeOutElastic"

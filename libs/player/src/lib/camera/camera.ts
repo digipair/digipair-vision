@@ -14,8 +14,6 @@ export class PlayerCameraElement extends MetaElement {
   vrmode!: boolean;
 
   override render(): TemplateResult {
-    console.log('this.vrmode', this.vrmode, typeof this.vrmode);
-
     return html`
       <a-entity
         static-body="shape: sphere; sphereRadius: 0.02"

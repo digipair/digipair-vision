@@ -7,7 +7,6 @@ export function exporter(object3D: Entity['object3D'], filename: string): void {
   gltfExporter.parse(
     object3D,
     (result: any) => {
-      console.log(result);
       if (result instanceof ArrayBuffer) {
         saveArrayBuffer(result, `${filename}.glb`);
       } else {

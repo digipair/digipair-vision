@@ -21,7 +21,9 @@ export class MenuPanelSceneElement extends MetaElement {
 
   private getPinsNameFromElement(el: Entity) {
     const component = el.components['meta-element'] as any;
-    const options = JSON.parse(atob(component.data.options));
+    const options = JSON.parse(
+      decodeURIComponent(atob(component.data.options))
+    );
 
     return options.name;
   }
@@ -61,7 +63,7 @@ export class MenuPanelSceneElement extends MetaElement {
                   ></a-text>
                   <meta-menu-button
                     icon="delete"
-                    position="0.72 0.025 0.001"
+                    position="0.72 0.025 0"
                     @click=${() => this.removePins(el)}
                   ></meta-menu-button>
                 </a-rounded>

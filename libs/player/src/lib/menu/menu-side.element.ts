@@ -22,18 +22,18 @@ export class MenuSideElement extends MetaElement {
       <meta-menu-side-profile>
         <meta-button
           content="Pin's"
-          position="0.036 0.36 0.001"
+          position="0.036 0.36 0"
           scale="0.5 0.5 1"
           @click=${() => (this.menuProvider.panel = 'pins')}
         ></meta-button>
         <meta-button
           content="Scene"
-          position="0.036 0.30 0.001"
+          position="0.036 0.30 0"
           scale="0.5 0.5 1"
           @click=${() => (this.menuProvider.panel = 'scene')}
         ></meta-button>
 
-        <a-entity position="0.075 0.03 0.001">
+        <a-entity position="0.075 0.03 0">
           <meta-menu-button
             position="0.029 0 0"
             icon=${this.playerProvider.playersound ? 'volume_up' : 'volume_off'}
