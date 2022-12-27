@@ -22,6 +22,11 @@
             "output": "."
           },
           {
+            "glob": "apps/demo/src/settings.html",
+            "input": ".",
+            "output": "."
+          },
+          {
             "glob": "apps/demo/src/favicon.ico",
             "input": ".",
             "output": "."

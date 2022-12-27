@@ -46,7 +46,7 @@ export default class AframeContext {
     // conttainer for all aframe elements
     this.container = document.createElement('a-entity');
     this.container.classList.add('vr-container');
-    this.container.classList.add(this.settings.interactiveTag);
+    this.container.setAttribute(this.settings.interactiveTag, '');
 
     // position container
     const width =

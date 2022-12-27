@@ -143,7 +143,7 @@ export default class Element {
         if (clientRect.width == 0 || clientRect.height == 0) {
             this.entity.object3D.visible = false;
             if (!this.domElement.classList.contains("vr-span"))
-                this.entity.classList.remove(this.web2vr.settings.interactiveTag);
+                this.entity.removeAttribute(this.web2vr.settings.interactiveTag);
             this.position.aframePosition.y = 1000; // for some reason raycast still hits so have to move position
             return;
         }
@@ -151,7 +151,7 @@ export default class Element {
         // for future move this in TextElement class
         if (this.domElement.classList.contains("vr-span")) {
             // dont need interaction with the text when we always have the background as interaction
-            this.entity.classList.remove(this.web2vr.settings.interactiveTag);
+            this.entity.removeAttribute(this.web2vr.settings.interactiveTag);
             // so all inline text width is good, dont do this if its text inside button
             if (this.domElement.parentElement.tagName != "BUTTON") {
                 clientRect.width += 8;
@@ -172,7 +172,7 @@ export default class Element {
             if (this.style.visibility === "hidden" || this.style.display === "none") {
                 this.entity.object3D.visible = false;
                 if (!this.domElement.classList.contains("vr-span"))
-                    this.entity.classList.remove(this.web2vr.settings.interactiveTag);
+                    this.entity.removeAttribute(this.web2vr.settings.interactiveTag);
                 this.position.aframePosition.y = 1000; // for some reason raycast still hits so have to move position
                 // update border so we can remove it because element is hidden
                 this.updateBorder();
@@ -184,7 +184,7 @@ export default class Element {
                 // we have to check tagName and type to see if its input text, for future make this work with mouseEventHandle
                 // also add interactiveTag if its main container
                 if ((!this.domElement.classList.contains("vr-span") && (this.mouseEventHandle.listeningForMouseEvents || (this.domElement.tagName == "INPUT" && this.domElement.type == "text")) || this.domElement == this.web2vr.container))
-                    this.entity.classList.add(this.web2vr.settings.interactiveTag);
+                    this.entity.setAttribute(this.web2vr.settings.interactiveTag, '');
             }
 
             // if there is transform then width and height will be set with the transform matrix scale
@@ -411,14 +411,14 @@ export default class Element {
                 this.entity.object3D.visible = false;
                 // remove interactive tag
                 if (!this.domElement.classList.contains("vr-span"))
-                    this.entity.classList.remove(this.web2vr.settings.interactiveTag);
+                    this.entity.removeAttribute(this.web2vr.settings.interactiveTag);
             }
             else {
                 this.visible = true;
                 this.entity.object3D.visible = true;
                 // interactive tag so we can do raycasting if it has mouse events or its container background
                 if ((!this.domElement.classList.contains("vr-span") && this.mouseEventHandle.listeningForMouseEvents) || this.domElement == this.web2vr.container)
-                    this.entity.classList.add(this.web2vr.settings.interactiveTag);
+                    this.entity.setAttribute(this.web2vr.settings.interactiveTag, '');
             }
         }
     }

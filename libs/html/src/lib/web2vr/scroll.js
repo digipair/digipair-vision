@@ -39,7 +39,7 @@ export default class Scroll {
     this.plane = document.createElement('a-plane');
     this.plane.setAttribute('material', 'shader', 'flat');
     this.plane.setAttribute('material', 'side', 'double');
-    this.plane.classList.add(this.web2vr.settings.interactiveTag);
+    this.plane.setAttribute(this.web2vr.settings.interactiveTag, '');
     this.plane.setAttribute('color', '#F1F1F1');
     this.plane.setAttribute('width', 1);
     this.plane.setAttribute('vr-scrollbar', '');
@@ -59,10 +59,10 @@ export default class Scroll {
     if (this.hasScroll) {
       if (this.web2vr.container.element.style.visibility == 'visible') {
         this.scrollbar.object3D.visible = true;
-        this.plane.classList.add(this.web2vr.settings.interactiveTag);
+        this.plane.setAttribute(this.web2vr.settings.interactiveTag, '');
       } else if (this.web2vr.container.element.style.visibility == 'hidden') {
         this.scrollbar.object3D.visible = false;
-        this.plane.classList.remove(this.web2vr.settings.interactiveTag);
+        this.plane.removeAttribute(this.web2vr.settings.interactiveTag);
       }
     }
   }

@@ -41,9 +41,9 @@ export default class VideoElement extends Element {
 
     if (this.domElement.hasAttribute('vr')) {
       this.video360.object3D.visible = true;
-      this.video360.classList.add(this.web2vr.settings.interactiveTag);
+      this.video360.setAttribute(this.web2vr.settings.interactiveTag, '');
       this.entity.object3D.visible = false;
-      this.entity.classList.remove(this.web2vr.settings.interactiveTag);
+      this.entity.removeAttribute(this.web2vr.settings.interactiveTag);
 
       this.video360.setAttribute('src', '#' + id);
       // set video360 rotation
@@ -53,9 +53,9 @@ export default class VideoElement extends Element {
       else this.video360.object3D.rotation.y = 0;
     } else {
       this.video360.object3D.visible = false;
-      this.video360.classList.remove(this.web2vr.settings.interactiveTag);
+      this.video360.removeAttribute(this.web2vr.settings.interactiveTag);
       this.entity.object3D.visible = true;
-      this.entity.classList.add(this.web2vr.settings.interactiveTag);
+      this.entity.setAttribute(this.web2vr.settings.interactiveTag, '');
 
       this.entity.setAttribute('src', '#' + id);
     }

@@ -6,7 +6,7 @@ export default class Settings {
     this.layerStep = 0.0005; // z space between the layers
 
     this.parentElement = null;
-    this.interactiveTag = 'vr-interactable';
+    this.interactiveTag = 'selectable';
     this.ignoreTags = ['BR', 'SOURCE', 'SCRIPT', 'AUDIO', 'NOSCRIPT'];
 
     this.debug = false;

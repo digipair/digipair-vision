@@ -21,6 +21,7 @@ import '../toolbar/toolbar';
 import '../utils/Geometry.js';
 import '../utils/look-controls-custom.js';
 import { PlayerProvider } from './player.provider';
+import './selectable.directive';
 
 declare const NAF: any;
 
@@ -204,7 +205,7 @@ export class PlayerElement extends MetaElement {
           networked="template: #avatar-template;"
         >
           <a-entity
-            raycaster="objects: [selectable], .vr-interactable, .collidable;"
+            raycaster="objects: [selectable];"
             cursor="rayOrigin: mouse; fuse: false;"
           ></a-entity>
           ${!templateCamera ? this.defaultCamera() : unsafeHTML(templateCamera)}
@@ -230,7 +231,7 @@ export class PlayerElement extends MetaElement {
                 hand-controls="hand: left;"
                 laser-controls="hand: left;"
                 blink-controls="cameraRig: [player]; teleportOrigin: [camera]; collisionEntities: [teleportable]; snapTurn: false;"
-                raycaster="objects: [selectable], .vr-interactable, .collidable;"
+                raycaster="objects: [selectable];"
                 networked="template: #left-hand-template; attachTemplateToLocal: false;"
               >
                 ${!templateHandLeft
@@ -254,7 +255,7 @@ export class PlayerElement extends MetaElement {
                 hand-controls="hand: right;"
                 laser-controls="hand: right;"
                 blink-controls="cameraRig: [player]; teleportOrigin: [camera]; collisionEntities: [teleportable]; snapTurn: false;"
-                raycaster="objects: [selectable], .vr-interactable, .collidable;"
+                raycaster="objects: [selectable];"
                 networked="template: #right-hand-template; attachTemplateToLocal: false;"
               >
                 ${!templateHandRight

@@ -2,7 +2,7 @@ import {
   customHtmlElement,
   html,
   injectHtml,
-  MetaHtmlElement
+  MetaHtmlElement,
 } from '@pinser-metaverse/core';
 import { SessionProvider } from '../../session.provider';
 
@@ -26,6 +26,8 @@ export class HomeSpaceElement extends MetaHtmlElement {
         >
           Live your experiences
         </button>
+
+        <input type="text" name="test" />
       </section>
     `;
   }
