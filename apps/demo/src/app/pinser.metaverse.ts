@@ -29,6 +29,8 @@ export class PinserMetaverseSpaceElement extends MetaElement {
       avatar: localStorage.getItem('avatar') || '/assets/visitor.glb',
       preview: localStorage.getItem('preview') || '/assets/visitor.png',
     });
+
+    this.playerProvider.teleport('0.624 0.001 -0.363', '-10 145 0');
   }
 
   override render() {
