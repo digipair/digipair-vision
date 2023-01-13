@@ -14,13 +14,14 @@ AFRAME.registerComponent('selectable', {
   tick: function () {
     const handEls = this.handEls;
     let handEl: Entity;
-    let distance: number;
+    let touch: number;
+
     for (let i = 0; i < handEls.length; i++) {
       handEl = handEls[i];
-      distance = this.calculateFingerDistance(
+      touch = this.calculateFingerDistance(
         (handEl.components['hand-tracking-controls'] as any).indexTipPosition
       );
-      if (distance < this.data.pressDistance) {
+      if (touch) {
         // if (!this.pressed) { this.el.emit('pressedstarted'); }
         this.pressed = true;
         return;
@@ -35,11 +36,19 @@ AFRAME.registerComponent('selectable', {
   calculateFingerDistance: function (fingerPosition: any) {
     const el = this.el;
     const worldPosition = this.worldPosition;
+    const position =
+      el.tagName === 'META-MESH'
+        ? el.object3D.children[0]?.position
+        : el.object3D.position;
 
-    worldPosition.copy(el.object3D.position);
+    if (!position) {
+      return false;
+    }
+
+    worldPosition.copy(position);
     el.object3D.parent.updateMatrixWorld();
     el.object3D.parent.localToWorld(worldPosition);
 
-    return worldPosition.distanceTo(fingerPosition);
+    return worldPosition.distanceTo(fingerPosition) < this.data.pressDistance;
   },
 } as any);

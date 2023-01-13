@@ -76,20 +76,34 @@ export class AnimationMixerElement extends MetaElement {
     });
   }
 
-  override init(): void {
-    const mesh = (this.el.parentElement as Entity).object3D;
-    this.updateMesh(mesh);
+  private get parentEl(): Entity | null | undefined {
+    return this.el.parentElement?.closest(
+      `meta-mesh, meta-spline, a-gltf-model, a-obj-model`
+    );
+  }
 
-    this.el.parentElement?.addEventListener('object3dset', this.meshChanged);
+  override init(): void {
+    const parentEl = this.parentEl;
+
+    if (parentEl) {
+      const mesh = parentEl.object3D;
+      this.updateMesh(mesh);
+
+      parentEl.addEventListener('object3dset', this.meshChanged);
+    }
   }
 
   override remove(): void {
-    this.el.parentElement?.removeEventListener('object3dset', this.meshChanged);
+    this.parentEl?.removeEventListener('object3dset', this.meshChanged);
   }
 
   override update(): void {
-    const mesh = (this.el.parentElement as Entity).object3D;
-    this.updateMesh(mesh);
+    const parentEl = this.parentEl;
+
+    if (parentEl) {
+      const mesh = parentEl.object3D;
+      this.updateMesh(mesh);
+    }
   }
 
   private async updateMesh(

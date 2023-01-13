@@ -1,11 +1,9 @@
 import {
   customElement,
-  html,
   inject,
   MetaElement,
   state,
   TemplateResult,
-  unsafeHTML,
 } from '@pinser-metaverse/core';
 import { PlayerProvider } from '../player/player.provider';
 
@@ -14,9 +12,6 @@ declare const NAF: any;
 @customElement('meta-element')
 export class ElementElement extends MetaElement {
   @state()
-  element!: string;
-
-  @state()
   attributes: any = {};
 
   @state()
@@ -24,8 +19,6 @@ export class ElementElement extends MetaElement {
 
   @inject()
   private playerProvider!: PlayerProvider;
-
-  private template!: string;
 
   private updateOptions(editing: boolean): void {
     const options = this.options;
@@ -58,7 +51,7 @@ export class ElementElement extends MetaElement {
   }
 
   public override render(): TemplateResult | null {
-    if (!this.element || !this.attributes) {
+    if (!this.attributes) {
       return null;
     }
 
@@ -95,15 +88,10 @@ export class ElementElement extends MetaElement {
         this.el.removeAttribute('collision-filter');
     }
 
-    const template = `<${this.element} ${Object.getOwnPropertyNames(attributes)
-      .map((property) => `${property}="${attributes[property]}"`)
-      .join(' ')}></${this.element}>`;
+    Object.getOwnPropertyNames(attributes).forEach((attribute) =>
+      this.el.setAttribute(attribute, attributes[attribute])
+    );
 
-    if (this.template === template) {
-      return null;
-    }
-    this.template = template;
-
-    return html`${unsafeHTML(this.template)}`;
+    return null;
   }
 }
