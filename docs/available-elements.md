@@ -13,7 +13,7 @@
 Display a [spline](https://spline.design) scene
 
 ```html
-<meta-spline url="SPLINECODE_URL"></meta-spline>
+<meta-spline scene="SPLINECODE_URL"></meta-spline>
 ```
 
 ## @pinser-metaverse/spline

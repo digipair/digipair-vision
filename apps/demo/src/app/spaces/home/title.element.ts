@@ -26,8 +26,6 @@ export class HomeSpaceElement extends MetaHtmlElement {
         >
           Live your experiences
         </button>
-
-        <input type="text" name="test" />
       </section>
     `;
   }
