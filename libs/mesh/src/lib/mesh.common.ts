@@ -1,10 +1,4 @@
-import {
-  customElement,
-  Entity,
-  MetaElement,
-  property,
-  THREE,
-} from '@pinser-metaverse/core';
+import { Entity, MetaElement, THREE } from '@pinser-metaverse/core';
 
 function getPathTo(element: Element, root: Element): string {
   if (element.id !== '') return 'id("' + element.id + '")';
@@ -36,10 +30,9 @@ function kebabCase(text: string) {
     .toLowerCase();
 }
 
-@customElement('meta-mesh-shared')
-export class MeshSharedElement extends MetaElement {
-  @property()
-  object!: string;
+export abstract class MeshCommon extends MetaElement {
+  abstract object: string;
+  abstract shared: boolean;
 
   private meshChanged = (event: any) => {
     if (!event.target.contains(this.el) || event.target === this.el) {
@@ -79,7 +72,9 @@ export class MeshSharedElement extends MetaElement {
     }
   }
 
-  private updateMesh(parentMesh: THREE.Object3D<THREE.Event>) {
+  protected async updateMesh(
+    parentMesh: THREE.Object3D<THREE.Event>
+  ): Promise<void> {
     const mesh = !this.object
       ? parentMesh
       : (parentMesh?.getObjectByName(this.object) as THREE.Object3D<Event>);
@@ -87,6 +82,12 @@ export class MeshSharedElement extends MetaElement {
     if (!mesh) return;
     this.el.setObject3D('mesh', mesh);
 
+    if (this.shared) {
+      this.updateShare();
+    }
+  }
+
+  protected updateShare(): void {
     const localPosition = this.el.object3D.children[0].position;
     const scale = new THREE.Vector3();
     this.el.object3D.getWorldScale(scale);

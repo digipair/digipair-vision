@@ -88,6 +88,7 @@ export class HomeSpaceElement extends MetaElement {
       >
         <meta-mesh-animation-mixer
           object="Scene"
+          shared="true"
           url="https://agency-experiences.onrender.com/assets/animations.glb"
           mixer="clip: IDLE;"
           selectable

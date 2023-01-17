@@ -1,14 +1,13 @@
-import {
-  customElement,
-  Entity,
-  MetaElement,
-  property,
-} from '@pinser-metaverse/core';
+import { customElement, Entity, property } from '@pinser-metaverse/core';
+import { MeshCommon } from './mesh.common';
 
 @customElement('meta-mesh-animation-mixer')
-export class AnimationMixerElement extends MetaElement {
+export class MeshAnimationMixerElement extends MeshCommon {
   @property()
   object!: string;
+
+  @property({ default: false })
+  shared!: boolean;
 
   @property()
   url!: string;
@@ -18,14 +17,6 @@ export class AnimationMixerElement extends MetaElement {
 
   @property({ default: 'AuxScene' })
   origin!: string;
-
-  private meshChanged = (event: any) => {
-    if (!event.target.contains(this.el) || event.target === this.el) {
-      return;
-    }
-
-    this.updateMesh(event.detail.object);
-  };
 
   private async initialization(url: string): Promise<void> {
     if (!url) {
@@ -76,45 +67,19 @@ export class AnimationMixerElement extends MetaElement {
     });
   }
 
-  private get parentEl(): Entity | null | undefined {
-    return this.el.parentElement?.closest(
-      `meta-mesh, meta-spline, a-gltf-model, a-obj-model`
-    );
-  }
-
-  override init(): void {
-    const parentEl = this.parentEl;
-
-    if (parentEl) {
-      const mesh = parentEl.object3D;
-      this.updateMesh(mesh);
-
-      parentEl.addEventListener('object3dset', this.meshChanged);
-    }
-  }
-
-  override remove(): void {
-    this.parentEl?.removeEventListener('object3dset', this.meshChanged);
-  }
-
-  override update(): void {
-    const parentEl = this.parentEl;
-
-    if (parentEl) {
-      const mesh = parentEl.object3D;
-      this.updateMesh(mesh);
-    }
-  }
-
-  private async updateMesh(
+  override async updateMesh(
     parentMesh: THREE.Object3D<THREE.Event>
   ): Promise<void> {
-    const mesh = parentMesh?.getObjectByName(
-      this.object
-    ) as THREE.Object3D<Event>;
+    const mesh = !this.object
+      ? parentMesh
+      : (parentMesh?.getObjectByName(this.object) as THREE.Object3D<Event>);
 
     if (!mesh) return;
     this.el.setObject3D('mesh', mesh);
+
+    if (this.shared) {
+      this.updateShare();
+    }
 
     await this.initialization(this.url);
     this.el.setAttribute('animation-mixer', this.mixer);

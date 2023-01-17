@@ -30,8 +30,8 @@
     "url": "https://www.pinser.world"
   },
   "peerDependencies": {
-    "@pinser-metaverse/core": "0.24.0",
-    "@pinser-metaverse/design-system": "0.24.0"
+    "@pinser-metaverse/core": "0.24.1",
+    "@pinser-metaverse/design-system": "0.24.1"
   },
   "devDependencies": {
     "aframe-blink-controls": "^0.5.1",
