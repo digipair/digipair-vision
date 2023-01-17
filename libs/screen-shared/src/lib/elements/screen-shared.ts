@@ -84,15 +84,15 @@ export class ShareScreenElement extends MetaElement {
             <meta-button
               content="Ecran"
               position=${this.curved
-                ? `-0.160 0.043 0.005`
-                : `-0.160 0.043 0.002`}
+                ? `-0.160 0.043 0.01`
+                : `-0.160 0.043 0.005`}
               @click=${() => this.openDesktop({ curved: this.curved })}
             ></meta-button>
             <meta-button
               content="Webcam"
               position=${this.curved
-                ? `-0.160 -0.059 0.005`
-                : `-0.160 -0.059 0.002`}
+                ? `-0.160 -0.059 0.010`
+                : `-0.160 -0.059 0.005`}
               @click=${() => this.openWebcam({ curved: this.curved })}
             ></meta-button>
           `}
@@ -102,8 +102,8 @@ export class ShareScreenElement extends MetaElement {
             <meta-button
               content="Stop"
               position=${this.curved
-                ? `-0.160 -0.051 0.005`
-                : `-0.160 -0.051 0.002`}
+                ? `-0.160 -0.051 0.010`
+                : `-0.160 -0.051 0.005`}
               @click=${() => this.stop()}
             ></meta-button>
           `}

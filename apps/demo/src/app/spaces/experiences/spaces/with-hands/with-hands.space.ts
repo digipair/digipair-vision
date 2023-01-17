@@ -27,6 +27,7 @@ export class WithHandsSpaceElement extends MetaElement {
         name: 'Nike',
         image:
           'https://agency-experiences.onrender.com/assets/spaces/experiences/nike.png',
+        element: 'a-gltf-model',
         dynamic: false,
         editable: true,
         placeholder: {
@@ -36,11 +37,10 @@ export class WithHandsSpaceElement extends MetaElement {
         shape:
           'shape: box; halfExtents: 0.049 0.053 0.163; offset: 0.05 0.053 -0.06;',
         attributes: {
-          position: '0.296 -0.15 0.143',
-          'gltf-model':
-            'https://agency-experiences.onrender.com/assets/spaces/experiences/nike_shoe-small.glb',
+          position: '-0.01 -0.01 0.058',
+          src: 'https://agency-experiences.onrender.com/assets/spaces/experiences/nike_shoe-small.glb',
           scale: '0.002 0.002 0.002',
-          rotation: '0 0 0',
+          rotation: '0 -90 0',
         },
       },
     },
@@ -52,6 +52,7 @@ export class WithHandsSpaceElement extends MetaElement {
         name: 'Sci-Fi',
         image:
           'https://agency-experiences.onrender.com/assets/spaces/experiences/sci-fi.png',
+        element: 'a-gltf-model',
         dynamic: false,
         editable: true,
         placeholder: {
@@ -60,11 +61,10 @@ export class WithHandsSpaceElement extends MetaElement {
         },
         shape: 'shape: box; halfExtents: 0.049 0.081 0.163; offset: 0 0.081 0;',
         attributes: {
-          position: '0.223 -0.15 0.92',
-          'gltf-model':
-            'https://agency-experiences.onrender.com/assets/spaces/experiences/sci-fi_shoe-small.glb',
+          position: '0.041 -0.01 -0.012',
+          src: 'https://agency-experiences.onrender.com/assets/spaces/experiences/sci-fi_shoe-small.glb',
           scale: '2.445 2.445 2.445',
-          rotation: '0 90 0',
+          rotation: '0 0 0',
         },
       },
     },

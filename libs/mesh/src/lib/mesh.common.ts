@@ -103,7 +103,9 @@ export abstract class MeshCommon extends MetaElement {
 
     this.el.setAttribute(
       'meta-element',
-      `attributes: ${btoa(
+      `element: ${btoa(
+        encodeURIComponent(JSON.stringify('a-entity'))
+      )}; attributes: ${btoa(
         encodeURIComponent(JSON.stringify({}))
       )}; options: ${btoa(
         encodeURIComponent(
@@ -115,6 +117,7 @@ export abstract class MeshCommon extends MetaElement {
               localPosition.y
             } ${localPosition.z};`,
             dynamic: false,
+            inline: true,
           })
         )
       )};`
