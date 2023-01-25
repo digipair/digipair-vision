@@ -111,7 +111,7 @@ export const customElement =
       }));
 
     if (options.networked || networkedProviders.length > 0) {
-      AFRAME.registerPrimitive(`${elementName}`, {
+      AFRAME.registerPrimitive(elementName, {
         defaultComponents: {
           'networked-element': {
             element: elementName,
@@ -145,7 +145,7 @@ export const customElement =
         },
       });
     } else {
-      AFRAME.registerPrimitive(`${elementName}`, {
+      AFRAME.registerPrimitive(elementName, {
         defaultComponents: {
           [elementName]: {},
           ...Object.fromEntries(
