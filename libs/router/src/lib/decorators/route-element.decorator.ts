@@ -17,14 +17,7 @@ export const routeElement =
     _options?: { networked?: boolean; providers?: P[] }
   ) =>
   <E extends typeof MetaElement>(ElementClass: E) => {
-    customElement('meta-route-child-' + elementName, _options)(ElementClass);
-
-    AFRAME.registerComponent(elementName, {
-      init: function (): void {
-        this.el.innerHTML = `<meta-route-child-${elementName}></meta-route-child-${elementName}>`;
-      },
-    });
-    AFRAME.registerPrimitive(elementName, { defaultComponents: { [elementName]: '' } });
+    customElement(elementName, _options)(ElementClass);
 
     AFRAME.primitives.primitives[elementName]['prototype'].onBeforeEnter = (
       _location: RouterLocation,
