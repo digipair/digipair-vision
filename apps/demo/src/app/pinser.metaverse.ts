@@ -49,9 +49,9 @@ export class PinserMetaverseSpaceElement extends MetaElement {
       ></a-plane>
 
       <meta-teleportable
-        width="0.001"
-        height="0.001"
-        position="0 100 0"
+        width="100"
+        height="100"
+        position="0 0.001 0"
         visible="false"
       ></meta-teleportable>
     `;

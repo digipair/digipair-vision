@@ -7,6 +7,7 @@ import {
   nothing,
   property,
   state,
+  THREE,
 } from '@pinser-metaverse/core';
 import { PlayerProvider } from '../player/player.provider';
 
@@ -24,7 +25,14 @@ export class TeleportableCursorElement extends MetaElement {
   @inject()
   playerProvider!: PlayerProvider;
 
+  private currentPosition = { clientX: -1, clientY: -1 };
+  private mouseDownPosition = { clientX: -1, clientY: -1 };
+
   private teleport = (event: any) => {
+    if (!this.isClickAvailable()) {
+      return;
+    }
+
     const cursor: any = (this.el.sceneEl as Entity).querySelector('[cursor]');
     const enable =
       cursor.components.raycaster.intersectedEls[0]?.hasAttribute(
@@ -38,6 +46,36 @@ export class TeleportableCursorElement extends MetaElement {
     const { x, y, z } = event.detail.intersection.point;
     this.playerProvider.teleport(`${x} ${y} ${z}`);
   };
+
+  private saveMousePosition = ({ clientX, clientY }: any) => {
+    this.currentPosition = { clientX, clientY };
+  };
+
+  private saveTouchPosition = (event: any) => {
+    console.log('event', event);
+    const { clientX, clientY } = event.touches[0];
+    this.currentPosition = { clientX, clientY };
+  };
+
+  private saveMouseDownPosition = () => {
+    setTimeout(() => {
+      this.mouseDownPosition = this.currentPosition;
+    }, 1);
+  };
+
+  private isClickAvailable(): boolean {
+    const mouseDownPosition = new THREE.Vector2(
+      this.mouseDownPosition.clientX,
+      this.mouseDownPosition.clientY
+    );
+    const currentPosition = new THREE.Vector2(
+      this.currentPosition.clientX,
+      this.currentPosition.clientY
+    );
+    const distance = mouseDownPosition.distanceTo(currentPosition);
+
+    return distance < 5;
+  }
 
   private computeCursorPosition() {
     if (this.vrmode) {
@@ -72,6 +110,10 @@ export class TeleportableCursorElement extends MetaElement {
     const cursor = this.el.sceneEl?.querySelector('[cursor]');
 
     cursor?.addEventListener('click', this.teleport);
+    cursor?.addEventListener('mousedown', this.saveMouseDownPosition);
+    document.addEventListener('mousemove', this.saveMousePosition);
+    document.addEventListener('touchstart', this.saveTouchPosition);
+    document.addEventListener('touchmove', this.saveTouchPosition);
   }
 
   override tick(): void {
@@ -82,6 +124,10 @@ export class TeleportableCursorElement extends MetaElement {
     const cursor = this.el.sceneEl?.querySelector('[cursor]');
 
     cursor?.removeEventListener('click', this.teleport);
+    cursor?.removeEventListener('mousedown', this.saveMouseDownPosition);
+    document.removeEventListener('mousemove', this.saveMousePosition);
+    document.removeEventListener('touchstart', this.saveTouchPosition);
+    document.removeEventListener('touchmove', this.saveTouchPosition);
   }
 
   override render() {

@@ -67,15 +67,11 @@ export class ElementElement extends MetaElement {
     const attributes = this.attributes;
     const options = this.options;
 
-    console.log('render', element, options);
-
     if (options.editable && (!options.editing || NAF.utils.isMine(this.el))) {
       const type =
         options.dynamic || options.editing
           ? 'type: dynamic; shape: none;'
           : 'type: static; shape: none;';
-
-      console.log('render no editing', element, options, this.el);
 
       !this.el.hasAttribute('grabbable') &&
         this.el.setAttribute('grabbable', '');
