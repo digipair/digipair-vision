@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "camrender": "libs/camrender",
     "core": "libs/core",
     "demo": "apps/demo",
     "design-system": "libs/design-system",

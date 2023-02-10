@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@pinser-metaverse/camrender": ["libs/camrender/src/index.ts"],
       "@pinser-metaverse/core": ["libs/core/src/index.ts"],
       "@pinser-metaverse/design-system": ["libs/design-system/src/index.ts"],
       "@pinser-metaverse/exporter": ["libs/exporter/src/index.ts"],

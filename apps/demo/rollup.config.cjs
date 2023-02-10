@@ -11,9 +11,8 @@ function getRollupOptions(options) {
     plugins: [
       ...options.plugins,
       alias({
-        entries: [
-                  ]
-      })
+        entries: [],
+      }),
     ],
     external: (name) => {
       if (externals.includes(name)) {
@@ -30,10 +29,20 @@ function getRollupOptions(options) {
             (property) => ({
               find: property,
               replacement: tsconfig.compilerOptions.paths[property][0],
-            })),
-          { find: 'three/examples/jsm/loaders/DRACOLoader.js', replacement: 'libs/spline/src/lib/vendors/DRACOLoader.js' },
-          { find: 'three/examples/jsm/utils/BufferGeometryUtils.js', replacement: 'libs/spline/src/lib/vendors/BufferGeometryUtils.js' },
-          { find: 'three', replacement: 'libs/spline/src/lib/vendors/three.js' },
+            })
+          ),
+          {
+            find: 'three/examples/jsm/loaders/DRACOLoader.js',
+            replacement: 'libs/spline/src/lib/vendors/DRACOLoader.js',
+          },
+          {
+            find: 'three/examples/jsm/utils/BufferGeometryUtils.js',
+            replacement: 'libs/spline/src/lib/vendors/BufferGeometryUtils.js',
+          },
+          {
+            find: 'three',
+            replacement: 'libs/spline/src/lib/vendors/three.js',
+          },
         ],
       }),
     ],
