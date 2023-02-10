@@ -52,7 +52,6 @@ export class TeleportableCursorElement extends MetaElement {
   };
 
   private saveTouchPosition = (event: any) => {
-    console.log('event', event);
     const { clientX, clientY } = event.touches[0];
     this.currentPosition = { clientX, clientY };
   };

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>@pinser-metaverse/html</title>
+    <title>@pinser-metaverse/camrender</title>
     <base href="/" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,7 +11,6 @@
     <script type="importmap">
       {
         "imports": {
-          "@pinser-metaverse/camrender": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/camrender-es@0.25.1/index.js",
           "@pinser-metaverse/core": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/core-es@0.25.1/index.js",
           "@pinser-metaverse/player": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/player-es@0.25.1/index.js",
           "@pinser-metaverse/scene": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/scene-es@0.25.1/index.js",
@@ -22,6 +21,7 @@
           "@pinser-metaverse/design-system": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/design-system-es@0.25.1/index.js",
           "@pinser-metaverse/screen-shared": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/screen-shared-es@0.25.1/index.js",
           "@pinser-metaverse/room": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/room-es@0.25.1/index.js",
+          "@pinser-metaverse/html": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/html-es@0.25.1/index.js",
           "@pinser-metaverse/spline": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/spline-es@0.25.1/index.js",
           "@pinser-metaverse/mesh": "https://cdn.jsdelivr.net/npm/@pinser-metaverse/mesh-es@0.25.1/index.js"
         }
@@ -36,14 +36,10 @@
     </script>
   </head>
   <body>
-    <meta-scene session="33726ecf-72f9-4fce-9215-6808539231c3" development>
+    <meta-scene session="201d35ac-6408-4310-a9f6-93ed1b5ba08e" development>
       <template slot="scene">
         <a-sky color="#DDDDDD"></a-sky>
-        <meta-html position="0 0 -10">
-          <template>
-            <h1>Hello World !</h1>
-          </template>
-        </meta-html>
+        <meta-camrender position="0 0 -10"></meta-camrender>
       </template>
     </meta-scene>
   </body>

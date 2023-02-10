@@ -1,9 +1,9 @@
 {
-  "name": "@pinser-metaverse/spline-es",
+  "name": "@pinser-metaverse/camrender-es",
   "version": "0.0.0",
   "type": "module",
   "license": "MIT",
-  "homepage": "https://github.com/pinser-metaverse/pinser-metaverse/tree/master/libs/spline",
+  "homepage": "https://github.com/pinser-metaverse/pinser-metaverse/tree/master/libs/camrender",
   "keywords": [
     "pinser",
     "aframe",

@@ -55,10 +55,6 @@ export class AvatarElement extends MetaElement {
   override render(): TemplateResult | null {
     let el: Entity | null;
 
-    if (this.el.hasAttribute('camera')) {
-      return null;
-    }
-
     // get and update the custom avatar if exists
     el = this.el.querySelector('[playerinfo]');
     if (el) {

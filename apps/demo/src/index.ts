@@ -1,3 +1,4 @@
+import '@pinser-metaverse/camrender';
 import '@pinser-metaverse/core';
 import '@pinser-metaverse/design-system';
 import '@pinser-metaverse/exporter';

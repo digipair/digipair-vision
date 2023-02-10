@@ -39,7 +39,7 @@ export class ReadyPlayerMeElement extends MetaElement {
           ></a-text>
         </a-rounded>
 
-        <a-gltf-model src=${this.playerinfo.avatar} position="0 0 -0.02">
+        <a-gltf-model src=${this.playerinfo.avatar} position="0 0 -0.04">
           <meta-mesh object="LeftHand" scale="0 0 0"></meta-mesh>
           <meta-mesh object="RightHand" scale="0 0 0"></meta-mesh>
         </a-gltf-model>
