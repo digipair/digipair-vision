@@ -11,7 +11,7 @@ export function exporter(object3D: Entity['object3D'], filename: string): void {
         saveArrayBuffer(result, `${filename}.glb`);
       } else {
         const output = JSON.stringify(result, null, 2);
-        saveString(output, `${filename}.gltf`);
+        saveString(output, `${filename}.glb`);
       }
     },
     (error: any) => {
