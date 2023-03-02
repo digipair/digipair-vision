@@ -135,7 +135,7 @@ export class HelloWorldElement extends MetaElement {
 
 ### AFrame hook
 
-All the hooks [AFrame](https://aframe.io/docs/1.3.0/core/component.html#overview-of-methods) are usable with [pinser-metaverse](https://www.pinser-metaverse.com).
+All the hooks [AFrame](https://aframe.io/docs/1.4.0/core/component.html#overview-of-methods) are usable with [pinser-metaverse](https://www.pinser-metaverse.com).
 
 ```typescript
 import {
