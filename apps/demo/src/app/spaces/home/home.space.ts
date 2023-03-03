@@ -1,4 +1,3 @@
-import '@pinser-metaverse/camrender';
 import { html, inject, MetaElement } from '@pinser-metaverse/core';
 import '@pinser-metaverse/html';
 import '@pinser-metaverse/mesh';
@@ -97,12 +96,6 @@ export class HomeSpaceElement extends MetaElement {
           animation__mouseleave="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 500; easing: easeOutElastic;"
         ></meta-mesh-animation-mixer>
       </a-gltf-model>
-
-      <meta-camrender-camera position="0 1.6 0"></meta-camrender-camera>
-      <meta-camrender-screen
-        position="1.5 1.6 1"
-        rotation="0 -135 0"
-      ></meta-camrender-screen>
     `;
   }
 }
