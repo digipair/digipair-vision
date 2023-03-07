@@ -5,7 +5,7 @@ export default class TextElement extends ContainerElement {
     super(web2vr, domElement, layer, false);
 
     this.entity.setAttribute('text', 'value', '');
-    this.textValue = null;
+    this.textValue = '';
   }
 
   setupClipping() {
