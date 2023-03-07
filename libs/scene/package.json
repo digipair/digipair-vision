@@ -28,12 +28,12 @@
     "url": "https://www.pinser.world"
   },
   "peerDependencies": {
-    "@pinser-metaverse/core": "0.25.1",
-    "@pinser-metaverse/player": "0.25.1"
+    "@pinser-metaverse/core": "0.26.0",
+    "@pinser-metaverse/player": "0.26.0"
   },
   "devDependencies": {
     "@types/aframe": "^1.2.0",
-    "aframe": "^1.3.0",
+    "aframe": "^1.4.1",
     "aframe-extras": "^6.1.1",
     "aframe-physics-extras": "^0.1.3",
     "aframe-physics-system": "n5ro/aframe-physics-system#59100ac83033cf337d26925de1f92854c2988b75",
