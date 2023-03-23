@@ -1,6 +1,6 @@
 import TextElement from './textElement';
 
-export default class ButtomElement extends TextElement {
+export default class ButtonElement extends TextElement {
   constructor(web2vr, domElement, layer) {
     super(web2vr, domElement, layer);
     this.borderColor = new THREE.Color(0x000000);

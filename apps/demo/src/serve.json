@@ -1,1 +1,6 @@
-{}
+{
+  "rewrites": [
+    { "source": "experiences/**", "destination": "/index.html" },
+    { "source": "home/**", "destination": "/index.html" }
+  ]
+}
