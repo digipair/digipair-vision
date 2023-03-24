@@ -37,7 +37,7 @@
     </template>
 
     <template id="template-avatar">
-        <iframe id="frame" class="frame" src="https://pinser.readyplayer.me/avatar?frameApi&bodyType=halfbody&hands=false" allow="camera *; microphone *"></iframe>
+        <iframe id="frame" class="frame" src="https://pinser.readyplayer.me/avatar?frameApi&bodyType=halfbody&hands=false" allow="camera *; microphone *;clipboard-write"></iframe>
     </template>
 
     <div class="container" id="container">
@@ -46,17 +46,10 @@
 
     <script>
         async function getPreview() {
-          if (!localStorage.getItem('preview')) {
-            const response = await fetch('https://render.readyplayer.me/render', { 
-              method: 'POST', 
-              body: JSON.stringify({ 
-                model: localStorage.getItem('avatar'),
-                scene: 'halfbody-portrait-v1'
-              })
-            });
-
-            const { renders } = await response.json();
-            localStorage.setItem('preview', renders[0]);
+          
+          if (!localStorage.getItem('preview') && localStorage.getItem('avatar')) {
+            const preview2D = localStorage.getItem('avatar').replace('.glb','.png');
+            localStorage.setItem('preview', preview2D)     
           }
 
           window.location = '/';
