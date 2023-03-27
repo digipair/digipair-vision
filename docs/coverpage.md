@@ -1,4 +1,4 @@
-![Pinser logo](https://www.pinser.agency/wp-content/uploads/2022/06/logo-long-e1656513928420.png)
+![Pinser logo](https://www.pinser.world/assets/images/logo/logo.png)
 
 > Create your <strike>web site</strike> web metaverse
 
