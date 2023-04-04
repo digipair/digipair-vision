@@ -17,7 +17,7 @@ export default class InputElement extends TextElement {
       keyboard.position.copy(camera.position);
       keyboard.rotation.copy(camera.rotation);
       keyboard.rotation.z = 0;
-      keyboard.rotation.x = THREE.Math.degToRad(-30);
+      keyboard.rotation.x = THREE.MathUtils.degToRad(-30);
       keyboard.translateX(-0.24);
       keyboard.translateY(-0.1);
       keyboard.translateZ(-0.6);
