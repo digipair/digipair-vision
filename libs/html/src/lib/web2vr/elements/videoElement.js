@@ -49,7 +49,7 @@ export default class VideoElement extends Element {
       // set video360 rotation
       const rotation = this.domElement.getAttribute('vr');
       if (rotation)
-        this.video360.object3D.rotation.y = THREE.Math.degToRad(rotation);
+        this.video360.object3D.rotation.y = THREE.MathUtils.degToRad(rotation);
       else this.video360.object3D.rotation.y = 0;
     } else {
       this.video360.object3D.visible = false;
