@@ -34,7 +34,7 @@
     "@pinser-metaverse/design-system": "0.26.1"
   },
   "devDependencies": {
-    "aframe-blink-controls": "^0.5.1",
-    "super-hands": "^3.0.3"
+    "aframe-blink-controls": "0.4.3",
+    "super-hands": "3.0.4"
   }
 }
