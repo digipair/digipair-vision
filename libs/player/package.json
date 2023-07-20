@@ -30,11 +30,11 @@
     "url": "https://www.pinser.world"
   },
   "peerDependencies": {
-    "@pinser-metaverse/core": "0.26.1",
-    "@pinser-metaverse/design-system": "0.26.1"
+    "@pinser-metaverse/core": "0.27.0",
+    "@pinser-metaverse/design-system": "0.27.0"
   },
   "devDependencies": {
-    "aframe-blink-controls": "^0.5.1",
-    "super-hands": "^3.0.3"
+    "aframe-blink-controls": "0.4.3",
+    "super-hands": "3.0.4"
   }
 }
