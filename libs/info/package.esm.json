@@ -22,7 +22,7 @@
     "url": "https://www.pinser.world"
   },
   "peerDependencies": {
-    "@pinser-metaverse/core": "0.27.0",
-    "@pinser-metaverse/design-system": "0.27.0"
+    "@pinser-metaverse/core": "0.27.1",
+    "@pinser-metaverse/design-system": "0.27.1"
   }
 }

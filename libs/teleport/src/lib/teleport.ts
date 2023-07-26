@@ -40,7 +40,7 @@ export class TeleportElement extends MetaElement {
     rotation.setFromQuaternion(quaternion);
 
     const x = rotationx;
-    const y = (THREE as any).Math.radToDeg(rotation.x) + rotationy;
+    const y = (THREE as any).MathUtils.radToDeg(rotation.x) + rotationy;
 
     this.playerProvider.teleport(
       `${position.x} ${height} ${position.z}`,

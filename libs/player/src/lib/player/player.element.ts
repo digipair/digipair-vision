@@ -119,10 +119,10 @@ export class PlayerElement extends MetaElement {
 
         (camera as any).components[
           'look-controls-custom'
-        ].pitchObject.rotation.x = (THREE as any).Math.degToRad(+rx);
+        ].pitchObject.rotation.x = (THREE as any).MathUtils.degToRad(+rx);
         (camera as any).components[
           'look-controls-custom'
-        ].yawObject.rotation.y = (THREE as any).Math.degToRad(+ry);
+        ].yawObject.rotation.y = (THREE as any).MathUtils.degToRad(+ry);
       }
     }
   };
