@@ -69,7 +69,7 @@ export const injectable =
       tock: function (
         time: number,
         timeDelta: number,
-        camera: THREE.Camera
+        camera: any
       ): void {
         getInstance(this as Component).tock(time, timeDelta, camera);
       },
