@@ -68,11 +68,11 @@ export class MeshAnimationMixerElement extends MeshCommon {
   }
 
   override async updateMesh(
-    parentMesh: THREE.Object3D<THREE.Event>
+    parentMesh: any
   ): Promise<void> {
     const mesh = !this.object
       ? parentMesh
-      : (parentMesh?.getObjectByName(this.object) as THREE.Object3D<Event>);
+      : (parentMesh?.getObjectByName(this.object) as any);
 
     if (!mesh) return;
     this.el.setObject3D('mesh', mesh);
