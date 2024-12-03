@@ -1,8 +1,0 @@
-{
-  "name": "@digipair-vision/core",
-  "version": "0.0.0",
-  "dependencies": {},
-  "typings": "./index.d.ts",
-  "main": "./index.cjs.js",
-  "module": "./index.esm.js"
-}
