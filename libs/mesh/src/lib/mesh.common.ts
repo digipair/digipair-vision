@@ -72,9 +72,7 @@ export abstract class MeshCommon extends MetaElement {
     }
   }
 
-  protected async updateMesh(
-    parentMesh: any
-  ): Promise<void> {
+  protected async updateMesh(parentMesh: any): Promise<void> {
     const mesh = !this.object
       ? parentMesh
       : (parentMesh?.getObjectByName(this.object) as any);

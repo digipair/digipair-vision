@@ -22,7 +22,7 @@ export class SceneElement extends MetaHtmlElement {
   private server = 'https://networked.digipair.ai';
 
   @propertyHtml()
-  private draco = 'https://assets.pinser-metaverse.com/draco/';
+  private draco = 'https://assets.digipair-vision.com/draco/';
 
   @propertyHtml()
   private adapter = 'easyrtc';

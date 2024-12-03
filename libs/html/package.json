@@ -1,7 +1,7 @@
 {
   "name": "@digipair-vision/html",
   "version": "0.0.0",
-  "type": "module ",
+  "type": "module",
   "license": "MIT",
   "homepage": "https://github.com/digipair/digipair-vision/tree/master/libs/htnl",
   "keywords": [
