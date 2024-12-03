@@ -1,0 +1,2388 @@
+{
+  "version": "6.0",
+  "nxVersion": "18.0.8",
+  "deps": {
+    "@rollup/plugin-alias": "^5.1.0",
+    "@splinetool/loader": "^1.9.46",
+    "@swc/helpers": "~0.5.2",
+    "@types/aframe": "^1.2.7",
+    "@vaadin/router": "^2.0.0",
+    "aframe": "1.6.0",
+    "aframe-blink-controls": "0.4.3",
+    "aframe-extras": "7.5.2",
+    "aframe-gradient-sky": "^1.0.4",
+    "aframe-physics-extras": "^0.1.3",
+    "aframe-physics-system": "n5ro/aframe-physics-system#59100ac83033cf337d26925de1f92854c2988b75",
+    "aframe-rounded": "^1.0.3",
+    "core-js": "^3.39.0",
+    "jest-canvas-mock": "^2.5.2",
+    "lit": "^3.1.4",
+    "md5": "^2.3.0",
+    "networked-aframe": "^0.12.3",
+    "reflect-metadata": "^0.2.2",
+    "regenerator-runtime": "0.14.1",
+    "super-hands": "3.0.4",
+    "swc-loader": "^0.2.6",
+    "@nestjs/schematics": "^10.1.1",
+    "@nestjs/testing": "^10.3.9",
+    "@nx/eslint": "18.0.8",
+    "@nx/eslint-plugin": "18.0.8",
+    "@nx/jest": "18.0.8",
+    "@nx/js": "18.0.8",
+    "@nx/nest": "18.0.8",
+    "@nx/node": "18.0.8",
+    "@nx/rollup": "18.0.8",
+    "@nx/web": "18.0.8",
+    "@nx/webpack": "18.0.8",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@swc-node/register": "~1.8.0",
+    "@swc/cli": "~0.1.62",
+    "@swc/core": "~1.3.85",
+    "@swc/jest": "0.2.20",
+    "@types/jest": "^29.4.0",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "20.14.2",
+    "@types/nodemailer": "^6.4.15",
+    "@types/showdown": "^2.0.6",
+    "@types/web-push": "^3.6.4",
+    "@typescript-eslint/eslint-plugin": "^7.13.0",
+    "@typescript-eslint/parser": "^7.13.0",
+    "css-selector-generator": "^3.6.8",
+    "docsify-cli": "^4.4.4",
+    "eslint": "~9.5.0",
+    "eslint-config-prettier": "^9.1.0",
+    "jest": "^29.7.0",
+    "jest-environment-node": "^29.7.0",
+    "nx": "18.0.8",
+    "prettier": "3.3.2",
+    "showdown": "^2.1.0",
+    "ts-jest": "^29.1.5",
+    "ts-node": "10.9.2",
+    "typescript": "~5.4.5",
+    "webpack-cli": "^5.1.4",
+    "@types/md5": "^2.3.5",
+    "@types/uuid": "^10.0.0",
+    "@ungap/custom-elements": "1.3.0",
+    "cypress": "^13.16.0",
+    "eslint-plugin-cypress": "^4.1.0",
+    "npm-run-all": "^4.1.5",
+    "rollup-plugin-terser": "^7.0.2",
+    "serve": "^14.2.4",
+    "uuid": "^11.0.3"
+  },
+  "pathMappings": {
+    "@digipair-vision/camrender": [
+      "libs/camrender/src/index.ts"
+    ],
+    "@digipair-vision/core": [
+      "libs/core/src/index.ts"
+    ],
+    "@digipair-vision/design-system": [
+      "libs/design-system/src/index.ts"
+    ],
+    "@digipair-vision/exporter": [
+      "libs/exporter/src/index.ts"
+    ],
+    "@digipair-vision/html": [
+      "libs/html/src/index.ts"
+    ],
+    "@digipair-vision/info": [
+      "libs/info/src/index.ts"
+    ],
+    "@digipair-vision/mesh": [
+      "libs/mesh/src/index.ts"
+    ],
+    "@digipair-vision/observe": [
+      "libs/observe/src/index.ts"
+    ],
+    "@digipair-vision/player": [
+      "libs/player/src/index.ts"
+    ],
+    "@digipair-vision/ready-player-me": [
+      "libs/ready-player-me/src/index.ts"
+    ],
+    "@digipair-vision/router": [
+      "libs/router/src/index.ts"
+    ],
+    "@digipair-vision/scene": [
+      "libs/scene/src/index.ts"
+    ],
+    "@digipair-vision/screen-shared": [
+      "libs/screen-shared/src/index.ts"
+    ],
+    "@digipair-vision/spline": [
+      "libs/spline/src/index.ts"
+    ],
+    "@digipair-vision/teleport": [
+      "libs/teleport/src/index.ts"
+    ]
+  },
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [],
+    "projectFileMap": {
+      "core": [
+        {
+          "file": "libs/core/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/core/.lib.swcrc",
+          "hash": "2681977989232576147"
+        },
+        {
+          "file": "libs/core/.swcrc",
+          "hash": "590103721083604220"
+        },
+        {
+          "file": "libs/core/README.md",
+          "hash": "10907728987461362843"
+        },
+        {
+          "file": "libs/core/jest.config.ts",
+          "hash": "2107797296629245421",
+          "deps": [
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "libs/core/package.json",
+          "hash": "4927380565469649443"
+        },
+        {
+          "file": "libs/core/project.json",
+          "hash": "11140535712191454465"
+        },
+        {
+          "file": "libs/core/rollup.build.cjs",
+          "hash": "16199825174508853060",
+          "deps": [
+            "npm:@rollup/plugin-alias",
+            "npm:path"
+          ]
+        },
+        {
+          "file": "libs/core/src/index.d.ts",
+          "hash": "17763201694493284238",
+          "deps": [
+            "npm:aframe",
+            "npm:lit",
+            "npm:three"
+          ]
+        },
+        {
+          "file": "libs/core/src/lib/classes/meta-element.ts",
+          "hash": "8255214650307364909",
+          "deps": [
+            "npm:aframe",
+            "npm:lit"
+          ]
+        },
+        {
+          "file": "libs/core/src/lib/classes/meta-html-element.ts",
+          "hash": "4848275131182032183",
+          "deps": [
+            "npm:lit"
+          ]
+        },
+        {
+          "file": "libs/core/src/lib/classes/meta-provider.ts",
+          "hash": "13876660864367807548"
+        },
+        {
+          "file": "libs/core/src/lib/components/hide-on-ar.ts",
+          "hash": "7798759187408111277",
+          "deps": [
+            "npm:aframe"
+          ]
+        },
+        {
+          "file": "libs/core/src/lib/components/networked-element.ts",
+          "hash": "3749451928423076332"
+        },
+        {
+          "file": "libs/core/src/lib/decorators/custom-element.ts",
+          "hash": "15539437294407793601",
+          "deps": [
+            "npm:aframe"
+          ]
+        },
+        {
+          "file": "libs/core/src/lib/decorators/inject-html.ts",
+          "hash": "11915633586438128635",
+          "deps": [
+            "npm:reflect-metadata"
+          ]
+        },
+        {
+          "file": "libs/core/src/lib/decorators/inject.ts",
+          "hash": "1135434798320167664",
+          "deps": [
+            "npm:reflect-metadata"
+          ]
+        },
+        {
+          "file": "libs/core/src/lib/decorators/injectable.ts",
+          "hash": "2981317679700602110",
+          "deps": [
+            "npm:aframe"
+          ]
+        },
+        {
+          "file": "libs/core/src/lib/decorators/property.ts",
+          "hash": "17480880412324054330",
+          "deps": [
+            "npm:aframe",
+            "npm:reflect-metadata"
+          ]
+        },
+        {
+          "file": "libs/core/src/lib/decorators/state.ts",
+          "hash": "4906042076379348374",
+          "deps": [
+            "npm:aframe"
+          ]
+        },
+        {
+          "file": "libs/core/src/lib/interfaces/subscription.ts",
+          "hash": "807658572285793485"
+        },
+        {
+          "file": "libs/core/src/lib/stores/providers.ts",
+          "hash": "11157380017772568900"
+        },
+        {
+          "file": "libs/core/tsconfig.json",
+          "hash": "5840880287502376438"
+        },
+        {
+          "file": "libs/core/tsconfig.lib.json",
+          "hash": "3632393694954060084"
+        },
+        {
+          "file": "libs/core/tsconfig.spec.json",
+          "hash": "11550347367511341917"
+        },
+        {
+          "file": "libs/core/src/index.ts",
+          "hash": "1621783086084689839",
+          "deps": [
+            "npm:aframe",
+            "npm:lit"
+          ]
+        }
+      ],
+      "demo": [
+        {
+          "file": "apps/demo/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "apps/demo/.lib.swcrc",
+          "hash": "11296388699961188334"
+        },
+        {
+          "file": "apps/demo/.swcrc",
+          "hash": "590103721083604220"
+        },
+        {
+          "file": "apps/demo/browserslist",
+          "hash": "3682804324403383287"
+        },
+        {
+          "file": "apps/demo/jest.config.ts",
+          "hash": "6420559611219804284"
+        },
+        {
+          "file": "apps/demo/package.json",
+          "hash": "14425527132756880912"
+        },
+        {
+          "file": "apps/demo/project.json",
+          "hash": "4837503804168170706"
+        },
+        {
+          "file": "apps/demo/rollup.config.cjs",
+          "hash": "943853117475777310",
+          "deps": [
+            "npm:rollup-plugin-terser",
+            "npm:@rollup/plugin-alias"
+          ]
+        },
+        {
+          "file": "apps/demo/src/app/pinser.metaverse.ts",
+          "hash": "8683671430867699410",
+          "deps": [
+            "core",
+            "player",
+            "router",
+            "screen-shared",
+            "teleport"
+          ]
+        },
+        {
+          "file": "apps/demo/src/app/pinser.routes.ts",
+          "hash": "16228944104346245975"
+        },
+        {
+          "file": "apps/demo/src/app/session.provider.ts",
+          "hash": "1033452769750347020",
+          "deps": [
+            "core",
+            "player",
+            "router"
+          ]
+        },
+        {
+          "file": "apps/demo/src/app/spaces/experiences/experiences.routes.ts",
+          "hash": "2048927907981487993"
+        },
+        {
+          "file": "apps/demo/src/app/spaces/experiences/experiences.space.ts",
+          "hash": "1179533784941074041",
+          "deps": [
+            "core",
+            "router"
+          ]
+        },
+        {
+          "file": "apps/demo/src/app/spaces/experiences/spaces/cinema/cinema.space.ts",
+          "hash": "8696953954919092351",
+          "deps": [
+            "core",
+            "router"
+          ]
+        },
+        {
+          "file": "apps/demo/src/app/spaces/experiences/spaces/cinema360/cinema360.space.ts",
+          "hash": "2382248092387425095",
+          "deps": [
+            "core",
+            "router"
+          ]
+        },
+        {
+          "file": "apps/demo/src/app/spaces/experiences/spaces/cinemavr/cinemavr.space.ts",
+          "hash": "5335473441542462336",
+          "deps": [
+            "core",
+            "router"
+          ]
+        },
+        {
+          "file": "apps/demo/src/app/spaces/experiences/spaces/home/home.space.ts",
+          "hash": "13613880797405010993",
+          "deps": [
+            "core",
+            "router"
+          ]
+        },
+        {
+          "file": "apps/demo/src/app/spaces/experiences/spaces/mixed-reality/mixed-reality.space.ts",
+          "hash": "6988146414393182389",
+          "deps": [
+            "core",
+            "router"
+          ]
+        },
+        {
+          "file": "apps/demo/src/app/spaces/experiences/spaces/with-hands/stand.element.ts",
+          "hash": "5385959655378159443",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "apps/demo/src/app/spaces/experiences/spaces/with-hands/with-hands.space.ts",
+          "hash": "11066339151895234738",
+          "deps": [
+            "core",
+            "design-system",
+            "router"
+          ]
+        },
+        {
+          "file": "apps/demo/src/app/spaces/home/home.space.ts",
+          "hash": "4692832587670969219",
+          "deps": [
+            "core",
+            "html",
+            "mesh",
+            "router"
+          ]
+        },
+        {
+          "file": "apps/demo/src/app/spaces/home/title.element.ts",
+          "hash": "13827263791029766511",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "apps/demo/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/demo/src/assets/animations.glb",
+          "hash": "8132524959562115880"
+        },
+        {
+          "file": "apps/demo/src/assets/man.glb",
+          "hash": "13524187080720619131"
+        },
+        {
+          "file": "apps/demo/src/favicon.ico",
+          "hash": "4235891415307196222"
+        },
+        {
+          "file": "apps/demo/src/index.html",
+          "hash": "12681918348933067678"
+        },
+        {
+          "file": "apps/demo/src/index.ts",
+          "hash": "14255348345894850483",
+          "deps": [
+            "camrender",
+            "core",
+            "design-system",
+            "exporter",
+            "html",
+            "info",
+            "mesh",
+            "observe",
+            "player",
+            "ready-player-me",
+            "router",
+            "scene",
+            "screen-shared",
+            "spline",
+            "teleport"
+          ]
+        },
+        {
+          "file": "apps/demo/src/serve.json",
+          "hash": "9623482702239066577"
+        },
+        {
+          "file": "apps/demo/src/settings.html",
+          "hash": "3136268866947584249"
+        },
+        {
+          "file": "apps/demo/src/test-setup.ts",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/demo/tsconfig.app.json",
+          "hash": "2270295517860578778"
+        },
+        {
+          "file": "apps/demo/tsconfig.json",
+          "hash": "9214820933160915425"
+        },
+        {
+          "file": "apps/demo/tsconfig.lib.json",
+          "hash": "13034901906147047048"
+        },
+        {
+          "file": "apps/demo/tsconfig.spec.json",
+          "hash": "6658172359945877284"
+        }
+      ],
+      "screen-shared": [
+        {
+          "file": "libs/screen-shared/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/screen-shared/.lib.swcrc",
+          "hash": "11296388699961188334"
+        },
+        {
+          "file": "libs/screen-shared/.swcrc",
+          "hash": "10207645754039751121"
+        },
+        {
+          "file": "libs/screen-shared/README.md",
+          "hash": "10907728987461362843"
+        },
+        {
+          "file": "libs/screen-shared/jest.config.ts",
+          "hash": "10916259132099256099",
+          "deps": [
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "libs/screen-shared/package.esm.json",
+          "hash": "8370650339947351"
+        },
+        {
+          "file": "libs/screen-shared/package.json",
+          "hash": "6887211505174389821",
+          "deps": [
+            "core",
+            "design-system",
+            "player"
+          ]
+        },
+        {
+          "file": "libs/screen-shared/project.json",
+          "hash": "12993078713900718116"
+        },
+        {
+          "file": "libs/screen-shared/rollup.config.cjs",
+          "hash": "16953823835044637120",
+          "deps": [
+            "npm:rollup-plugin-terser"
+          ]
+        },
+        {
+          "file": "libs/screen-shared/src/index.html",
+          "hash": "7443724805235188165"
+        },
+        {
+          "file": "libs/screen-shared/src/index.ts",
+          "hash": "11540784766868529902"
+        },
+        {
+          "file": "libs/screen-shared/src/lib/elements/desktop.ts",
+          "hash": "11357297858237509730",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/screen-shared/src/lib/elements/screen-shared.ts",
+          "hash": "6495346417771903556",
+          "deps": [
+            "core",
+            "design-system"
+          ]
+        },
+        {
+          "file": "libs/screen-shared/src/lib/elements/webcam.ts",
+          "hash": "4583841362133824263",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/screen-shared/src/lib/providers/screen-shared.provider.ts",
+          "hash": "1832646840742550525",
+          "deps": [
+            "core",
+            "player",
+            "npm:md5"
+          ]
+        },
+        {
+          "file": "libs/screen-shared/tsconfig.json",
+          "hash": "5840880287502376438"
+        },
+        {
+          "file": "libs/screen-shared/tsconfig.lib.json",
+          "hash": "6789591993676711731"
+        },
+        {
+          "file": "libs/screen-shared/tsconfig.spec.json",
+          "hash": "10595040461224341030"
+        }
+      ],
+      "networked-server": [
+        {
+          "file": "apps/networked-server/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "apps/networked-server/jest.config.ts",
+          "hash": "10027174517329571449"
+        },
+        {
+          "file": "apps/networked-server/project.json",
+          "hash": "14365444261387414667"
+        },
+        {
+          "file": "apps/networked-server/src/app/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/networked-server/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/networked-server/src/environments/environment.prod.ts",
+          "hash": "10220522844224226756"
+        },
+        {
+          "file": "apps/networked-server/src/environments/environment.ts",
+          "hash": "1135292433917692033"
+        },
+        {
+          "file": "apps/networked-server/src/main.ts",
+          "hash": "5249951641889982773",
+          "deps": [
+            "npm:express",
+            "npm:http",
+            "npm:open-easyrtc",
+            "npm:socket.io"
+          ]
+        },
+        {
+          "file": "apps/networked-server/tsconfig.app.json",
+          "hash": "701691449558357218"
+        },
+        {
+          "file": "apps/networked-server/tsconfig.json",
+          "hash": "9214820933160915425"
+        },
+        {
+          "file": "apps/networked-server/tsconfig.spec.json",
+          "hash": "10595040461224341030"
+        }
+      ],
+      "files": [
+        {
+          "file": "tools/generators/pinser/files/.lib.swcrc",
+          "hash": "11296388699961188334"
+        },
+        {
+          "file": "tools/generators/pinser/files/.swcrc",
+          "hash": "590103721083604220"
+        },
+        {
+          "file": "tools/generators/pinser/files/jest.config.ts",
+          "hash": "4503108485794036987",
+          "deps": [
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "tools/generators/pinser/files/package.esm.json",
+          "hash": "11034418442525618344"
+        },
+        {
+          "file": "tools/generators/pinser/files/package.json",
+          "hash": "15633469488516575607",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "tools/generators/pinser/files/project.json",
+          "hash": "7003206060681441518"
+        },
+        {
+          "file": "tools/generators/pinser/files/rollup.config.cjs",
+          "hash": "3634757379037039428",
+          "deps": [
+            "npm:rollup-plugin-terser"
+          ]
+        },
+        {
+          "file": "tools/generators/pinser/files/src/index.html",
+          "hash": "126018916064825612"
+        },
+        {
+          "file": "tools/generators/pinser/files/src/index.ts",
+          "hash": "14720947997518963223"
+        },
+        {
+          "file": "tools/generators/pinser/files/src/lib/__name__.ts",
+          "hash": "237829447868139829",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "tools/generators/pinser/files/tsconfig.json",
+          "hash": "5840880287502376438"
+        },
+        {
+          "file": "tools/generators/pinser/files/tsconfig.lib.json",
+          "hash": "6789591993676711731"
+        },
+        {
+          "file": "tools/generators/pinser/files/tsconfig.spec.json",
+          "hash": "10595040461224341030"
+        }
+      ],
+      "scene": [
+        {
+          "file": "libs/scene/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/scene/.lib.swcrc",
+          "hash": "11296388699961188334"
+        },
+        {
+          "file": "libs/scene/.swcrc",
+          "hash": "590103721083604220"
+        },
+        {
+          "file": "libs/scene/README.md",
+          "hash": "10907728987461362843"
+        },
+        {
+          "file": "libs/scene/jest.config.ts",
+          "hash": "8911509539572187426",
+          "deps": [
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "libs/scene/package.esm.json",
+          "hash": "11559425889757878530"
+        },
+        {
+          "file": "libs/scene/package.json",
+          "hash": "649834233554846800",
+          "deps": [
+            "core",
+            "player"
+          ]
+        },
+        {
+          "file": "libs/scene/project.json",
+          "hash": "5613985956741655568"
+        },
+        {
+          "file": "libs/scene/rollup.config.cjs",
+          "hash": "17083735807737952750",
+          "deps": [
+            "npm:rollup-plugin-terser"
+          ]
+        },
+        {
+          "file": "libs/scene/src/index.ts",
+          "hash": "13862842347155350921"
+        },
+        {
+          "file": "libs/scene/src/lib/scene-container.ts",
+          "hash": "16921816894457330841",
+          "deps": [
+            "core",
+            "player"
+          ]
+        },
+        {
+          "file": "libs/scene/src/lib/scene.ts",
+          "hash": "10625110174286903962",
+          "deps": [
+            "core",
+            "npm:aframe-extras",
+            "npm:aframe-gradient-sky",
+            "npm:aframe-physics-extras",
+            "npm:aframe-physics-system/dist/aframe-physics-system.js",
+            "npm:aframe-rounded",
+            "npm:networked-aframe"
+          ]
+        },
+        {
+          "file": "libs/scene/tsconfig.json",
+          "hash": "5840880287502376438"
+        },
+        {
+          "file": "libs/scene/tsconfig.lib.json",
+          "hash": "6789591993676711731"
+        },
+        {
+          "file": "libs/scene/tsconfig.spec.json",
+          "hash": "10595040461224341030"
+        }
+      ],
+      "teleport": [
+        {
+          "file": "libs/teleport/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/teleport/.lib.swcrc",
+          "hash": "11296388699961188334"
+        },
+        {
+          "file": "libs/teleport/.swcrc",
+          "hash": "10207645754039751121"
+        },
+        {
+          "file": "libs/teleport/README.md",
+          "hash": "10907728987461362843"
+        },
+        {
+          "file": "libs/teleport/jest.config.ts",
+          "hash": "7402130046233715688",
+          "deps": [
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "libs/teleport/package.esm.json",
+          "hash": "4086725345269176385"
+        },
+        {
+          "file": "libs/teleport/package.json",
+          "hash": "10767394035630403118",
+          "deps": [
+            "core",
+            "player"
+          ]
+        },
+        {
+          "file": "libs/teleport/project.json",
+          "hash": "1319433159559892569"
+        },
+        {
+          "file": "libs/teleport/rollup.config.cjs",
+          "hash": "14972733735697240940",
+          "deps": [
+            "npm:rollup-plugin-terser"
+          ]
+        },
+        {
+          "file": "libs/teleport/src/index.html",
+          "hash": "8213376130997427888"
+        },
+        {
+          "file": "libs/teleport/src/index.ts",
+          "hash": "9478489265511944869"
+        },
+        {
+          "file": "libs/teleport/src/lib/teleport.ts",
+          "hash": "13719632422681520106",
+          "deps": [
+            "core",
+            "player"
+          ]
+        },
+        {
+          "file": "libs/teleport/tsconfig.json",
+          "hash": "5840880287502376438"
+        },
+        {
+          "file": "libs/teleport/tsconfig.lib.json",
+          "hash": "6789591993676711731"
+        },
+        {
+          "file": "libs/teleport/tsconfig.spec.json",
+          "hash": "10595040461224341030"
+        }
+      ],
+      "spline": [
+        {
+          "file": "libs/spline/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/spline/.lib.swcrc",
+          "hash": "11296388699961188334"
+        },
+        {
+          "file": "libs/spline/.swcrc",
+          "hash": "10207645754039751121"
+        },
+        {
+          "file": "libs/spline/README.md",
+          "hash": "4383744075915684020"
+        },
+        {
+          "file": "libs/spline/jest.config.ts",
+          "hash": "2739971165698655778",
+          "deps": [
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "libs/spline/package.esm.json",
+          "hash": "12967136587121803453"
+        },
+        {
+          "file": "libs/spline/package.json",
+          "hash": "4465426338791763549",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/spline/project.json",
+          "hash": "16966716956690574573"
+        },
+        {
+          "file": "libs/spline/rollup.config.cjs",
+          "hash": "11722936796034319410",
+          "deps": [
+            "npm:rollup-plugin-terser",
+            "npm:@rollup/plugin-alias"
+          ]
+        },
+        {
+          "file": "libs/spline/src/index.html",
+          "hash": "6317905180514157223"
+        },
+        {
+          "file": "libs/spline/src/index.ts",
+          "hash": "9641401822618118232"
+        },
+        {
+          "file": "libs/spline/src/lib/spline.element.ts",
+          "hash": "6514105624516374918",
+          "deps": [
+            "core",
+            "npm:@splinetool/loader"
+          ]
+        },
+        {
+          "file": "libs/spline/src/lib/vendors/BufferGeometryUtils.js",
+          "hash": "17652244933201209593",
+          "deps": [
+            "npm:three"
+          ]
+        },
+        {
+          "file": "libs/spline/src/lib/vendors/DRACOLoader.js",
+          "hash": "13918473536828734154",
+          "deps": [
+            "npm:three"
+          ]
+        },
+        {
+          "file": "libs/spline/src/lib/vendors/three.js",
+          "hash": "16548394686318182827",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/spline/tsconfig.json",
+          "hash": "5840880287502376438"
+        },
+        {
+          "file": "libs/spline/tsconfig.lib.json",
+          "hash": "6789591993676711731"
+        },
+        {
+          "file": "libs/spline/tsconfig.spec.json",
+          "hash": "10595040461224341030"
+        }
+      ],
+      "mesh": [
+        {
+          "file": "libs/mesh/.eslintrc.json",
+          "hash": "667794231868823404"
+        },
+        {
+          "file": "libs/mesh/.swcrc",
+          "hash": "3236768094882387443"
+        },
+        {
+          "file": "libs/mesh/README.md",
+          "hash": "875943830510810331"
+        },
+        {
+          "file": "libs/mesh/jest.config.ts",
+          "hash": "9887728078189652194",
+          "deps": [
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "libs/mesh/package.json",
+          "hash": "6191703334505698676"
+        },
+        {
+          "file": "libs/mesh/project.json",
+          "hash": "15755271512871797722"
+        },
+        {
+          "file": "libs/mesh/rollup.build.cjs",
+          "hash": "15980900949157381842",
+          "deps": [
+            "npm:@rollup/plugin-alias",
+            "npm:path"
+          ]
+        },
+        {
+          "file": "libs/mesh/src/index.d.ts",
+          "hash": "5437775673014920231"
+        },
+        {
+          "file": "libs/mesh/src/index.html",
+          "hash": "16974264455363099601"
+        },
+        {
+          "file": "libs/mesh/src/index.ts",
+          "hash": "14650756749108018626"
+        },
+        {
+          "file": "libs/mesh/src/lib/mesh-animation-mixer.element.ts",
+          "hash": "14890905976970914758",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/mesh/src/lib/mesh.common.ts",
+          "hash": "14858261411815238456",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/mesh/src/lib/mesh.element.ts",
+          "hash": "16992065751540079146",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/mesh/src/schema.fr.json",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "libs/mesh/src/schema.json",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "libs/mesh/tsconfig.json",
+          "hash": "5840880287502376438"
+        },
+        {
+          "file": "libs/mesh/tsconfig.lib.json",
+          "hash": "6789591993676711731"
+        },
+        {
+          "file": "libs/mesh/tsconfig.spec.json",
+          "hash": "10595040461224341030"
+        }
+      ],
+      "design-system": [
+        {
+          "file": "libs/design-system/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/design-system/.lib.swcrc",
+          "hash": "11296388699961188334"
+        },
+        {
+          "file": "libs/design-system/.swcrc",
+          "hash": "10207645754039751121"
+        },
+        {
+          "file": "libs/design-system/README.md",
+          "hash": "2369891645486022704"
+        },
+        {
+          "file": "libs/design-system/jest.config.ts",
+          "hash": "4979118351220309385",
+          "deps": [
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "libs/design-system/package.esm.json",
+          "hash": "1613587013256186973"
+        },
+        {
+          "file": "libs/design-system/package.json",
+          "hash": "4559353841677936674",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/design-system/project.json",
+          "hash": "8827968188694330247"
+        },
+        {
+          "file": "libs/design-system/rollup.config.cjs",
+          "hash": "14972733735697240940",
+          "deps": [
+            "npm:rollup-plugin-terser"
+          ]
+        },
+        {
+          "file": "libs/design-system/src/index.html",
+          "hash": "4324399764267505819"
+        },
+        {
+          "file": "libs/design-system/src/index.ts",
+          "hash": "5428595204430333457"
+        },
+        {
+          "file": "libs/design-system/src/lib/const/icons.const.ts",
+          "hash": "10100177612902970015"
+        },
+        {
+          "file": "libs/design-system/src/lib/elements/common/bubble.element.ts",
+          "hash": "14037387684517947267",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/design-system/src/lib/elements/common/button.element.ts",
+          "hash": "10674470562712086120",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/design-system/src/lib/elements/common/dialog.element.ts",
+          "hash": "3826001527070522895",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/design-system/src/lib/elements/common/icon.element.ts",
+          "hash": "5392798551715708890",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/design-system/src/lib/elements/menu/menu-button-image.element.ts",
+          "hash": "14815990876586257022",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/design-system/src/lib/elements/menu/menu-button.element.ts",
+          "hash": "17373094323467233405",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/design-system/src/lib/elements/menu/menu-panel.element.ts",
+          "hash": "16287749104891290321",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/design-system/src/lib/elements/menu/menu-side-profile.element.ts",
+          "hash": "13812422590339451234",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/design-system/src/lib/elements/menu/menu.element.ts",
+          "hash": "9613165824922647272",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/design-system/tsconfig.json",
+          "hash": "5840880287502376438"
+        },
+        {
+          "file": "libs/design-system/tsconfig.lib.json",
+          "hash": "6789591993676711731"
+        },
+        {
+          "file": "libs/design-system/tsconfig.spec.json",
+          "hash": "10595040461224341030"
+        }
+      ],
+      "html": [
+        {
+          "file": "libs/html/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/html/.lib.swcrc",
+          "hash": "11296388699961188334"
+        },
+        {
+          "file": "libs/html/.swcrc",
+          "hash": "10207645754039751121"
+        },
+        {
+          "file": "libs/html/README.md",
+          "hash": "10907728987461362843"
+        },
+        {
+          "file": "libs/html/jest.config.ts",
+          "hash": "15654909167146832795",
+          "deps": [
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "libs/html/package.esm.json",
+          "hash": "11519728693843608005"
+        },
+        {
+          "file": "libs/html/package.json",
+          "hash": "9715436113892754424",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/html/project.json",
+          "hash": "16971440183213629436"
+        },
+        {
+          "file": "libs/html/rollup.config.cjs",
+          "hash": "14972733735697240940",
+          "deps": [
+            "npm:rollup-plugin-terser"
+          ]
+        },
+        {
+          "file": "libs/html/src/index.html",
+          "hash": "9703306885131551450"
+        },
+        {
+          "file": "libs/html/src/index.ts",
+          "hash": "838658342931966979"
+        },
+        {
+          "file": "libs/html/src/lib/html.ts",
+          "hash": "7183648721140248679",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/html/src/lib/web2vr/aframeContext.js",
+          "hash": "7520002607055192794"
+        },
+        {
+          "file": "libs/html/src/lib/web2vr/assetManager.js",
+          "hash": "8354692038923593923"
+        },
+        {
+          "file": "libs/html/src/lib/web2vr/components/animate.js",
+          "hash": "16502384237600524528"
+        },
+        {
+          "file": "libs/html/src/lib/web2vr/components/border.js",
+          "hash": "7463613283337297693"
+        },
+        {
+          "file": "libs/html/src/lib/web2vr/components/grabRotateStatic.js",
+          "hash": "8593376959403988173"
+        },
+        {
+          "file": "libs/html/src/lib/web2vr/components/renderer.js",
+          "hash": "11537258054334037562"
+        },
+        {
+          "file": "libs/html/src/lib/web2vr/components/scrollbar.js",
+          "hash": "12867798185327515257"
+        },
+        {
+          "file": "libs/html/src/lib/web2vr/elements/buttonElement.js",
+          "hash": "3555396559283365487"
+        },
+        {
+          "file": "libs/html/src/lib/web2vr/elements/canvasElement.js",
+          "hash": "13802985798479387645"
+        },
+        {
+          "file": "libs/html/src/lib/web2vr/elements/checkboxElement.js",
+          "hash": "14386913690851810461"
+        },
+        {
+          "file": "libs/html/src/lib/web2vr/elements/containerElement.js",
+          "hash": "14200398711588487968"
+        },
+        {
+          "file": "libs/html/src/lib/web2vr/elements/element.js",
+          "hash": "11439500639861150915"
+        },
+        {
+          "file": "libs/html/src/lib/web2vr/elements/imageElement.js",
+          "hash": "5043475690065397879"
+        },
+        {
+          "file": "libs/html/src/lib/web2vr/elements/inputElement.js",
+          "hash": "2927571509516648088"
+        },
+        {
+          "file": "libs/html/src/lib/web2vr/elements/radioElement.js",
+          "hash": "14834303560279795941"
+        },
+        {
+          "file": "libs/html/src/lib/web2vr/elements/svgElement.js",
+          "hash": "4217598421772929261"
+        },
+        {
+          "file": "libs/html/src/lib/web2vr/elements/textElement.js",
+          "hash": "5608583228880242196"
+        },
+        {
+          "file": "libs/html/src/lib/web2vr/elements/videoElement.js",
+          "hash": "1871295618214191984"
+        },
+        {
+          "file": "libs/html/src/lib/web2vr/plugins/aframe-keyboard.min.js",
+          "hash": "11949998101751090999"
+        },
+        {
+          "file": "libs/html/src/lib/web2vr/plugins/eventListenerListPlugin.js",
+          "hash": "15794457361343355839"
+        },
+        {
+          "file": "libs/html/src/lib/web2vr/scroll.js",
+          "hash": "2034716742354771243"
+        },
+        {
+          "file": "libs/html/src/lib/web2vr/settings.js",
+          "hash": "1058326885504341001"
+        },
+        {
+          "file": "libs/html/src/lib/web2vr/utils/helper.js",
+          "hash": "1406901026349359403"
+        },
+        {
+          "file": "libs/html/src/lib/web2vr/utils/mouseEventHandler.js",
+          "hash": "17140750481037481018"
+        },
+        {
+          "file": "libs/html/src/lib/web2vr/utils/position.js",
+          "hash": "9815368531334704700"
+        },
+        {
+          "file": "libs/html/src/lib/web2vr/web2vr.js",
+          "hash": "12392140347966716211"
+        },
+        {
+          "file": "libs/html/tsconfig.json",
+          "hash": "8235438660901607162"
+        },
+        {
+          "file": "libs/html/tsconfig.lib.json",
+          "hash": "9805258529140305265"
+        },
+        {
+          "file": "libs/html/tsconfig.spec.json",
+          "hash": "10595040461224341030"
+        }
+      ],
+      "observe": [
+        {
+          "file": "libs/observe/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/observe/.lib.swcrc",
+          "hash": "9496014749560349652"
+        },
+        {
+          "file": "libs/observe/.swcrc",
+          "hash": "590103721083604220"
+        },
+        {
+          "file": "libs/observe/README.md",
+          "hash": "10907728987461362843"
+        },
+        {
+          "file": "libs/observe/docs/assets/example-tictactoe.png",
+          "hash": "17641576289908057582"
+        },
+        {
+          "file": "libs/observe/docs/assets/example-todolist.png",
+          "hash": "14234808272716318156"
+        },
+        {
+          "file": "libs/observe/jest.config.ts",
+          "hash": "12905445487349413736",
+          "deps": [
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "libs/observe/package.esm.json",
+          "hash": "15156073213313924839"
+        },
+        {
+          "file": "libs/observe/package.json",
+          "hash": "6066340720524075467",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/observe/project.json",
+          "hash": "235565097039314498"
+        },
+        {
+          "file": "libs/observe/rollup.config.cjs",
+          "hash": "4678150665042324798",
+          "deps": [
+            "npm:rollup-plugin-terser"
+          ]
+        },
+        {
+          "file": "libs/observe/src/index.ts",
+          "hash": "6379345675090442997"
+        },
+        {
+          "file": "libs/observe/src/lib/observe.spec.ts",
+          "hash": "13437230025108969638"
+        },
+        {
+          "file": "libs/observe/src/lib/observe.ts",
+          "hash": "18123405133577500773",
+          "deps": [
+            "core",
+            "npm:lit/async-directive.js",
+            "npm:lit/directive.js"
+          ]
+        },
+        {
+          "file": "libs/observe/tsconfig.json",
+          "hash": "5840880287502376438"
+        },
+        {
+          "file": "libs/observe/tsconfig.lib.json",
+          "hash": "154339738929850465"
+        },
+        {
+          "file": "libs/observe/tsconfig.spec.json",
+          "hash": "2916358175645510760"
+        }
+      ],
+      "ready-player-me": [
+        {
+          "file": "libs/ready-player-me/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/ready-player-me/.lib.swcrc",
+          "hash": "11296388699961188334"
+        },
+        {
+          "file": "libs/ready-player-me/.swcrc",
+          "hash": "10207645754039751121"
+        },
+        {
+          "file": "libs/ready-player-me/README.md",
+          "hash": "10907728987461362843"
+        },
+        {
+          "file": "libs/ready-player-me/jest.config.ts",
+          "hash": "8134277194360427282",
+          "deps": [
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "libs/ready-player-me/package.esm.json",
+          "hash": "9406824635842546398"
+        },
+        {
+          "file": "libs/ready-player-me/package.json",
+          "hash": "9054849939538829879",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/ready-player-me/project.json",
+          "hash": "8251982063707208977"
+        },
+        {
+          "file": "libs/ready-player-me/rollup.config.cjs",
+          "hash": "14972733735697240940",
+          "deps": [
+            "npm:rollup-plugin-terser"
+          ]
+        },
+        {
+          "file": "libs/ready-player-me/src/index.html",
+          "hash": "1983775339609225576"
+        },
+        {
+          "file": "libs/ready-player-me/src/index.ts",
+          "hash": "11133213638002334575"
+        },
+        {
+          "file": "libs/ready-player-me/src/lib/ready-player-me.ts",
+          "hash": "13301829994713315847",
+          "deps": [
+            "core",
+            "mesh"
+          ]
+        },
+        {
+          "file": "libs/ready-player-me/tsconfig.json",
+          "hash": "5840880287502376438"
+        },
+        {
+          "file": "libs/ready-player-me/tsconfig.lib.json",
+          "hash": "6789591993676711731"
+        },
+        {
+          "file": "libs/ready-player-me/tsconfig.spec.json",
+          "hash": "10595040461224341030"
+        }
+      ],
+      "exporter": [
+        {
+          "file": "libs/exporter/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/exporter/.lib.swcrc",
+          "hash": "11296388699961188334"
+        },
+        {
+          "file": "libs/exporter/.swcrc",
+          "hash": "590103721083604220"
+        },
+        {
+          "file": "libs/exporter/README.md",
+          "hash": "10907728987461362843"
+        },
+        {
+          "file": "libs/exporter/jest.config.ts",
+          "hash": "376443681003884312",
+          "deps": [
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "libs/exporter/package.esm.json",
+          "hash": "17493432234756791259"
+        },
+        {
+          "file": "libs/exporter/package.json",
+          "hash": "686410836185860656",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/exporter/project.json",
+          "hash": "16732108876017557921"
+        },
+        {
+          "file": "libs/exporter/rollup.config.cjs",
+          "hash": "2889963547474922871",
+          "deps": [
+            "npm:rollup-plugin-terser"
+          ]
+        },
+        {
+          "file": "libs/exporter/src/index.ts",
+          "hash": "12156139908744459799"
+        },
+        {
+          "file": "libs/exporter/src/lib/GLTFExporter.ts",
+          "hash": "7776645054690688114",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/exporter/src/lib/exporter.ts",
+          "hash": "15041534609975710295",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/exporter/tsconfig.json",
+          "hash": "5840880287502376438"
+        },
+        {
+          "file": "libs/exporter/tsconfig.lib.json",
+          "hash": "154339738929850465"
+        },
+        {
+          "file": "libs/exporter/tsconfig.spec.json",
+          "hash": "2916358175645510760"
+        }
+      ],
+      "router": [
+        {
+          "file": "libs/router/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/router/.lib.swcrc",
+          "hash": "11296388699961188334"
+        },
+        {
+          "file": "libs/router/.swcrc",
+          "hash": "10207645754039751121"
+        },
+        {
+          "file": "libs/router/README.md",
+          "hash": "10907728987461362843"
+        },
+        {
+          "file": "libs/router/jest.config.ts",
+          "hash": "12138254161459199637",
+          "deps": [
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "libs/router/package.esm.json",
+          "hash": "2535567918470774833"
+        },
+        {
+          "file": "libs/router/package.json",
+          "hash": "14008632983033947767",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/router/project.json",
+          "hash": "6044349923865599885"
+        },
+        {
+          "file": "libs/router/rollup.config.cjs",
+          "hash": "2685232220656160152",
+          "deps": [
+            "npm:rollup-plugin-terser"
+          ]
+        },
+        {
+          "file": "libs/router/src/index.html",
+          "hash": "4145128602341202816"
+        },
+        {
+          "file": "libs/router/src/index.ts",
+          "hash": "16038343481937785814",
+          "deps": [
+            "npm:@vaadin/router"
+          ]
+        },
+        {
+          "file": "libs/router/src/lib/decorators/route-element.decorator.ts",
+          "hash": "477694892896463726",
+          "deps": [
+            "core",
+            "npm:@vaadin/router"
+          ]
+        },
+        {
+          "file": "libs/router/src/lib/elements/router-outlet.element.ts",
+          "hash": "1483709708699162457",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/router/src/lib/elements/router-zone.element.ts",
+          "hash": "14110385265368297144",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/router/src/lib/providers/route.provider.ts",
+          "hash": "13778591307122763637",
+          "deps": [
+            "core",
+            "npm:@vaadin/router"
+          ]
+        },
+        {
+          "file": "libs/router/src/lib/providers/router.provider.ts",
+          "hash": "1299869441405476401",
+          "deps": [
+            "core",
+            "npm:@vaadin/router"
+          ]
+        },
+        {
+          "file": "libs/router/tsconfig.json",
+          "hash": "5840880287502376438"
+        },
+        {
+          "file": "libs/router/tsconfig.lib.json",
+          "hash": "6789591993676711731"
+        },
+        {
+          "file": "libs/router/tsconfig.spec.json",
+          "hash": "10595040461224341030"
+        }
+      ],
+      "info": [
+        {
+          "file": "libs/info/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/info/.lib.swcrc",
+          "hash": "11296388699961188334"
+        },
+        {
+          "file": "libs/info/.swcrc",
+          "hash": "10207645754039751121"
+        },
+        {
+          "file": "libs/info/README.md",
+          "hash": "10907728987461362843"
+        },
+        {
+          "file": "libs/info/jest.config.ts",
+          "hash": "7317206854630692442",
+          "deps": [
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "libs/info/package.esm.json",
+          "hash": "16010498572076393290"
+        },
+        {
+          "file": "libs/info/package.json",
+          "hash": "17880051375217946630",
+          "deps": [
+            "core",
+            "design-system"
+          ]
+        },
+        {
+          "file": "libs/info/project.json",
+          "hash": "11671920001479497071"
+        },
+        {
+          "file": "libs/info/rollup.config.cjs",
+          "hash": "14972733735697240940",
+          "deps": [
+            "npm:rollup-plugin-terser"
+          ]
+        },
+        {
+          "file": "libs/info/src/index.html",
+          "hash": "16473631481071841637"
+        },
+        {
+          "file": "libs/info/src/index.ts",
+          "hash": "94116230134373990"
+        },
+        {
+          "file": "libs/info/src/lib/info.ts",
+          "hash": "11688910584745876731",
+          "deps": [
+            "core",
+            "design-system"
+          ]
+        },
+        {
+          "file": "libs/info/tsconfig.json",
+          "hash": "5840880287502376438"
+        },
+        {
+          "file": "libs/info/tsconfig.lib.json",
+          "hash": "6789591993676711731"
+        },
+        {
+          "file": "libs/info/tsconfig.spec.json",
+          "hash": "10595040461224341030"
+        }
+      ],
+      "player": [
+        {
+          "file": "libs/player/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/player/.lib.swcrc",
+          "hash": "11296388699961188334"
+        },
+        {
+          "file": "libs/player/.swcrc",
+          "hash": "590103721083604220"
+        },
+        {
+          "file": "libs/player/README.md",
+          "hash": "10907728987461362843"
+        },
+        {
+          "file": "libs/player/jest.config.ts",
+          "hash": "11938427728373269588",
+          "deps": [
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "libs/player/package.esm.json",
+          "hash": "12856821630900459119"
+        },
+        {
+          "file": "libs/player/package.json",
+          "hash": "13060877043146149663",
+          "deps": [
+            "core",
+            "design-system"
+          ]
+        },
+        {
+          "file": "libs/player/project.json",
+          "hash": "13284291808900563277"
+        },
+        {
+          "file": "libs/player/rollup.config.cjs",
+          "hash": "9841220981099129633",
+          "deps": [
+            "npm:rollup-plugin-terser"
+          ]
+        },
+        {
+          "file": "libs/player/src/index.ts",
+          "hash": "16636661795432038991"
+        },
+        {
+          "file": "libs/player/src/lib/avatar/avatar.ts",
+          "hash": "5276840006641029316",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/player/src/lib/avatar/logo-box.ts",
+          "hash": "622338854075171641",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/player/src/lib/avatar/logo.ts",
+          "hash": "7975465815912844769",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/player/src/lib/camera/camera.ts",
+          "hash": "15219934784024211066",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/player/src/lib/menu/menu-panels.element.ts",
+          "hash": "8516986655598777980",
+          "deps": [
+            "core",
+            "design-system"
+          ]
+        },
+        {
+          "file": "libs/player/src/lib/menu/menu-side.element.ts",
+          "hash": "15943414734361527599",
+          "deps": [
+            "core",
+            "design-system"
+          ]
+        },
+        {
+          "file": "libs/player/src/lib/menu/menu.element.ts",
+          "hash": "7802983641214101084",
+          "deps": [
+            "core",
+            "design-system"
+          ]
+        },
+        {
+          "file": "libs/player/src/lib/menu/menu.provider.ts",
+          "hash": "13076509976493992650",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/player/src/lib/menu/pins/menu-panel-pins.ts",
+          "hash": "16255559139056389977",
+          "deps": [
+            "core",
+            "design-system"
+          ]
+        },
+        {
+          "file": "libs/player/src/lib/menu/scene/menu-panel-scene.ts",
+          "hash": "2085041008382280120",
+          "deps": [
+            "core",
+            "design-system"
+          ]
+        },
+        {
+          "file": "libs/player/src/lib/pins/add-pins-cursor.ts",
+          "hash": "7044093028196019313",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/player/src/lib/pins/element.ts",
+          "hash": "5409512556026437625",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/player/src/lib/pins/pins.interface.ts",
+          "hash": "9935304609950866939"
+        },
+        {
+          "file": "libs/player/src/lib/player/cursor.interface.ts",
+          "hash": "12162245364386539159"
+        },
+        {
+          "file": "libs/player/src/lib/player/player.element.ts",
+          "hash": "8409019497092322174",
+          "deps": [
+            "core",
+            "npm:aframe-blink-controls",
+            "npm:super-hands"
+          ]
+        },
+        {
+          "file": "libs/player/src/lib/player/player.provider.ts",
+          "hash": "10410937910004389894",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/player/src/lib/player/selectable.directive.ts",
+          "hash": "17421076073914288610",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/player/src/lib/teleport/event-teleport.ts",
+          "hash": "10522420395412380096"
+        },
+        {
+          "file": "libs/player/src/lib/teleport/teleportable-cursor.ts",
+          "hash": "9168897208682934990",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/player/src/lib/teleport/teleportable.ts",
+          "hash": "16868448338459185911",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/player/src/lib/toolbar/toolbar-default.ts",
+          "hash": "6504666488569456751",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/player/src/lib/toolbar/toolbar.ts",
+          "hash": "18116137940115346762",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/player/src/lib/utils/Geometry.js",
+          "hash": "5598645873277434674"
+        },
+        {
+          "file": "libs/player/src/lib/utils/look-controls-custom.js",
+          "hash": "3413959341935353552"
+        },
+        {
+          "file": "libs/player/tsconfig.json",
+          "hash": "5840880287502376438"
+        },
+        {
+          "file": "libs/player/tsconfig.lib.json",
+          "hash": "6789591993676711731"
+        },
+        {
+          "file": "libs/player/tsconfig.spec.json",
+          "hash": "10595040461224341030"
+        }
+      ],
+      "digipair-vision": [
+        {
+          "file": ".editorconfig",
+          "hash": "5443105041930014821"
+        },
+        {
+          "file": ".eslintrc.json",
+          "hash": "15388041757782744192"
+        },
+        {
+          "file": ".github/FUNDING.yml",
+          "hash": "4555811388159257371"
+        },
+        {
+          "file": ".gitignore",
+          "hash": "6094718384296077061"
+        },
+        {
+          "file": ".prettierignore",
+          "hash": "17733650430415207254"
+        },
+        {
+          "file": ".prettierrc",
+          "hash": "16267754514737964994"
+        },
+        {
+          "file": ".vscode/extensions.json",
+          "hash": "235626400633494639"
+        },
+        {
+          "file": ".vscode/settings.json",
+          "hash": "11651074156016702256"
+        },
+        {
+          "file": "README.md",
+          "hash": "10907728987461362843"
+        },
+        {
+          "file": "assets/draco/draco_decoder.js",
+          "hash": "16743784829577687193",
+          "deps": [
+            [
+              "npm:fs",
+              "dynamic"
+            ],
+            [
+              "npm:path",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "assets/draco/draco_decoder.wasm",
+          "hash": "4534809471624672141"
+        },
+        {
+          "file": "assets/draco/draco_encoder.js",
+          "hash": "7068555596063549832",
+          "deps": [
+            [
+              "npm:fs",
+              "dynamic"
+            ],
+            [
+              "npm:path",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "assets/draco/draco_wasm_wrapper.js",
+          "hash": "5254870063458856374",
+          "deps": [
+            [
+              "npm:fs",
+              "dynamic"
+            ],
+            [
+              "npm:path",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "assets/fonts/icons/icons.fnt",
+          "hash": "529260762474960998"
+        },
+        {
+          "file": "assets/fonts/icons/icons.png",
+          "hash": "15124130801379458661"
+        },
+        {
+          "file": "assets/objects/leftHandHigh.glb",
+          "hash": "12832557780343334965"
+        },
+        {
+          "file": "assets/objects/rightHandHigh.glb",
+          "hash": "2173518287683521844"
+        },
+        {
+          "file": "assets/pins/images/box.jpg",
+          "hash": "8291417860760136786"
+        },
+        {
+          "file": "assets/pins/images/man.jpg",
+          "hash": "16382409034935715510"
+        },
+        {
+          "file": "assets/pins/images/screen-shared-curved.jpg",
+          "hash": "14323255400181894633"
+        },
+        {
+          "file": "assets/pins/images/screen-shared.jpg",
+          "hash": "16169723458493411573"
+        },
+        {
+          "file": "assets/pins/images/sphere.jpg",
+          "hash": "7326215309405077935"
+        },
+        {
+          "file": "assets/pins/list.json",
+          "hash": "14142707262593474625"
+        },
+        {
+          "file": "assets/pins/objects/animations.glb",
+          "hash": "8132524959562115880"
+        },
+        {
+          "file": "assets/pins/objects/man.glb",
+          "hash": "13524187080720619131"
+        },
+        {
+          "file": "docs/.nojekyll",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "docs/README.md",
+          "hash": "12421890760308520207"
+        },
+        {
+          "file": "docs/animations.md",
+          "hash": "8100589357389986579"
+        },
+        {
+          "file": "docs/assets/boy-using-metaverse-tech.min.png",
+          "hash": "4273872207776425830"
+        },
+        {
+          "file": "docs/assets/discord.png",
+          "hash": "3288278047414378404"
+        },
+        {
+          "file": "docs/assets/employee-desk.min.png",
+          "hash": "13110157443526556861"
+        },
+        {
+          "file": "docs/assets/github.png",
+          "hash": "14690420107055684250"
+        },
+        {
+          "file": "docs/assets/labour-tool-box.min.png",
+          "hash": "13502507459626351222"
+        },
+        {
+          "file": "docs/assets/stackoverflow.png",
+          "hash": "15221351975750081997"
+        },
+        {
+          "file": "docs/available-elements.md",
+          "hash": "17241823432635706756"
+        },
+        {
+          "file": "docs/coverpage.md",
+          "hash": "10266342067176645711"
+        },
+        {
+          "file": "docs/element-creation.md",
+          "hash": "2846701454725550136"
+        },
+        {
+          "file": "docs/example-tictactoe.md",
+          "hash": "9434045902022861046"
+        },
+        {
+          "file": "docs/export.md",
+          "hash": "14547434444916497614"
+        },
+        {
+          "file": "docs/favicon.ico",
+          "hash": "4235891415307196222"
+        },
+        {
+          "file": "docs/get-started.md",
+          "hash": "2125502113808411085"
+        },
+        {
+          "file": "docs/how-it-works.md",
+          "hash": "6512570574468646329"
+        },
+        {
+          "file": "docs/index.html",
+          "hash": "14921512770444561200"
+        },
+        {
+          "file": "docs/physics.md",
+          "hash": "4545212740065758368"
+        },
+        {
+          "file": "docs/player.md",
+          "hash": "10842443655775517450"
+        },
+        {
+          "file": "docs/scene.md",
+          "hash": "2300198539907860130"
+        },
+        {
+          "file": "docs/sidebar.md",
+          "hash": "3609483934129404961"
+        },
+        {
+          "file": "jest.config.ts",
+          "hash": "2950215254536237782",
+          "deps": [
+            "npm:@nrwl/jest"
+          ]
+        },
+        {
+          "file": "jest.preset.js",
+          "hash": "2772139696069860212",
+          "deps": [
+            "npm:@nrwl/jest/preset"
+          ]
+        },
+        {
+          "file": "nx.json",
+          "hash": "670114148469485109"
+        },
+        {
+          "file": "package.json",
+          "hash": "7714387764384718532"
+        },
+        {
+          "file": "tools/generators/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "tools/generators/pinser/index.ts",
+          "hash": "4707700257801019166",
+          "deps": [
+            "npm:@nrwl/devkit",
+            "npm:@nrwl/workspace/generators",
+            "npm:path",
+            "npm:uuid"
+          ]
+        },
+        {
+          "file": "tools/generators/pinser/schema.json",
+          "hash": "7990027407743342277"
+        },
+        {
+          "file": "tools/scripts/publish-es.mjs",
+          "hash": "8030323841243826653",
+          "deps": [
+            "npm:@nrwl/devkit",
+            "npm:child_process",
+            "npm:fs",
+            "npm:chalk"
+          ]
+        },
+        {
+          "file": "tools/scripts/publish.mjs",
+          "hash": "15997605150442953191",
+          "deps": [
+            "npm:@nrwl/devkit",
+            "npm:child_process",
+            "npm:fs",
+            "npm:chalk"
+          ]
+        },
+        {
+          "file": "tools/tsconfig.tools.json",
+          "hash": "9031198630281046142"
+        },
+        {
+          "file": "tsconfig.base.json",
+          "hash": "5086573354040864293"
+        },
+        {
+          "file": "yarn.lock",
+          "hash": "14287081146779279703"
+        }
+      ],
+      "camrender": [
+        {
+          "file": "libs/camrender/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/camrender/.lib.swcrc",
+          "hash": "11296388699961188334"
+        },
+        {
+          "file": "libs/camrender/.swcrc",
+          "hash": "10207645754039751121"
+        },
+        {
+          "file": "libs/camrender/README.md",
+          "hash": "7267005877760514195"
+        },
+        {
+          "file": "libs/camrender/jest.config.ts",
+          "hash": "8175045824757402375",
+          "deps": [
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "libs/camrender/package.esm.json",
+          "hash": "2859339859374115590"
+        },
+        {
+          "file": "libs/camrender/package.json",
+          "hash": "9649816358727747446",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/camrender/project.json",
+          "hash": "11235572496913086713"
+        },
+        {
+          "file": "libs/camrender/rollup.config.cjs",
+          "hash": "14972733735697240940",
+          "deps": [
+            "npm:rollup-plugin-terser"
+          ]
+        },
+        {
+          "file": "libs/camrender/src/index.html",
+          "hash": "11248035134881019828"
+        },
+        {
+          "file": "libs/camrender/src/index.ts",
+          "hash": "3517115283461284539"
+        },
+        {
+          "file": "libs/camrender/src/lib/camrender-camera.ts",
+          "hash": "13796811827667469069",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/camrender/src/lib/camrender-screen.ts",
+          "hash": "371816945849757973",
+          "deps": [
+            "core"
+          ]
+        },
+        {
+          "file": "libs/camrender/tsconfig.json",
+          "hash": "5840880287502376438"
+        },
+        {
+          "file": "libs/camrender/tsconfig.lib.json",
+          "hash": "6789591993676711731"
+        },
+        {
+          "file": "libs/camrender/tsconfig.spec.json",
+          "hash": "10595040461224341030"
+        }
+      ]
+    }
+  }
+}

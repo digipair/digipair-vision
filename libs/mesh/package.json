@@ -1,27 +1,7 @@
 {
   "name": "@digipair-vision/mesh",
   "version": "0.0.0",
-  "type": "commonjs",
-  "license": "MIT",
-  "homepage": "https://github.com/pinser-metaverse/pinser-metaverse/tree/master/libs/mesh",
-  "keywords": [
-    "pinser",
-    "aframe",
-    "lit",
-    "metaverse",
-    "pinser-metaverse",
-    "teleport"
-  ],
-  "repository": {
-    "url": "https://github.com/pinser-metaverse/pinser-metaverse.git",
-    "type": "git"
-  },
-  "author": {
-    "name": "Marc Buils",
-    "email": "marc.buils@pinser.world",
-    "url": "https://www.pinser.world"
-  },
-  "peerDependencies": {
-    "@digipair-vision/core": "0.27.1"
-  }
+  "dependencies": {},
+  "main": "./index.cjs.js",
+  "module": "./index.esm.js"
 }

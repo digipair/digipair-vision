@@ -67,9 +67,7 @@ export class MeshAnimationMixerElement extends MeshCommon {
     });
   }
 
-  override async updateMesh(
-    parentMesh: any
-  ): Promise<void> {
+  override async updateMesh(parentMesh: any): Promise<void> {
     const mesh = !this.object
       ? parentMesh
       : (parentMesh?.getObjectByName(this.object) as any);

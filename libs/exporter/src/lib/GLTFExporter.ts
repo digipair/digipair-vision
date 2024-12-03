@@ -709,7 +709,7 @@ class GLTFWriter {
     componentType: any,
     start: any,
     count: any,
-    target: any,
+    target: any
   ): any {
     const json = this.json;
 
@@ -926,7 +926,7 @@ class GLTFWriter {
     image: any,
     format: any,
     flipY: any,
-    mimeType: any = 'image/png',
+    mimeType: any = 'image/png'
   ) {
     const writer = this;
     const cache = writer.cache;

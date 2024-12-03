@@ -8,7 +8,7 @@ To load the Javascript files, [digipair-vision](https://www.pinser-metaverse.com
 
 About the realtime server, [digipair-vision](https://www.pinser-metaverse.com) uses easyRTC.  
 The server is available here:  
-https://github.com/pinser-metaverse/pinser-metaverse/tree/master/apps/networked-server
+https://github.com/digipair-vision/digipair-vision/tree/master/apps/networked-server
 
 ## Infrastructure
 
@@ -72,4 +72,4 @@ cloud "Custom CDN" {
 ```
 
 > Don't hesitate to improve this documentation, any help will be amazing !  
-> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/pinser-metaverse/pinser-metaverse/blob/master/docs/how-it-works.md)
+> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/digipair-vision/digipair-vision/blob/master/docs/how-it-works.md)

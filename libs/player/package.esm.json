@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "type": "module",
   "license": "MIT",
-  "homepage": "https://github.com/pinser-metaverse/pinser-metaverse",
+  "homepage": "https://github.com/digipair-vision/digipair-vision",
   "keywords": [
     "metaverse",
     "pinser",
-    "pinser-metaverse",
+    "digipair-vision",
     "webxr",
     "webgl",
     "vr",
@@ -21,7 +21,7 @@
     "camera"
   ],
   "repository": {
-    "url": "https://github.com/pinser-metaverse/pinser-metaverse.git",
+    "url": "https://github.com/digipair-vision/digipair-vision.git",
     "type": "git"
   },
   "author": {
