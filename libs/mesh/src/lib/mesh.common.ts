@@ -34,6 +34,12 @@ export abstract class MeshCommon extends MetaElement {
   abstract object: string;
   abstract shared: boolean;
 
+  // @ts-ignore
+  get el() {
+    // @ts-ignore
+    return super.el;
+  }
+
   private meshChanged = (event: any) => {
     if (!event.target.contains(this.el) || event.target === this.el) {
       return;
@@ -44,10 +50,11 @@ export abstract class MeshCommon extends MetaElement {
 
   private get parentEl(): Entity | null | undefined {
     return this.el.parentElement?.closest(
-      `meta-mesh, meta-spline, a-gltf-model, a-obj-model`
+      `meta-mesh, meta-spline, a-gltf-model, a-obj-model`,
     );
   }
 
+  // @ts-ignore
   override init(): void {
     const parentEl = this.parentEl;
 
@@ -59,10 +66,12 @@ export abstract class MeshCommon extends MetaElement {
     }
   }
 
+  // @ts-ignore
   override remove(): void {
     this.parentEl?.removeEventListener('object3dset', this.meshChanged);
   }
 
+  // @ts-ignore
   override update(): void {
     const parentEl = this.parentEl;
 
@@ -102,9 +111,9 @@ export abstract class MeshCommon extends MetaElement {
     this.el.setAttribute(
       'meta-element',
       `element: ${btoa(
-        encodeURIComponent(JSON.stringify('a-entity'))
+        encodeURIComponent(JSON.stringify('a-entity')),
       )}; attributes: ${btoa(
-        encodeURIComponent(JSON.stringify({}))
+        encodeURIComponent(JSON.stringify({})),
       )}; options: ${btoa(
         encodeURIComponent(
           JSON.stringify({
@@ -116,16 +125,16 @@ export abstract class MeshCommon extends MetaElement {
             } ${localPosition.z};`,
             dynamic: false,
             inline: true,
-          })
-        )
-      )};`
+          }),
+        ),
+      )};`,
     );
 
     this.el.setAttribute(
       'networked',
       `template: #element-template; persistent: true; owner: scene; networkId: ${kebabCase(
-        getPathTo(this.el, this.el.sceneEl as Element)
-      )};`
+        getPathTo(this.el, this.el.sceneEl as Element),
+      )};`,
     );
   }
 }
