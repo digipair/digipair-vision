@@ -5,8 +5,8 @@ import {
   inject,
   MetaElement,
   TemplateResult,
-} from '@pinser-metaverse/core';
-import '@pinser-metaverse/design-system';
+} from '@digipair-vision/core';
+import '@digipair-vision/design-system';
 import { PlayerProvider } from '../../player/player.provider';
 
 @customElement('meta-player-menu-planel-scene')

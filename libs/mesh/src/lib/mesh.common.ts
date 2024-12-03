@@ -1,4 +1,4 @@
-import { Entity, MetaElement, THREE } from '@pinser-metaverse/core';
+import { Entity, MetaElement, THREE } from '@digipair-vision/core';
 
 function getPathTo(element: Element, root: Element): string {
   if (element.id !== '') return 'id("' + element.id + '")';
@@ -72,9 +72,7 @@ export abstract class MeshCommon extends MetaElement {
     }
   }
 
-  protected async updateMesh(
-    parentMesh: any
-  ): Promise<void> {
+  protected async updateMesh(parentMesh: any): Promise<void> {
     const mesh = !this.object
       ? parentMesh
       : (parentMesh?.getObjectByName(this.object) as any);

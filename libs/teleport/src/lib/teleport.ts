@@ -7,8 +7,8 @@ import {
   state,
   TemplateResult,
   THREE,
-} from '@pinser-metaverse/core';
-import { PlayerProvider } from '@pinser-metaverse/player';
+} from '@digipair-vision/core';
+import { PlayerProvider } from '@digipair-vision/player';
 
 @customElement('meta-teleport')
 export class TeleportElement extends MetaElement {

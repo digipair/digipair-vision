@@ -1,13 +1,13 @@
 {
-  "name": "@pinser-metaverse/exporter-es",
+  "name": "@digipair-vision/exporter-es",
   "version": "0.0.0",
   "type": "module",
   "license": "MIT",
-  "homepage": "https://github.com/pinser-metaverse/pinser-metaverse",
+  "homepage": "https://github.com/digipair-vision/digipair-vision",
   "keywords": [
     "metaverse",
     "pinser",
-    "pinser-metaverse",
+    "digipair-vision",
     "webxr",
     "webgl",
     "vr",
@@ -20,7 +20,7 @@
     "glb"
   ],
   "repository": {
-    "url": "https://github.com/pinser-metaverse/pinser-metaverse.git",
+    "url": "https://github.com/digipair-vision/digipair-vision.git",
     "type": "git"
   },
   "author": {
@@ -29,6 +29,6 @@
     "url": "https://www.pinser.world"
   },
   "peerDependencies": {
-    "@pinser-metaverse/core": "0.27.1"
+    "@digipair-vision/core": "0.27.1"
   }
 }

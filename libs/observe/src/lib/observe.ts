@@ -1,4 +1,4 @@
-import { noChange } from '@pinser-metaverse/core';
+import { noChange } from '@digipair-vision/core';
 import { AsyncDirective } from 'lit/async-directive.js';
 import { directive, DirectiveResult } from 'lit/directive.js';
 

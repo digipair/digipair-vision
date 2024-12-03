@@ -2,7 +2,7 @@ import {
   customElement,
   MetaElement,
   MetaProvider,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 import {
   PreventAndRedirectCommands,
   Router,

@@ -11,7 +11,7 @@ import {
   property,
   TemplateResult,
   THREE,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 
 @customElement('meta-camrender-camera')
 export class CamrenderCameraElement extends MetaElement {

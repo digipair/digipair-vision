@@ -5,7 +5,7 @@ import {
   MetaElement,
   property,
   TemplateResult,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 
 @customElement('meta-camrender-screen')
 export class CamrenderScreenElement extends MetaElement {

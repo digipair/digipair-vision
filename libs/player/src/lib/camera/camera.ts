@@ -5,7 +5,7 @@ import {
   nothing,
   property,
   TemplateResult,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 import '../toolbar/toolbar';
 
 @customElement('meta-player-camera')

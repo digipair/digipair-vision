@@ -8,7 +8,7 @@ import {
   property,
   state,
   THREE,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 import { PlayerProvider } from '../player/player.provider';
 
 @customElement('meta-player-menu-add-pins-cursor')

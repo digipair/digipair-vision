@@ -7,8 +7,8 @@ import {
   property,
   TemplateResult,
   unsafeHTML,
-} from '@pinser-metaverse/core';
-import { PlayerProvider } from '@pinser-metaverse/player';
+} from '@digipair-vision/core';
+import { PlayerProvider } from '@digipair-vision/player';
 
 @customElement('meta-scene-container', {
   providers: [PlayerProvider],

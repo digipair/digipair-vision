@@ -6,7 +6,7 @@ import {
   state,
   TemplateResult,
   unsafeHTML,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 import { PlayerProvider } from '../player/player.provider';
 
 declare const NAF: any;

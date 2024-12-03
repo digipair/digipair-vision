@@ -4,7 +4,7 @@ import {
   MetaHtmlElement,
   propertyHtml,
   TemplateResult,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 import 'aframe-extras';
 import 'aframe-gradient-sky';
 import 'aframe-physics-extras';
@@ -19,10 +19,10 @@ export class SceneElement extends MetaHtmlElement {
   private session!: string;
 
   @propertyHtml()
-  private server = 'https://networked.pinser-metaverse.com';
+  private server = 'https://networked.digipair-vision.com';
 
   @propertyHtml()
-  private draco = 'https://assets.pinser-metaverse.com/draco/';
+  private draco = 'https://assets.digipair-vision.com/draco/';
 
   @propertyHtml()
   private adapter = 'easyrtc';

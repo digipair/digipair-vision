@@ -5,8 +5,8 @@ import {
   MetaProvider,
   state,
   THREE,
-} from '@pinser-metaverse/core';
-import { PlayerProvider } from '@pinser-metaverse/player';
+} from '@digipair-vision/core';
+import { PlayerProvider } from '@digipair-vision/player';
 import * as md5 from 'md5';
 
 declare const NAF: any;

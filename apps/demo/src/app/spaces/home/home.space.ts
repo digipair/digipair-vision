@@ -1,7 +1,7 @@
-import { html, inject, MetaElement } from '@pinser-metaverse/core';
-import '@pinser-metaverse/html';
-import '@pinser-metaverse/mesh';
-import { routeElement } from '@pinser-metaverse/router';
+import { html, inject, MetaElement } from '@digipair-vision/core';
+import '@digipair-vision/html';
+import '@digipair-vision/mesh';
+import { routeElement } from '@digipair-vision/router';
 import { SessionProvider } from '../../session.provider';
 import './title.element';
 

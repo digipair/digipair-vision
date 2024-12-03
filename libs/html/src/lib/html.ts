@@ -1,4 +1,4 @@
-import { customElement, MetaElement, property } from '@pinser-metaverse/core';
+import { customElement, MetaElement, property } from '@digipair-vision/core';
 import { Web2VR } from './web2vr/web2vr';
 
 @customElement('meta-html')

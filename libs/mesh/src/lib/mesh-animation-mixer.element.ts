@@ -1,4 +1,4 @@
-import { customElement, Entity, property } from '@pinser-metaverse/core';
+import { customElement, Entity, property } from '@digipair-vision/core';
 import { MeshCommon } from './mesh.common';
 
 @customElement('meta-mesh-animation-mixer')
@@ -67,9 +67,7 @@ export class MeshAnimationMixerElement extends MeshCommon {
     });
   }
 
-  override async updateMesh(
-    parentMesh: any
-  ): Promise<void> {
+  override async updateMesh(parentMesh: any): Promise<void> {
     const mesh = !this.object
       ? parentMesh
       : (parentMesh?.getObjectByName(this.object) as any);

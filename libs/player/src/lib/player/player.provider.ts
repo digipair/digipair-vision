@@ -4,7 +4,7 @@ import {
   MetaProvider,
   state,
   THREE,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 import { MetaCursor } from './cursor.interface';
 
 declare const NAF: any;
@@ -34,7 +34,7 @@ export class PlayerProvider extends MetaProvider {
   override init(): void {
     this.debug = false;
     this.networked = {
-      serverURL: 'https://networked.pinser-metaverse.com',
+      serverURL: 'https://networked.digipair-vision.com',
       adapter: 'easyrtc',
     };
 
@@ -231,7 +231,7 @@ export class PlayerProvider extends MetaProvider {
 
       sceneEl.setAttribute('networked-scene', {
         serverURL: this.networked.serverURL,
-        app: 'pinser-metaverse',
+        app: 'digipair-vision',
         room: sessionFormated.replace(/-/g, '').toLowerCase(),
         adapter: this.networked.adapter,
         audio,

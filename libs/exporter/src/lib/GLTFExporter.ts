@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-this-alias */
-import { THREE } from '@pinser-metaverse/core';
+import { THREE } from '@digipair-vision/core';
 
 const {
   BufferAttribute,
@@ -704,7 +704,13 @@ class GLTFWriter {
    * @param  {number} target (Optional) Target usage of the BufferView
    * @return {Object}
    */
-  processBufferView(attribute: any, componentType: any, start: any, count: any, target: any): any {
+  processBufferView(
+    attribute: any,
+    componentType: any,
+    start: any,
+    count: any,
+    target: any
+  ): any {
     const json = this.json;
 
     if (!json.bufferViews) json.bufferViews = [];
@@ -916,7 +922,12 @@ class GLTFWriter {
    * @param  {String} mimeType export format
    * @return {Integer}     Index of the processed texture in the "images" array
    */
-  processImage(image: any, format: any, flipY: any, mimeType: any = 'image/png') {
+  processImage(
+    image: any,
+    format: any,
+    flipY: any,
+    mimeType: any = 'image/png'
+  ) {
     const writer = this;
     const cache = writer.cache;
     const json = writer.json;

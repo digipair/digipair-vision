@@ -5,7 +5,7 @@ import {
   property,
   TemplateResult,
   unsafeHTML,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 
 @customElement('experiences-with-hands-stand')
 export class StandElement extends MetaElement {

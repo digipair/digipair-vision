@@ -6,8 +6,8 @@ import {
   property,
   state,
   TemplateResult,
-} from '@pinser-metaverse/core';
-import '@pinser-metaverse/design-system';
+} from '@digipair-vision/core';
+import '@digipair-vision/design-system';
 import '../../pins/add-pins-cursor';
 import { MetaPins } from '../../pins/pins.interface';
 import { PlayerProvider } from '../../player/player.provider';

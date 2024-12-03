@@ -3,15 +3,15 @@ import {
   html,
   inject,
   MetaElement,
-} from '@pinser-metaverse/core';
-import { PlayerProvider } from '@pinser-metaverse/player';
-import { RouterProvider } from '@pinser-metaverse/router';
-import '@pinser-metaverse/screen-shared';
-import '@pinser-metaverse/teleport';
+} from '@digipair-vision/core';
+import { PlayerProvider } from '@digipair-vision/player';
+import { RouterProvider } from '@digipair-vision/router';
+import '@digipair-vision/screen-shared';
+import '@digipair-vision/teleport';
 import { routes } from './pinser.routes';
 import { SessionProvider } from './session.provider';
 
-@customElement('pinser-metaverse', {
+@customElement('digipair-vision', {
   providers: [RouterProvider, SessionProvider],
 })
 export class PinserMetaverseSpaceElement extends MetaElement {

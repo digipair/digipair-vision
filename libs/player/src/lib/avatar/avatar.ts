@@ -6,7 +6,7 @@ import {
   property,
   TemplateResult,
   unsafeHTML,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 import './logo';
 
 @customElement('meta-avatar')

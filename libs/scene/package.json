@@ -1,13 +1,13 @@
 {
-  "name": "@pinser-metaverse/scene",
+  "name": "@digipair-vision/scene",
   "version": "0.0.0",
   "type": "commonjs",
   "license": "MIT",
-  "homepage": "https://github.com/pinser-metaverse/pinser-metaverse",
+  "homepage": "https://github.com/digipair-vision/digipair-vision",
   "keywords": [
     "metaverse",
     "pinser",
-    "pinser-metaverse",
+    "digipair-vision",
     "webxr",
     "webgl",
     "vr",
@@ -19,7 +19,7 @@
     "scene"
   ],
   "repository": {
-    "url": "https://github.com/pinser-metaverse/pinser-metaverse.git",
+    "url": "https://github.com/digipair-vision/digipair-vision.git",
     "type": "git"
   },
   "author": {
@@ -28,8 +28,8 @@
     "url": "https://www.pinser.world"
   },
   "peerDependencies": {
-    "@pinser-metaverse/core": "0.27.1",
-    "@pinser-metaverse/player": "0.27.1"
+    "@digipair-vision/core": "0.27.1",
+    "@digipair-vision/player": "0.27.1"
   },
   "devDependencies": {
     "@types/aframe": "^1.2.0",

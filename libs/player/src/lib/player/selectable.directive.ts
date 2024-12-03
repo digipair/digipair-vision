@@ -1,4 +1,4 @@
-import { Entity, THREE } from '@pinser-metaverse/core';
+import { Entity, THREE } from '@digipair-vision/core';
 
 AFRAME.registerComponent('selectable', {
   schema: {

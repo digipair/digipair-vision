@@ -5,7 +5,7 @@ import {
   nothing,
   TemplateResult,
   unsafeHTML,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 
 @customElement('meta-menu')
 export class MenuElement extends MetaElement {

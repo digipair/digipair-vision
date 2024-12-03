@@ -8,8 +8,8 @@ import {
   state,
   TemplateResult,
   unsafeHTML,
-} from '@pinser-metaverse/core';
-import '@pinser-metaverse/design-system';
+} from '@digipair-vision/core';
+import '@digipair-vision/design-system';
 
 @customElement('meta-info')
 export class InfoElement extends MetaElement {

@@ -6,8 +6,8 @@ import {
   nothing,
   property,
   TemplateResult,
-} from '@pinser-metaverse/core';
-import '@pinser-metaverse/design-system';
+} from '@digipair-vision/core';
+import '@digipair-vision/design-system';
 import { ScreenSharedProvider } from '../providers/screen-shared.provider';
 import './desktop';
 import './webcam';

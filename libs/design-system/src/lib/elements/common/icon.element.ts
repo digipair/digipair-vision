@@ -4,7 +4,7 @@ import {
   MetaElement,
   property,
   TemplateResult,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 import { icons } from '../../const/icons.const';
 
 @customElement('meta-icon')
@@ -22,7 +22,7 @@ export class UiIconElement extends MetaElement {
     return html`
       <a-text
         value=${icons[this.icon]}
-        font="https://assets.pinser-metaverse.com/fonts/icons/icons.fnt"
+        font="https://assets.digipair-vision.com/fonts/icons/icons.fnt"
         color=${this.color}
         width=${this.width}
         negate="false"

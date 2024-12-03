@@ -3,7 +3,7 @@ import {
   html,
   MetaElement,
   TemplateResult,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 
 @customElement('meta-menu-side-profile')
 export class MenuSideElement extends MetaElement {

@@ -1,9 +1,9 @@
 [
   {
     "name": "Screen",
-    "image": "https://assets.pinser-metaverse.com/pins/images/screen-shared.jpg",
+    "image": "https://assets.digipair-vision.com/pins/images/screen-shared.jpg",
     "component": "meta-screen-shared",
-    "import": "@pinser-metaverse/screen-shared",
+    "import": "@digipair-vision/screen-shared",
     "dynamic": false,
     "placeholder": {
       "geometry": "primitive: box; width: 1.6; height: 0.9; depth: 0.003;",
@@ -14,9 +14,9 @@
   },
   {
     "name": "Screen curved",
-    "image": "https://assets.pinser-metaverse.com/pins/images/screen-shared-curved.jpg",
+    "image": "https://assets.digipair-vision.com/pins/images/screen-shared-curved.jpg",
     "component": "meta-screen-shared",
-    "import": "@pinser-metaverse/screen-shared",
+    "import": "@digipair-vision/screen-shared",
     "dynamic": false,
     "placeholder": {
       "geometry": "primitive: box; width: 1.54; height: 0.9; depth: 0.2;",
@@ -30,7 +30,7 @@
   },
   {
     "name": "Box",
-    "image": "https://assets.pinser-metaverse.com/pins/images/box.jpg",
+    "image": "https://assets.digipair-vision.com/pins/images/box.jpg",
     "component": "a-box",
     "dynamic": false,
     "placeholder": {
@@ -45,7 +45,7 @@
   },
   {
     "name": "Sphere",
-    "image": "https://assets.pinser-metaverse.com/pins/images/sphere.jpg",
+    "image": "https://assets.digipair-vision.com/pins/images/sphere.jpg",
     "component": "a-sphere",
     "dynamic": false,
     "placeholder": {
@@ -61,7 +61,7 @@
   },
   {
     "name": "Box gravity",
-    "image": "https://assets.pinser-metaverse.com/pins/images/box.jpg",
+    "image": "https://assets.digipair-vision.com/pins/images/box.jpg",
     "component": "a-box",
     "dynamic": true,
     "placeholder": {
@@ -76,7 +76,7 @@
   },
   {
     "name": "Sphere gravity",
-    "image": "https://assets.pinser-metaverse.com/pins/images/sphere.jpg",
+    "image": "https://assets.digipair-vision.com/pins/images/sphere.jpg",
     "component": "a-sphere",
     "dynamic": true,
     "placeholder": {

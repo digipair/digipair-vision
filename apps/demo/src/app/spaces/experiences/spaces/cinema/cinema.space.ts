@@ -1,5 +1,5 @@
-import { html, inject, MetaElement } from '@pinser-metaverse/core';
-import { routeElement } from '@pinser-metaverse/router';
+import { html, inject, MetaElement } from '@digipair-vision/core';
+import { routeElement } from '@digipair-vision/router';
 import { SessionProvider } from '../../../../session.provider';
 
 @routeElement('experiences-cinema-space')

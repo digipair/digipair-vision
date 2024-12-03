@@ -4,9 +4,9 @@ import {
   MetaElement,
   nothing,
   state,
-} from '@pinser-metaverse/core';
-import '@pinser-metaverse/design-system';
-import { routeElement } from '@pinser-metaverse/router';
+} from '@digipair-vision/core';
+import '@digipair-vision/design-system';
+import { routeElement } from '@digipair-vision/router';
 import { SessionProvider } from '../../../../session.provider';
 import './stand.element';
 

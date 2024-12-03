@@ -6,7 +6,7 @@ import {
   MetaElement,
   property,
   TemplateResult,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 import { RouteProvider } from '../providers/route.provider';
 import { RouterProvider } from '../providers/router.provider';
 
