@@ -6,12 +6,12 @@
 
 ## Pin's
 
-On [digipair-vision](https://www.digipair-vision.com), a library who exposes an autonomous 3d webcomponents is named a pin's.  
+On [digipair-vision](https://www.pinser-metaverse.com), a library who exposes an autonomous 3d webcomponents is named a pin's.  
 In this section, we will create your first pin's !
 
 ### Generate a new Pin's
 
-To generate a Pin's, we will use a nx generator embedded in the [metaverse-bootstrap](https://github.com/digipair-vision/metaverse-boostrap) project.
+To generate a Pin's, we will use a nx generator embedded in the [metaverse-bootstrap](https://github.com/pinser-metaverse/metaverse-boostrap) project.
 
 On a bash / DOS terminal, execute the following command **in your project directory**:
 
@@ -31,7 +31,7 @@ The pin's source code is available in the file `libs/{pins-domain}/{pins-name}/s
 yarn nx workspace-generator pins hello-world example
 ```
 
-<iframe src="https://codesandbox.io/embed/github/digipair-vision/digipair-vision-examples/tree/element-creation-generate-pins/?fontsize=10&hidenavigation=1&theme=dark&view=split&module=/libs/example/hello-world/src/lib/hello-world.element.ts"
+<iframe src="https://codesandbox.io/embed/github/pinser-metaverse/digipair-vision-examples/tree/element-creation-generate-pins/?fontsize=10&hidenavigation=1&theme=dark&view=split&module=/libs/example/hello-world/src/lib/hello-world.element.ts"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
      title="Pinser element-creation Pin's generation"
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
@@ -52,13 +52,13 @@ yarn nx serve {pins-domain}-{pins-name}
 
 ## Element
 
-[digipair-vision](https://www.digipair-vision.com) element is a 3D web component.  
+[digipair-vision](https://www.pinser-metaverse.com) element is a 3D web component.  
 By convention, it is generally creatted in a typescript file ended by `.element.ts`.
 
 ### @customElement decorator
 
-To keep the compatibility with [AFrame](https://aframe.io), [digipair-vision](https://www.digipair-vision.com) use a similar interface that [lit](https://lit.dev) to manage the properties, but don't use [lit](https://lit.dev). So, there are some little differencies with the behavior and the interface.
-To create a [digipair-vision](https://www.digipair-vision.com) element, you can use the decorator `@customElement`.
+To keep the compatibility with [AFrame](https://aframe.io), [digipair-vision](https://www.pinser-metaverse.com) use a similar interface that [lit](https://lit.dev) to manage the properties, but don't use [lit](https://lit.dev). So, there are some little differencies with the behavior and the interface.
+To create a [digipair-vision](https://www.pinser-metaverse.com) element, you can use the decorator `@customElement`.
 
 ```typescript
 @customElement(element: string, options: {
@@ -85,7 +85,7 @@ export class HelloWorldElement extends MetaElement {
 
 ### Display variable
 
-[digipair-vision](https://www.digipair-vision.com) use [lit-html](https://lit.dev) to menage the template. Your can read more information on [lit documentation](https://lit.dev/docs/templates/overview/).
+[digipair-vision](https://www.pinser-metaverse.com) use [lit-html](https://lit.dev) to menage the template. Your can read more information on [lit documentation](https://lit.dev/docs/templates/overview/).
 
 ```typescript
 import { customElement, html, MetaElement, TemplateResult } from '@digipair-vision/core';
@@ -101,7 +101,7 @@ export class HelloWorldElement extends MetaElement {
 
 ### Manage events
 
-[digipair-vision](https://www.digipair-vision.com) use [lit-html](https://lit.dev) to menage the template. Your can read more information on [lit documentation](https://lit.dev/docs/templates/overview/).
+[digipair-vision](https://www.pinser-metaverse.com) use [lit-html](https://lit.dev) to menage the template. Your can read more information on [lit documentation](https://lit.dev/docs/templates/overview/).
 
 ```typescript
 import { customElement, html, MetaElement, TemplateResult } from '@digipair-vision/core';
@@ -119,7 +119,7 @@ export class HelloWorldElement extends MetaElement {
 
 ### AFrame hook
 
-All the hooks [AFrame](https://aframe.io/docs/1.4.0/core/component.html#overview-of-methods) are usable with [digipair-vision](https://www.digipair-vision.com).
+All the hooks [AFrame](https://aframe.io/docs/1.4.0/core/component.html#overview-of-methods) are usable with [digipair-vision](https://www.pinser-metaverse.com).
 
 ```typescript
 import { customElement, html, MetaElement, TemplateResult } from '@digipair-vision/core';
@@ -138,7 +138,7 @@ export class HelloWorldElement extends MetaElement {
 
 ### @property decorator
 
-To keep the compatibility with [AFrame](https://aframe.io), [digipair-vision](https://www.digipair-vision.com) use a similar interface that [lit](https://lit.dev) to manage the properties, but don't use [lit](https://lit.dev). So, there are some little differencies with the behavior and the interface.
+To keep the compatibility with [AFrame](https://aframe.io), [digipair-vision](https://www.pinser-metaverse.com) use a similar interface that [lit](https://lit.dev) to manage the properties, but don't use [lit](https://lit.dev). So, there are some little differencies with the behavior and the interface.
 To read an attribute from the HTML element, you can use the decorator `@property`.
 
 ```typescript
@@ -175,7 +175,7 @@ export class HelloWorldElement extends MetaElement {
 
 ### @state decorator
 
-To keep the compatibility with [AFrame](https://aframe.io), [digipair-vision](https://www.digipair-vision.com) use a similar interface that [lit](https://lit.dev) to manage the properties, but don't use [lit](https://lit.dev). So, there are some little differencies with the behavior and the interface.
+To keep the compatibility with [AFrame](https://aframe.io), [digipair-vision](https://www.pinser-metaverse.com) use a similar interface that [lit](https://lit.dev) to manage the properties, but don't use [lit](https://lit.dev). So, there are some little differencies with the behavior and the interface.
 To rendering the component each time a variable is updated, you can use the decorator `@state`.  
 The value is synchronized on the networked if the networked attribute of the `customElement` decorator set to true.
 
@@ -250,4 +250,4 @@ export class TictactoeProvider extends MetaProvider {
 see the section [@state decorator](#state-decorator) of the component section because the interface is the same.
 
 > Don't hesitate to improve this documentation, any help will be amazing !  
-> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/digipair-vision/digipair-vision/blob/master/docs/element-creation.md)
+> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/pinser-metaverse/digipair-vision/blob/master/docs/element-creation.md)

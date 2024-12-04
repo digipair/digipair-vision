@@ -47,7 +47,7 @@ export class PlayerElement extends MetaElement {
           <a-gltf-model
             class="tracked-left-hand"
             rotation="0 0 90"
-            src="https://assets.digipair-vision.com/objects/leftHandHigh.glb"
+            src="https://assets.pinser-metaverse.com/objects/leftHandHigh.glb"
           ></a-gltf-model>
         </a-entity>
       `,
@@ -59,7 +59,7 @@ export class PlayerElement extends MetaElement {
           <a-gltf-model
             class="tracked-right-hand"
             rotation="0 0 -90"
-            src="https://assets.digipair-vision.com/objects/rightHandHigh.glb"
+            src="https://assets.pinser-metaverse.com/objects/rightHandHigh.glb"
           ></a-gltf-model>
         </a-entity>
       `,
@@ -182,7 +182,7 @@ export class PlayerElement extends MetaElement {
     return html`
       ${this.playerProvider.customcursor
         ? unsafeHTML(
-            `<${this.playerProvider.customcursor} vrmode=${this.vrmode}></${this.playerProvider.customcursor}>`
+            `<${this.playerProvider.customcursor} vrmode=${this.vrmode}></${this.playerProvider.customcursor}>`,
           )
         : html`<meta-teleportable-cursor
             vrmode=${this.vrmode}
