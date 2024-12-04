@@ -9,5 +9,5 @@
 > Alpha version
 
 [Get Started](#main)
-[GitHub](https://github.com/digipair-vision/digipair-vision)
+[GitHub](https://github.com/pinser-metaverse/digipair-vision)
 [Discord](https://discord.gg/kCqF8xaMHJ)

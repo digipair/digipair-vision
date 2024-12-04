@@ -34,7 +34,7 @@ export class PlayerProvider extends MetaProvider {
   override init(): void {
     this.debug = false;
     this.networked = {
-      serverURL: 'https://networked.digipair-vision.com',
+      serverURL: 'https://networked.pinser-metaverse.com',
       adapter: 'easyrtc',
     };
 

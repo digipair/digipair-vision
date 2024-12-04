@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "type": "commonjs",
   "license": "MIT",
-  "homepage": "https://github.com/digipair-vision/digipair-vision/tree/master/libs/design-system",
+  "homepage": "https://github.com/pinser-metaverse/digipair-vision/tree/master/libs/design-system",
   "keywords": [
     "pinser",
     "aframe",
@@ -13,7 +13,7 @@
     "teleport"
   ],
   "repository": {
-    "url": "https://github.com/digipair-vision/digipair-vision.git",
+    "url": "https://github.com/pinser-metaverse/digipair-vision.git",
     "type": "git"
   },
   "author": {

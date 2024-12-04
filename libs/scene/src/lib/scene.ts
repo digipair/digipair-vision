@@ -19,10 +19,10 @@ export class SceneElement extends MetaHtmlElement {
   private session!: string;
 
   @propertyHtml()
-  private server = 'https://networked.digipair-vision.com';
+  private server = 'https://networked.pinser-metaverse.com';
 
   @propertyHtml()
-  private draco = 'https://assets.digipair-vision.com/draco/';
+  private draco = 'https://assets.pinser-metaverse.com/draco/';
 
   @propertyHtml()
   private adapter = 'easyrtc';

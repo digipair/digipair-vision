@@ -59,7 +59,7 @@ Display an icon
 ```
 
 > see the list [here](https://fonts.google.com/icons)  
-> see the real name [here](https://github.com/digipair-vision/digipair-vision/blob/master/libs/design-system/src/lib/const/icons.const.ts)
+> see the real name [here](https://github.com/pinser-metaverse/digipair-vision/blob/master/libs/design-system/src/lib/const/icons.const.ts)
 
 ### bubble
 
@@ -103,7 +103,7 @@ All [AFrame](https://aframe.io) primitives are usable in a [digipair-vision](htt
 
 ## Example
 
-<iframe src="https://codesandbox.io/embed/github/digipair-vision/digipair-vision-examples/tree/available-elements-example/?fontsize=10&hidenavigation=1&theme=dark&view=preview&module=/apps/metaverse/src/lib/metaverse.space.ts"
+<iframe src="https://codesandbox.io/embed/github/pinser-metaverse/digipair-vision-examples/tree/available-elements-example/?fontsize=10&hidenavigation=1&theme=dark&view=preview&module=/apps/metaverse/src/lib/metaverse.space.ts"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
      title="Pinser available elements example"
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
@@ -111,4 +111,4 @@ All [AFrame](https://aframe.io) primitives are usable in a [digipair-vision](htt
    ></iframe>
 
 > Don't hesitate to improve this documentation, any help will be amazing !  
-> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/digipair-vision/digipair-vision/blob/master/docs/available-elements.md)
+> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/pinser-metaverse/digipair-vision/blob/master/docs/available-elements.md)

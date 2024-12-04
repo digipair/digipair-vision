@@ -11,7 +11,7 @@ In this section, we will create your first pin's !
 
 ### Generate a new Pin's
 
-To generate a Pin's, we will use a nx generator embedded in the [metaverse-bootstrap](https://github.com/digipair-vision/metaverse-boostrap) project.
+To generate a Pin's, we will use a nx generator embedded in the [metaverse-bootstrap](https://github.com/pinser-metaverse/metaverse-boostrap) project.
 
 On a bash / DOS terminal, execute the following command **in your project directory**:
 
@@ -31,7 +31,7 @@ The pin's source code is available in the file `libs/{pins-domain}/{pins-name}/s
 yarn nx workspace-generator pins hello-world example
 ```
 
-<iframe src="https://codesandbox.io/embed/github/digipair-vision/digipair-vision-examples/tree/element-creation-generate-pins/?fontsize=10&hidenavigation=1&theme=dark&view=split&module=/libs/example/hello-world/src/lib/hello-world.element.ts"
+<iframe src="https://codesandbox.io/embed/github/pinser-metaverse/digipair-vision-examples/tree/element-creation-generate-pins/?fontsize=10&hidenavigation=1&theme=dark&view=split&module=/libs/example/hello-world/src/lib/hello-world.element.ts"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
      title="Pinser element-creation Pin's generation"
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
@@ -250,4 +250,4 @@ export class TictactoeProvider extends MetaProvider {
 see the section [@state decorator](#state-decorator) of the component section because the interface is the same.
 
 > Don't hesitate to improve this documentation, any help will be amazing !  
-> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/digipair-vision/digipair-vision/blob/master/docs/element-creation.md)
+> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/pinser-metaverse/digipair-vision/blob/master/docs/element-creation.md)

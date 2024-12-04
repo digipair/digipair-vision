@@ -3,7 +3,7 @@
 Pinser metaverse provide a simple way to create your own web metaverse or 3D web components like a simple HTML page.  
 Inspired from the very nice libraries [Polymer lit](https://lit.dev/) and [A-Frame](https://aframe.io/), you can create AR / VR / 3D elements on typescript classes like Angular/React/Lit.
 
-<iframe src="https://codesandbox.io/embed/github/digipair-vision/digipair-vision-examples/tree/sample/?fontsize=10&hidenavigation=1&theme=dark&view=preview&module=/apps/metaverse/src/index.html"
+<iframe src="https://codesandbox.io/embed/github/pinser-metaverse/digipair-vision-examples/tree/sample/?fontsize=10&hidenavigation=1&theme=dark&view=preview&module=/apps/metaverse/src/index.html"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
      title="metaverse-bootstrap"
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
@@ -52,7 +52,7 @@ Follow the section [Get started](get-started)
 
 ### Try it now
 
-[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/digipair-vision/metaverse-boostrap/blob/master/apps/metaverse/src/lib/metaverse.space.ts)
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/pinser-metaverse/metaverse-boostrap/blob/master/apps/metaverse/src/lib/metaverse.space.ts)
 
 ### Join us
 
@@ -60,9 +60,9 @@ Follow the section [Get started](get-started)
 
 ### Support
 
-[![Github](./assets/github.png)](https://github.com/digipair-vision/digipair-vision)
+[![Github](./assets/github.png)](https://github.com/pinser-metaverse/digipair-vision)
 
 [![stackoverflow](./assets/stackoverflow.png)](https://stackoverflow.com/questions/tagged/pinser)
 
 > Don't hesitate to improve this documentation, any help will be amazing !  
-> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/digipair-vision/digipair-vision/blob/master/docs/README.md)
+> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/pinser-metaverse/digipair-vision/blob/master/docs/README.md)

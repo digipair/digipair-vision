@@ -1,9 +1,9 @@
 {
   "name": "@digipair-vision/html",
   "version": "0.0.0",
-  "type": "module ",
+  "type": "module",
   "license": "MIT",
-  "homepage": "https://github.com/digipair-vision/digipair-vision/tree/master/libs/htnl",
+  "homepage": "https://github.com/pinser-metaverse/digipair-vision/tree/master/libs/htnl",
   "keywords": [
     "pinser",
     "aframe",
@@ -13,7 +13,7 @@
     "teleport"
   ],
   "repository": {
-    "url": "https://github.com/digipair-vision/digipair-vision.git",
+    "url": "https://github.com/pinser-metaverse/digipair-vision.git",
     "type": "git"
   },
   "author": {

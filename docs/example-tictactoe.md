@@ -4,9 +4,9 @@
 
 ## Before start
 
-- **option 1:** clone the project [metaverse-bootstrap](https://github.com/digipair-vision/metaverse-boostrap) from Github
+- **option 1:** clone the project [metaverse-bootstrap](https://github.com/pinser-metaverse/metaverse-boostrap) from Github
 - **option 2:**  
-  [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/digipair-vision/metaverse-boostrap/blob/master/apps/metaverse/src/lib/metaverse.space.ts)
+  [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/pinser-metaverse/metaverse-boostrap/blob/master/apps/metaverse/src/lib/metaverse.space.ts)
 
 ## Generate new Pin's
 
@@ -291,7 +291,7 @@ export class TictactoePawnElement extends MetaElement {
 > - Desktop (3D)
 > - Headset (3D & AR)
 
-<iframe src="https://codesandbox.io/embed/github/digipair-vision/digipair-vision-examples/tree/example-tictactoe/?fontsize=10&hidenavigation=1&theme=dark&view=editor&module=/libs/game/tictactoe/src/lib/tictactoe.provider.ts,/libs/game/tictactoe/src/lib/tictactoe.element.ts,/libs/game/tictactoe/src/lib/tictactoe-pawn.element.ts"
+<iframe src="https://codesandbox.io/embed/github/pinser-metaverse/digipair-vision-examples/tree/example-tictactoe/?fontsize=10&hidenavigation=1&theme=dark&view=editor&module=/libs/game/tictactoe/src/lib/tictactoe.provider.ts,/libs/game/tictactoe/src/lib/tictactoe.element.ts,/libs/game/tictactoe/src/lib/tictactoe-pawn.element.ts"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
      title="Pinser Example Tic-tac-toe"
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
@@ -299,4 +299,4 @@ export class TictactoePawnElement extends MetaElement {
    ></iframe>
 
 > Don't hesitate to improve this documentation, any help will be amazing !  
-> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/digipair-vision/digipair-vision/blob/master/docs/element-creation.md)
+> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/pinser-metaverse/digipair-vision/blob/master/docs/element-creation.md)

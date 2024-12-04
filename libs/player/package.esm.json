@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "type": "module",
   "license": "MIT",
-  "homepage": "https://github.com/digipair-vision/digipair-vision",
+  "homepage": "https://github.com/pinser-metaverse/digipair-vision",
   "keywords": [
     "metaverse",
     "pinser",
@@ -21,7 +21,7 @@
     "camera"
   ],
   "repository": {
-    "url": "https://github.com/digipair-vision/digipair-vision.git",
+    "url": "https://github.com/pinser-metaverse/digipair-vision.git",
     "type": "git"
   },
   "author": {
