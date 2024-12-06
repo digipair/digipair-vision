@@ -1,99 +1,39 @@
 {
-  "$schema": "..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
+  "name": "design-system",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/design-system/src",
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nrwl/js:swc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/design-system",
-        "main": "libs/design-system/src/index.ts",
-        "tsConfig": "libs/design-system/tsconfig.lib.json",
-        "assets": ["libs/design-system/*.md"]
+    "executor": "@nx/rollup:rollup",
+    "outputs": ["{options.outputPath}"],
+    "options": {
+      "outputPath": "dist/libs/design-system",
+      "main": "libs/design-system/src/index.ts",
+      "tsConfig": "libs/design-system/tsconfig.lib.json",
+      "assets": [
+          "libs/design-system/src/index.d.ts",
+          "libs/design-system/src/schema.json",
+          "libs/design-system/src/schema.fr.json",
+          "libs/design-system/src/index.html"
+        ],
+      "rollupConfig": ["libs/design-system/rollup.build.cjs"],
+      "project": "libs/design-system/package.json",
+      "compiler": "swc",
+      "format": ["cjs", "esm"]
       }
     },
-    "build-es": {
-      "executor": "@nrwl/web:rollup",
-      "outputs": ["{options.outputPath}"],
+    "serve": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
       "options": {
-        "project": "libs/design-system/package.esm.json",
-        "outputPath": "dist/libs/design-system-es",
-        "compiler": "swc",
-        "entryFile": "libs/design-system/src/index.ts",
-        "tsConfig": "libs/design-system/tsconfig.lib.json",
-        "rollupConfig": ["libs/design-system/rollup.config.cjs"],
-        "assets": [
-          {
-            "glob": "libs/design-system/*.md",
-            "input": ".",
-            "output": "."
-          },
-          {
-            "glob": "libs/design-system/src/index.html",
-            "input": ".",
-            "output": "."
-          }
-        ]
-      },
-      "configurations": {
-        "serve": {
-          "watch": true,
-          "assets": []
-        }
+        "command": "npx serve dist/libs/design-system/"
       }
     },
     "publish": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "node tools/scripts/publish.mjs design-system {args.ver} {args.tag}"
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build"
-        }
-      ]
-    },
-    "publish-es": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "node tools/scripts/publish-es.mjs design-system {args.ver} {args.tag}"
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build-es"
-        }
-      ]
-    },
-    "serve": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "npm-run-all --parallel \"serve ./dist/libs/design-system-es\" \"nx run design-system:build-es:serve\""
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build-es"
-        }
-      ]
-    },
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/design-system/**/*.ts"]
-      }
-    },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/design-system"],
-      "options": {
-        "jestConfig": "libs/design-system/jest.config.ts",
-        "passWithNoTests": true
-      }
+      "command": "node tools/scripts/publish.mjs design-system {args.ver} {args.tag}",
+      "dependsOn": ["build"]
     }
   },
-  "tags": ["design-system"]
+  "tags": []
 }
