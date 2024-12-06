@@ -21,12 +21,6 @@
       "project": "libs/mesh/package.json",
       "compiler": "swc",
       "format": ["cjs", "esm"]
-      },
-      "configurations": {
-        "serve": {
-          "watch": true,
-          "assets": []
-        }
       }
     },
     "serve": {
