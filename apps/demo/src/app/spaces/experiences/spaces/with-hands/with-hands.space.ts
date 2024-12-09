@@ -4,9 +4,9 @@ import {
   MetaElement,
   nothing,
   state,
-} from '@pinser-metaverse/core';
-import '@pinser-metaverse/design-system';
-import { routeElement } from '@pinser-metaverse/router';
+} from '@digipair-vision/core';
+import '@digipair-vision/design-system';
+import { routeElement } from '@digipair-vision/router';
 import { SessionProvider } from '../../../../session.provider';
 import './stand.element';
 
@@ -114,7 +114,7 @@ export class WithHandsSpaceElement extends MetaElement {
                 title=${article.title}
                 @click=${() => this.show(index)}
               ></meta-menu-button-image>
-            `
+            `,
           )}
         </a-entity>
       </meta-dialog>
@@ -125,8 +125,8 @@ export class WithHandsSpaceElement extends MetaElement {
             <experiences-with-hands-stand
               pins=${btoa(
                 encodeURIComponent(
-                  JSON.stringify(this.articles[this.current].pins)
-                )
+                  JSON.stringify(this.articles[this.current].pins),
+                ),
               )}
               position="1.09 1.36 -0.166"
               rotation="0 -90 0"

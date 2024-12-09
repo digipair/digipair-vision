@@ -1,4 +1,4 @@
-import { Entity, MetaElement, THREE } from '@pinser-metaverse/core';
+import { Entity, MetaElement, THREE } from '@digipair-vision/core';
 
 function getPathTo(element: Element, root: Element): string {
   if (element.id !== '') return 'id("' + element.id + '")';
@@ -44,7 +44,7 @@ export abstract class MeshCommon extends MetaElement {
 
   private get parentEl(): Entity | null | undefined {
     return this.el.parentElement?.closest(
-      `meta-mesh, meta-spline, a-gltf-model, a-obj-model`
+      `meta-mesh, meta-spline, a-gltf-model, a-obj-model`,
     );
   }
 
@@ -73,7 +73,7 @@ export abstract class MeshCommon extends MetaElement {
   }
 
   protected async updateMesh(
-    parentMesh: THREE.Object3D<THREE.Event>
+    parentMesh: THREE.Object3D<THREE.Event>,
   ): Promise<void> {
     const mesh = !this.object
       ? parentMesh
@@ -104,9 +104,9 @@ export abstract class MeshCommon extends MetaElement {
     this.el.setAttribute(
       'meta-element',
       `element: ${btoa(
-        encodeURIComponent(JSON.stringify('a-entity'))
+        encodeURIComponent(JSON.stringify('a-entity')),
       )}; attributes: ${btoa(
-        encodeURIComponent(JSON.stringify({}))
+        encodeURIComponent(JSON.stringify({})),
       )}; options: ${btoa(
         encodeURIComponent(
           JSON.stringify({
@@ -118,16 +118,16 @@ export abstract class MeshCommon extends MetaElement {
             } ${localPosition.z};`,
             dynamic: false,
             inline: true,
-          })
-        )
-      )};`
+          }),
+        ),
+      )};`,
     );
 
     this.el.setAttribute(
       'networked',
       `template: #element-template; persistent: true; owner: scene; networkId: ${kebabCase(
-        getPathTo(this.el, this.el.sceneEl as Element)
-      )};`
+        getPathTo(this.el, this.el.sceneEl as Element),
+      )};`,
     );
   }
 }

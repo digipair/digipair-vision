@@ -4,8 +4,8 @@ import {
   MetaElement,
   property,
   TemplateResult,
-} from '@pinser-metaverse/core';
-import '@pinser-metaverse/mesh';
+} from '@digipair-vision/core';
+import '@digipair-vision/mesh';
 
 @customElement('meta-ready-player-me')
 export class ReadyPlayerMeElement extends MetaElement {

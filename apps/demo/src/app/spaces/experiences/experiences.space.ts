@@ -1,5 +1,5 @@
-import { html, inject, MetaElement } from '@pinser-metaverse/core';
-import { routeElement, RouterProvider } from '@pinser-metaverse/router';
+import { html, inject, MetaElement } from '@digipair-vision/core';
+import { routeElement, RouterProvider } from '@digipair-vision/router';
 import { SessionProvider } from '../../session.provider';
 import { routes } from './experiences.routes';
 
@@ -16,27 +16,32 @@ export class ExperiencesSpaceElement extends MetaElement {
   private experiences = [
     {
       title: 'Pop corn',
-      image: 'https://agency-experiences.onrender.com/assets/spaces/experiences/cinema-food-small.png',
+      image:
+        'https://agency-experiences.onrender.com/assets/spaces/experiences/cinema-food-small.png',
       route: '/experiences/cinema/',
     },
     {
       title: 'Black night',
-      image: 'https://agency-experiences.onrender.com/assets/spaces/experiences/night-small.png',
+      image:
+        'https://agency-experiences.onrender.com/assets/spaces/experiences/night-small.png',
       route: '/experiences/cinemavr/',
     },
     {
       title: '360',
-      image: 'https://agency-experiences.onrender.com/assets/spaces/experiences/360-degree-small.png',
+      image:
+        'https://agency-experiences.onrender.com/assets/spaces/experiences/360-degree-small.png',
       route: '/experiences/cinema360/',
     },
     {
       title: 'Prison',
-      image: 'https://agency-experiences.onrender.com/assets/spaces/experiences/prisoner-small.png',
+      image:
+        'https://agency-experiences.onrender.com/assets/spaces/experiences/prisoner-small.png',
       route: '/experiences/mixed-reality/',
     },
     {
       title: 'Shopping',
-      image: 'https://agency-experiences.onrender.com/assets/spaces/experiences/shopping-cart-with-gift-box-small.png',
+      image:
+        'https://agency-experiences.onrender.com/assets/spaces/experiences/shopping-cart-with-gift-box-small.png',
       route: '/experiences/with-hands/',
     },
   ];
@@ -80,7 +85,7 @@ export class ExperiencesSpaceElement extends MetaElement {
               title=${experience.title}
               @click=${() => this.go(experience.route)}
             ></meta-menu-button-image>
-          `
+          `,
         )}
       </a-entity>
 

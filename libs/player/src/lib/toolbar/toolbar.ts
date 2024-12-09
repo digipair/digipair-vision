@@ -4,7 +4,7 @@ import {
   MetaElement,
   TemplateResult,
   unsafeHTML,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 import './toolbar-default';
 
 @customElement('meta-player-toolbar')

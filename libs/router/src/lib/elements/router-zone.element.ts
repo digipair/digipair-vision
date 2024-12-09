@@ -6,7 +6,7 @@ import {
   MetaElement,
   property,
   TemplateResult,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 import { RouterProvider } from '../providers/router.provider';
 
 @customElement('meta-router-zone')

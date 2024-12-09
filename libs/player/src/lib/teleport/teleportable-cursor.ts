@@ -8,7 +8,7 @@ import {
   property,
   state,
   THREE,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 import { PlayerProvider } from '../player/player.provider';
 
 @customElement('meta-teleportable-cursor')
@@ -36,7 +36,7 @@ export class TeleportableCursorElement extends MetaElement {
     const cursor: any = (this.el.sceneEl as Entity).querySelector('[cursor]');
     const enable =
       cursor.components.raycaster.intersectedEls[0]?.hasAttribute(
-        'teleportable'
+        'teleportable',
       );
 
     if (!enable) {
@@ -65,11 +65,11 @@ export class TeleportableCursorElement extends MetaElement {
   private isClickAvailable(): boolean {
     const mouseDownPosition = new THREE.Vector2(
       this.mouseDownPosition.clientX,
-      this.mouseDownPosition.clientY
+      this.mouseDownPosition.clientY,
     );
     const currentPosition = new THREE.Vector2(
       this.currentPosition.clientX,
-      this.currentPosition.clientY
+      this.currentPosition.clientY,
     );
     const distance = mouseDownPosition.distanceTo(currentPosition);
 
@@ -87,7 +87,7 @@ export class TeleportableCursorElement extends MetaElement {
     const cursor: any = (this.el.sceneEl as Entity).querySelector('[cursor]');
     const visible =
       cursor.components.raycaster.intersectedEls[0]?.hasAttribute(
-        'teleportable'
+        'teleportable',
       );
 
     if (visible) {

@@ -11,7 +11,7 @@ import {
   property,
   TemplateResult,
   THREE,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 
 @customElement('meta-camrender-camera')
 export class CamrenderCameraElement extends MetaElement {
@@ -33,7 +33,7 @@ export class CamrenderCameraElement extends MetaElement {
   override update(oldData: any): void {
     const data = this.data as any;
     const camera = this.el.querySelector(
-      ':scope > [data-meta-camrender-camera]'
+      ':scope > [data-meta-camrender-camera]',
     ) as Entity | null;
 
     if (!camera) {
@@ -77,10 +77,10 @@ export class CamrenderCameraElement extends MetaElement {
         () =>
           this.renderer.render(
             ((this.el as Entity).sceneEl as Entity).object3D,
-            (camera.object3DMap as any).camera
+            (camera.object3DMap as any).camera,
           ),
         1000 / data.fps,
-        this
+        this,
       );
     }
   }

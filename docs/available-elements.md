@@ -1,14 +1,14 @@
 # Available elements
 
 > **_ Libraries concerned _**  
-> [@pinser-metaverse/core](https://www.npmjs.com/package/@pinser-metaverse/core)  
-> [@pinser-metaverse/mesh](https://www.npmjs.com/package/@pinser-metaverse/mesh)  
-> [@pinser-metaverse/teleport](https://www.npmjs.com/package/@pinser-metaverse/teleport)  
-> [@pinser-metaverse/design-system](https://www.npmjs.com/package/@pinser-metaverse/design-system)  
-> [@pinser-metaverse/screen-shared](https://www.npmjs.com/package/@pinser-metaverse/screen-shared)  
-> [@pinser-metaverse/info](https://www.npmjs.com/package/@pinser-metaverse/info)
+> [@digipair-vision/core](https://www.npmjs.com/package/@digipair-vision/core)  
+> [@digipair-vision/mesh](https://www.npmjs.com/package/@digipair-vision/mesh)  
+> [@digipair-vision/teleport](https://www.npmjs.com/package/@digipair-vision/teleport)  
+> [@digipair-vision/design-system](https://www.npmjs.com/package/@digipair-vision/design-system)  
+> [@digipair-vision/screen-shared](https://www.npmjs.com/package/@digipair-vision/screen-shared)  
+> [@digipair-vision/info](https://www.npmjs.com/package/@digipair-vision/info)
 
-## @pinser-metaverse/spline
+## @digipair-vision/spline
 
 Display a [spline](https://spline.design) scene
 
@@ -16,7 +16,7 @@ Display a [spline](https://spline.design) scene
 <meta-spline scene="SPLINECODE_URL"></meta-spline>
 ```
 
-## @pinser-metaverse/spline
+## @digipair-vision/spline
 
 Manage a mesh in a GLTF or a Spline object
 
@@ -28,14 +28,11 @@ Manage a mesh in a GLTF or a Spline object
 
 ```html
 <a-gltf-model src="/assets/scene.glb">
-  <meta-mesh
-    object="Emoji"
-    animation="property: position; to: -20 -10 0; dur: 2000; easing: linear; dir: alternate; loop: true;"
-  ></meta-mesh>
+  <meta-mesh object="Emoji" animation="property: position; to: -20 -10 0; dur: 2000; easing: linear; dir: alternate; loop: true;"></meta-mesh>
 </a-gltf-model>
 ```
 
-## @pinser-metaverse/teleport
+## @digipair-vision/teleport
 
 Display a ring where the user is teleported if he selects it.
 
@@ -43,7 +40,7 @@ Display a ring where the user is teleported if he selects it.
 <meta-teleport></meta-teleport>
 ```
 
-## @pinser-metaverse/design-system
+## @digipair-vision/design-system
 
 ### Button
 
@@ -77,15 +74,10 @@ Display an icon in a circle
 Display an dia&log box
 
 ```html
-<meta-dialog
-  color="COLOR"
-  icon="ICON"
-  width="WIDTH"
-  height="HEIGHT"
-></meta-dialog>
+<meta-dialog color="COLOR" icon="ICON" width="WIDTH" height="HEIGHT"></meta-dialog>
 ```
 
-## @pinser-metaverse/screen-shared
+## @digipair-vision/screen-shared
 
 Screen used to shared user webcam or user screen.
 
@@ -93,7 +85,7 @@ Screen used to shared user webcam or user screen.
 <meta-screen-shared></meta-screen-shared>
 ```
 
-## @pinser-metaverse/info
+## @digipair-vision/info
 
 Display an oinformation icon.  
 When the user is behind this icon, a dialog box is displayed with elements inner the template element.
@@ -106,7 +98,7 @@ When the user is behind this icon, a dialog box is displayed with elements inner
 
 ## AFrame primitives
 
-All [AFrame](https://aframe.io) primitives are usable in a [pinser-metaverse](https://www.pinser-metaverse.com) project.  
+All [AFrame](https://aframe.io) primitives are usable in a [digipair-vision](https://www.pinser-metaverse.com) project.  
 [Go here](https://aframe.io/docs/) to find the full primitive list.
 
 ## Example

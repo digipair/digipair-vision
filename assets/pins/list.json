@@ -3,7 +3,7 @@
     "name": "Screen",
     "image": "https://assets.pinser-metaverse.com/pins/images/screen-shared.jpg",
     "component": "meta-screen-shared",
-    "import": "@pinser-metaverse/screen-shared",
+    "import": "@digipair-vision/screen-shared",
     "dynamic": false,
     "placeholder": {
       "geometry": "primitive: box; width: 1.6; height: 0.9; depth: 0.003;",
@@ -16,7 +16,7 @@
     "name": "Screen curved",
     "image": "https://assets.pinser-metaverse.com/pins/images/screen-shared-curved.jpg",
     "component": "meta-screen-shared",
-    "import": "@pinser-metaverse/screen-shared",
+    "import": "@digipair-vision/screen-shared",
     "dynamic": false,
     "placeholder": {
       "geometry": "primitive: box; width: 1.54; height: 0.9; depth: 0.2;",

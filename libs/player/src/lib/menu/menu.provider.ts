@@ -1,7 +1,7 @@
-import { injectable, MetaProvider, state } from '@pinser-metaverse/core';
+import { injectable, MetaProvider, state } from '@digipair-vision/core';
 
 @injectable()
 export class MenuProvider extends MetaProvider {
-    @state()
-    panel = 'pins';
+  @state()
+  panel = 'pins';
 }

@@ -1,4 +1,4 @@
-import { THREE } from '@pinser-metaverse/core';
+import { THREE } from '@digipair-vision/core';
 export const {
   ACESFilmicToneMapping,
   AddEquation,

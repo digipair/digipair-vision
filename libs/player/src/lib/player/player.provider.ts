@@ -4,7 +4,7 @@ import {
   MetaProvider,
   state,
   THREE,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 import { MetaCursor } from './cursor.interface';
 
 declare const NAF: any;
@@ -60,7 +60,7 @@ export class PlayerProvider extends MetaProvider {
   setAudio(config: any = {}): void {
     (
       this.el.sceneEl?.querySelector(
-        'meta-player [meta-avatar][networked-audio-source]'
+        'meta-player [meta-avatar][networked-audio-source]',
       ) as Entity
     )?.setAttribute('networked-audio-source', config);
   }
@@ -80,7 +80,7 @@ export class PlayerProvider extends MetaProvider {
       this.el.sceneEl?.querySelector('meta-player [meta-avatar]') as Entity
     )?.setAttribute(
       'meta-avatar',
-      `playerinfo: ${btoa(encodeURIComponent(JSON.stringify(data)))}`
+      `playerinfo: ${btoa(encodeURIComponent(JSON.stringify(data)))}`,
     );
   }
 
@@ -91,7 +91,7 @@ export class PlayerProvider extends MetaProvider {
           position,
           rotation,
         },
-      })
+      }),
     );
   }
 
@@ -102,10 +102,10 @@ export class PlayerProvider extends MetaProvider {
     }
 
     const playerEl = this.el.sceneEl?.querySelector(
-      'meta-player > [networked]'
+      'meta-player > [networked]',
     ) as Entity;
     const cameraEl = this.el.sceneEl?.querySelector(
-      'meta-player [meta-avatar]'
+      'meta-player [meta-avatar]',
     ) as Entity;
     const position = new THREE.Vector3();
     cameraEl.object3D.getWorldPosition(position);
@@ -130,7 +130,7 @@ export class PlayerProvider extends MetaProvider {
       shape?: string;
       dynamic?: boolean;
       import?: string;
-    } = {}
+    } = {},
   ): Entity {
     const el = document.createElement('a-entity');
 
@@ -138,7 +138,7 @@ export class PlayerProvider extends MetaProvider {
     el.setAttribute(
       'meta-element',
       `element: ${btoa(
-        encodeURIComponent(JSON.stringify(element))
+        encodeURIComponent(JSON.stringify(element)),
       )}; attributes: ${btoa(
         encodeURIComponent(
           JSON.stringify({
@@ -146,9 +146,9 @@ export class PlayerProvider extends MetaProvider {
             position: undefined,
             rotation: undefined,
             scale: undefined,
-          })
-        )
-      )}; options: ${btoa(encodeURIComponent(JSON.stringify(options)))};`
+          }),
+        ),
+      )}; options: ${btoa(encodeURIComponent(JSON.stringify(options)))};`,
     );
 
     if (id) {
@@ -262,7 +262,7 @@ export class PlayerProvider extends MetaProvider {
 
     sceneEl
       .querySelectorAll(
-        ':scope > meta-scene-container > meta-player [networked]'
+        ':scope > meta-scene-container > meta-player [networked]',
       )
       .forEach((el) => {
         const { template } = el.getAttribute('networked') as any;

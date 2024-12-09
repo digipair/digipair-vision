@@ -1,5 +1,5 @@
-import { html, inject, MetaElement } from '@pinser-metaverse/core';
-import { routeElement } from '@pinser-metaverse/router';
+import { html, inject, MetaElement } from '@digipair-vision/core';
+import { routeElement } from '@digipair-vision/router';
 import { SessionProvider } from '../../../../session.provider';
 
 @routeElement('experiences-cinema-space')
@@ -23,7 +23,7 @@ export class CinemaSpaceElement extends MetaElement {
       const source = document.createElement('source');
       source.setAttribute(
         'src',
-        'https://agency-experiences.onrender.com/assets/spaces/experiences/timeScapes.mp4'
+        'https://agency-experiences.onrender.com/assets/spaces/experiences/timeScapes.mp4',
       );
 
       video.appendChild(source);

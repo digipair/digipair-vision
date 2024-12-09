@@ -5,17 +5,17 @@ import {
   nothing,
   TemplateResult,
   unsafeHTML,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 
 @customElement('meta-menu')
 export class MenuElement extends MetaElement {
   override render(): TemplateResult {
     const templateMenu = this.el.querySelector(
-      ':scope > template[slot=menu]'
+      ':scope > template[slot=menu]',
     )?.innerHTML;
 
     const templatePanel = this.el.querySelector(
-      ':scope > template[slot=panel]'
+      ':scope > template[slot=panel]',
     )?.innerHTML;
 
     return html`

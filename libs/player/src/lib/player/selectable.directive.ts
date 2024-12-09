@@ -1,4 +1,4 @@
-import { Entity, THREE } from '@pinser-metaverse/core';
+import { Entity, THREE } from '@digipair-vision/core';
 
 AFRAME.registerComponent('selectable', {
   schema: {
@@ -19,7 +19,7 @@ AFRAME.registerComponent('selectable', {
     for (let i = 0; i < handEls.length; i++) {
       handEl = handEls[i];
       touch = this.calculateFingerDistance(
-        (handEl.components['hand-tracking-controls'] as any).indexTipPosition
+        (handEl.components['hand-tracking-controls'] as any).indexTipPosition,
       );
       if (touch) {
         // if (!this.pressed) { this.el.emit('pressedstarted'); }

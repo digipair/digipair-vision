@@ -6,7 +6,7 @@ import {
   property,
   state,
   TemplateResult,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 import './icon.element';
 
 const BACKGROUND = '#0062ff';

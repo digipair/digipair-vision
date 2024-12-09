@@ -6,7 +6,7 @@ import {
   state,
   TemplateResult,
   unsafeHTML,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 import { PlayerProvider } from '../player/player.provider';
 
 declare const NAF: any;
@@ -85,7 +85,7 @@ export class ElementElement extends MetaElement {
       !this.el.hasAttribute('collision-filter') &&
         this.el.setAttribute(
           'collision-filter',
-          'collidesWith: hand, surface;'
+          'collidesWith: hand, surface;',
         );
     } else {
       this.el.hasAttribute('grabbable') && this.el.removeAttribute('grabbable');
@@ -100,7 +100,7 @@ export class ElementElement extends MetaElement {
     if (this.options.inline) {
       const elementAttributes = this.getExtraComponents(element, attributes);
       Object.getOwnPropertyNames(elementAttributes).forEach((attribute) =>
-        this.el.setAttribute(attribute, elementAttributes[attribute])
+        this.el.setAttribute(attribute, elementAttributes[attribute]),
       );
 
       return null;
@@ -129,7 +129,7 @@ export class ElementElement extends MetaElement {
     // Gather component data from default components.
     const data = utils.clone(
       primitives.primitives[element]?.prototype
-        .defaultComponentsFromPrimitive || {}
+        .defaultComponentsFromPrimitive || {},
     );
     const mappings = primitives.primitives[element]?.prototype.mappings || {};
 

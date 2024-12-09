@@ -1,12 +1,12 @@
 # Element creation
 
 > **_ Libraries concerned _**  
-> [@pinser-metaverse/core](https://www.npmjs.com/package/@pinser-metaverse/core)  
-> [@pinser-metaverse/observe](https://www.npmjs.com/package/@pinser-metaverse/observe)
+> [@digipair-vision/core](https://www.npmjs.com/package/@digipair-vision/core)  
+> [@digipair-vision/observe](https://www.npmjs.com/package/@digipair-vision/observe)
 
 ## Pin's
 
-On [pinser-metaverse](https://www.pinser-metaverse.com), a library who exposes an autonomous 3d webcomponents is named a pin's.  
+On [digipair-vision](https://www.pinser-metaverse.com), a library who exposes an autonomous 3d webcomponents is named a pin's.  
 In this section, we will create your first pin's !
 
 ### Generate a new Pin's
@@ -52,13 +52,13 @@ yarn nx serve {pins-domain}-{pins-name}
 
 ## Element
 
-[pinser-metaverse](https://www.pinser-metaverse.com) element is a 3D web component.  
+[digipair-vision](https://www.pinser-metaverse.com) element is a 3D web component.  
 By convention, it is generally creatted in a typescript file ended by `.element.ts`.
 
 ### @customElement decorator
 
-To keep the compatibility with [AFrame](https://aframe.io), [pinser-metaverse](https://www.pinser-metaverse.com) use a similar interface that [lit](https://lit.dev) to manage the properties, but don't use [lit](https://lit.dev). So, there are some little differencies with the behavior and the interface.
-To create a [pinser-metaverse](https://www.pinser-metaverse.com) element, you can use the decorator `@customElement`.
+To keep the compatibility with [AFrame](https://aframe.io), [digipair-vision](https://www.pinser-metaverse.com) use a similar interface that [lit](https://lit.dev) to manage the properties, but don't use [lit](https://lit.dev). So, there are some little differencies with the behavior and the interface.
+To create a [digipair-vision](https://www.pinser-metaverse.com) element, you can use the decorator `@customElement`.
 
 ```typescript
 @customElement(element: string, options: {
@@ -73,12 +73,7 @@ To create a [pinser-metaverse](https://www.pinser-metaverse.com) element, you ca
 Example:
 
 ```typescript
-import {
-  customElement,
-  html,
-  MetaElement,
-  TemplateResult,
-} from '@pinser-metaverse/core';
+import { customElement, html, MetaElement, TemplateResult } from '@digipair-vision/core';
 
 @customElement('example-hello-world')
 export class HelloWorldElement extends MetaElement {
@@ -90,15 +85,10 @@ export class HelloWorldElement extends MetaElement {
 
 ### Display variable
 
-[pinser-metaverse](https://www.pinser-metaverse.com) use [lit-html](https://lit.dev) to menage the template. Your can read more information on [lit documentation](https://lit.dev/docs/templates/overview/).
+[digipair-vision](https://www.pinser-metaverse.com) use [lit-html](https://lit.dev) to menage the template. Your can read more information on [lit documentation](https://lit.dev/docs/templates/overview/).
 
 ```typescript
-import {
-  customElement,
-  html,
-  MetaElement,
-  TemplateResult,
-} from '@pinser-metaverse/core';
+import { customElement, html, MetaElement, TemplateResult } from '@digipair-vision/core';
 
 @customElement('example-hello-world')
 export class HelloWorldElement extends MetaElement {
@@ -111,21 +101,15 @@ export class HelloWorldElement extends MetaElement {
 
 ### Manage events
 
-[pinser-metaverse](https://www.pinser-metaverse.com) use [lit-html](https://lit.dev) to menage the template. Your can read more information on [lit documentation](https://lit.dev/docs/templates/overview/).
+[digipair-vision](https://www.pinser-metaverse.com) use [lit-html](https://lit.dev) to menage the template. Your can read more information on [lit documentation](https://lit.dev/docs/templates/overview/).
 
 ```typescript
-import {
-  customElement,
-  html,
-  MetaElement,
-  TemplateResult,
-} from '@pinser-metaverse/core';
+import { customElement, html, MetaElement, TemplateResult } from '@digipair-vision/core';
 
 @customElement('example-selectable-box')
 export class HelloWorldElement extends MetaElement {
   override render(): TemplateResult {
-    return html`<a-box selectable @click=${() => console.log('box clicked')}>
-    </a-box>`;
+    return html`<a-box selectable @click=${() => console.log('box clicked')}> </a-box>`;
   }
 }
 ```
@@ -135,15 +119,10 @@ export class HelloWorldElement extends MetaElement {
 
 ### AFrame hook
 
-All the hooks [AFrame](https://aframe.io/docs/1.4.0/core/component.html#overview-of-methods) are usable with [pinser-metaverse](https://www.pinser-metaverse.com).
+All the hooks [AFrame](https://aframe.io/docs/1.4.0/core/component.html#overview-of-methods) are usable with [digipair-vision](https://www.pinser-metaverse.com).
 
 ```typescript
-import {
-  customElement,
-  html,
-  MetaElement,
-  TemplateResult,
-} from '@pinser-metaverse/core';
+import { customElement, html, MetaElement, TemplateResult } from '@digipair-vision/core';
 
 @customElement('example-hello-world')
 export class HelloWorldElement extends MetaElement {
@@ -159,7 +138,7 @@ export class HelloWorldElement extends MetaElement {
 
 ### @property decorator
 
-To keep the compatibility with [AFrame](https://aframe.io), [pinser-metaverse](https://www.pinser-metaverse.com) use a similar interface that [lit](https://lit.dev) to manage the properties, but don't use [lit](https://lit.dev). So, there are some little differencies with the behavior and the interface.
+To keep the compatibility with [AFrame](https://aframe.io), [digipair-vision](https://www.pinser-metaverse.com) use a similar interface that [lit](https://lit.dev) to manage the properties, but don't use [lit](https://lit.dev). So, there are some little differencies with the behavior and the interface.
 To read an attribute from the HTML element, you can use the decorator `@property`.
 
 ```typescript
@@ -173,12 +152,7 @@ To read an attribute from the HTML element, you can use the decorator `@property
 Example:
 
 ```typescript
-import {
-  customElement,
-  html,
-  MetaElement,
-  TemplateResult,
-} from '@pinser-metaverse/core';
+import { customElement, html, MetaElement, TemplateResult } from '@digipair-vision/core';
 
 @customElement('example-hello-world')
 export class HelloWorldElement extends MetaElement {
@@ -201,7 +175,7 @@ export class HelloWorldElement extends MetaElement {
 
 ### @state decorator
 
-To keep the compatibility with [AFrame](https://aframe.io), [pinser-metaverse](https://www.pinser-metaverse.com) use a similar interface that [lit](https://lit.dev) to manage the properties, but don't use [lit](https://lit.dev). So, there are some little differencies with the behavior and the interface.
+To keep the compatibility with [AFrame](https://aframe.io), [digipair-vision](https://www.pinser-metaverse.com) use a similar interface that [lit](https://lit.dev) to manage the properties, but don't use [lit](https://lit.dev). So, there are some little differencies with the behavior and the interface.
 To rendering the component each time a variable is updated, you can use the decorator `@state`.  
 The value is synchronized on the networked if the networked attribute of the `customElement` decorator set to true.
 
@@ -212,12 +186,7 @@ The value is synchronized on the networked if the networked attribute of the `cu
 Example:
 
 ```typescript
-import {
-  customElement,
-  html,
-  MetaElement,
-  TemplateResult,
-} from '@pinser-metaverse/core';
+import { customElement, html, MetaElement, TemplateResult } from '@digipair-vision/core';
 
 @customElement('example-color-box')
 export class HelloWorldElement extends MetaElement {
@@ -225,12 +194,7 @@ export class HelloWorldElement extends MetaElement {
   color = 'green';
 
   override render(): TemplateResult {
-    return html`<a-box
-      color=${this.color}
-      selectable
-      @click=${() =>
-        this.color === 'green' ? (this.color = 'red') : (this.color = 'green')}
-    ></a-box>`;
+    return html`<a-box color=${this.color} selectable @click=${() => (this.color === 'green' ? (this.color = 'red') : (this.color = 'green'))}></a-box>`;
   }
 }
 ```

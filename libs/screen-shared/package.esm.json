@@ -1,5 +1,5 @@
 {
-  "name": "@pinser-metaverse/screen-shared-es",
+  "name": "@digipair-vision/screen-shared-es",
   "version": "0.0.0",
   "type": "module",
   "license": "MIT",
@@ -22,8 +22,8 @@
     "url": "https://www.pinser.world"
   },
   "peerDependencies": {
-    "@pinser-metaverse/core": "0.27.1",
-    "@pinser-metaverse/design-system": "0.27.1",
-    "@pinser-metaverse/player": "0.27.1"
+    "@digipair-vision/core": "0.27.1",
+    "@digipair-vision/design-system": "0.27.1",
+    "@digipair-vision/player": "0.27.1"
   }
 }

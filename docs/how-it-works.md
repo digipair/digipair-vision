@@ -1,18 +1,18 @@
 # How it works
 
-[pinser-metaverse](https://www.pinser-metaverse.com) is a magic shake between [AFrame](https://aframe.io) for the 3D engine and [lit-html](https://lit.dev) for reactive webcomponent creation.
+[digipair-vision](https://www.pinser-metaverse.com) is a magic shake between [AFrame](https://aframe.io) for the 3D engine and [lit-html](https://lit.dev) for reactive webcomponent creation.
 
 ## Technical choices
 
-To load the Javascript files, [pinser-metaverse](https://www.pinser-metaverse.com) uses [Javascript module](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) who is an html standard to load javascript files asynchronously (mainly webcomponents in our case).
+To load the Javascript files, [digipair-vision](https://www.pinser-metaverse.com) uses [Javascript module](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) who is an html standard to load javascript files asynchronously (mainly webcomponents in our case).
 
-About the realtime server, [pinser-metaverse](https://www.pinser-metaverse.com) uses easyRTC.  
+About the realtime server, [digipair-vision](https://www.pinser-metaverse.com) uses easyRTC.  
 The server is available here:  
 https://github.com/pinser-metaverse/pinser-metaverse/tree/master/apps/networked-server
 
 ## Infrastructure
 
-[pinser-metaverse](https://www.pinser-metaverse.com) manage for you 2 stacks:
+[digipair-vision](https://www.pinser-metaverse.com) manage for you 2 stacks:
 
 - IHM to manage the 3D display and the behavior (click, touch, lazer, teleportation, collision, ...)
 - Realtime to manage data sharing in P2P (avatar position, object state, screen sharing, webcam, voice, ...)
@@ -20,7 +20,7 @@ https://github.com/pinser-metaverse/pinser-metaverse/tree/master/apps/networked-
 ### default configuration
 
 Deploy a default configuration is really easy because all you need to do is to deploy your own files on a web server or a CDN.
-By default, [pinser-metaverse](https://www.pinser-metaverse.com) use shared realtime servers and shared CDN.
+By default, [digipair-vision](https://www.pinser-metaverse.com) use shared realtime servers and shared CDN.
 
 ```plantuml
 @startuml
@@ -30,8 +30,8 @@ package "Browser" {
 }
 
 cloud "Pinser CDN" {
-  [@pinser-metaverse ESM] - HTTP
-  [@pinser-metaverse assets] - HTTP
+  [@digipair-vision ESM] - HTTP
+  [@digipair-vision assets] - HTTP
 }
 
 cloud "Pinser Realtime server" {
@@ -62,8 +62,8 @@ cloud "Custom Realtime server" {
 }
 
 cloud "Custom CDN" {
-  [@pinser-metaverse ESM] - HTTP
-  [@pinser-metaverse assets] - HTTP
+  [@digipair-vision ESM] - HTTP
+  [@digipair-vision assets] - HTTP
   [custom HTML] - HTTP
   [custom ESM] - HTTP
   [custom assets] - HTTP

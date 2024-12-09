@@ -1,4 +1,4 @@
-import { noChange } from '@pinser-metaverse/core';
+import { noChange } from '@digipair-vision/core';
 import { AsyncDirective } from 'lit/async-directive.js';
 import { directive, DirectiveResult } from 'lit/directive.js';
 
@@ -49,5 +49,5 @@ class ObserveDirective extends AsyncDirective {
 }
 export const observe = directive(ObserveDirective) as <T>(
   observable: Observable<T>,
-  callback?: (value: T) => unknown
+  callback?: (value: T) => unknown,
 ) => DirectiveResult<typeof ObserveDirective>;

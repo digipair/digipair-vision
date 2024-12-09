@@ -1,5 +1,5 @@
 {
-  "name": "@pinser-metaverse/exporter-es",
+  "name": "@digipair-vision/exporter-es",
   "version": "0.0.0",
   "type": "module",
   "license": "MIT",
@@ -29,6 +29,6 @@
     "url": "https://www.pinser.world"
   },
   "peerDependencies": {
-    "@pinser-metaverse/core": "0.27.1"
+    "@digipair-vision/core": "0.27.1"
   }
 }

@@ -1,4 +1,4 @@
-import { Entity, injectable, MetaProvider } from '@pinser-metaverse/core';
+import { Entity, injectable, MetaProvider } from '@digipair-vision/core';
 import { Route, Router } from '@vaadin/router';
 
 @injectable()

@@ -8,7 +8,7 @@ import {
   TemplateResult,
   THREE,
   unsafeHTML,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 import 'aframe-blink-controls';
 import 'super-hands';
 import '../avatar/avatar';
@@ -182,7 +182,7 @@ export class PlayerElement extends MetaElement {
     return html`
       ${this.playerProvider.customcursor
         ? unsafeHTML(
-            `<${this.playerProvider.customcursor} vrmode=${this.vrmode}></${this.playerProvider.customcursor}>`
+            `<${this.playerProvider.customcursor} vrmode=${this.vrmode}></${this.playerProvider.customcursor}>`,
           )
         : html`<meta-teleportable-cursor
             vrmode=${this.vrmode}

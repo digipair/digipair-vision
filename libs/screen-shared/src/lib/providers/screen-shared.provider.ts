@@ -5,8 +5,8 @@ import {
   MetaProvider,
   state,
   THREE,
-} from '@pinser-metaverse/core';
-import { PlayerProvider } from '@pinser-metaverse/player';
+} from '@digipair-vision/core';
+import { PlayerProvider } from '@digipair-vision/player';
 import * as md5 from 'md5';
 
 declare const NAF: any;
@@ -58,7 +58,7 @@ export class ScreenSharedProvider extends MetaProvider {
 
   override init(): void {
     this.elementid = (md5 as any).default(
-      getPathTo(this.el, this.el.sceneEl as Element)
+      getPathTo(this.el, this.el.sceneEl as Element),
     );
     this.streamId = '';
     this.stream = null;
@@ -83,7 +83,7 @@ export class ScreenSharedProvider extends MetaProvider {
         screenid: `${this.elementid}`,
         streamid: this.streamId,
         curved: options.curved,
-      }
+      },
     );
     this.setScreenPosition(screenEl);
 
@@ -100,7 +100,7 @@ export class ScreenSharedProvider extends MetaProvider {
       {
         screenid: `${this.elementid}`,
         curved: options.curved,
-      }
+      },
     );
     this.setScreenPosition(screenEl);
 
@@ -122,10 +122,10 @@ export class ScreenSharedProvider extends MetaProvider {
     }
 
     const screenEl = this.el.sceneEl?.querySelector(
-      `[screenid="${this.elementid}"]`
+      `[screenid="${this.elementid}"]`,
     ) as Entity;
     this.playerProvider.removeNetworkedElement(
-      screenEl.parentElement as Entity
+      screenEl.parentElement as Entity,
     );
   }
 
@@ -140,7 +140,7 @@ export class ScreenSharedProvider extends MetaProvider {
 
   private videoElement(): Element {
     let videoEl = this.el.sceneEl?.querySelector(
-      `#screen-shared-${this.elementid}`
+      `#screen-shared-${this.elementid}`,
     );
 
     if (!videoEl) {
@@ -165,7 +165,7 @@ export class ScreenSharedProvider extends MetaProvider {
 
   private removeScreen() {
     const screenEl = this.el.sceneEl?.querySelector(
-      `[screenid="${this.elementid}"]`
+      `[screenid="${this.elementid}"]`,
     );
     const isMine = screenEl && NAF.utils.isMine(screenEl.parentElement);
     if (isMine) {
@@ -173,7 +173,7 @@ export class ScreenSharedProvider extends MetaProvider {
     }
 
     const videoEl = this.el.sceneEl?.querySelector(
-      `#screen-shared-${this.elementid}`
+      `#screen-shared-${this.elementid}`,
     );
     videoEl?.remove();
   }

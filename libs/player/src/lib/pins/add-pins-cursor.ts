@@ -8,7 +8,7 @@ import {
   property,
   state,
   THREE,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 import { PlayerProvider } from '../player/player.provider';
 
 @customElement('meta-player-menu-add-pins-cursor')
@@ -25,7 +25,7 @@ export class AddPinsCursorElement extends MetaElement {
   private add = (event: any) => {
     const cursor: any = this.vrmode
       ? (this.el.sceneEl as Entity).querySelector(
-          '[laser-controls="hand: right;"]'
+          '[laser-controls="hand: right;"]',
         )
       : (this.el.sceneEl as Entity).querySelector('[cursor]');
     const enable =
@@ -37,7 +37,7 @@ export class AddPinsCursorElement extends MetaElement {
 
     const point = event.detail.intersection.point;
     const rotationMatrix = new THREE.Matrix4().extractRotation(
-      event.detail.intersectedEl.object3D.matrixWorld
+      event.detail.intersectedEl.object3D.matrixWorld,
     );
     const normal = event.detail.intersection.face.normal
       .clone()
@@ -58,7 +58,7 @@ export class AddPinsCursorElement extends MetaElement {
         shape: cursorData.shape,
         dynamic: cursorData.dynamic,
         import: cursorData.import,
-      }
+      },
     );
 
     el.object3D.position.set(point.x, point.y, point.z);
@@ -83,7 +83,7 @@ export class AddPinsCursorElement extends MetaElement {
   private computePinsPosition() {
     const cursor: any = this.vrmode
       ? (this.el.sceneEl as Entity).querySelector(
-          '[laser-controls="hand: right;"]'
+          '[laser-controls="hand: right;"]',
         )
       : (this.el.sceneEl as Entity).querySelector('[cursor]');
     const visible =
@@ -93,7 +93,7 @@ export class AddPinsCursorElement extends MetaElement {
       const { point } = cursor.components.raycaster.rawIntersections[0];
       const el = cursor.components.raycaster.intersectedEls[0];
       const rotationMatrix = new THREE.Matrix4().extractRotation(
-        el.object3D.matrixWorld
+        el.object3D.matrixWorld,
       );
       const normal = cursor.components.raycaster.intersections[0]?.face.normal
         .clone()

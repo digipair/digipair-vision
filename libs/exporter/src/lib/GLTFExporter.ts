@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-this-alias */
-import { THREE } from '@pinser-metaverse/core';
+import { THREE } from '@digipair-vision/core';
 
 const {
   BufferAttribute,
@@ -81,7 +81,7 @@ export class GLTFExporter {
   parse(input: any, onDone: any, onError: any, options?: any) {
     if (typeof onError === 'object') {
       console.warn(
-        'THREE.GLTFExporter: parse() expects options as the fourth argument now.'
+        'THREE.GLTFExporter: parse() expects options as the fourth argument now.',
       );
 
       options = onError;
@@ -210,7 +210,7 @@ function stringToArrayBuffer(text: any) {
 function isIdentityMatrix(matrix: any) {
   return equalArray(
     matrix.elements,
-    [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]
+    [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1],
   );
 }
 
@@ -388,7 +388,7 @@ class GLTFWriter {
         animations: [],
         includeCustomExtensions: false,
       },
-      options
+      options,
     );
 
     if (this.options.animations.length > 0) {
@@ -427,7 +427,7 @@ class GLTFWriter {
         // Binary chunk.
         const binaryChunk = getPaddedArrayBuffer(reader.result);
         const binaryChunkPrefix = new DataView(
-          new ArrayBuffer(GLB_CHUNK_PREFIX_BYTES)
+          new ArrayBuffer(GLB_CHUNK_PREFIX_BYTES),
         );
         binaryChunkPrefix.setUint32(0, binaryChunk.byteLength, true);
         binaryChunkPrefix.setUint32(4, GLB_CHUNK_TYPE_BIN, true);
@@ -435,10 +435,10 @@ class GLTFWriter {
         // JSON chunk.
         const jsonChunk = getPaddedArrayBuffer(
           stringToArrayBuffer(JSON.stringify(json)),
-          0x20
+          0x20,
         );
         const jsonChunkPrefix = new DataView(
-          new ArrayBuffer(GLB_CHUNK_PREFIX_BYTES)
+          new ArrayBuffer(GLB_CHUNK_PREFIX_BYTES),
         );
         jsonChunkPrefix.setUint32(0, jsonChunk.byteLength, true);
         jsonChunkPrefix.setUint32(4, GLB_CHUNK_TYPE_JSON, true);
@@ -458,7 +458,7 @@ class GLTFWriter {
 
         const glbBlob = new Blob(
           [header, jsonChunkPrefix, jsonChunk, binaryChunkPrefix, binaryChunk],
-          { type: 'application/octet-stream' }
+          { type: 'application/octet-stream' },
         );
 
         const glbReader = new FileReader();
@@ -516,7 +516,7 @@ class GLTFWriter {
           object.name +
           "' " +
           "won't be serialized because of JSON.stringify error - " +
-          error.message
+          error.message,
       );
     }
   }
@@ -626,7 +626,7 @@ class GLTFWriter {
     if (metalnessMap === roughnessMap) return metalnessMap;
 
     console.warn(
-      'THREE.GLTFExporter: Merged metalnessMap and roughnessMap textures.'
+      'THREE.GLTFExporter: Merged metalnessMap and roughnessMap textures.',
     );
 
     const metalness = metalnessMap?.image;
@@ -704,7 +704,13 @@ class GLTFWriter {
    * @param  {number} target (Optional) Target usage of the BufferView
    * @return {Object}
    */
-  processBufferView(attribute: any, componentType: any, start: any, count: any, target: any): any {
+  processBufferView(
+    attribute: any,
+    componentType: any,
+    start: any,
+    count: any,
+    target: any,
+  ): any {
     const json = this.json;
 
     if (!json.bufferViews) json.bufferViews = [];
@@ -722,7 +728,7 @@ class GLTFWriter {
     }
 
     const byteLength = getPaddedBufferSize(
-      count * attribute.itemSize * componentSize
+      count * attribute.itemSize * componentSize,
     );
     const dataView = new DataView(new ArrayBuffer(byteLength));
     let offset = 0;
@@ -844,7 +850,7 @@ class GLTFWriter {
       componentType = WEBGL_CONSTANTS.UNSIGNED_BYTE;
     } else {
       throw new Error(
-        'THREE.GLTFExporter: Unsupported bufferAttribute component type.'
+        'THREE.GLTFExporter: Unsupported bufferAttribute component type.',
       );
     }
 
@@ -889,7 +895,7 @@ class GLTFWriter {
       componentType,
       start,
       count,
-      bufferViewTarget
+      bufferViewTarget,
     );
 
     const accessorDef: any = {
@@ -916,7 +922,12 @@ class GLTFWriter {
    * @param  {String} mimeType export format
    * @return {Integer}     Index of the processed texture in the "images" array
    */
-  processImage(image: any, format: any, flipY: any, mimeType: any = 'image/png') {
+  processImage(
+    image: any,
+    format: any,
+    flipY: any,
+    mimeType: any = 'image/png',
+  ) {
     const writer = this;
     const cache = writer.cache;
     const json = writer.json;
@@ -961,7 +972,7 @@ class GLTFWriter {
         ) {
           console.warn(
             'GLTFExporter: Image size is bigger than maxTextureSize',
-            image
+            image,
           );
         }
 
@@ -984,7 +995,7 @@ class GLTFWriter {
 
         if (canvas.toBlob !== undefined) {
           toBlobPromise = new Promise((resolve) =>
-            canvas.toBlob(resolve, mimeType)
+            canvas.toBlob(resolve, mimeType),
           );
         } else {
           let quality;
@@ -1007,8 +1018,8 @@ class GLTFWriter {
           toBlobPromise.then((blob: any) =>
             writer.processBufferViewImage(blob).then((bufferViewIndex) => {
               imageDef.bufferView = bufferViewIndex;
-            })
-          )
+            }),
+          ),
         );
       } else {
         imageDef.uri = canvas.toDataURL(mimeType);
@@ -1101,7 +1112,7 @@ class GLTFWriter {
       material.isMeshBasicMaterial !== true
     ) {
       console.warn(
-        'GLTFExporter: Use MeshStandardMaterial or MeshBasicMaterial for best results.'
+        'GLTFExporter: Use MeshStandardMaterial or MeshBasicMaterial for best results.',
       );
     }
 
@@ -1124,7 +1135,7 @@ class GLTFWriter {
     if (material.metalnessMap || material.roughnessMap) {
       const metalRoughTexture = this.buildMetalRoughTexture(
         material.metalnessMap,
-        material.roughnessMap
+        material.roughnessMap,
       );
 
       const metalRoughMapDef = {
@@ -1153,7 +1164,7 @@ class GLTFWriter {
         emissive.multiplyScalar(1 / maxEmissiveComponent);
 
         console.warn(
-          'THREE.GLTFExporter: Some emissive components exceed 1; emissive has been limited'
+          'THREE.GLTFExporter: Some emissive components exceed 1; emissive has been limited',
         );
       }
 
@@ -1270,7 +1281,7 @@ class GLTFWriter {
 
     if (geometry.isBufferGeometry !== true) {
       throw new Error(
-        'THREE.GLTFExporter: Geometry is not of type THREE.BufferGeometry.'
+        'THREE.GLTFExporter: Geometry is not of type THREE.BufferGeometry.',
       );
     }
 
@@ -1295,12 +1306,12 @@ class GLTFWriter {
       !this.isNormalizedNormalAttribute(originalNormal)
     ) {
       console.warn(
-        'THREE.GLTFExporter: Creating normalized normal attribute from the non-normalized one.'
+        'THREE.GLTFExporter: Creating normalized normal attribute from the non-normalized one.',
       );
 
       geometry.setAttribute(
         'normal',
-        this.createNormalizedNormalAttribute(originalNormal)
+        this.createNormalizedNormalAttribute(originalNormal),
       );
     }
 
@@ -1326,7 +1337,7 @@ class GLTFWriter {
 
       if (cache.attributes.has(this.getUID(attribute))) {
         attributes[attributeName] = cache.attributes.get(
-          this.getUID(attribute)
+          this.getUID(attribute),
         );
         continue;
       }
@@ -1341,18 +1352,18 @@ class GLTFWriter {
         !(array instanceof Uint8Array)
       ) {
         console.warn(
-          'GLTFExporter: Attribute "skinIndex" converted to type UNSIGNED_SHORT.'
+          'GLTFExporter: Attribute "skinIndex" converted to type UNSIGNED_SHORT.',
         );
         modifiedAttribute = new BufferAttribute(
           new Uint16Array(array),
           attribute.itemSize,
-          attribute.normalized
+          attribute.normalized,
         );
       }
 
       const accessor = this.processAccessor(
         modifiedAttribute || attribute,
-        geometry
+        geometry,
       );
 
       if (accessor !== null) {
@@ -1393,7 +1404,7 @@ class GLTFWriter {
           if (attributeName !== 'position' && attributeName !== 'normal') {
             if (!warned) {
               console.warn(
-                'GLTFExporter: Only POSITION and NORMAL morph are supported.'
+                'GLTFExporter: Only POSITION and NORMAL morph are supported.',
               );
               warned = true;
             }
@@ -1413,7 +1424,7 @@ class GLTFWriter {
 
           if (cache.attributes.has(this.getUID(attribute))) {
             target[gltfAttributeName] = cache.attributes.get(
-              this.getUID(attribute)
+              this.getUID(attribute),
             );
             continue;
           }
@@ -1427,18 +1438,18 @@ class GLTFWriter {
                 j,
                 attribute.getX(j) - baseAttribute.getX(j),
                 attribute.getY(j) - baseAttribute.getY(j),
-                attribute.getZ(j) - baseAttribute.getZ(j)
+                attribute.getZ(j) - baseAttribute.getZ(j),
               );
             }
           }
 
           target[gltfAttributeName] = this.processAccessor(
             relativeAttribute,
-            geometry
+            geometry,
           );
           cache.attributes.set(
             this.getUID(baseAttribute),
-            target[gltfAttributeName]
+            target[gltfAttributeName],
           );
         }
 
@@ -1491,7 +1502,7 @@ class GLTFWriter {
             geometry.index,
             geometry,
             groups[i].start,
-            groups[i].count
+            groups[i].count,
           );
           cache.attributes.set(cacheKey, primitive.indices);
         }
@@ -1588,7 +1599,7 @@ class GLTFWriter {
       if (trackBinding.objectName === 'bones') {
         if (trackNode.isSkinnedMesh === true) {
           trackNode = trackNode.skeleton.getBoneByName(
-            trackBinding.objectIndex
+            trackBinding.objectIndex,
           );
         } else {
           trackNode = undefined;
@@ -1598,7 +1609,7 @@ class GLTFWriter {
       if (!trackNode || !trackProperty) {
         console.warn(
           'THREE.GLTFExporter: Could not export animation track "%s".',
-          track.name
+          track.name,
         );
         return null;
       }
@@ -1635,10 +1646,10 @@ class GLTFWriter {
 
       samplers.push({
         input: this.processAccessor(
-          new BufferAttribute(track.times, inputItemSize)
+          new BufferAttribute(track.times, inputItemSize),
         ),
         output: this.processAccessor(
-          new BufferAttribute(track.values, outputItemSize)
+          new BufferAttribute(track.values, outputItemSize),
         ),
         interpolation: interpolation,
       });
@@ -1695,7 +1706,7 @@ class GLTFWriter {
 
     json.skins.push({
       inverseBindMatrices: this.processAccessor(
-        new BufferAttribute(inverseBindMatrices, 16)
+        new BufferAttribute(inverseBindMatrices, 16),
       ),
       joints: joints,
       skeleton: nodeMap.get(rootJoint),
@@ -1907,7 +1918,7 @@ class GLTFLightExtension {
     ) {
       console.warn(
         'THREE.GLTFExporter: Only directional, point, and spot lights are supported.',
-        light
+        light,
       );
       return;
     }
@@ -1944,7 +1955,7 @@ class GLTFLightExtension {
     if (light.decay !== undefined && light.decay !== 2) {
       console.warn(
         'THREE.GLTFExporter: Light decay may be lost. glTF is physically-based, ' +
-          'and expects light.decay=2.'
+          'and expects light.decay=2.',
       );
     }
 
@@ -1957,7 +1968,7 @@ class GLTFLightExtension {
     ) {
       console.warn(
         'THREE.GLTFExporter: Light direction may be lost. For best results, ' +
-          'make light.target a child of the light with position 0,0,-1.'
+          'make light.target a child of the light with position 0,0,-1.',
       );
     }
 
@@ -2093,7 +2104,7 @@ class GLTFMaterialsClearcoatExtension {
       };
       writer.applyTextureTransform(
         clearcoatRoughnessMapDef,
-        material.clearcoatRoughnessMap
+        material.clearcoatRoughnessMap,
       );
       extensionDef.clearcoatRoughnessTexture = clearcoatRoughnessMapDef;
     }
@@ -2104,7 +2115,7 @@ class GLTFMaterialsClearcoatExtension {
       };
       writer.applyTextureTransform(
         clearcoatNormalMapDef,
-        material.clearcoatNormalMap
+        material.clearcoatNormalMap,
       );
       extensionDef.clearcoatNormalTexture = clearcoatNormalMapDef;
     }
@@ -2145,7 +2156,7 @@ class GLTFMaterialsTransmissionExtension {
       };
       writer.applyTextureTransform(
         transmissionMapDef,
-        material.transmissionMap
+        material.transmissionMap,
       );
       extensionDef.transmissionTexture = transmissionMapDef;
     }
@@ -2209,7 +2220,7 @@ GLTFExporter.Utils = {
     const times = new track.TimeBufferType(track.times.length + 1);
     const values = new track.ValueBufferType(track.values.length + valueSize);
     const interpolant = track.createInterpolant(
-      new track.ValueBufferType(valueSize)
+      new track.ValueBufferType(valueSize),
     );
 
     let index;
@@ -2257,7 +2268,7 @@ GLTFExporter.Utils = {
           values.set(interpolant.evaluate(time), (i + 1) * valueSize);
           values.set(
             track.values.slice((i + 1) * valueSize),
-            (i + 2) * valueSize
+            (i + 2) * valueSize,
           );
 
           index = i + 1;
@@ -2281,11 +2292,11 @@ GLTFExporter.Utils = {
     for (let i = 0; i < sourceTracks.length; ++i) {
       let sourceTrack = sourceTracks[i];
       const sourceTrackBinding = PropertyBinding.parseTrackName(
-        sourceTrack.name
+        sourceTrack.name,
       );
       const sourceTrackNode = PropertyBinding.findNode(
         root,
-        sourceTrackBinding.nodeName
+        sourceTrackBinding.nodeName,
       );
 
       if (
@@ -2310,12 +2321,12 @@ GLTFExporter.Utils = {
           // This should never happen, because glTF morph target animations
           // affect all targets already.
           throw new Error(
-            'THREE.GLTFExporter: Cannot merge tracks with glTF CUBICSPLINE interpolation.'
+            'THREE.GLTFExporter: Cannot merge tracks with glTF CUBICSPLINE interpolation.',
           );
         }
 
         console.warn(
-          'THREE.GLTFExporter: Morph target interpolation mode not yet supported. Using LINEAR instead.'
+          'THREE.GLTFExporter: Morph target interpolation mode not yet supported. Using LINEAR instead.',
         );
 
         sourceTrack = sourceTrack.clone();
@@ -2329,7 +2340,7 @@ GLTFExporter.Utils = {
       if (targetIndex === undefined) {
         throw new Error(
           'THREE.GLTFExporter: Morph target name not found: ' +
-            sourceTrackBinding.propertyIndex
+            sourceTrackBinding.propertyIndex,
         );
       }
 
@@ -2341,7 +2352,7 @@ GLTFExporter.Utils = {
         mergedTrack = sourceTrack.clone();
 
         const values = new mergedTrack.ValueBufferType(
-          targetCount * mergedTrack.times.length
+          targetCount * mergedTrack.times.length,
         );
 
         for (let j = 0; j < mergedTrack.times.length; j++) {
@@ -2361,7 +2372,7 @@ GLTFExporter.Utils = {
       }
 
       const sourceInterpolant = sourceTrack.createInterpolant(
-        new sourceTrack.ValueBufferType(1)
+        new sourceTrack.ValueBufferType(1),
       );
 
       mergedTrack = mergedTracks[sourceTrackNode.uuid];
@@ -2379,7 +2390,7 @@ GLTFExporter.Utils = {
       for (let j = 0; j < sourceTrack.times.length; j++) {
         const keyframeIndex = this.insertKeyframe(
           mergedTrack,
-          sourceTrack.times[j]
+          sourceTrack.times[j],
         );
         mergedTrack.values[keyframeIndex * targetCount + targetIndex] =
           sourceTrack.values[j];

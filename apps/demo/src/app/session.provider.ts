@@ -1,11 +1,6 @@
-import {
-  inject,
-  injectable,
-  MetaProvider,
-  state,
-} from '@pinser-metaverse/core';
-import { PlayerProvider } from '@pinser-metaverse/player';
-import { RouterProvider } from '@pinser-metaverse/router';
+import { inject, injectable, MetaProvider, state } from '@digipair-vision/core';
+import { PlayerProvider } from '@digipair-vision/player';
+import { RouterProvider } from '@digipair-vision/router';
 
 const SESSION_SHARED = false;
 

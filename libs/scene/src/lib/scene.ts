@@ -4,7 +4,7 @@ import {
   MetaHtmlElement,
   propertyHtml,
   TemplateResult,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 import 'aframe-extras';
 import 'aframe-gradient-sky';
 import 'aframe-physics-extras';
