@@ -231,7 +231,7 @@ export class PlayerProvider extends MetaProvider {
 
       sceneEl.setAttribute('networked-scene', {
         serverURL: this.networked.serverURL,
-        app: 'pinser-metaverse',
+        app: 'digipair-vision',
         room: sessionFormated.replace(/-/g, '').toLowerCase(),
         adapter: this.networked.adapter,
         audio,
