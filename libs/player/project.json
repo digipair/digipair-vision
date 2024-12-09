@@ -20,13 +20,12 @@
       "project": "libs/player/package.json",
       "compiler": "swc",
       "format": ["cjs", "esm"]
-      }
-    },
-    "serve": {
-      "executor": "nx:run-commands",
-      "dependsOn": ["build"],
-      "options": {
-        "command": "npx serve dist/libs/player/"
+      },
+      "configurations": {
+        "serve": {
+          "watch": true,
+          "assets": []
+        }
       }
     },
     "publish": {
