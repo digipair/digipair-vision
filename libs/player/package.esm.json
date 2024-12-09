@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "type": "module",
   "license": "MIT",
-  "homepage": "https://github.com/pinser-metaverse/pinser-metaverse",
+  "homepage": "https://github.com/digipair/digipair-vision",
   "keywords": [
     "metaverse",
     "pinser",
-    "pinser-metaverse",
+    "digipair-vision",
     "webxr",
     "webgl",
     "vr",
@@ -21,7 +21,7 @@
     "camera"
   ],
   "repository": {
-    "url": "https://github.com/pinser-metaverse/pinser-metaverse.git",
+    "url": "https://github.com/digipair/digipair-vision.git",
     "type": "git"
   },
   "author": {
@@ -30,8 +30,8 @@
     "url": "https://www.pinser.world"
   },
   "peerDependencies": {
-    "@digipair-vision/core": "0.27.1",
-    "@digipair-vision/design-system": "0.27.1"
+    "@digipair-vision/core": "latest",
+    "@digipair-vision/design-system": "latest"
   },
   "devDependencies": {
     "aframe-blink-controls": "0.4.3",

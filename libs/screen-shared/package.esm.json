@@ -3,17 +3,17 @@
   "version": "0.0.0",
   "type": "module",
   "license": "MIT",
-  "homepage": "https://github.com/pinser-metaverse/pinser-metaverse/tree/master/libs/screen-shared",
+  "homepage": "https://github.com/digipair/digipair-vision/tree/master/libs/screen-shared",
   "keywords": [
     "pinser",
     "aframe",
     "lit",
     "metaverse",
-    "pinser-metaverse",
+    "digipair-vision",
     "teleport"
   ],
   "repository": {
-    "url": "https://github.com/pinser-metaverse/pinser-metaverse.git",
+    "url": "https://github.com/digipair/digipair-vision.git",
     "type": "git"
   },
   "author": {
@@ -22,8 +22,8 @@
     "url": "https://www.pinser.world"
   },
   "peerDependencies": {
-    "@digipair-vision/core": "0.27.1",
-    "@digipair-vision/design-system": "0.27.1",
-    "@digipair-vision/player": "0.27.1"
+    "@digipair-vision/core": "latest",
+    "@digipair-vision/design-system": "latest",
+    "@digipair-vision/player": "latest"
   }
 }

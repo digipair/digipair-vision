@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "type": "module",
   "license": "MIT",
-  "homepage": "https://github.com/pinser-metaverse/pinser-metaverse",
+  "homepage": "https://github.com/digipair/digipair-vision",
   "keywords": [
     "rxjs",
     "redux",
@@ -11,11 +11,11 @@
     "aframe",
     "lit",
     "metaverse",
-    "pinser-metaverse",
+    "digipair-vision",
     "observe"
   ],
   "repository": {
-    "url": "https://github.com/pinser-metaverse/pinser-metaverse.git",
+    "url": "https://github.com/digipair/digipair-vision.git",
     "type": "git"
   },
   "author": {
@@ -24,6 +24,6 @@
     "url": "https://www.pinser.world"
   },
   "peerDependencies": {
-    "@digipair-vision/core": "0.27.1"
+    "@digipair-vision/core": "latest"
   }
 }

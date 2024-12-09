@@ -11,5 +11,5 @@
 - [How it works](how-it-works)
 - **Links**
 - [Discord](https://discord.gg/kCqF8xaMHJ)
-- [Github](https://github.com/pinser-metaverse/pinser-metaverse)
+- [Github](https://github.com/digipair/digipair-vision)
 - [stackoverflow](https://stackoverflow.com/questions/tagged/pinser)
