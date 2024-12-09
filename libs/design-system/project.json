@@ -21,6 +21,12 @@
       "project": "libs/design-system/package.json",
       "compiler": "swc",
       "format": ["cjs", "esm"]
+      },
+      "configurations": {
+        "serve": {
+          "watch": true,
+          "assets": []
+        }
       }
     },
     "serve": {
