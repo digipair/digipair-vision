@@ -6,7 +6,7 @@ import {
   property,
   TemplateResult,
   THREE,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 
 @customElement('meta-screen-shared-desktop')
 export class ScreenSharedDesktopElement extends MetaElement {

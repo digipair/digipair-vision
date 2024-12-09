@@ -4,8 +4,8 @@ import {
   inject,
   MetaElement,
   TemplateResult,
-} from '@pinser-metaverse/core';
-import '@pinser-metaverse/design-system';
+} from '@digipair-vision/core';
+import '@digipair-vision/design-system';
 import { MenuProvider } from './menu.provider';
 import './pins/menu-panel-pins';
 import './scene/menu-panel-scene';

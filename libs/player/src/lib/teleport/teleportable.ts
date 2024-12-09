@@ -4,7 +4,7 @@ import {
   inject,
   MetaElement,
   property,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 import { PlayerProvider } from '../player/player.provider';
 
 @customElement('meta-teleportable')

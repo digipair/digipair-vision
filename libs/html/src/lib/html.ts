@@ -1,4 +1,4 @@
-import { customElement, MetaElement, property } from '@pinser-metaverse/core';
+import { customElement, MetaElement, property } from '@digipair-vision/core';
 import { Web2VR } from './web2vr/web2vr';
 
 @customElement('meta-html')
@@ -23,7 +23,7 @@ export class HtmlElement extends MetaElement {
     container.setAttribute('meta-html-container', '');
     container.setAttribute(
       'style',
-      `filter: opacity(0); z-index: -1; position: absolute; top: 0; left: 0; width:${this.width}; ${this.style}`
+      `filter: opacity(0); z-index: -1; position: absolute; top: 0; left: 0; width:${this.width}; ${this.style}`,
     );
     container.innerHTML = template;
     container.__META_ELEMENT_INSTANCE__ = this;

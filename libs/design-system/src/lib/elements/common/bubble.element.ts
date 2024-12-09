@@ -4,7 +4,7 @@ import {
   MetaElement,
   property,
   TemplateResult,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 import './icon.element';
 
 @customElement('meta-bubble')

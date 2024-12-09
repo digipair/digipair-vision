@@ -5,7 +5,7 @@ import {
   MetaElement,
   property,
   TemplateResult,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 
 @customElement('meta-camrender-screen')
 export class CamrenderScreenElement extends MetaElement {
@@ -20,7 +20,7 @@ export class CamrenderScreenElement extends MetaElement {
 
   override tick(): void {
     const el = this.el.querySelector(
-      ':scope > [data-meta-camrender-screen]'
+      ':scope > [data-meta-camrender-screen]',
     ) as Entity | null;
     if (!el) {
       return;

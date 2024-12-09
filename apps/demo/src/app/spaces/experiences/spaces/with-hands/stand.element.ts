@@ -5,7 +5,7 @@ import {
   property,
   TemplateResult,
   unsafeHTML,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 
 @customElement('experiences-with-hands-stand')
 export class StandElement extends MetaElement {
@@ -54,9 +54,9 @@ export class StandElement extends MetaElement {
         <a-entity
           networked="template: #element-template; persistent: true; owner: scene; networkId: experiences-with-hands-stand-item;"
           meta-element=${`element: ${btoa(
-            encodeURIComponent(JSON.stringify(element))
+            encodeURIComponent(JSON.stringify(element)),
           )}; attributes: ${btoa(
-            encodeURIComponent(JSON.stringify(attributes))
+            encodeURIComponent(JSON.stringify(attributes)),
           )}; options: ${btoa(encodeURIComponent(JSON.stringify(options)))};`}
           position="0.24 -0.143 0.126"
           rotation="0 90 0"

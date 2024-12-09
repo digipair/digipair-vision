@@ -3,7 +3,7 @@ import {
     html,
     MetaElement,
     TemplateResult
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 
 @customElement('meta-<%= name %>')
 export class <%= className %>Element extends MetaElement {

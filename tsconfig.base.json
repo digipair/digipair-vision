@@ -15,23 +15,21 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@pinser-metaverse/camrender": ["libs/camrender/src/index.ts"],
-      "@pinser-metaverse/core": ["libs/core/src/index.ts"],
-      "@pinser-metaverse/design-system": ["libs/design-system/src/index.ts"],
-      "@pinser-metaverse/exporter": ["libs/exporter/src/index.ts"],
-      "@pinser-metaverse/html": ["libs/html/src/index.ts"],
-      "@pinser-metaverse/info": ["libs/info/src/index.ts"],
-      "@pinser-metaverse/mesh": ["libs/mesh/src/index.ts"],
-      "@pinser-metaverse/observe": ["libs/observe/src/index.ts"],
-      "@pinser-metaverse/player": ["libs/player/src/index.ts"],
-      "@pinser-metaverse/ready-player-me": [
-        "libs/ready-player-me/src/index.ts"
-      ],
-      "@pinser-metaverse/router": ["libs/router/src/index.ts"],
-      "@pinser-metaverse/scene": ["libs/scene/src/index.ts"],
-      "@pinser-metaverse/screen-shared": ["libs/screen-shared/src/index.ts"],
-      "@pinser-metaverse/spline": ["libs/spline/src/index.ts"],
-      "@pinser-metaverse/teleport": ["libs/teleport/src/index.ts"]
+      "@digipair-vision/camrender": ["libs/camrender/src/index.ts"],
+      "@digipair-vision/core": ["libs/core/src/index.ts"],
+      "@digipair-vision/design-system": ["libs/design-system/src/index.ts"],
+      "@digipair-vision/exporter": ["libs/exporter/src/index.ts"],
+      "@digipair-vision/html": ["libs/html/src/index.ts"],
+      "@digipair-vision/info": ["libs/info/src/index.ts"],
+      "@digipair-vision/mesh": ["libs/mesh/src/index.ts"],
+      "@digipair-vision/observe": ["libs/observe/src/index.ts"],
+      "@digipair-vision/player": ["libs/player/src/index.ts"],
+      "@digipair-vision/ready-player-me": ["libs/ready-player-me/src/index.ts"],
+      "@digipair-vision/router": ["libs/router/src/index.ts"],
+      "@digipair-vision/scene": ["libs/scene/src/index.ts"],
+      "@digipair-vision/screen-shared": ["libs/screen-shared/src/index.ts"],
+      "@digipair-vision/spline": ["libs/spline/src/index.ts"],
+      "@digipair-vision/teleport": ["libs/teleport/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -6,8 +6,8 @@ import {
   property,
   state,
   TemplateResult,
-} from '@pinser-metaverse/core';
-import '@pinser-metaverse/design-system';
+} from '@digipair-vision/core';
+import '@digipair-vision/design-system';
 import '../../pins/add-pins-cursor';
 import { MetaPins } from '../../pins/pins.interface';
 import { PlayerProvider } from '../../player/player.provider';
@@ -53,7 +53,7 @@ export class MenuPanelPinsElement extends MetaElement {
               title=${pin.name}
               @click=${() => this.add(pin)}
             ></meta-menu-button-image>
-          `
+          `,
         )}
       </meta-menu-panel>
     `;

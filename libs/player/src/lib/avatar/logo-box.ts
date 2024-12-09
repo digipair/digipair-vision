@@ -4,7 +4,7 @@ import {
   MetaElement,
   property,
   TemplateResult,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 
 @customElement('meta-logo-box')
 export class BoxElement extends MetaElement {

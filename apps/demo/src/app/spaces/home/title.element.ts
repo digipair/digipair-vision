@@ -3,7 +3,7 @@ import {
   html,
   injectHtml,
   MetaHtmlElement,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 import { SessionProvider } from '../../session.provider';
 
 @customHtmlElement('home-title')

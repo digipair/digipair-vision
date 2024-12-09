@@ -4,8 +4,8 @@ import {
   MetaElement,
   TemplateResult,
   unsafeHTML,
-} from '@pinser-metaverse/core';
-import '@pinser-metaverse/design-system';
+} from '@digipair-vision/core';
+import '@digipair-vision/design-system';
 import './menu-panels.element';
 import './menu-side.element';
 import { MenuProvider } from './menu.provider';

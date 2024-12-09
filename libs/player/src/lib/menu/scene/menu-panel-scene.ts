@@ -5,8 +5,8 @@ import {
   inject,
   MetaElement,
   TemplateResult,
-} from '@pinser-metaverse/core';
-import '@pinser-metaverse/design-system';
+} from '@digipair-vision/core';
+import '@digipair-vision/design-system';
 import { PlayerProvider } from '../../player/player.provider';
 
 @customElement('meta-player-menu-planel-scene')
@@ -22,7 +22,7 @@ export class MenuPanelSceneElement extends MetaElement {
   private getPinsNameFromElement(el: Entity) {
     const component = el.components['meta-element'] as any;
     const options = JSON.parse(
-      decodeURIComponent(atob(component.data.options))
+      decodeURIComponent(atob(component.data.options)),
     );
 
     return options.name;
@@ -31,7 +31,7 @@ export class MenuPanelSceneElement extends MetaElement {
   override render(): TemplateResult {
     const pins = [
       ...(this.el.sceneEl?.querySelectorAll(
-        ':scope > [meta-element][editable]'
+        ':scope > [meta-element][editable]',
       ) as any),
     ];
 
@@ -67,7 +67,7 @@ export class MenuPanelSceneElement extends MetaElement {
                     @click=${() => this.removePins(el)}
                   ></meta-menu-button>
                 </a-rounded>
-              `
+              `,
             )}
       </meta-menu-panel>
     `;

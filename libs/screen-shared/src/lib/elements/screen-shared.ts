@@ -6,8 +6,8 @@ import {
   nothing,
   property,
   TemplateResult,
-} from '@pinser-metaverse/core';
-import '@pinser-metaverse/design-system';
+} from '@digipair-vision/core';
+import '@digipair-vision/design-system';
 import { ScreenSharedProvider } from '../providers/screen-shared.provider';
 import './desktop';
 import './webcam';
@@ -35,7 +35,7 @@ export class ShareScreenElement extends MetaElement {
 
   private toggleMenu(): void {
     const screenEl = this.el.sceneEl?.querySelector(
-      `[screenid="${this.elementid}"]`
+      `[screenid="${this.elementid}"]`,
     );
     const isMine = screenEl && NAF.utils.isMine(screenEl.parentElement);
 
@@ -60,7 +60,7 @@ export class ShareScreenElement extends MetaElement {
 
   override render(): TemplateResult {
     const screenEl = this.el.sceneEl?.querySelector(
-      `[screenid="${this.elementid}"]`
+      `[screenid="${this.elementid}"]`,
     );
     const isMine = screenEl && NAF.utils.isMine(screenEl.parentElement);
 

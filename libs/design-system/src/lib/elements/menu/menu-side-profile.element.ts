@@ -3,7 +3,7 @@ import {
   html,
   MetaElement,
   TemplateResult,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 
 @customElement('meta-menu-side-profile')
 export class MenuSideElement extends MetaElement {
@@ -12,9 +12,9 @@ export class MenuSideElement extends MetaElement {
       decodeURIComponent(
         atob(
           (this.el.sceneEl?.querySelector('meta-player [meta-avatar]') as any)
-            .components['meta-avatar'].data.playerinfo
-        )
-      )
+            .components['meta-avatar'].data.playerinfo,
+        ),
+      ),
     );
   }
 

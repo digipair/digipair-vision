@@ -10,7 +10,7 @@
 
 ## Generate new Pin's
 
-On [pinser-metaverse](https://www.pinser-metaverse.com), a library who exposes an autonomous 3d webcomponents is named a pin's.  
+On [digipair-vision](https://www.pinser-metaverse.com), a library who exposes an autonomous 3d webcomponents is named a pin's.  
 To generate a Pin's, we will use a nx generator embedded in the [metaverse-bootstrap](https://github.com/pinser-metaverse/metaverse-boostrap) project.
 
 To develop our game `tic-tac-toe`, we will create 1 Pin's `tictactoe` composed with:
@@ -43,7 +43,7 @@ To add a provider in your new Pin's, create a new file `tictactoe.provider.ts` i
 Place the foillowing code in this file:
 
 ```typescript
-import { injectable, MetaProvider, state } from '@pinser-metaverse/core';
+import { injectable, MetaProvider, state } from '@digipair-vision/core';
 
 @injectable()
 export class TictactoeProvider extends MetaProvider {
@@ -96,15 +96,7 @@ Create a new file `tictactoe-pawn.element.ts` in the directory `libs/game/tictac
 Place the foillowing code in your file:
 
 ```typescript
-import {
-  customElement,
-  html,
-  inject,
-  MetaElement,
-  property,
-  state,
-  TemplateResult,
-} from '@pinser-metaverse/core';
+import { customElement, html, inject, MetaElement, property, state, TemplateResult } from '@digipair-vision/core';
 import { TictactoeProvider } from './tictactoe.provider';
 
 @customElement('game-tictactoe-pawn')
@@ -130,16 +122,7 @@ export class TictactoePawnElement extends MetaElement {
     const player = pawns[this.positionline][this.positioncolumn];
 
     return html`
-      <a-box
-        selectable
-        width="0.1"
-        height="0.1"
-        depth="0.01"
-        material="color: ${this.backgroundcolor}"
-        @click=${() => this.add(this.positionline, this.positioncolumn)}
-        @mouseenter=${() => (this.backgroundcolor = '#AAAAAA')}
-        @mouseleave=${() => (this.backgroundcolor = 'grey')}
-      ></a-box>
+      <a-box selectable width="0.1" height="0.1" depth="0.01" material="color: ${this.backgroundcolor}" @click=${() => this.add(this.positionline, this.positioncolumn)} @mouseenter=${() => (this.backgroundcolor = '#AAAAAA')} @mouseleave=${() => (this.backgroundcolor = 'grey')}></a-box>
       <a-text value="${player}" width="1.5" position="-0.029 0 0.01"></a-text>
     `;
   }
@@ -153,7 +136,7 @@ export class TictactoePawnElement extends MetaElement {
 - Function `add` used to play a new game step
 - `selectable` is used to listen the events `click`, `mouseenter` and `mouseleave`
 
-`a-box` and `a-text` are [AFrame](https://aframe.io) primitives. All [AFrame](https://aframe.io) primitives are usable in a [pinser-metaverse](https://www.pinser-metaverse.com) project.  
+`a-box` and `a-text` are [AFrame](https://aframe.io) primitives. All [AFrame](https://aframe.io) primitives are usable in a [digipair-vision](https://www.pinser-metaverse.com) project.  
 [Go here](https://aframe.io/docs/) to find the full primitive list.
 
 ## Update Tictactoe element
@@ -163,13 +146,7 @@ Update `tictactoe` element to display pawns and a button `reset`
 Replace file `libs/game/tictactoe/src/lib/tictactoe.element.ts` content by:
 
 ```typescript
-import {
-  customElement,
-  html,
-  inject,
-  MetaElement,
-  TemplateResult,
-} from '@pinser-metaverse/core';
+import { customElement, html, inject, MetaElement, TemplateResult } from '@digipair-vision/core';
 import { TictactoeProvider } from './tictactoe.provider';
 import './tictactoe-pawn.element';
 
@@ -186,60 +163,19 @@ export class TictactoeElement extends MetaElement {
 
   override render(): TemplateResult {
     return html`
-      <game-tictactoe-pawn
-        positionline="0"
-        positioncolumn="0"
-        position="-0.11 0.28 0"
-      ></game-tictactoe-pawn>
-      <game-tictactoe-pawn
-        positionline="0"
-        positioncolumn="1"
-        position="0 0.28 0"
-      ></game-tictactoe-pawn>
-      <game-tictactoe-pawn
-        positionline="0"
-        positioncolumn="2"
-        position="0.11 0.28 0"
-      ></game-tictactoe-pawn>
+      <game-tictactoe-pawn positionline="0" positioncolumn="0" position="-0.11 0.28 0"></game-tictactoe-pawn>
+      <game-tictactoe-pawn positionline="0" positioncolumn="1" position="0 0.28 0"></game-tictactoe-pawn>
+      <game-tictactoe-pawn positionline="0" positioncolumn="2" position="0.11 0.28 0"></game-tictactoe-pawn>
       <!-- line 2 -->
-      <game-tictactoe-pawn
-        positionline="1"
-        positioncolumn="0"
-        position="-0.11 0.17 0"
-      ></game-tictactoe-pawn>
-      <game-tictactoe-pawn
-        positionline="1"
-        positioncolumn="1"
-        position="0 0.17 0"
-      ></game-tictactoe-pawn>
-      <game-tictactoe-pawn
-        positionline="1"
-        positioncolumn="2"
-        position="0.11 0.17 0"
-      ></game-tictactoe-pawn>
+      <game-tictactoe-pawn positionline="1" positioncolumn="0" position="-0.11 0.17 0"></game-tictactoe-pawn>
+      <game-tictactoe-pawn positionline="1" positioncolumn="1" position="0 0.17 0"></game-tictactoe-pawn>
+      <game-tictactoe-pawn positionline="1" positioncolumn="2" position="0.11 0.17 0"></game-tictactoe-pawn>
       <!-- line 3 -->
-      <game-tictactoe-pawn
-        positionline="2"
-        positioncolumn="0"
-        position="-0.11 0.06 0"
-      ></game-tictactoe-pawn>
-      <game-tictactoe-pawn
-        positionline="2"
-        positioncolumn="1"
-        position="0 0.06 0"
-      ></game-tictactoe-pawn>
-      <game-tictactoe-pawn
-        positionline="2"
-        positioncolumn="2"
-        position="0.11 0.06 0"
-      ></game-tictactoe-pawn>
+      <game-tictactoe-pawn positionline="2" positioncolumn="0" position="-0.11 0.06 0"></game-tictactoe-pawn>
+      <game-tictactoe-pawn positionline="2" positioncolumn="1" position="0 0.06 0"></game-tictactoe-pawn>
+      <game-tictactoe-pawn positionline="2" positioncolumn="2" position="0.11 0.06 0"></game-tictactoe-pawn>
 
-      <a-sphere
-        selectable
-        @click=${() => this.reset()}
-        position="0.25 0.05 0"
-        radius="0.05"
-      ></a-sphere>
+      <a-sphere selectable @click=${() => this.reset()} position="0.25 0.05 0" radius="0.05"></a-sphere>
     `;
   }
 }
@@ -255,14 +191,9 @@ Now, your pin's `game-tictactoe` is ready to be used. Next step is to place the 
 Replace `apps/metaverse/src/lib/metaverse.space.ts` content with:
 
 ```typescript
-import {
-  customElement,
-  html,
-  inject,
-  MetaElement,
-} from '@pinser-metaverse/core';
-import { PlayerProvider } from '@pinser-metaverse/player';
-import '@pinser-metaverse/teleport';
+import { customElement, html, inject, MetaElement } from '@digipair-vision/core';
+import { PlayerProvider } from '@digipair-vision/player';
+import '@digipair-vision/teleport';
 import '@metaverse-bootstrap/game/tictactoe';
 
 @customElement('metaverse-bootstrap-space')
@@ -287,12 +218,7 @@ export class MetaverseBootstrapSpaceElement extends MetaElement {
       <meta-teleport position="0 0.001 0"></meta-teleport>
 
       <!-- ground -->
-      <meta-teleportable
-        hide-on-enter-ar
-        width="22.9"
-        height="16.92"
-        color="#d99f20"
-      ></meta-teleportable>`;
+      <meta-teleportable hide-on-enter-ar width="22.9" height="16.92" color="#d99f20"></meta-teleportable>`;
   }
 }
 ```

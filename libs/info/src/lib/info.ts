@@ -8,8 +8,8 @@ import {
   state,
   TemplateResult,
   unsafeHTML,
-} from '@pinser-metaverse/core';
-import '@pinser-metaverse/design-system';
+} from '@digipair-vision/core';
+import '@digipair-vision/design-system';
 
 @customElement('meta-info')
 export class InfoElement extends MetaElement {
@@ -30,7 +30,7 @@ export class InfoElement extends MetaElement {
 
   private content(): TemplateResult {
     const template = this.el.querySelector(
-      ':scope > template[slot="content"]'
+      ':scope > template[slot="content"]',
     )?.innerHTML;
     return html`${template ? unsafeHTML(template) : nothing}`;
   }

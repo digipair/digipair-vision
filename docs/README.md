@@ -1,4 +1,4 @@
-# @pinser-metaverse
+# @digipair-vision
 
 Pinser metaverse provide a simple way to create your own web metaverse or 3D web components like a simple HTML page.  
 Inspired from the very nice libraries [Polymer lit](https://lit.dev/) and [A-Frame](https://aframe.io/), you can create AR / VR / 3D elements on typescript classes like Angular/React/Lit.

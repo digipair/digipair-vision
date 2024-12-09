@@ -2,7 +2,7 @@ import {
   customElement,
   MetaElement,
   MetaProvider,
-} from '@pinser-metaverse/core';
+} from '@digipair-vision/core';
 import {
   PreventAndRedirectCommands,
   Router,
@@ -14,7 +14,7 @@ declare const AFRAME: any;
 export const routeElement =
   <P extends typeof MetaProvider>(
     elementName: string,
-    _options?: { networked?: boolean; providers?: P[] }
+    _options?: { networked?: boolean; providers?: P[] },
   ) =>
   <E extends typeof MetaElement>(ElementClass: E) => {
     customElement(elementName, _options)(ElementClass);
@@ -22,7 +22,7 @@ export const routeElement =
     AFRAME.primitives.primitives[elementName]['prototype'].onBeforeEnter = (
       _location: RouterLocation,
       commands: PreventAndRedirectCommands,
-      router: Router
+      router: Router,
     ) => {
       if ((router as any).__outlet.querySelector(`:scope > ${elementName}`)) {
         return commands.prevent();

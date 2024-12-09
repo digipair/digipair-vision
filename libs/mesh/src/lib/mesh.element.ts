@@ -1,4 +1,4 @@
-import { customElement, property } from '@pinser-metaverse/core';
+import { customElement, property } from '@digipair-vision/core';
 import { MeshCommon } from './mesh.common';
 
 @customElement('meta-mesh')

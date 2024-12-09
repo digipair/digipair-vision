@@ -1,4 +1,4 @@
-import { customElement, Entity, property } from '@pinser-metaverse/core';
+import { customElement, Entity, property } from '@digipair-vision/core';
 import { MeshCommon } from './mesh.common';
 
 @customElement('meta-mesh-animation-mixer')
@@ -37,7 +37,7 @@ export class MeshAnimationMixerElement extends MeshCommon {
     return new Promise((resolve) => {
       let animationsEl: Entity | null | undefined =
         this.el.sceneEl?.querySelector(
-          `:scope > [data-meta-mesh-animation-mixer][url="${url}"]`
+          `:scope > [data-meta-mesh-animation-mixer][url="${url}"]`,
         );
 
       if (!animationsEl) {
@@ -49,7 +49,7 @@ export class MeshAnimationMixerElement extends MeshCommon {
         animationsEl.addEventListener('model-loaded', ({ srcElement }) => {
           (animationsEl as Entity).setAttribute(
             'data-meta-mesh-animation-mixer-ready',
-            ''
+            '',
           );
           resolve(srcElement as Entity);
         });
@@ -68,7 +68,7 @@ export class MeshAnimationMixerElement extends MeshCommon {
   }
 
   override async updateMesh(
-    parentMesh: THREE.Object3D<THREE.Event>
+    parentMesh: THREE.Object3D<THREE.Event>,
   ): Promise<void> {
     const mesh = !this.object
       ? parentMesh
