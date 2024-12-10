@@ -19,7 +19,7 @@ export class MenuSideElement extends MetaElement {
     const panels: { [key: string]: TemplateResult } = {
       pins: html`
         <meta-player-menu-planel-pins
-          repository="https://assets.digipair-vision.com/pins/list.json"
+          repository="https://assets.pinser-metaverse.com/pins/list.json"
         ></meta-player-menu-planel-pins>
       `,
       scene: html`<meta-player-menu-planel-scene></meta-player-menu-planel-scene>`,

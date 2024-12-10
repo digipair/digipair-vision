@@ -72,7 +72,7 @@ To see the other connected users, you must create a network session:
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-> Congratulation, you created your first web metaverse with [digipair-vision](https://www.digipair-vision.com).  
+> Congratulation, you created your first web metaverse with [digipair-vision](https://opensource.digipair.ai/).  
 > You can test it on Phone, tablet, Desktop and VR/AR/XR headset
 
 ## Next step

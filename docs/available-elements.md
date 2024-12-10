@@ -98,7 +98,7 @@ When the user is behind this icon, a dialog box is displayed with elements inner
 
 ## AFrame primitives
 
-All [AFrame](https://aframe.io) primitives are usable in a [digipair-vision](https://www.digipair-vision.com) project.  
+All [AFrame](https://aframe.io) primitives are usable in a [digipair-vision](https://opensource.digipair.ai/) project.  
 [Go here](https://aframe.io/docs/) to find the full primitive list.
 
 ## Example
