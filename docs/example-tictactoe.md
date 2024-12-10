@@ -10,7 +10,7 @@
 
 ## Generate new Pin's
 
-On [digipair-vision](https://opensource.digipair.ai/), a library who exposes an autonomous 3d webcomponents is named a pin's.  
+On [digipair-vision](https://opensource.digipair.ai), a library who exposes an autonomous 3d webcomponents is named a pin's.  
 To generate a Pin's, we will use a nx generator embedded in the [metaverse-bootstrap](https://github.com/pinser-metaverse/metaverse-boostrap) project.
 
 To develop our game `tic-tac-toe`, we will create 1 Pin's `tictactoe` composed with:
@@ -136,7 +136,7 @@ export class TictactoePawnElement extends MetaElement {
 - Function `add` used to play a new game step
 - `selectable` is used to listen the events `click`, `mouseenter` and `mouseleave`
 
-`a-box` and `a-text` are [AFrame](https://aframe.io) primitives. All [AFrame](https://aframe.io) primitives are usable in a [digipair-vision](https://opensource.digipair.ai/) project.  
+`a-box` and `a-text` are [AFrame](https://aframe.io) primitives. All [AFrame](https://aframe.io) primitives are usable in a [digipair-vision](https://opensource.digipair.ai) project.  
 [Go here](https://aframe.io/docs/) to find the full primitive list.
 
 ## Update Tictactoe element
@@ -291,7 +291,7 @@ export class TictactoePawnElement extends MetaElement {
 > - Desktop (3D)
 > - Headset (3D & AR)
 
-<iframe src="https://codesandbox.io/embed/github/digipair/digipair-vision-examples/tree/example-tictactoe/?fontsize=10&hidenavigation=1&theme=dark&view=editor&module=/libs/game/tictactoe/src/lib/tictactoe.provider.ts,/libs/game/tictactoe/src/lib/tictactoe.element.ts,/libs/game/tictactoe/src/lib/tictactoe-pawn.element.ts"
+<iframe src="https://codesandbox.io/embed/github/pinser-metaverse/pinser-metaverse-examples/tree/example-tictactoe/?fontsize=10&hidenavigation=1&theme=dark&view=editor&module=/libs/game/tictactoe/src/lib/tictactoe.provider.ts,/libs/game/tictactoe/src/lib/tictactoe.element.ts,/libs/game/tictactoe/src/lib/tictactoe-pawn.element.ts"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
      title="Pinser Example Tic-tac-toe"
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"

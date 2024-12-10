@@ -65,14 +65,14 @@ To see the other connected users, you must create a network session:
 
 > The uuid can be generated from [uuidgenerator.net](https://www.uuidgenerator.net) for example
 
-<iframe src="https://codesandbox.io/embed/github/digipair/digipair-vision-examples/tree/get-started-network/?fontsize=10&hidenavigation=1&theme=dark&view=editor&module=/apps/metaverse/src/metaverse.html&codemirror=1&highlights=50"
+<iframe src="https://codesandbox.io/embed/github/pinser-metaverse/pinser-metaverse-examples/tree/get-started-network/?fontsize=10&hidenavigation=1&theme=dark&view=editor&module=/apps/metaverse/src/metaverse.html&codemirror=1&highlights=50"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
      title="Pinser get-started network"
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-> Congratulation, you created your first web metaverse with [digipair-vision](https://opensource.digipair.ai/).  
+> Congratulation, you created your first web metaverse with [digipair-vision](https://opensource.digipair.ai).  
 > You can test it on Phone, tablet, Desktop and VR/AR/XR headset
 
 ## Next step

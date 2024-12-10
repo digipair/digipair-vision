@@ -3,7 +3,7 @@
 Digipair vision provide a simple way to create your own web metaverse or 3D web components like a simple HTML page.  
 Inspired from the very nice libraries [Polymer lit](https://lit.dev) and [A-Frame](https://aframe.io), you can create AR / VR / 3D elements on typescript classes like Angular/React/Lit.
 
-[Go to @digipair-vision documentation](https://opensource.digipair.ai/)
+[Go to @digipair-vision documentation](https://opensource.digipair.ai)
 
 ## Develop across all platforms
 
