@@ -11,7 +11,7 @@ In this section, we will create your first pin's !
 
 ### Generate a new Pin's
 
-To generate a Pin's, we will use a nx generator embedded in the [metaverse-bootstrap](https://github.com/digipair-vision/metaverse-boostrap) project.
+To generate a Pin's, we will use a nx generator embedded in the [metaverse-bootstrap](https://github.com/pinser-metaverse/metaverse-boostrap) project.
 
 On a bash / DOS terminal, execute the following command **in your project directory**:
 

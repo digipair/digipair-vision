@@ -1,6 +1,6 @@
 # Get started
 
-The easier way to create your own project is to fork the project [metaverse-bootstrap](https://github.com/digipair-vision/metaverse-boostrap).
+The easier way to create your own project is to fork the project [metaverse-bootstrap](https://github.com/pinser-metaverse/metaverse-boostrap).
 
 There is 2 options:
 
@@ -9,13 +9,13 @@ There is 2 options:
 
 ## Quick
 
-The project [metaverse-bootstrap](https://github.com/digipair-vision/metaverse-boostrap) is ready to be used with the wonderful tool CodeSandbox.
+The project [metaverse-bootstrap](https://github.com/pinser-metaverse/metaverse-boostrap) is ready to be used with the wonderful tool CodeSandbox.
 
 [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/digipair-vision/metaverse-boostrap/blob/master/apps/metaverse/src/lib/metaverse.space.ts)
 
 ## Normal
 
-The project [metaverse-bootstrap](https://github.com/digipair-vision/metaverse-boostrap) is hosted on Github and use the repository engine Git.
+The project [metaverse-bootstrap](https://github.com/pinser-metaverse/metaverse-boostrap) is hosted on Github and use the repository engine Git.
 
 ### Requirements
 
@@ -30,7 +30,7 @@ The project requires the following tools:
 On a bash / DOS terminal, execute the following command:
 
 ```bash
-git clone https://github.com/digipair-vision/metaverse-boostrap.git
+git clone https://github.com/pinser-metaverse/metaverse-boostrap.git
 ```
 
 ### Install dependencies
@@ -43,7 +43,7 @@ yarn install
 
 ### Start the development server
 
-[metaverse-bootstrap](https://github.com/digipair-vision/metaverse-boostrap) use the build system [nx](https://nx.dev) to be more flexible.
+[metaverse-bootstrap](https://github.com/pinser-metaverse/metaverse-boostrap) use the build system [nx](https://nx.dev) to be more flexible.
 The project is composed of one application named "metaverse".
 
 On a bash / DOS terminal, execute the following command **in your project directory**:

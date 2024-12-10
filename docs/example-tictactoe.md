@@ -4,14 +4,14 @@
 
 ## Before start
 
-- **option 1:** clone the project [metaverse-bootstrap](https://github.com/digipair-vision/metaverse-boostrap) from Github
+- **option 1:** clone the project [metaverse-bootstrap](https://github.com/pinser-metaverse/metaverse-boostrap) from Github
 - **option 2:**  
   [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/digipair-vision/metaverse-boostrap/blob/master/apps/metaverse/src/lib/metaverse.space.ts)
 
 ## Generate new Pin's
 
 On [digipair-vision](https://opensource.digipair.ai/), a library who exposes an autonomous 3d webcomponents is named a pin's.  
-To generate a Pin's, we will use a nx generator embedded in the [metaverse-bootstrap](https://github.com/digipair-vision/metaverse-boostrap) project.
+To generate a Pin's, we will use a nx generator embedded in the [metaverse-bootstrap](https://github.com/pinser-metaverse/metaverse-boostrap) project.
 
 To develop our game `tic-tac-toe`, we will create 1 Pin's `tictactoe` composed with:
 
