@@ -21,7 +21,7 @@
   "author": {
     "name": "Marc Buils",
     "email": "marc.buils@pinser.world",
-    "url": "https://www.digipair.ai/"
+    "url": "https://www.digipair.ai"
   },
   "peerDependencies": {
     "@digipair-vision/core": "latest"
