@@ -10,7 +10,7 @@
 
 ## Generate new Pin's
 
-On [digipair-vision](https://www.pinser-metaverse.com), a library who exposes an autonomous 3d webcomponents is named a pin's.  
+On [digipair-vision](https://opensource.digipair.ai), a library who exposes an autonomous 3d webcomponents is named a pin's.  
 To generate a Pin's, we will use a nx generator embedded in the [metaverse-bootstrap](https://github.com/pinser-metaverse/metaverse-boostrap) project.
 
 To develop our game `tic-tac-toe`, we will create 1 Pin's `tictactoe` composed with:
@@ -136,7 +136,7 @@ export class TictactoePawnElement extends MetaElement {
 - Function `add` used to play a new game step
 - `selectable` is used to listen the events `click`, `mouseenter` and `mouseleave`
 
-`a-box` and `a-text` are [AFrame](https://aframe.io) primitives. All [AFrame](https://aframe.io) primitives are usable in a [digipair-vision](https://www.pinser-metaverse.com) project.  
+`a-box` and `a-text` are [AFrame](https://aframe.io) primitives. All [AFrame](https://aframe.io) primitives are usable in a [digipair-vision](https://opensource.digipair.ai) project.  
 [Go here](https://aframe.io/docs/) to find the full primitive list.
 
 ## Update Tictactoe element
@@ -299,4 +299,4 @@ export class TictactoePawnElement extends MetaElement {
    ></iframe>
 
 > Don't hesitate to improve this documentation, any help will be amazing !  
-> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/pinser-metaverse/pinser-metaverse/blob/master/docs/element-creation.md)
+> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/digipair/digipair-vision/blob/master/docs/element-creation.md)

@@ -1,6 +1,6 @@
 # @digipair-vision
 
-Pinser metaverse provide a simple way to create your own web metaverse or 3D web components like a simple HTML page.  
+Digipair vision provide a simple way to create your own web metaverse or 3D web components like a simple HTML page.  
 Inspired from the very nice libraries [Polymer lit](https://lit.dev/) and [A-Frame](https://aframe.io/), you can create AR / VR / 3D elements on typescript classes like Angular/React/Lit.
 
 <iframe src="https://codesandbox.io/embed/github/pinser-metaverse/pinser-metaverse-examples/tree/sample/?fontsize=10&hidenavigation=1&theme=dark&view=preview&module=/apps/metaverse/src/index.html"
@@ -14,7 +14,7 @@ Inspired from the very nice libraries [Polymer lit](https://lit.dev/) and [A-Fra
 
 <img alt="Develop across all platforms" src="./assets/employee-desk.min.png" style="float: right; width: 17rem;"/>
 
-Pinser metaverse is compatible with :
+Digipair vision is compatible with :
 
 - Mobile
 - Tablet
@@ -60,9 +60,9 @@ Follow the section [Get started](get-started)
 
 ### Support
 
-[![Github](./assets/github.png)](https://github.com/pinser-metaverse/pinser-metaverse)
+[![Github](./assets/github.png)](https://github.com/digipair/digipair-vision)
 
 [![stackoverflow](./assets/stackoverflow.png)](https://stackoverflow.com/questions/tagged/pinser)
 
 > Don't hesitate to improve this documentation, any help will be amazing !  
-> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/pinser-metaverse/pinser-metaverse/blob/master/docs/README.md)
+> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/digipair/digipair-vision/blob/master/docs/README.md)

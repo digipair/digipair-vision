@@ -1,4 +1,4 @@
-![Pinser logo](https://www.pinser.world/assets/images/logo/logo.png)
+![Pinser logo](https://www.digipair.aiassets/images/logo/logo.png)
 
 > Create your <strike>web site</strike> web metaverse
 
@@ -9,5 +9,5 @@
 > Alpha version
 
 [Get Started](#main)
-[GitHub](https://github.com/pinser-metaverse/pinser-metaverse)
+[GitHub](https://github.com/digipair/digipair-vision)
 [Discord](https://discord.gg/kCqF8xaMHJ)

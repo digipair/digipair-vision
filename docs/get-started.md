@@ -72,7 +72,7 @@ To see the other connected users, you must create a network session:
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-> Congratulation, you created your first web metaverse with [digipair-vision](https://www.pinser-metaverse.com).  
+> Congratulation, you created your first web metaverse with [digipair-vision](https://opensource.digipair.ai).  
 > You can test it on Phone, tablet, Desktop and VR/AR/XR headset
 
 ## Next step
@@ -80,4 +80,4 @@ To see the other connected users, you must create a network session:
 Create your first Pin's [a tic-tac-toe](example-tictactoe)
 
 > Don't hesitate to improve this documentation, any help will be amazing !  
-> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/pinser-metaverse/pinser-metaverse/blob/master/docs/get-started.md)
+> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/digipair/digipair-vision/blob/master/docs/get-started.md)

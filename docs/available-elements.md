@@ -59,7 +59,7 @@ Display an icon
 ```
 
 > see the list [here](https://fonts.google.com/icons)  
-> see the real name [here](https://github.com/pinser-metaverse/pinser-metaverse/blob/master/libs/design-system/src/lib/const/icons.const.ts)
+> see the real name [here](https://github.com/digipair/digipair-vision/blob/master/libs/design-system/src/lib/const/icons.const.ts)
 
 ### bubble
 
@@ -98,7 +98,7 @@ When the user is behind this icon, a dialog box is displayed with elements inner
 
 ## AFrame primitives
 
-All [AFrame](https://aframe.io) primitives are usable in a [digipair-vision](https://www.pinser-metaverse.com) project.  
+All [AFrame](https://aframe.io) primitives are usable in a [digipair-vision](https://opensource.digipair.ai) project.  
 [Go here](https://aframe.io/docs/) to find the full primitive list.
 
 ## Example
@@ -111,4 +111,4 @@ All [AFrame](https://aframe.io) primitives are usable in a [digipair-vision](htt
    ></iframe>
 
 > Don't hesitate to improve this documentation, any help will be amazing !  
-> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/pinser-metaverse/pinser-metaverse/blob/master/docs/available-elements.md)
+> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/digipair/digipair-vision/blob/master/docs/available-elements.md)
