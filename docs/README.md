@@ -52,7 +52,7 @@ Follow the section [Get started](get-started)
 
 ### Try it now
 
-[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/digipair-vision/metaverse-boostrap/blob/master/apps/metaverse/src/lib/metaverse.space.ts)
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/pinser-metaverse/metaverse-boostrap/blob/master/apps/metaverse/src/lib/metaverse.space.ts)
 
 ### Join us
 

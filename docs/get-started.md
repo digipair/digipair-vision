@@ -11,7 +11,7 @@ There is 2 options:
 
 The project [metaverse-bootstrap](https://github.com/pinser-metaverse/metaverse-boostrap) is ready to be used with the wonderful tool CodeSandbox.
 
-[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/digipair-vision/metaverse-boostrap/blob/master/apps/metaverse/src/lib/metaverse.space.ts)
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/pinser-metaverse/metaverse-boostrap/blob/master/apps/metaverse/src/lib/metaverse.space.ts)
 
 ## Normal
 

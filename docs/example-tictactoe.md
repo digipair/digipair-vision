@@ -6,7 +6,7 @@
 
 - **option 1:** clone the project [metaverse-bootstrap](https://github.com/pinser-metaverse/metaverse-boostrap) from Github
 - **option 2:**  
-  [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/digipair-vision/metaverse-boostrap/blob/master/apps/metaverse/src/lib/metaverse.space.ts)
+  [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/pinser-metaverse/metaverse-boostrap/blob/master/apps/metaverse/src/lib/metaverse.space.ts)
 
 ## Generate new Pin's
 
