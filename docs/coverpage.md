@@ -1,4 +1,4 @@
-![Pinser logo](https://www.digipair.aiassets/images/logo/logo.png)
+![Pinser logo](https://www.digipair.ai/assets/images/logo/logo.png)
 
 > Create your <strike>web site</strike> web metaverse
 

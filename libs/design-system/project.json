@@ -33,7 +33,7 @@
       "executor": "nx:run-commands",
       "dependsOn": ["build"],
       "options": {
-        "command": "npx serve dist/libs/design-system/"
+        "command": "npx serve dist/libs/design-system"
       }
     },
     "publish": {
