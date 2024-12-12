@@ -27,7 +27,7 @@ export class CamrenderCameraElement extends MetaElement {
   @property({ default: 400 })
   width!: number;
 
-  private renderer!: THREE.WebGLRenderer;
+  private renderer!: any;
   private canvasUpdate!: (t: number, dt: number) => void;
 
   override update(oldData: any): void {

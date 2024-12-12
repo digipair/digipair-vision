@@ -22,7 +22,7 @@ export class MetaElement {
   play(): void {}
   remove(): void {}
   tick(time: number, timeDelta: number): void {}
-  tock(time: number, timeDelta: number, camera: THREE.Camera): void {}
+  tock(time: number, timeDelta: number, camera: any): void {}
   update(oldData: unknown): void {}
   updateSchema(): void {}
 

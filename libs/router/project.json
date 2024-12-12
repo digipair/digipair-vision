@@ -1,40 +1,26 @@
 {
-  "$schema": "..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
+  "name": "router",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/router/src",
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nrwl/js:swc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/router",
-        "main": "libs/router/src/index.ts",
-        "tsConfig": "libs/router/tsconfig.lib.json",
-        "assets": ["libs/router/*.md"]
-      }
-    },
-    "build-es": {
-      "executor": "@nrwl/web:rollup",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "project": "libs/router/package.esm.json",
-        "outputPath": "dist/libs/router-es",
-        "compiler": "swc",
-        "entryFile": "libs/router/src/index.ts",
-        "tsConfig": "libs/router/tsconfig.lib.json",
-        "rollupConfig": ["libs/router/rollup.config.cjs"],
-        "assets": [
-          {
-            "glob": "libs/router/*.md",
-            "input": ".",
-            "output": "."
-          },
-          {
-            "glob": "libs/router/src/index.html",
-            "input": ".",
-            "output": "."
-          }
-        ]
+    "executor": "@nx/rollup:rollup",
+    "outputs": ["{options.outputPath}"],
+    "options": {
+      "outputPath": "dist/libs/router",
+      "main": "libs/router/src/index.ts",
+      "tsConfig": "libs/router/tsconfig.lib.json",
+      "assets": [
+          "libs/router/src/index.d.ts",
+          "libs/router/src/schema.json",
+          "libs/router/src/schema.fr.json",
+          "libs/router/src/index.html"
+        ],
+      "rollupConfig": ["libs/router/rollup.build.cjs"],
+      "project": "libs/router/package.json",
+      "compiler": "swc",
+      "format": ["cjs", "esm"]
       },
       "configurations": {
         "serve": {
@@ -43,57 +29,17 @@
         }
       }
     },
-    "publish": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "node tools/scripts/publish.mjs router {args.ver} {args.tag}"
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build"
-        }
-      ]
-    },
-    "publish-es": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "node tools/scripts/publish-es.mjs router {args.ver} {args.tag}"
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build-es"
-        }
-      ]
-    },
     "serve": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
       "options": {
-        "command": "npm-run-all --parallel \"serve ./dist/libs/router-es\" \"nx run router:build-es:serve\""
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build-es"
-        }
-      ]
-    },
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/router/**/*.ts"]
+        "command": "npx serve dist/libs/router"
       }
     },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/router"],
-      "options": {
-        "jestConfig": "libs/router/jest.config.ts",
-        "passWithNoTests": true
-      }
+    "publish": {
+      "command": "node tools/scripts/publish.mjs router {args.ver} {args.tag}",
+      "dependsOn": ["build"]
     }
   },
-  "tags": ["router"]
+  "tags": []
 }

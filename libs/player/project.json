@@ -1,77 +1,37 @@
 {
-  "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
+  "name": "player",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/player/src",
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nrwl/js:swc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/player",
-        "main": "libs/player/src/index.ts",
-        "tsConfig": "libs/player/tsconfig.lib.json",
-        "assets": [
-          "libs/player/*.md",
-          "libs/player/src/lib/utils/*.js"
-        ]
-      }
-    },
-    "build-es": {
-      "executor": "@nrwl/web:rollup",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "project": "libs/player/package.esm.json",
-        "outputPath": "dist/libs/player-es",
-        "compiler": "swc",
-        "entryFile": "libs/player/src/index.ts",
-        "tsConfig": "libs/player/tsconfig.lib.json",
-        "rollupConfig": ["libs/player/rollup.config.cjs"],
-        "assets": [{
-          "glob": "libs/player/*.md",
-          "input": ".",
-          "output": "."
-        }]
+    "executor": "@nx/rollup:rollup",
+    "outputs": ["{options.outputPath}"],
+    "options": {
+      "outputPath": "dist/libs/player",
+      "main": "libs/player/src/index.ts",
+      "tsConfig": "libs/player/tsconfig.lib.json",
+      "assets": [
+          "libs/player/src/index.d.ts",
+          "libs/player/src/schema.json",
+          "libs/player/src/schema.fr.json"
+        ],
+      "rollupConfig": ["libs/player/rollup.build.cjs"],
+      "project": "libs/player/package.json",
+      "compiler": "swc",
+      "format": ["cjs", "esm"]
+      },
+      "configurations": {
+        "serve": {
+          "watch": true,
+          "assets": []
+        }
       }
     },
     "publish": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "node tools/scripts/publish.mjs player {args.ver} {args.tag}"
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build"
-        }
-      ]
-    },
-    "publish-es": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "node tools/scripts/publish-es.mjs player {args.ver} {args.tag}"
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build-es"
-        }
-      ]
-    },
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/player/**/*.ts"]
-      }
-    },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/player"],
-      "options": {
-        "jestConfig": "libs/player/jest.config.ts",
-        "passWithNoTests": true
-      }
+      "command": "node tools/scripts/publish.mjs player {args.ver} {args.tag}",
+      "dependsOn": ["build"]
     }
   },
-  "tags": ["library", "player"]
+  "tags": []
 }

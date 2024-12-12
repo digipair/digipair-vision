@@ -32,8 +32,8 @@ export class ScreenSharedDesktopElement extends MetaElement {
       (
         (
           this.el.querySelector(':scope > a-entity') as Entity
-        ).object3D.getObjectByProperty('type', 'Mesh') as THREE.Mesh
-      )?.material as THREE.MeshStandardMaterial
+        ).object3D.getObjectByProperty('type', 'Mesh') as any
+      )?.material as any
     ).map;
 
     if (!map) {

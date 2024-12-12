@@ -2,7 +2,7 @@ import { LitElement } from 'lit';
 import { subscription } from '../interfaces/subscription';
 
 export class MetaHtmlElement extends LitElement {
-  protected override createRenderRoot(): Element | ShadowRoot {
+  protected override createRenderRoot(): any {
     return this;
   }
 

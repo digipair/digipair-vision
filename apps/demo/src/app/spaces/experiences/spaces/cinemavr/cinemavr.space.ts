@@ -36,7 +36,7 @@ export class CinemaVrSpaceElement extends MetaElement {
   }
 
   override remove() {
-    const assets = this.el.sceneEl?.querySelector(':scope > a-assets');
+    const assets = this.el.sceneEl?.querySelector(':scope > a-assets') as any;
     const video = assets.querySelector('#video') as any;
     video.pause();
 
