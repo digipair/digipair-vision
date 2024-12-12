@@ -1,76 +1,37 @@
 {
-  "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
+  "name": "observe",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/observe/src",
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nrwl/js:swc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/observe",
-        "main": "libs/observe/src/index.ts",
-        "tsConfig": "libs/observe/tsconfig.lib.json",
-        "assets": ["libs/observe/*.md"]
-      }
-    },
-    "build-es": {
-      "executor": "@nrwl/web:rollup",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "project": "libs/observe/package.esm.json",
-        "outputPath": "dist/libs/observe-es",
-        "compiler": "swc",
-        "entryFile": "libs/observe/src/index.ts",
-        "tsConfig": "libs/observe/tsconfig.lib.json",
-        "rollupConfig": ["libs/observe/rollup.config.cjs"],
-        "assets": [
-          {
-            "glob": "libs/observe/*.md",
-            "input": ".",
-            "output": "."
-          }
-        ]
+    "executor": "@nx/rollup:rollup",
+    "outputs": ["{options.outputPath}"],
+    "options": {
+      "outputPath": "dist/libs/observe",
+      "main": "libs/observe/src/index.ts",
+      "tsConfig": "libs/observe/tsconfig.lib.json",
+      "assets": [
+          "libs/observe/src/index.d.ts",
+          "libs/observe/src/schema.json",
+          "libs/observe/src/schema.fr.json"
+        ],
+      "rollupConfig": ["libs/observe/rollup.build.cjs"],
+      "project": "libs/observe/package.json",
+      "compiler": "swc",
+      "format": ["cjs", "esm"]
+      },
+      "configurations": {
+        "serve": {
+          "watch": true,
+          "assets": []
+        }
       }
     },
     "publish": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "node tools/scripts/publish.mjs observe {args.ver} {args.tag}"
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build"
-        }
-      ]
-    },
-    "publish-es": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "node tools/scripts/publish-es.mjs observe {args.ver} {args.tag}"
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build-es"
-        }
-      ]
-    },
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/observe/**/*.ts"]
-      }
-    },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/observe"],
-      "options": {
-        "jestConfig": "libs/observe/jest.config.ts",
-        "passWithNoTests": true
-      }
+      "command": "node tools/scripts/publish.mjs observe {args.ver} {args.tag}",
+      "dependsOn": ["build"]
     }
   },
-  "tags": ["library", "utils", "observe"]
+  "tags": []
 }
