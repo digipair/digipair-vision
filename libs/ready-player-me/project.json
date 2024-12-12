@@ -1,40 +1,26 @@
 {
-  "$schema": "..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
+  "name": "ready-player-me",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/ready-player-me/src",
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nrwl/js:swc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/ready-player-me",
-        "main": "libs/ready-player-me/src/index.ts",
-        "tsConfig": "libs/ready-player-me/tsconfig.lib.json",
-        "assets": ["libs/ready-player-me/*.md"]
-      }
-    },
-    "build-es": {
-      "executor": "@nrwl/web:rollup",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "project": "libs/ready-player-me/package.esm.json",
-        "outputPath": "dist/libs/ready-player-me-es",
-        "compiler": "swc",
-        "entryFile": "libs/ready-player-me/src/index.ts",
-        "tsConfig": "libs/ready-player-me/tsconfig.lib.json",
-        "rollupConfig": ["libs/ready-player-me/rollup.config.cjs"],
-        "assets": [
-          {
-            "glob": "libs/ready-player-me/*.md",
-            "input": ".",
-            "output": "."
-          },
-          {
-            "glob": "libs/ready-player-me/src/index.html",
-            "input": ".",
-            "output": "."
-          }
-        ]
+    "executor": "@nx/rollup:rollup",
+    "outputs": ["{options.outputPath}"],
+    "options": {
+      "outputPath": "dist/libs/ready-player-me",
+      "main": "libs/ready-player-me/src/index.ts",
+      "tsConfig": "libs/ready-player-me/tsconfig.lib.json",
+      "assets": [
+          "libs/ready-player-me/src/index.d.ts",
+          "libs/ready-player-me/src/schema.json",
+          "libs/ready-player-me/src/schema.fr.json",
+          "libs/ready-player-me/src/index.html"
+        ],
+      "rollupConfig": ["libs/ready-player-me/rollup.build.cjs"],
+      "project": "libs/ready-player-me/package.json",
+      "compiler": "swc",
+      "format": ["cjs", "esm"]
       },
       "configurations": {
         "serve": {
@@ -43,57 +29,17 @@
         }
       }
     },
-    "publish": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "node tools/scripts/publish.mjs ready-player-me {args.ver} {args.tag}"
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build"
-        }
-      ]
-    },
-    "publish-es": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "node tools/scripts/publish-es.mjs ready-player-me {args.ver} {args.tag}"
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build-es"
-        }
-      ]
-    },
     "serve": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
       "options": {
-        "command": "npm-run-all --parallel \"serve ./dist/libs/ready-player-me-es\" \"nx run ready-player-me:build-es:serve\""
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build-es"
-        }
-      ]
-    },
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/ready-player-me/**/*.ts"]
+        "command": "npx serve dist/libs/ready-player-me"
       }
     },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/ready-player-me"],
-      "options": {
-        "jestConfig": "libs/ready-player-me/jest.config.ts",
-        "passWithNoTests": true
-      }
+    "publish": {
+      "command": "node tools/scripts/publish.mjs ready-player-me {args.ver} {args.tag}",
+      "dependsOn": ["build"]
     }
   },
-  "tags": ["ready-player-me"]
+  "tags": []
 }
