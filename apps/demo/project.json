@@ -1,21 +1,17 @@
 {
-  "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
-  "projectType": "application",
+  "name": "demo",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/demo/src",
-  "tags": [],
+  "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/web:rollup",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "project": "apps/demo/package.json",
-        "outputPath": "dist/apps/demo",
-        "compiler": "swc",
-        "entryFile": "apps/demo/src/index.ts",
-        "tsConfig": "apps/demo/tsconfig.lib.json",
-        "rollupConfig": ["apps/demo/rollup.config.cjs"],
-        "format": ["esm"],
-        "assets": [
+    "executor": "@nx/rollup:rollup",
+    "outputs": ["{options.outputPath}"],
+    "options": {
+      "outputPath": "dist/apps/demo",
+      "main": "apps/demo/src/index.ts",
+      "tsConfig": "apps/demo/tsconfig.lib.json",
+      "assets": [
           {
             "glob": "apps/demo/src/index.html",
             "input": ".",
@@ -37,7 +33,11 @@
             "output": "."
           },
           "apps/demo/src/assets"
-        ]
+      ],
+      "rollupConfig": ["apps/demo/rollup.build.cjs"],
+      "project": "apps/demo/package.json",
+      "compiler": "swc",
+      "format": ["cjs", "esm"]
       },
       "configurations": {
         "serve": {
@@ -47,31 +47,16 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
       "options": {
         "command": "npm-run-all --parallel \"serve --cors ./dist/apps/demo\" \"nx run demo:build:serve\""
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build"
-        }
-      ]
-    },
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/demo/**/*.ts"]
       }
     },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/demo"],
-      "options": {
-        "jestConfig": "apps/demo/jest.config.ts",
-        "passWithNoTests": true
-      }
+    "publish": {
+      "command": "node tools/scripts/publish.mjs demo {args.ver} {args.tag}",
+      "dependsOn": ["build"]
     }
-  }
+  },
+  "tags": []
 }
