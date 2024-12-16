@@ -1,34 +1,7 @@
 {
   "name": "@digipair-vision/exporter",
   "version": "0.0.0",
-  "type": "commonjs",
-  "license": "MIT",
-  "homepage": "https://github.com/digipair/digipair-vision",
-  "keywords": [
-    "metaverse",
-    "pinser",
-    "digipair-vision",
-    "webxr",
-    "webgl",
-    "vr",
-    "ar",
-    "3d",
-    "aframe",
-    "three",
-    "threejs",
-    "gltf",
-    "glb"
-  ],
-  "repository": {
-    "url": "https://github.com/digipair/digipair-vision.git",
-    "type": "git"
-  },
-  "author": {
-    "name": "Marc Buils",
-    "email": "marc.buils@pinser.world",
-    "url": "https://www.digipair.ai"
-  },
-  "peerDependencies": {
-    "@digipair-vision/core": "latest"
-  }
+  "dependencies": {},
+  "main": "./index.cjs.js",
+  "module": "./index.esm.js"
 }

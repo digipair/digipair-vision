@@ -1,7 +1,7 @@
 import '@digipair-vision/camrender';
 import '@digipair-vision/core';
 import '@digipair-vision/design-system';
-// import '@digipair-vision/exporter';
+import '@digipair-vision/exporter';
 import '@digipair-vision/html';
 import '@digipair-vision/info';
 import '@digipair-vision/mesh';

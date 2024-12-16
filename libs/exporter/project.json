@@ -1,74 +1,37 @@
 {
-  "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
+  "name": "exporter",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/exporter/src",
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nrwl/js:swc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/exporter",
-        "main": "libs/exporter/src/index.ts",
-        "tsConfig": "libs/exporter/tsconfig.lib.json",
-        "assets": ["libs/exporter/*.md"]
-      }
-    },
-    "build-es": {
-      "executor": "@nrwl/web:rollup",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "project": "libs/exporter/package.esm.json",
-        "outputPath": "dist/libs/exporter-es",
-        "compiler": "swc",
-        "entryFile": "libs/exporter/src/index.ts",
-        "tsConfig": "libs/exporter/tsconfig.lib.json",
-        "rollupConfig": ["libs/exporter/rollup.config.cjs"],
-        "assets": [{
-          "glob": "libs/exporter/*.md",
-          "input": ".",
-          "output": "."
-        }]
+    "executor": "@nx/rollup:rollup",
+    "outputs": ["{options.outputPath}"],
+    "options": {
+      "outputPath": "dist/libs/exporter",
+      "main": "libs/exporter/src/index.ts",
+      "tsConfig": "libs/exporter/tsconfig.lib.json",
+      "assets": [
+          "libs/exporter/src/index.d.ts",
+          "libs/exporter/src/schema.json",
+          "libs/exporter/src/schema.fr.json"
+        ],
+      "rollupConfig": ["libs/exporter/rollup.build.cjs"],
+      "project": "libs/exporter/package.json",
+      "compiler": "swc",
+      "format": ["cjs", "esm"]
+      },
+      "configurations": {
+        "serve": {
+          "watch": true,
+          "assets": []
+        }
       }
     },
     "publish": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "node tools/scripts/publish.mjs exporter {args.ver} {args.tag}"
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build"
-        }
-      ]
-    },
-    "publish-es": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "node tools/scripts/publish-es.mjs exporter {args.ver} {args.tag}"
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build-es"
-        }
-      ]
-    },
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/exporter/**/*.ts"]
-      }
-    },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/exporter"],
-      "options": {
-        "jestConfig": "libs/exporter/jest.config.ts",
-        "passWithNoTests": true
-      }
+      "command": "node tools/scripts/publish.mjs exporter {args.ver} {args.tag}",
+      "dependsOn": ["build"]
     }
   },
-  "tags": ["library", "utils", "exporter"]
+  "tags": []
 }
