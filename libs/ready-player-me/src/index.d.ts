@@ -1,1 +1,1 @@
-export * from './src/index';
+export * from './src/lib/ready-player-me';

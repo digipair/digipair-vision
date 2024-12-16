@@ -31,5 +31,5 @@
       "dependsOn": ["build"]
     }
   },
-  "tags": ["library", "core"]
+  "tags": []
 }

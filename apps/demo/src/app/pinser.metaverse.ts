@@ -4,7 +4,6 @@ import {
   inject,
   MetaElement,
 } from '@digipair-vision/core';
-
 import { PlayerProvider } from '@digipair-vision/player';
 import { RouterProvider } from '@digipair-vision/router';
 import '@digipair-vision/screen-shared';

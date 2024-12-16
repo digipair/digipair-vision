@@ -1,4 +1,5 @@
 {
+  "npmScope": "digipair-vision",
   "pluginsConfig": {
     "@nx/js": {
       "analyzeSourceFiles": true
@@ -6,7 +7,15 @@
   },
   "extends": "nx/presets/npm.json",
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "digipair-vision",
+  "namedInputs": {
+    "default": [
+      "sharedGlobals"
+    ],
+    "sharedGlobals": [
+      "{projectRoot}/package.json",
+      "{projectRoot}/.eslintrc.json"
+    ]
+  },
   "targetDefaults": {
     "@nx/rollup:rollup": {
       "cache": true,
@@ -37,13 +46,13 @@
     }
   ],
   "generators": {
-    "@nrwl/web:application": {
+    "@nx/web:application": {
       "style": "scss",
       "linter": "eslint",
       "unitTestRunner": "jest",
       "e2eTestRunner": "cypress"
     },
-    "@nrwl/web:library": {
+    "@nx/js:library": {
       "style": "scss",
       "linter": "eslint",
       "unitTestRunner": "jest"

@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 // @ts-ignore
 declare const NAF: any;
 
