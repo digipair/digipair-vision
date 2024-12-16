@@ -34,12 +34,6 @@ export abstract class MeshCommon extends MetaElement {
   abstract object: string;
   abstract shared: boolean;
 
-  // @ts-ignore
-  get el() {
-    // @ts-ignore
-    return super.el;
-  }
-
   private meshChanged = (event: any) => {
     if (!event.target.contains(this.el) || event.target === this.el) {
       return;
@@ -54,7 +48,6 @@ export abstract class MeshCommon extends MetaElement {
     );
   }
 
-  // @ts-ignore
   override init(): void {
     const parentEl = this.parentEl;
 
@@ -66,12 +59,10 @@ export abstract class MeshCommon extends MetaElement {
     }
   }
 
-  // @ts-ignore
   override remove(): void {
     this.parentEl?.removeEventListener('object3dset', this.meshChanged);
   }
 
-  // @ts-ignore
   override update(): void {
     const parentEl = this.parentEl;
 
