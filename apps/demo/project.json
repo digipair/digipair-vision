@@ -52,10 +52,6 @@
       "options": {
         "command": "npm-run-all --parallel \"serve --cors ./dist/apps/demo\" \"nx run demo:build:serve\""
       }
-    },
-    "publish": {
-      "command": "node tools/scripts/publish.mjs demo {args.ver} {args.tag}",
-      "dependsOn": ["build"]
     }
   },
   "tags": []
