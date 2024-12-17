@@ -15,7 +15,9 @@
     "loose": true
   },
   "module": {
-    "type": "es6"
+    "type": "es6",
+    "strict": true,
+    "noInterop": true
   },
   "sourceMaps": true,
   "exclude": [
