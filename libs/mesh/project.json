@@ -1,40 +1,26 @@
 {
-  "$schema": "..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
+  "name": "mesh",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/mesh/src",
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nrwl/js:swc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/mesh",
-        "main": "libs/mesh/src/index.ts",
-        "tsConfig": "libs/mesh/tsconfig.lib.json",
-        "assets": ["libs/mesh/*.md"]
-      }
-    },
-    "build-es": {
-      "executor": "@nrwl/web:rollup",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "project": "libs/mesh/package.esm.json",
-        "outputPath": "dist/libs/mesh-es",
-        "compiler": "swc",
-        "entryFile": "libs/mesh/src/index.ts",
-        "tsConfig": "libs/mesh/tsconfig.lib.json",
-        "rollupConfig": ["libs/mesh/rollup.config.cjs"],
-        "assets": [
-          {
-            "glob": "libs/mesh/*.md",
-            "input": ".",
-            "output": "."
-          },
-          {
-            "glob": "libs/mesh/src/index.html",
-            "input": ".",
-            "output": "."
-          }
-        ]
+    "executor": "@nx/rollup:rollup",
+    "outputs": ["{options.outputPath}"],
+    "options": {
+      "outputPath": "dist/libs/mesh",
+      "main": "libs/mesh/src/index.ts",
+      "tsConfig": "libs/mesh/tsconfig.lib.json",
+      "assets": [
+          "libs/mesh/src/index.d.ts",
+          "libs/mesh/src/schema.json",
+          "libs/mesh/src/schema.fr.json",
+          "libs/mesh/src/index.html"
+        ],
+      "rollupConfig": ["libs/mesh/rollup.build.cjs"],
+      "project": "libs/mesh/package.json",
+      "compiler": "swc",
+      "format": ["cjs", "esm"]
       },
       "configurations": {
         "serve": {
@@ -43,57 +29,17 @@
         }
       }
     },
-    "publish": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "node tools/scripts/publish.mjs mesh {args.ver} {args.tag}"
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build"
-        }
-      ]
-    },
-    "publish-es": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "node tools/scripts/publish-es.mjs mesh {args.ver} {args.tag}"
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build-es"
-        }
-      ]
-    },
     "serve": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
       "options": {
-        "command": "npm-run-all --parallel \"serve ./dist/libs/mesh-es\" \"nx run mesh:build-es:serve\""
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build-es"
-        }
-      ]
-    },
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/mesh/**/*.ts"]
+        "command": "npm-run-all --parallel \"serve ./dist/libs/mesh\" \"nx run mesh:build:serve\""
       }
     },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/mesh"],
-      "options": {
-        "jestConfig": "libs/mesh/jest.config.ts",
-        "passWithNoTests": true
-      }
+    "publish": {
+      "command": "node tools/scripts/publish.mjs mesh {args.ver} {args.tag}",
+      "dependsOn": ["build"]
     }
   },
-  "tags": ["mesh"]
+  "tags": []
 }

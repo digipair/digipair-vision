@@ -1,4 +1,4 @@
-import { customElement, Entity, property } from '@digipair-vision/core';
+import { customElement, property, Entity } from '@digipair-vision/core';
 import { MeshCommon } from './mesh.common';
 
 @customElement('meta-mesh-animation-mixer')
@@ -46,7 +46,7 @@ export class MeshAnimationMixerElement extends MeshCommon {
         animationsEl.setAttribute('visible', false);
         animationsEl.setAttribute('data-meta-mesh-animation-mixer', '');
 
-        animationsEl.addEventListener('model-loaded', ({ srcElement }) => {
+        animationsEl.addEventListener('model-loaded', ({ srcElement }: any) => {
           (animationsEl as Entity).setAttribute(
             'data-meta-mesh-animation-mixer-ready',
             '',
@@ -58,7 +58,7 @@ export class MeshAnimationMixerElement extends MeshCommon {
       } else if (
         !animationsEl.hasAttribute('data-meta-mesh-animation-mixer-ready')
       ) {
-        animationsEl.addEventListener('model-loaded', ({ srcElement }) => {
+        animationsEl.addEventListener('model-loaded', ({ srcElement }: any) => {
           resolve(srcElement as Entity);
         });
       } else {
@@ -67,12 +67,10 @@ export class MeshAnimationMixerElement extends MeshCommon {
     });
   }
 
-  override async updateMesh(
-    parentMesh: THREE.Object3D<THREE.Event>,
-  ): Promise<void> {
+  override async updateMesh(parentMesh: any): Promise<void> {
     const mesh = !this.object
       ? parentMesh
-      : (parentMesh?.getObjectByName(this.object) as THREE.Object3D<Event>);
+      : (parentMesh?.getObjectByName(this.object) as any);
 
     if (!mesh) return;
     this.el.setObject3D('mesh', mesh);

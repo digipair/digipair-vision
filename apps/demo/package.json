@@ -1,5 +1,7 @@
 {
   "name": "@digipair-vision/demo",
   "version": "0.0.0",
-  "type": "module"
+  "dependencies": {},
+  "main": "./index.cjs.js",
+  "module": "./index.esm.js"
 }

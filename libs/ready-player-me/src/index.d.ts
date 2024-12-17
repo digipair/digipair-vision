@@ -1,0 +1,1 @@
+export * from './src/lib/ready-player-me';

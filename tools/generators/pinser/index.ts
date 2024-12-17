@@ -6,18 +6,17 @@ import {
   installPackagesTask,
   names,
   Tree,
-} from '@nrwl/devkit';
-import { libraryGenerator } from '@nrwl/workspace/generators';
+} from '@nx/devkit';
+import { libraryGenerator } from '@nx/js';
 import * as path from 'path';
 import { v4 } from 'uuid';
 
 export default async function (tree: Tree, schema: any) {
-  const { npmScope } = getWorkspaceLayout(tree);
+  const { npmScope }: any = getWorkspaceLayout(tree);
   const { className } = names(schema.name);
 
   await libraryGenerator(tree, {
-    name: schema.name,
-    skipBabelrc: true,
+    name: schema.name
   });
   tree.delete(`./libs/${schema.name}/src/lib/${schema.name}.ts`);
   tree.delete(`./libs/${schema.name}/src/lib/${schema.name}.spec.ts`);

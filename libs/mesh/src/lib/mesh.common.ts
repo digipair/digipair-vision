@@ -72,12 +72,10 @@ export abstract class MeshCommon extends MetaElement {
     }
   }
 
-  protected async updateMesh(
-    parentMesh: THREE.Object3D<THREE.Event>,
-  ): Promise<void> {
+  protected async updateMesh(parentMesh: any): Promise<void> {
     const mesh = !this.object
       ? parentMesh
-      : (parentMesh?.getObjectByName(this.object) as THREE.Object3D<Event>);
+      : (parentMesh?.getObjectByName(this.object) as any);
 
     if (!mesh) return;
     this.el.setObject3D('mesh', mesh);

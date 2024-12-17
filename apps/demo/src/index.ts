@@ -11,7 +11,6 @@ import '@digipair-vision/ready-player-me';
 import '@digipair-vision/router';
 import '@digipair-vision/scene';
 import '@digipair-vision/screen-shared';
-import '@digipair-vision/spline';
 import '@digipair-vision/teleport';
 
 import './app/pinser.metaverse';

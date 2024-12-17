@@ -1,40 +1,26 @@
 {
-  "$schema": "..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
+  "name": "teleport",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/teleport/src",
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nrwl/js:swc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/teleport",
-        "main": "libs/teleport/src/index.ts",
-        "tsConfig": "libs/teleport/tsconfig.lib.json",
-        "assets": ["libs/teleport/*.md"]
-      }
-    },
-    "build-es": {
-      "executor": "@nrwl/web:rollup",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "project": "libs/teleport/package.esm.json",
-        "outputPath": "dist/libs/teleport-es",
-        "compiler": "swc",
-        "entryFile": "libs/teleport/src/index.ts",
-        "tsConfig": "libs/teleport/tsconfig.lib.json",
-        "rollupConfig": ["libs/teleport/rollup.config.cjs"],
-        "assets": [
-          {
-            "glob": "libs/teleport/*.md",
-            "input": ".",
-            "output": "."
-          },
-          {
-            "glob": "libs/teleport/src/index.html",
-            "input": ".",
-            "output": "."
-          }
-        ]
+    "executor": "@nx/rollup:rollup",
+    "outputs": ["{options.outputPath}"],
+    "options": {
+      "outputPath": "dist/libs/teleport",
+      "main": "libs/teleport/src/index.ts",
+      "tsConfig": "libs/teleport/tsconfig.lib.json",
+      "assets": [
+          "libs/teleport/src/index.d.ts",
+          "libs/teleport/src/schema.json",
+          "libs/teleport/src/schema.fr.json",
+          "libs/teleport/src/index.html"
+        ],
+      "rollupConfig": ["libs/teleport/rollup.build.cjs"],
+      "project": "libs/teleport/package.json",
+      "compiler": "swc",
+      "format": ["cjs", "esm"]
       },
       "configurations": {
         "serve": {
@@ -43,57 +29,17 @@
         }
       }
     },
-    "publish": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "node tools/scripts/publish.mjs teleport {args.ver} {args.tag}"
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build"
-        }
-      ]
-    },
-    "publish-es": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "node tools/scripts/publish-es.mjs teleport {args.ver} {args.tag}"
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build-es"
-        }
-      ]
-    },
     "serve": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
       "options": {
-        "command": "npm-run-all --parallel \"serve ./dist/libs/teleport-es\" \"nx run teleport:build-es:serve\""
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build-es"
-        }
-      ]
-    },
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/teleport/**/*.ts"]
+        "command": "npm-run-all --parallel \"serve ./dist/libs/teleport\" \"nx run teleport:build:serve\""
       }
     },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/teleport"],
-      "options": {
-        "jestConfig": "libs/teleport/jest.config.ts",
-        "passWithNoTests": true
-      }
+    "publish": {
+      "command": "node tools/scripts/publish.mjs teleport {args.ver} {args.tag}",
+      "dependsOn": ["build"]
     }
   },
-  "tags": ["teleport"]
+  "tags": []
 }

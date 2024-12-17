@@ -1,76 +1,35 @@
 {
-  "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
+  "name": "core",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/core/src",
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nrwl/js:swc",
+      "executor": "@nx/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/libs/core",
         "main": "libs/core/src/index.ts",
         "tsConfig": "libs/core/tsconfig.lib.json",
-        "assets": ["libs/core/*.md"]
-      }
-    },
-    "build-es": {
-      "executor": "@nrwl/web:rollup",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "project": "libs/core/package.esm.json",
-        "outputPath": "dist/libs/core-es",
-        "compiler": "swc",
-        "entryFile": "libs/core/src/index.ts",
-        "tsConfig": "libs/core/tsconfig.lib.json",
-        "rollupConfig": ["libs/core/rollup.config.cjs"],
         "assets": [
-          {
-            "glob": "libs/core/*.md",
-            "input": ".",
-            "output": "."
-          }
-        ]
+          "libs/core/src/index.d.ts"
+        ],
+        "project": "libs/core/package.json",
+        "compiler": "swc",
+        "format": ["esm", "cjs"],
+        "rollupConfig": ["libs/core/rollup.build.cjs"]
+      },
+      "configurations": {
+        "serve": {
+          "watch": true,
+          "assets": []
+        }
       }
     },
     "publish": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "node tools/scripts/publish.mjs core {args.ver} {args.tag}"
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build"
-        }
-      ]
-    },
-    "publish-es": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "node tools/scripts/publish-es.mjs core {args.ver} {args.tag}"
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build-es"
-        }
-      ]
-    },
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/core/**/*.ts"]
-      }
-    },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/core"],
-      "options": {
-        "jestConfig": "libs/core/jest.config.ts",
-        "passWithNoTests": true
-      }
+      "command": "node tools/scripts/publish.mjs core {args.ver} {args.tag}",
+      "dependsOn": ["build"]
     }
   },
-  "tags": ["library", "core"]
+  "tags": []
 }
