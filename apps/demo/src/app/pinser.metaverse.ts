@@ -1,17 +1,17 @@
 import {
-  customElement,
-  html,
-  inject,
-  MetaElement,
-} from '@digipair-vision/core';
-import { PlayerProvider } from '@digipair-vision/player';
-import { RouterProvider } from '@digipair-vision/router';
-import '@digipair-vision/screen-shared';
-import '@digipair-vision/teleport';
+    customElement,
+    html,
+    inject,
+    MetaElement,
+} from '@digipair-xr/core';
+import { PlayerProvider } from '@digipair-xr/player';
+import { RouterProvider } from '@digipair-xr/router';
+import '@digipair-xr/screen-shared';
+import '@digipair-xr/teleport';
 import { routes } from './pinser.routes';
 import { SessionProvider } from './session.provider';
 
-@customElement('digipair-vision', {
+@customElement('digipair-xr', {
   providers: [RouterProvider, SessionProvider],
 })
 export class PinserMetaverseSpaceElement extends MetaElement {

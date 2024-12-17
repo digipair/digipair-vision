@@ -1,15 +1,15 @@
 import {
-  customElement,
-  Entity,
-  html,
-  MetaElement,
-  nothing,
-  property,
-  state,
-  TemplateResult,
-  unsafeHTML,
-} from '@digipair-vision/core';
-import '@digipair-vision/design-system';
+    customElement,
+    Entity,
+    html,
+    MetaElement,
+    nothing,
+    property,
+    state,
+    TemplateResult,
+    unsafeHTML,
+} from '@digipair-xr/core';
+import '@digipair-xr/design-system';
 
 @customElement('meta-info')
 export class InfoElement extends MetaElement {

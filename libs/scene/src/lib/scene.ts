@@ -1,10 +1,10 @@
 import {
-  customHtmlElement,
-  html,
-  MetaHtmlElement,
-  propertyHtml,
-  TemplateResult,
-} from '@digipair-vision/core';
+    customHtmlElement,
+    html,
+    MetaHtmlElement,
+    propertyHtml,
+    TemplateResult,
+} from '@digipair-xr/core';
 import 'aframe-extras';
 import 'aframe-gradient-sky';
 import 'aframe-physics-extras';

@@ -1,12 +1,12 @@
 import {
-  customElement,
-  Entity,
-  html,
-  inject,
-  MetaElement,
-  property,
-  TemplateResult,
-} from '@digipair-vision/core';
+    customElement,
+    Entity,
+    html,
+    inject,
+    MetaElement,
+    property,
+    TemplateResult,
+} from '@digipair-xr/core';
 import { RouteProvider } from '../providers/route.provider';
 import { RouterProvider } from '../providers/router.provider';
 

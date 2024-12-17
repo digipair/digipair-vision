@@ -1,11 +1,11 @@
 import {
-  customElement,
-  html,
-  MetaElement,
-  TemplateResult,
-  unsafeHTML,
-} from '@digipair-vision/core';
-import '@digipair-vision/design-system';
+    customElement,
+    html,
+    MetaElement,
+    TemplateResult,
+    unsafeHTML,
+} from '@digipair-xr/core';
+import '@digipair-xr/design-system';
 import './menu-panels.element';
 import './menu-side.element';
 import { MenuProvider } from './menu.provider';

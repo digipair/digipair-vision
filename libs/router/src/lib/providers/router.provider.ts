@@ -1,4 +1,4 @@
-import { Entity, injectable, MetaProvider } from '@digipair-vision/core';
+import { Entity, injectable, MetaProvider } from '@digipair-xr/core';
 import { Route, Router } from '@vaadin/router';
 
 @injectable()

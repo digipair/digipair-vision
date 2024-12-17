@@ -1,4 +1,4 @@
-import { THREE } from '@digipair-vision/core';
+import { THREE } from '@digipair-xr/core';
 export const {
   ACESFilmicToneMapping,
   AddEquation,

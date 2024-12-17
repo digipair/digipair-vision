@@ -3,17 +3,17 @@
   "version": "0.0.0",
   "type": "module",
   "license": "MIT",
-  "homepage": "https://github.com/digipair/digipair-vision/tree/master/libs/<%= name %>",
+  "homepage": "https://github.com/digipair/digipair-xr/tree/master/libs/<%= name %>",
   "keywords": [
     "pinser",
     "aframe",
     "lit",
     "metaverse",
-    "digipair-vision",
+    "digipair-xr",
     "teleport"
   ],
   "repository": {
-    "url": "https://github.com/digipair/digipair-vision.git",
+    "url": "https://github.com/digipair/digipair-xr.git",
     "type": "git"
   },
   "author": {
@@ -22,6 +22,6 @@
     "url": "https://www.digipair.ai"
   },
   "peerDependencies": {
-    "@digipair-vision/core": "latest"
+    "@digipair-xr/core": "latest"
   }
 }

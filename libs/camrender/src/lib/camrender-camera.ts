@@ -4,14 +4,14 @@
 //   https://wirewhiz.com/how-to-use-a-cameras-output-as-a-texture-in-aframe/
 //
 import {
-  customElement,
-  Entity,
-  html,
-  MetaElement,
-  property,
-  TemplateResult,
-  THREE,
-} from '@digipair-vision/core';
+    customElement,
+    Entity,
+    html,
+    MetaElement,
+    property,
+    TemplateResult,
+    THREE,
+} from '@digipair-xr/core';
 
 @customElement('meta-camrender-camera')
 export class CamrenderCameraElement extends MetaElement {

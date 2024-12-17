@@ -1,4 +1,4 @@
-import { Entity } from '@digipair-vision/core';
+import { Entity } from '@digipair-xr/core';
 import { GLTFExporter } from './GLTFExporter';
 
 export function exporter(object3D: Entity['object3D'], filename: string): void {

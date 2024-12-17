@@ -1,4 +1,4 @@
-import { customElement, MetaElement, property } from '@digipair-vision/core';
+import { customElement, MetaElement, property } from '@digipair-xr/core';
 // @ts-ignore
 import { Web2VR } from './web2vr/web2vr';
 

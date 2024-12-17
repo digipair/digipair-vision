@@ -1,4 +1,4 @@
-import { Entity, THREE } from '@digipair-vision/core';
+import { Entity, THREE } from '@digipair-xr/core';
 
 AFRAME.registerComponent('selectable', {
   schema: {

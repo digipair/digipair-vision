@@ -1,12 +1,12 @@
 import {
-  customElement,
-  Entity,
-  html,
-  MetaElement,
-  property,
-  TemplateResult,
-  THREE,
-} from '@digipair-vision/core';
+    customElement,
+    Entity,
+    html,
+    MetaElement,
+    property,
+    TemplateResult,
+    THREE,
+} from '@digipair-xr/core';
 
 @customElement('meta-screen-shared-webcam')
 export class ScreenSharedWebcamElement extends MetaElement {

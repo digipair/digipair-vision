@@ -1,10 +1,10 @@
 import {
-  customElement,
-  html,
-  MetaElement,
-  property,
-  TemplateResult,
-} from '@digipair-vision/core';
+    customElement,
+    html,
+    MetaElement,
+    property,
+    TemplateResult,
+} from '@digipair-xr/core';
 import { icons } from '../../const/icons.const';
 
 @customElement('meta-icon')

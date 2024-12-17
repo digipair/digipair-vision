@@ -1,12 +1,12 @@
 import {
-  customElement,
-  MetaElement,
-  MetaProvider,
-} from '@digipair-vision/core';
+    customElement,
+    MetaElement,
+    MetaProvider,
+} from '@digipair-xr/core';
 import {
-  PreventAndRedirectCommands,
-  Router,
-  RouterLocation,
+    PreventAndRedirectCommands,
+    Router,
+    RouterLocation,
 } from '@vaadin/router';
 
 declare const AFRAME: any;

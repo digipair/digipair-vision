@@ -1,12 +1,12 @@
 import {
-  customElement,
-  html,
-  MetaElement,
-  nothing,
-  property,
-  state,
-  TemplateResult,
-} from '@digipair-vision/core';
+    customElement,
+    html,
+    MetaElement,
+    nothing,
+    property,
+    state,
+    TemplateResult,
+} from '@digipair-xr/core';
 import './icon.element';
 
 const BACKGROUND = '#0062ff';

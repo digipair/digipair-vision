@@ -3,7 +3,7 @@ import {
     html,
     MetaElement,
     TemplateResult
-} from '@digipair-vision/core';
+} from '@digipair-xr/core';
 
 @customElement('meta-<%= name %>')
 export class <%= className %>Element extends MetaElement {

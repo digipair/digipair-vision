@@ -1,5 +1,5 @@
 {
-  "name": "@digipair-vision/screen-shared",
+  "name": "@digipair-xr/screen-shared",
   "version": "0.0.0",
   "dependencies": {},
   "main": "./index.cjs.js",

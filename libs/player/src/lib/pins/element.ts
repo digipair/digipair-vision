@@ -1,12 +1,12 @@
 import {
-  customElement,
-  html,
-  inject,
-  MetaElement,
-  state,
-  TemplateResult,
-  unsafeHTML,
-} from '@digipair-vision/core';
+    customElement,
+    html,
+    inject,
+    MetaElement,
+    state,
+    TemplateResult,
+    unsafeHTML,
+} from '@digipair-xr/core';
 import { PlayerProvider } from '../player/player.provider';
 
 declare const NAF: any;

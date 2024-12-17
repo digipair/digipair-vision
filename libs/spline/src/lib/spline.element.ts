@@ -1,4 +1,4 @@
-import { customElement, MetaElement, property } from '@digipair-vision/core';
+import { customElement, MetaElement, property } from '@digipair-xr/core';
 import SplineLoader from '@splinetool/loader';
 
 @customElement('meta-spline')

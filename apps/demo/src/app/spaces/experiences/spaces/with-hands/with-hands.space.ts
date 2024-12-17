@@ -1,12 +1,12 @@
 import {
-  html,
-  inject,
-  MetaElement,
-  nothing,
-  state,
-} from '@digipair-vision/core';
-import '@digipair-vision/design-system';
-import { routeElement } from '@digipair-vision/router';
+    html,
+    inject,
+    MetaElement,
+    nothing,
+    state,
+} from '@digipair-xr/core';
+import '@digipair-xr/design-system';
+import { routeElement } from '@digipair-xr/router';
 import { SessionProvider } from '../../../../session.provider';
 import './stand.element';
 

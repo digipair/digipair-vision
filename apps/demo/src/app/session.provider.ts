@@ -1,6 +1,6 @@
-import { inject, injectable, MetaProvider, state } from '@digipair-vision/core';
-import { PlayerProvider } from '@digipair-vision/player';
-import { RouterProvider } from '@digipair-vision/router';
+import { inject, injectable, MetaProvider, state } from '@digipair-xr/core';
+import { PlayerProvider } from '@digipair-xr/player';
+import { RouterProvider } from '@digipair-xr/router';
 
 const SESSION_SHARED = false;
 

@@ -1,14 +1,14 @@
 import {
-  customElement,
-  html,
-  inject,
-  MetaElement,
-  nothing,
-  property,
-  TemplateResult,
-  unsafeHTML,
-} from '@digipair-vision/core';
-import { PlayerProvider } from '@digipair-vision/player';
+    customElement,
+    html,
+    inject,
+    MetaElement,
+    nothing,
+    property,
+    TemplateResult,
+    unsafeHTML,
+} from '@digipair-xr/core';
+import { PlayerProvider } from '@digipair-xr/player';
 
 @customElement('meta-scene-container', {
   providers: [PlayerProvider],

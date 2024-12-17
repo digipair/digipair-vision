@@ -1,11 +1,11 @@
 import {
-  customElement,
-  html,
-  MetaElement,
-  nothing,
-  property,
-  TemplateResult,
-} from '@digipair-vision/core';
+    customElement,
+    html,
+    MetaElement,
+    nothing,
+    property,
+    TemplateResult,
+} from '@digipair-xr/core';
 import '../toolbar/toolbar';
 
 @customElement('meta-player-camera')

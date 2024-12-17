@@ -10,7 +10,7 @@
 
 ## Generate new Pin's
 
-On [digipair-vision](https://opensource.digipair.ai), a library who exposes an autonomous 3d webcomponents is named a pin's.  
+On [digipair-xr](https://opensource.digipair.ai), a library who exposes an autonomous 3d webcomponents is named a pin's.  
 To generate a Pin's, we will use a nx generator embedded in the [metaverse-bootstrap](https://github.com/pinser-metaverse/metaverse-boostrap) project.
 
 To develop our game `tic-tac-toe`, we will create 1 Pin's `tictactoe` composed with:
@@ -43,7 +43,7 @@ To add a provider in your new Pin's, create a new file `tictactoe.provider.ts` i
 Place the foillowing code in this file:
 
 ```typescript
-import { injectable, MetaProvider, state } from '@digipair-vision/core';
+import { injectable, MetaProvider, state } from '@digipair-xr/core';
 
 @injectable()
 export class TictactoeProvider extends MetaProvider {
@@ -96,7 +96,7 @@ Create a new file `tictactoe-pawn.element.ts` in the directory `libs/game/tictac
 Place the foillowing code in your file:
 
 ```typescript
-import { customElement, html, inject, MetaElement, property, state, TemplateResult } from '@digipair-vision/core';
+import { customElement, html, inject, MetaElement, property, state, TemplateResult } from '@digipair-xr/core';
 import { TictactoeProvider } from './tictactoe.provider';
 
 @customElement('game-tictactoe-pawn')
@@ -136,7 +136,7 @@ export class TictactoePawnElement extends MetaElement {
 - Function `add` used to play a new game step
 - `selectable` is used to listen the events `click`, `mouseenter` and `mouseleave`
 
-`a-box` and `a-text` are [AFrame](https://aframe.io) primitives. All [AFrame](https://aframe.io) primitives are usable in a [digipair-vision](https://opensource.digipair.ai) project.  
+`a-box` and `a-text` are [AFrame](https://aframe.io) primitives. All [AFrame](https://aframe.io) primitives are usable in a [digipair-xr](https://opensource.digipair.ai) project.  
 [Go here](https://aframe.io/docs/) to find the full primitive list.
 
 ## Update Tictactoe element
@@ -146,7 +146,7 @@ Update `tictactoe` element to display pawns and a button `reset`
 Replace file `libs/game/tictactoe/src/lib/tictactoe.element.ts` content by:
 
 ```typescript
-import { customElement, html, inject, MetaElement, TemplateResult } from '@digipair-vision/core';
+import { customElement, html, inject, MetaElement, TemplateResult } from '@digipair-xr/core';
 import { TictactoeProvider } from './tictactoe.provider';
 import './tictactoe-pawn.element';
 
@@ -191,9 +191,9 @@ Now, your pin's `game-tictactoe` is ready to be used. Next step is to place the 
 Replace `apps/metaverse/src/lib/metaverse.space.ts` content with:
 
 ```typescript
-import { customElement, html, inject, MetaElement } from '@digipair-vision/core';
-import { PlayerProvider } from '@digipair-vision/player';
-import '@digipair-vision/teleport';
+import { customElement, html, inject, MetaElement } from '@digipair-xr/core';
+import { PlayerProvider } from '@digipair-xr/player';
+import '@digipair-xr/teleport';
 import '@metaverse-bootstrap/game/tictactoe';
 
 @customElement('metaverse-bootstrap-space')
@@ -299,4 +299,4 @@ export class TictactoePawnElement extends MetaElement {
    ></iframe>
 
 > Don't hesitate to improve this documentation, any help will be amazing !  
-> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/digipair/digipair-vision/blob/master/docs/element-creation.md)
+> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/digipair/digipair-xr/blob/master/docs/element-creation.md)

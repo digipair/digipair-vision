@@ -1,5 +1,5 @@
 {
-  "name": "@digipair-vision/observe",
+  "name": "@digipair-xr/observe",
   "version": "0.0.0",
   "dependencies": {},
   "main": "./index.cjs.js",

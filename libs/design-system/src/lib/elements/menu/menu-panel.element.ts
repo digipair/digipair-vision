@@ -1,10 +1,10 @@
 import {
-  customElement,
-  html,
-  MetaElement,
-  property,
-  TemplateResult,
-} from '@digipair-vision/core';
+    customElement,
+    html,
+    MetaElement,
+    property,
+    TemplateResult,
+} from '@digipair-xr/core';
 
 @customElement('meta-menu-panel')
 export class MenuPanelElement extends MetaElement {

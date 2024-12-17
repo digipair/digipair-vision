@@ -9,5 +9,5 @@
 > Alpha version
 
 [Get Started](#main)
-[GitHub](https://github.com/digipair/digipair-vision)
+[GitHub](https://github.com/digipair/digipair-xr)
 [Discord](https://discord.gg/kCqF8xaMHJ)

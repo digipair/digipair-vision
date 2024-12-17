@@ -1,5 +1,5 @@
 {
-  "name": "@digipair-vision/camrender",
+  "name": "@digipair-xr/camrender",
   "version": "0.0.0",
   "dependencies": {},
   "main": "./index.cjs.js",

@@ -1,4 +1,4 @@
-import { injectable, MetaProvider, state } from '@digipair-vision/core';
+import { injectable, MetaProvider, state } from '@digipair-xr/core';
 
 @injectable()
 export class MenuProvider extends MetaProvider {

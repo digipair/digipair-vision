@@ -1,4 +1,4 @@
-import { Entity, MetaElement, THREE } from '@digipair-vision/core';
+import { Entity, MetaElement, THREE } from '@digipair-xr/core';
 
 function getPathTo(element: Element, root: Element): string {
   if (element.id !== '') return 'id("' + element.id + '")';

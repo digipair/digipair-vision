@@ -1,4 +1,4 @@
-import { customElement, property } from '@digipair-vision/core';
+import { customElement, property } from '@digipair-xr/core';
 import { MeshCommon } from './mesh.common';
 
 @customElement('meta-mesh')

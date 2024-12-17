@@ -1,11 +1,11 @@
 import {
-  addDependenciesToPackageJson,
-  formatFiles,
-  generateFiles,
-  getWorkspaceLayout,
-  installPackagesTask,
-  names,
-  Tree,
+    addDependenciesToPackageJson,
+    formatFiles,
+    generateFiles,
+    getWorkspaceLayout,
+    installPackagesTask,
+    names,
+    Tree,
 } from '@nx/devkit';
 import { libraryGenerator } from '@nx/js';
 import * as path from 'path';
@@ -33,7 +33,7 @@ export default async function (tree: Tree, schema: any) {
     { '@swc/helpers': '0.3.13' },
     {
       '@types/aframe': '^1.2.0',
-      '@digipair-vision/core': 'latest',
+      '@digipair-xr/core': 'latest',
       'npm-run-all': '^4.1.5',
       serve: '^14.0.1',
       '@swc/core': '1.2.185',

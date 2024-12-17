@@ -1,10 +1,10 @@
 import {
-  customElement,
-  html,
-  inject,
-  MetaElement,
-  property,
-} from '@digipair-vision/core';
+    customElement,
+    html,
+    inject,
+    MetaElement,
+    property,
+} from '@digipair-xr/core';
 import { PlayerProvider } from '../player/player.provider';
 
 @customElement('meta-teleportable')

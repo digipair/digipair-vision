@@ -1,5 +1,5 @@
 {
-  "name": "@digipair-vision/spline",
+  "name": "@digipair-xr/spline",
   "version": "0.0.0",
   "dependencies": {},
   "main": "./index.cjs.js",
