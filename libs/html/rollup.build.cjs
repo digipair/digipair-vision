@@ -4,7 +4,7 @@ const path = require('path');
 
 function getRollupOptions(options) {
   const extraGlobals = {};
-  const externals = options.output.format === 'cjs' ? ['@digipair-vision/core', '@digipair-vision/scene'] : [];
+  const externals = options.output.format === 'cjs' ? ['@digipair-vision/core'] : [];
 
   const value = {
     ...options,
