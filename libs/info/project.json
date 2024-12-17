@@ -33,7 +33,7 @@
       "executor": "nx:run-commands",
       "dependsOn": ["build"],
       "options": {
-        "command": "npx serve dist/libs/info"
+        "command": "npm-run-all --parallel \"serve ./dist/libs/info\" \"nx run info:build:serve\""
       }
     },
     "publish": {

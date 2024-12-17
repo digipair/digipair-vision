@@ -33,7 +33,7 @@
       "executor": "nx:run-commands",
       "dependsOn": ["build"],
       "options": {
-        "command": "npx serve dist/libs/ready-player-me"
+        "command": "npm-run-all --parallel \"serve ./dist/libs/ready-player-me\" \"nx run ready-player-me:build:serve\""
       }
     },
     "publish": {

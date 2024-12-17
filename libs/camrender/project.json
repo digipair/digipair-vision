@@ -33,7 +33,7 @@
       "executor": "nx:run-commands",
       "dependsOn": ["build"],
       "options": {
-        "command": "npx serve dist/libs/camrender"
+        "command": "npm-run-all --parallel \"serve ./dist/libs/camrender\" \"nx run camrender:build:serve\""
       }
     },
     "publish": {

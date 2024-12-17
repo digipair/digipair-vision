@@ -33,7 +33,7 @@
       "executor": "nx:run-commands",
       "dependsOn": ["build"],
       "options": {
-        "command": "npx serve dist/libs/teleport"
+        "command": "npm-run-all --parallel \"serve ./dist/libs/teleport\" \"nx run teleport:build:serve\""
       }
     },
     "publish": {

@@ -33,7 +33,7 @@
       "executor": "nx:run-commands",
       "dependsOn": ["build"],
       "options": {
-        "command": "npx serve dist/libs/router"
+        "command": "npm-run-all --parallel \"serve ./dist/libs/router\" \"nx run router:build:serve\""
       }
     },
     "publish": {
