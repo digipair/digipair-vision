@@ -1,14 +1,14 @@
 import {
-  customElement,
-  html,
-  inject,
-  MetaElement,
-  property,
-  state,
-  TemplateResult,
-  THREE,
-} from '@digipair-vision/core';
-import { PlayerProvider } from '@digipair-vision/player';
+    customElement,
+    html,
+    inject,
+    MetaElement,
+    property,
+    state,
+    TemplateResult,
+    THREE,
+} from '@digipair-xr/core';
+import { PlayerProvider } from '@digipair-xr/player';
 
 @customElement('meta-teleport')
 export class TeleportElement extends MetaElement {

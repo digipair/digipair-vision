@@ -1,5 +1,5 @@
 {
-  "name": "@digipair-vision/scene",
+  "name": "@digipair-xr/scene",
   "version": "0.0.0",
   "dependencies": {},
   "typings": "./index.d.ts",

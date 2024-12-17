@@ -1,4 +1,4 @@
-import { customElement, property, Entity } from '@digipair-vision/core';
+import { customElement, Entity, property } from '@digipair-xr/core';
 import { MeshCommon } from './mesh.common';
 
 @customElement('meta-mesh-animation-mixer')

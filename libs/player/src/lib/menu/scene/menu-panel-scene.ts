@@ -1,12 +1,12 @@
 import {
-  customElement,
-  Entity,
-  html,
-  inject,
-  MetaElement,
-  TemplateResult,
-} from '@digipair-vision/core';
-import '@digipair-vision/design-system';
+    customElement,
+    Entity,
+    html,
+    inject,
+    MetaElement,
+    TemplateResult,
+} from '@digipair-xr/core';
+import '@digipair-xr/design-system';
 import { PlayerProvider } from '../../player/player.provider';
 
 @customElement('meta-player-menu-planel-scene')

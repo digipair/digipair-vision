@@ -1,5 +1,5 @@
 {
-  "name": "@digipair-vision/html",
+  "name": "@digipair-xr/html",
   "version": "0.0.0",
   "dependencies": {},
   "main": "./index.cjs.js",

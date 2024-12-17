@@ -1,14 +1,14 @@
 # Available elements
 
 > **_ Libraries concerned _**  
-> [@digipair-vision/core](https://www.npmjs.com/package/@digipair-vision/core)  
-> [@digipair-vision/mesh](https://www.npmjs.com/package/@digipair-vision/mesh)  
-> [@digipair-vision/teleport](https://www.npmjs.com/package/@digipair-vision/teleport)  
-> [@digipair-vision/design-system](https://www.npmjs.com/package/@digipair-vision/design-system)  
-> [@digipair-vision/screen-shared](https://www.npmjs.com/package/@digipair-vision/screen-shared)  
-> [@digipair-vision/info](https://www.npmjs.com/package/@digipair-vision/info)
+> [@digipair-xr/core](https://www.npmjs.com/package/@digipair-xr/core)  
+> [@digipair-xr/mesh](https://www.npmjs.com/package/@digipair-xr/mesh)  
+> [@digipair-xr/teleport](https://www.npmjs.com/package/@digipair-xr/teleport)  
+> [@digipair-xr/design-system](https://www.npmjs.com/package/@digipair-xr/design-system)  
+> [@digipair-xr/screen-shared](https://www.npmjs.com/package/@digipair-xr/screen-shared)  
+> [@digipair-xr/info](https://www.npmjs.com/package/@digipair-xr/info)
 
-## @digipair-vision/spline
+## @digipair-xr/spline
 
 Display a [spline](https://spline.design) scene
 
@@ -16,7 +16,7 @@ Display a [spline](https://spline.design) scene
 <meta-spline scene="SPLINECODE_URL"></meta-spline>
 ```
 
-## @digipair-vision/spline
+## @digipair-xr/spline
 
 Manage a mesh in a GLTF or a Spline object
 
@@ -32,7 +32,7 @@ Manage a mesh in a GLTF or a Spline object
 </a-gltf-model>
 ```
 
-## @digipair-vision/teleport
+## @digipair-xr/teleport
 
 Display a ring where the user is teleported if he selects it.
 
@@ -40,7 +40,7 @@ Display a ring where the user is teleported if he selects it.
 <meta-teleport></meta-teleport>
 ```
 
-## @digipair-vision/design-system
+## @digipair-xr/design-system
 
 ### Button
 
@@ -59,7 +59,7 @@ Display an icon
 ```
 
 > see the list [here](https://fonts.google.com/icons)  
-> see the real name [here](https://github.com/digipair/digipair-vision/blob/master/libs/design-system/src/lib/const/icons.const.ts)
+> see the real name [here](https://github.com/digipair/digipair-xr/blob/master/libs/design-system/src/lib/const/icons.const.ts)
 
 ### bubble
 
@@ -77,7 +77,7 @@ Display an dia&log box
 <meta-dialog color="COLOR" icon="ICON" width="WIDTH" height="HEIGHT"></meta-dialog>
 ```
 
-## @digipair-vision/screen-shared
+## @digipair-xr/screen-shared
 
 Screen used to shared user webcam or user screen.
 
@@ -85,7 +85,7 @@ Screen used to shared user webcam or user screen.
 <meta-screen-shared></meta-screen-shared>
 ```
 
-## @digipair-vision/info
+## @digipair-xr/info
 
 Display an oinformation icon.  
 When the user is behind this icon, a dialog box is displayed with elements inner the template element.
@@ -98,7 +98,7 @@ When the user is behind this icon, a dialog box is displayed with elements inner
 
 ## AFrame primitives
 
-All [AFrame](https://aframe.io) primitives are usable in a [digipair-vision](https://opensource.digipair.ai) project.  
+All [AFrame](https://aframe.io) primitives are usable in a [digipair-xr](https://opensource.digipair.ai) project.  
 [Go here](https://aframe.io/docs/) to find the full primitive list.
 
 ## Example
@@ -111,4 +111,4 @@ All [AFrame](https://aframe.io) primitives are usable in a [digipair-vision](htt
    ></iframe>
 
 > Don't hesitate to improve this documentation, any help will be amazing !  
-> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/digipair/digipair-vision/blob/master/docs/available-elements.md)
+> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/digipair/digipair-xr/blob/master/docs/available-elements.md)

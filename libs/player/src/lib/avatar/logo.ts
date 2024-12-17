@@ -1,9 +1,9 @@
 import {
-  customElement,
-  html,
-  MetaElement,
-  TemplateResult,
-} from '@digipair-vision/core';
+    customElement,
+    html,
+    MetaElement,
+    TemplateResult,
+} from '@digipair-xr/core';
 import './logo-box';
 
 @customElement('meta-logo')

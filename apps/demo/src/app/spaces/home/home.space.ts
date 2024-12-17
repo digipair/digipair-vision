@@ -1,7 +1,7 @@
-import { html, inject, MetaElement } from '@digipair-vision/core';
-import '@digipair-vision/html';
-import '@digipair-vision/mesh';
-import { routeElement } from '@digipair-vision/router';
+import { html, inject, MetaElement } from '@digipair-xr/core';
+import '@digipair-xr/html';
+import '@digipair-xr/mesh';
+import { routeElement } from '@digipair-xr/router';
 import { SessionProvider } from '../../session.provider';
 import './title.element';
 

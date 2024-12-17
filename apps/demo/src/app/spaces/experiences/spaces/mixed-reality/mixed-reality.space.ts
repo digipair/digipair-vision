@@ -1,5 +1,5 @@
-import { html, inject, MetaElement } from '@digipair-vision/core';
-import { routeElement } from '@digipair-vision/router';
+import { html, inject, MetaElement } from '@digipair-xr/core';
+import { routeElement } from '@digipair-xr/router';
 import { SessionProvider } from '../../../../session.provider';
 
 @routeElement('experiences-mixed-reality-space')

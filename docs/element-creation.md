@@ -1,12 +1,12 @@
 # Element creation
 
 > **_ Libraries concerned _**  
-> [@digipair-vision/core](https://www.npmjs.com/package/@digipair-vision/core)  
-> [@digipair-vision/observe](https://www.npmjs.com/package/@digipair-vision/observe)
+> [@digipair-xr/core](https://www.npmjs.com/package/@digipair-xr/core)  
+> [@digipair-xr/observe](https://www.npmjs.com/package/@digipair-xr/observe)
 
 ## Pin's
 
-On [digipair-vision](https://opensource.digipair.ai), a library who exposes an autonomous 3d webcomponents is named a pin's.  
+On [digipair-xr](https://opensource.digipair.ai), a library who exposes an autonomous 3d webcomponents is named a pin's.  
 In this section, we will create your first pin's !
 
 ### Generate a new Pin's
@@ -52,13 +52,13 @@ yarn nx serve {pins-domain}-{pins-name}
 
 ## Element
 
-[digipair-vision](https://opensource.digipair.ai) element is a 3D web component.  
+[digipair-xr](https://opensource.digipair.ai) element is a 3D web component.  
 By convention, it is generally creatted in a typescript file ended by `.element.ts`.
 
 ### @customElement decorator
 
-To keep the compatibility with [AFrame](https://aframe.io), [digipair-vision](https://opensource.digipair.ai) use a similar interface that [lit](https://lit.dev) to manage the properties, but don't use [lit](https://lit.dev). So, there are some little differencies with the behavior and the interface.
-To create a [digipair-vision](https://opensource.digipair.ai) element, you can use the decorator `@customElement`.
+To keep the compatibility with [AFrame](https://aframe.io), [digipair-xr](https://opensource.digipair.ai) use a similar interface that [lit](https://lit.dev) to manage the properties, but don't use [lit](https://lit.dev). So, there are some little differencies with the behavior and the interface.
+To create a [digipair-xr](https://opensource.digipair.ai) element, you can use the decorator `@customElement`.
 
 ```typescript
 @customElement(element: string, options: {
@@ -73,7 +73,7 @@ To create a [digipair-vision](https://opensource.digipair.ai) element, you can u
 Example:
 
 ```typescript
-import { customElement, html, MetaElement, TemplateResult } from '@digipair-vision/core';
+import { customElement, html, MetaElement, TemplateResult } from '@digipair-xr/core';
 
 @customElement('example-hello-world')
 export class HelloWorldElement extends MetaElement {
@@ -85,10 +85,10 @@ export class HelloWorldElement extends MetaElement {
 
 ### Display variable
 
-[digipair-vision](https://opensource.digipair.ai) use [lit-html](https://lit.dev) to menage the template. Your can read more information on [lit documentation](https://lit.dev/docs/templates/overview/).
+[digipair-xr](https://opensource.digipair.ai) use [lit-html](https://lit.dev) to menage the template. Your can read more information on [lit documentation](https://lit.dev/docs/templates/overview/).
 
 ```typescript
-import { customElement, html, MetaElement, TemplateResult } from '@digipair-vision/core';
+import { customElement, html, MetaElement, TemplateResult } from '@digipair-xr/core';
 
 @customElement('example-hello-world')
 export class HelloWorldElement extends MetaElement {
@@ -101,10 +101,10 @@ export class HelloWorldElement extends MetaElement {
 
 ### Manage events
 
-[digipair-vision](https://opensource.digipair.ai) use [lit-html](https://lit.dev) to menage the template. Your can read more information on [lit documentation](https://lit.dev/docs/templates/overview/).
+[digipair-xr](https://opensource.digipair.ai) use [lit-html](https://lit.dev) to menage the template. Your can read more information on [lit documentation](https://lit.dev/docs/templates/overview/).
 
 ```typescript
-import { customElement, html, MetaElement, TemplateResult } from '@digipair-vision/core';
+import { customElement, html, MetaElement, TemplateResult } from '@digipair-xr/core';
 
 @customElement('example-selectable-box')
 export class HelloWorldElement extends MetaElement {
@@ -119,10 +119,10 @@ export class HelloWorldElement extends MetaElement {
 
 ### AFrame hook
 
-All the hooks [AFrame](https://aframe.io/docs/1.4.0/core/component.html#overview-of-methods) are usable with [digipair-vision](https://opensource.digipair.ai).
+All the hooks [AFrame](https://aframe.io/docs/1.4.0/core/component.html#overview-of-methods) are usable with [digipair-xr](https://opensource.digipair.ai).
 
 ```typescript
-import { customElement, html, MetaElement, TemplateResult } from '@digipair-vision/core';
+import { customElement, html, MetaElement, TemplateResult } from '@digipair-xr/core';
 
 @customElement('example-hello-world')
 export class HelloWorldElement extends MetaElement {
@@ -138,7 +138,7 @@ export class HelloWorldElement extends MetaElement {
 
 ### @property decorator
 
-To keep the compatibility with [AFrame](https://aframe.io), [digipair-vision](https://opensource.digipair.ai) use a similar interface that [lit](https://lit.dev) to manage the properties, but don't use [lit](https://lit.dev). So, there are some little differencies with the behavior and the interface.
+To keep the compatibility with [AFrame](https://aframe.io), [digipair-xr](https://opensource.digipair.ai) use a similar interface that [lit](https://lit.dev) to manage the properties, but don't use [lit](https://lit.dev). So, there are some little differencies with the behavior and the interface.
 To read an attribute from the HTML element, you can use the decorator `@property`.
 
 ```typescript
@@ -152,7 +152,7 @@ To read an attribute from the HTML element, you can use the decorator `@property
 Example:
 
 ```typescript
-import { customElement, html, MetaElement, TemplateResult } from '@digipair-vision/core';
+import { customElement, html, MetaElement, TemplateResult } from '@digipair-xr/core';
 
 @customElement('example-hello-world')
 export class HelloWorldElement extends MetaElement {
@@ -175,7 +175,7 @@ export class HelloWorldElement extends MetaElement {
 
 ### @state decorator
 
-To keep the compatibility with [AFrame](https://aframe.io), [digipair-vision](https://opensource.digipair.ai) use a similar interface that [lit](https://lit.dev) to manage the properties, but don't use [lit](https://lit.dev). So, there are some little differencies with the behavior and the interface.
+To keep the compatibility with [AFrame](https://aframe.io), [digipair-xr](https://opensource.digipair.ai) use a similar interface that [lit](https://lit.dev) to manage the properties, but don't use [lit](https://lit.dev). So, there are some little differencies with the behavior and the interface.
 To rendering the component each time a variable is updated, you can use the decorator `@state`.  
 The value is synchronized on the networked if the networked attribute of the `customElement` decorator set to true.
 
@@ -186,7 +186,7 @@ The value is synchronized on the networked if the networked attribute of the `cu
 Example:
 
 ```typescript
-import { customElement, html, MetaElement, TemplateResult } from '@digipair-vision/core';
+import { customElement, html, MetaElement, TemplateResult } from '@digipair-xr/core';
 
 @customElement('example-color-box')
 export class HelloWorldElement extends MetaElement {
@@ -250,4 +250,4 @@ export class TictactoeProvider extends MetaProvider {
 see the section [@state decorator](#state-decorator) of the component section because the interface is the same.
 
 > Don't hesitate to improve this documentation, any help will be amazing !  
-> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/digipair/digipair-vision/blob/master/docs/element-creation.md)
+> [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/digipair/digipair-xr/blob/master/docs/element-creation.md)

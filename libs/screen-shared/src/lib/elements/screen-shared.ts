@@ -1,13 +1,13 @@
 import {
-  customElement,
-  html,
-  inject,
-  MetaElement,
-  nothing,
-  property,
-  TemplateResult,
-} from '@digipair-vision/core';
-import '@digipair-vision/design-system';
+    customElement,
+    html,
+    inject,
+    MetaElement,
+    nothing,
+    property,
+    TemplateResult,
+} from '@digipair-xr/core';
+import '@digipair-xr/design-system';
 import { ScreenSharedProvider } from '../providers/screen-shared.provider';
 import './desktop';
 import './webcam';

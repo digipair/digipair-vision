@@ -1,13 +1,13 @@
 import {
-  customElement,
-  html,
-  inject,
-  MetaElement,
-  property,
-  state,
-  TemplateResult,
-} from '@digipair-vision/core';
-import '@digipair-vision/design-system';
+    customElement,
+    html,
+    inject,
+    MetaElement,
+    property,
+    state,
+    TemplateResult,
+} from '@digipair-xr/core';
+import '@digipair-xr/design-system';
 import '../../pins/add-pins-cursor';
 import { MetaPins } from '../../pins/pins.interface';
 import { PlayerProvider } from '../../player/player.provider';

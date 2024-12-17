@@ -1,11 +1,11 @@
 import {
-  customElement,
-  html,
-  inject,
-  MetaElement,
-  TemplateResult,
-} from '@digipair-vision/core';
-import '@digipair-vision/design-system';
+    customElement,
+    html,
+    inject,
+    MetaElement,
+    TemplateResult,
+} from '@digipair-xr/core';
+import '@digipair-xr/design-system';
 import { PlayerProvider } from '../player/player.provider';
 import { MenuProvider } from './menu.provider';
 

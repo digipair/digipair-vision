@@ -1,10 +1,10 @@
 import {
-  customElement,
-  html,
-  MetaElement,
-  TemplateResult,
-  unsafeHTML,
-} from '@digipair-vision/core';
+    customElement,
+    html,
+    MetaElement,
+    TemplateResult,
+    unsafeHTML,
+} from '@digipair-xr/core';
 import './toolbar-default';
 
 @customElement('meta-player-toolbar')

@@ -1,5 +1,5 @@
 {
-  "name": "@digipair-vision/router",
+  "name": "@digipair-xr/router",
   "version": "0.0.0",
   "dependencies": {},
   "main": "./index.cjs.js",

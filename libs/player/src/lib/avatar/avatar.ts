@@ -1,12 +1,12 @@
 import {
-  customElement,
-  Entity,
-  html,
-  MetaElement,
-  property,
-  TemplateResult,
-  unsafeHTML,
-} from '@digipair-vision/core';
+    customElement,
+    Entity,
+    html,
+    MetaElement,
+    property,
+    TemplateResult,
+    unsafeHTML,
+} from '@digipair-xr/core';
 import './logo';
 
 @customElement('meta-avatar')

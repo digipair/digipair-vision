@@ -1,10 +1,10 @@
 import {
-  Entity,
-  injectable,
-  MetaProvider,
-  state,
-  THREE,
-} from '@digipair-vision/core';
+    Entity,
+    injectable,
+    MetaProvider,
+    state,
+    THREE,
+} from '@digipair-xr/core';
 import { MetaCursor } from './cursor.interface';
 
 declare const NAF: any;
@@ -231,7 +231,7 @@ export class PlayerProvider extends MetaProvider {
 
       sceneEl.setAttribute('networked-scene', {
         serverURL: this.networked.serverURL,
-        app: 'digipair-vision',
+        app: 'digipair-xr',
         room: sessionFormated.replace(/-/g, '').toLowerCase(),
         adapter: this.networked.adapter,
         audio,

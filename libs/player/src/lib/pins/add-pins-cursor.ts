@@ -1,14 +1,14 @@
 import {
-  customElement,
-  Entity,
-  html,
-  inject,
-  MetaElement,
-  nothing,
-  property,
-  state,
-  THREE,
-} from '@digipair-vision/core';
+    customElement,
+    Entity,
+    html,
+    inject,
+    MetaElement,
+    nothing,
+    property,
+    state,
+    THREE,
+} from '@digipair-xr/core';
 import { PlayerProvider } from '../player/player.provider';
 
 @customElement('meta-player-menu-add-pins-cursor')

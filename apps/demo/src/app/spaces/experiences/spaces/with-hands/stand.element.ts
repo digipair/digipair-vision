@@ -1,11 +1,11 @@
 import {
-  customElement,
-  html,
-  MetaElement,
-  property,
-  TemplateResult,
-  unsafeHTML,
-} from '@digipair-vision/core';
+    customElement,
+    html,
+    MetaElement,
+    property,
+    TemplateResult,
+    unsafeHTML,
+} from '@digipair-xr/core';
 
 @customElement('experiences-with-hands-stand')
 export class StandElement extends MetaElement {

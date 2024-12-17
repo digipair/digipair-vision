@@ -1,11 +1,11 @@
 import {
-  customElement,
-  html,
-  MetaElement,
-  property,
-  TemplateResult,
-} from '@digipair-vision/core';
-import '@digipair-vision/mesh';
+    customElement,
+    html,
+    MetaElement,
+    property,
+    TemplateResult,
+} from '@digipair-xr/core';
+import '@digipair-xr/mesh';
 
 @customElement('meta-ready-player-me')
 export class ReadyPlayerMeElement extends MetaElement {

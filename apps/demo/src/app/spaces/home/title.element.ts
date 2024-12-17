@@ -1,9 +1,9 @@
 import {
-  customHtmlElement,
-  html,
-  injectHtml,
-  MetaHtmlElement,
-} from '@digipair-vision/core';
+    customHtmlElement,
+    html,
+    injectHtml,
+    MetaHtmlElement,
+} from '@digipair-xr/core';
 import { SessionProvider } from '../../session.provider';
 
 @customHtmlElement('home-title')

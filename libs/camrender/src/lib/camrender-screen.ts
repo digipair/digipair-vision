@@ -5,7 +5,7 @@ import {
   MetaElement,
   property,
   TemplateResult,
-} from '@digipair-vision/core';
+} from '@digipair-xr/core';
 
 @customElement('meta-camrender-screen')
 export class CamrenderScreenElement extends MetaElement {

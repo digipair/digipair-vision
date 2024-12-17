@@ -1,5 +1,5 @@
 {
-  "name": "@digipair-vision/player",
+  "name": "@digipair-xr/player",
   "version": "0.0.0",
   "dependencies": {},
   "main": "./index.cjs.js",

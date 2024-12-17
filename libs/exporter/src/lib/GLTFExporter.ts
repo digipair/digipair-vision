@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-this-alias */
-import { THREE } from '@digipair-vision/core';
+import { THREE } from '@digipair-xr/core';
 
 const {
   BufferAttribute,

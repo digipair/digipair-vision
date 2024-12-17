@@ -1,12 +1,12 @@
 import {
-  Entity,
-  inject,
-  injectable,
-  MetaProvider,
-  state,
-  THREE,
-} from '@digipair-vision/core';
-import { PlayerProvider } from '@digipair-vision/player';
+    Entity,
+    inject,
+    injectable,
+    MetaProvider,
+    state,
+    THREE,
+} from '@digipair-xr/core';
+import { PlayerProvider } from '@digipair-xr/player';
 import * as md5 from 'md5';
 
 declare const NAF: any;

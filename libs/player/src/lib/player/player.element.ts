@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {
-  customElement,
-  html,
-  inject,
-  MetaElement,
-  nothing,
-  TemplateResult,
-  THREE,
-  unsafeHTML,
-} from '@digipair-vision/core';
+    customElement,
+    html,
+    inject,
+    MetaElement,
+    nothing,
+    TemplateResult,
+    THREE,
+    unsafeHTML,
+} from '@digipair-xr/core';
 import 'aframe-blink-controls';
 import 'super-hands';
 import '../avatar/avatar';
