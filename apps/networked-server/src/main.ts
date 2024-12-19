@@ -1,5 +1,5 @@
 // Load required modules
-import * as express from 'express'; // web framework external module
+import express from 'express'; // web framework external module
 import * as http from 'http'; // http server core module
 import * as easyrtc from 'open-easyrtc'; // EasyRTC external module
 import * as socketIo from 'socket.io'; // web socket external module
