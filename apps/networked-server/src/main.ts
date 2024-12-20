@@ -36,7 +36,6 @@ const myIceServers = [
 easyrtc.setOption('appIceServers', myIceServers);
 easyrtc.setOption('logLevel', 'debug');
 easyrtc.setOption('demosEnable', false);
-easyrtc.setOption('stillAliveInterval', 20 * 1000);
 
 // Overriding the default easyrtcAuth listener, only so we can directly access its callback
 easyrtc.events.on(
