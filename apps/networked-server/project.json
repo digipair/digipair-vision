@@ -1,10 +1,11 @@
 {
-  "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
+  "name": "networked-server",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/networked-server/src",
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/node:webpack",
+      "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/networked-server",
@@ -15,6 +16,7 @@
       "configurations": {
         "production": {
           "optimization": true,
+          "sourceMap": false,
           "extractLicenses": true,
           "inspect": false,
           "fileReplacements": [
@@ -26,27 +28,33 @@
         }
       }
     },
+    "prepare": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "nx build networked-server && nx run networked-server:copy-assets"
+      }
+    },
+    "copy-assets": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cpx 'apps/networked-server/src/assets/**/*' dist/apps/networked-server/src/assets"
+      }
+    },
     "serve": {
-      "executor": "@nrwl/node:node",
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
       "options": {
         "buildTarget": "networked-server:build"
-      }
-    },
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/networked-server/**/*.ts"]
-      }
-    },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/networked-server"],
-      "options": {
-        "jestConfig": "apps/networked-server/jest.config.ts",
-        "passWithNoTests": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "networked-server:build:development"
+        },
+        "production": {
+          "buildTarget": "networked-server:build:production"
+        }
       }
     }
   },
-  "tags": ["server", "networked"]
+  "tags": []
 }
