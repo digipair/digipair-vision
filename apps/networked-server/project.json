@@ -16,7 +16,15 @@
       "configurations": {
         "production": {
           "optimization": true,
-          "sourceMap": false
+          "sourceMap": false,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/networked-server/src/environments/environment.ts",
+              "with": "apps/networked-server/src/environments/environment.prod.ts"
+            }
+          ]
         }
       }
     },
